@@ -1,6 +1,7 @@
 // Wraps src/page.html (written for the Artifact viewer, which adds its own
-// document skeleton) into a standalone page at public/index.html.
-import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
+// document skeleton) into a standalone page at docs/index.html for GitHub Pages.
+// docs/data and docs/images belong to the owner panel and are never overwritten.
+import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 
 const src = readFileSync(new URL('./src/page.html', import.meta.url), 'utf8');
 const [head, body] = src.split('<!-- page -->');
@@ -27,7 +28,9 @@ ${body.trim()}
 </html>
 `;
 
-mkdirSync(new URL('./public/', import.meta.url), { recursive: true });
-writeFileSync(new URL('./public/index.html', import.meta.url), html);
-writeFileSync(new URL('./public/.nojekyll', import.meta.url), '');
-console.log('built public/index.html', (html.length / 1024).toFixed(1) + ' KB');
+mkdirSync(new URL('./docs/data/', import.meta.url), { recursive: true });
+writeFileSync(new URL('./docs/index.html', import.meta.url), html);
+writeFileSync(new URL('./docs/.nojekyll', import.meta.url), '');
+const data = new URL('./docs/data/products.json', import.meta.url);
+if (!existsSync(data)) writeFileSync(data, JSON.stringify({ settings: { whatsapp: '9647503321266', map: 'https://maps.app.goo.gl/vMUJ7ErkPsaVY9hb8', showSamples: true, hiddenSamples: [] }, products: [] }, null, 1) + '\n');
+console.log('built docs/index.html', (html.length / 1024).toFixed(1) + ' KB');

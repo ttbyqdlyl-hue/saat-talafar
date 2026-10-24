@@ -397,6 +397,124 @@ img,svg{max-width:100%}
 .flyer{position:fixed;z-index:120;pointer-events:none;transform-origin:50% 50%}
 .flyer .wsvg{height:100%}
 
+/* photo products (added by the owner) */
+.stage.photo{overflow:hidden;background:#0A0D12;transform-style:flat}
+.stage.photo .ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:translate3d(var(--px,0px),var(--py,0px),0) scale(1.06);transition:transform 1.2s var(--ease-out),filter .6s}
+.card:hover .stage.photo .ph{transform:translate3d(var(--px,0px),var(--py,0px),0) scale(1.13)}
+.stage.photo::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(7,8,11,.25),transparent 30%,transparent 62%,rgba(7,8,11,.6))}
+.ph-shine{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(105deg,transparent 35%,rgba(255,244,214,.32) 50%,transparent 65%);transform:translateX(130%)}
+.card:hover .ph-shine,.card.in-focus .ph-shine{animation:phShine 1.3s var(--ease-io)}
+@keyframes phShine{from{transform:translateX(130%)}to{transform:translateX(-130%)}}
+.stage.photo .badge{z-index:2}
+.card.sold .ph{filter:grayscale(.9) brightness(.62)}
+.badge.sold{background:#2A2F3A;color:var(--ivory);box-shadow:none}
+.lume-mode .stage.photo .ph{filter:brightness(.35)}
+.var.plain{padding:0 16px}
+.card.skel .card-tilt{min-height:440px;background:linear-gradient(100deg,var(--panel) 30%,var(--panel-2) 50%,var(--panel) 70%);background-size:300% 100%;animation:skel 1.4s linear infinite}
+@keyframes skel{to{background-position:-300% 0}}
+.sheet-gallery{position:relative;width:100%;height:min(440px,54vh)}
+.gal-track{display:flex;height:100%;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;border-radius:20px}
+.gal-track::-webkit-scrollbar{display:none}
+.gal-track img{flex:0 0 100%;width:100%;height:100%;object-fit:contain;scroll-snap-align:center}
+.gal-dots{position:absolute;bottom:-28px;inset-inline:0;display:flex;justify-content:center;gap:6px}
+.gal-dots button{width:8px;height:8px;border-radius:999px;background:rgba(255,255,255,.28);transition:width .4s var(--ease-out),background-color .3s}
+.gal-dots button[aria-current="true"]{width:24px;background:var(--champagne)}
+.flyer img{width:100%;height:100%;object-fit:contain}
+@media (max-width:760px){.sheet-gallery{height:300px}}
+
+/* owner panel */
+.owner{position:fixed;inset:0;z-index:150;overflow:auto;overscroll-behavior:contain;padding-block:env(safe-area-inset-top,0px) env(safe-area-inset-bottom,0px);
+  background:radial-gradient(80vw 60vw at 90% -10%,rgba(201,161,90,.12),transparent 60%),var(--obsidian)}
+.ow-shell{max-width:900px;margin-inline:auto;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px));padding-block:0 70px}
+.ow-top{position:sticky;top:0;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:12px;height:70px;margin-bottom:26px;border-bottom:1px solid var(--line);background:color-mix(in srgb,var(--obsidian) 86%,transparent);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+.ow-top-start{display:flex;align-items:center;gap:10px;min-width:0}
+.ow-brand{display:flex;align-items:center;gap:10px;font-family:var(--f-display);font-weight:700;font-size:19px;white-space:nowrap}
+.ow-actions{display:flex;gap:8px}
+.ow-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:44px;padding:0 18px;border-radius:999px;border:1px solid var(--line);background:var(--panel);font-size:14px;transition:border-color .3s}
+.ow-btn.icon{width:44px;padding:0}
+.ow-btn:hover{border-color:color-mix(in srgb,var(--champagne) 50%,transparent)}
+.ow-card{border:1px solid var(--line);border-radius:26px;background:linear-gradient(180deg,var(--panel-2),var(--panel));padding:clamp(22px,4vw,36px)}
+.ow-lock{max-width:440px;margin:7vh auto 0;text-align:center}
+.ow-lock-ic{width:68px;height:68px;margin:0 auto 18px;border-radius:22px;display:grid;place-items:center;background:var(--night);border:1px solid var(--line);color:var(--champagne)}
+.ow-h{margin:0 0 6px;font-family:var(--f-display);font-weight:700;font-size:clamp(24px,3.6vw,32px);line-height:1.3}
+.ow-p{margin:0 0 18px;color:var(--mist);font-size:15px}
+.ow-stack{display:grid;gap:16px}
+.ow-stack > .ow-h,.ow-stack > .ow-p{margin-bottom:0}
+.ow-field{display:grid;gap:7px;text-align:start;min-width:0}
+.ow-field label,.ow-label{font-size:13px;color:var(--mist)}
+.ow-input{width:100%;min-height:52px;padding:12px 16px;border-radius:16px;border:1px solid var(--line);background:var(--night);color:var(--ivory);font:inherit;font-size:16px;transition:border-color .3s,box-shadow .3s}
+.ow-input:focus{outline:none;border-color:var(--champagne);box-shadow:0 0 0 4px rgba(234,211,162,.12)}
+textarea.ow-input{resize:vertical;line-height:1.7}
+select.ow-input{appearance:none;-webkit-appearance:none;padding-inline-end:44px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='18' height='18'%3E%3Cpath d='M6 9l6 6 6-6' fill='none' stroke='%23EAD3A2' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:left 16px center}
+.ow-err{min-height:1.4em;margin:0;font-size:13.5px;color:#FF8A80}
+.ow-grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+@media (max-width:560px){.ow-grid2{grid-template-columns:minmax(0,1fr)}}
+.ow-steps{display:grid;gap:8px;margin:0 0 22px;padding-inline-start:20px;color:var(--mist);font-size:14.5px}
+.ow-steps a{color:var(--champagne);text-decoration:underline}
+.ow-steps b{color:var(--ivory);font-weight:500}
+.ow-tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+@media (min-width:720px){.ow-tiles{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.ow-tile.slim{grid-column:1 / -1;min-height:0;flex-direction:row;align-items:center;gap:14px;padding:14px 20px}
+.ow-tile.slim .ow-tile-ic{margin:0;width:42px;height:42px}
+.ow-tile.slim b{font-size:17px}
+.ow-tile{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:6px;min-height:150px;padding:20px;border-radius:24px;border:1px solid var(--line);background:linear-gradient(180deg,var(--panel-2),var(--panel));text-align:start;transition:transform .5s var(--ease-out),border-color .3s,box-shadow .5s}
+.ow-tile:hover{transform:translateY(-4px);border-color:color-mix(in srgb,var(--champagne) 45%,transparent);box-shadow:0 24px 50px -30px rgba(201,161,90,.5)}
+.ow-tile.big{grid-column:1 / -1;min-height:170px;background:radial-gradient(100% 120% at 100% 0%,rgba(201,161,90,.16),transparent 60%),linear-gradient(180deg,var(--panel-2),var(--panel))}
+.ow-tile-ic{width:48px;height:48px;margin-bottom:8px;border-radius:16px;display:grid;place-items:center;background:var(--night);border:1px solid var(--line);color:var(--champagne)}
+.ow-tile-ic.wa{color:#25D366}
+.ow-tile b{font-family:var(--f-display);font-weight:600;font-size:19px}
+.ow-tile small{max-width:100%;font-size:13px;color:var(--mist);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ow-tile em{font-style:normal;font-size:13px;color:var(--champagne)}
+.ow-bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px}
+.ow-count{margin:0;font-size:13.5px;color:var(--mist)}
+.ow-list{display:grid;gap:10px;margin:0;padding:0;list-style:none}
+.ow-item{display:grid;grid-template-columns:64px minmax(0,1fr) auto auto auto;align-items:center;gap:12px;padding:10px;border:1px solid var(--line);border-radius:18px;background:var(--panel)}
+.ow-item img{width:64px;height:64px;border-radius:12px;object-fit:cover;background:var(--night)}
+.ow-item.sold img{filter:grayscale(1) brightness(.7)}
+.ow-meta{display:grid;min-width:0}
+.ow-meta b{font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ow-meta span{font-size:13px;color:var(--mist)}
+.ow-icon{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-width:42px;height:42px;border-radius:12px;border:1px solid var(--line);color:var(--ivory);transition:background-color .3s,border-color .3s}
+.ow-icon.danger{color:#FF8A80}
+.ow-icon.danger span{display:none;font-size:13px}
+.ow-icon.danger.confirm{padding:0 12px;background:#4A1A17;border-color:#FF8A80}
+.ow-icon.danger.confirm span{display:inline}
+.ow-icon.danger.confirm svg{display:none}
+@media (max-width:560px){.ow-item{grid-template-columns:56px minmax(0,1fr) auto auto}.ow-item img{width:56px;height:56px}.ow-item .ow-switch{grid-row:2;grid-column:2 / -1}}
+.ow-switch{position:relative;display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--mist);cursor:pointer}
+.ow-switch input{position:absolute;opacity:0;width:1px;height:1px}
+.ow-switch span{position:relative;flex:none;width:44px;height:26px;border-radius:999px;background:var(--line);transition:background-color .3s}
+.ow-switch span::after{content:"";position:absolute;top:3px;inset-inline-start:3px;width:20px;height:20px;border-radius:50%;background:var(--ivory);transition:transform .4s var(--ease-out)}
+.ow-switch input:checked + span{background:#C9A15A}
+.ow-switch input:checked + span::after{transform:translateX(-18px)}
+.ow-switch input:focus-visible + span{outline:2px solid var(--champagne);outline-offset:2px}
+.ow-switch em{font-style:normal}
+.ow-switch.big{font-size:15px;color:var(--ivory)}
+.ow-empty{padding:30px 16px;text-align:center;color:var(--mist);border:1px dashed var(--line);border-radius:18px}
+.ow-section{margin-top:22px}
+.ow-note{margin:8px 0 0;font-size:13px;color:var(--mist)}
+.ow-foot{display:flex;flex-wrap:wrap;gap:10px}
+.ow-form-wrap{position:fixed;inset:0;z-index:3;display:grid;place-items:end center;background:rgba(3,4,6,.72);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.ow-form{width:min(720px,100%);max-height:94vh;overflow:auto;overscroll-behavior:contain;border:1px solid var(--line);border-bottom:0;border-radius:28px 28px 0 0;background:linear-gradient(180deg,var(--panel-2),var(--night));padding:24px max(18px, env(safe-area-inset-right, 0px)) calc(26px + env(safe-area-inset-bottom,0px)) max(18px, env(safe-area-inset-left, 0px));animation:owUp .55s var(--ease-out)}
+@media (min-width:761px){.ow-form-wrap{place-items:center}.ow-form{border-bottom:1px solid var(--line);border-radius:28px}}
+@keyframes owUp{from{transform:translateY(40px);opacity:0}}
+.ow-photos{display:grid;grid-template-columns:repeat(auto-fill,minmax(100px,1fr));gap:10px}
+.ow-ph{position:relative;aspect-ratio:1;max-width:100%;border-radius:16px;overflow:hidden;border:1px solid var(--line);background:var(--night)}
+.ow-ph img{width:100%;height:100%;object-fit:cover}
+.ow-ph.main{border-color:var(--champagne);box-shadow:0 0 0 2px rgba(234,211,162,.25)}
+.ow-tag{position:absolute;bottom:6px;inset-inline-start:6px;padding:3px 9px;border-radius:999px;font-size:11px;background:rgba(7,8,11,.78);color:var(--champagne)}
+.ow-rm{position:absolute;top:6px;inset-inline-end:6px;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:rgba(7,8,11,.82);font-size:20px;line-height:1}
+.ow-ph.add{display:grid;place-items:center;align-content:center;gap:6px;cursor:pointer;border-style:dashed;color:var(--champagne);font-size:13px}
+.ow-ph.add input{position:absolute;inset:0;opacity:0;cursor:pointer}
+.ow-checks{display:flex;flex-wrap:wrap;gap:10px}
+.ow-check{display:inline-flex;align-items:center;gap:9px;height:46px;padding:0 18px;border-radius:999px;border:1px solid var(--line);font-size:14.5px;cursor:pointer}
+.ow-check input{width:18px;height:18px;accent-color:#C9A15A}
+.ow-busy{position:fixed;inset:0;z-index:4;display:grid;place-items:center;align-content:center;gap:16px;text-align:center;background:rgba(3,4,6,.76);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.ow-spin{width:54px;height:54px;border-radius:50%;border:3px solid rgba(234,211,162,.2);border-top-color:var(--champagne);animation:spin .9s linear infinite}
+.ow-busy p{margin:0;font-size:15px}
+.shake{animation:shake .45s}
+@keyframes shake{20%,60%{transform:translateX(-8px)}40%,80%{transform:translateX(8px)}}
+
 /* toast, veil, cursor */
 .toast{position:fixed;left:50%;bottom:calc(22px + env(safe-area-inset-bottom,0px));z-index:200;width:max-content;max-width:min(560px,calc(100% - 32px));display:grid;gap:6px;padding:15px 20px;border-radius:18px;background:var(--ivory);color:#0B0B0D;font-size:14.5px;line-height:1.6;box-shadow:0 24px 60px -12px rgba(0,0,0,.7);transform:translate(-50%,calc(100% + 80px));visibility:hidden;transition:transform .7s var(--ease-out),visibility 0s .7s,background-color .9s}
 .toast.show{transform:translate(-50%,0);visibility:visible;transition:transform .7s var(--ease-out),visibility 0s,background-color .9s}
@@ -509,7 +627,7 @@ img,svg{max-width:100%}
           <p class="sample-note">نسخة تجريبية: المنتجات والأسعار أمثلة لحد ما توصل صور وأسعار المحل</p>
         </div>
         <div class="filters" id="filters" role="group" aria-label="تصفية حسب النوع"></div>
-        <div class="grid" id="grid"></div>
+        <div class="grid" id="grid"><div class="card skel" aria-hidden="true"><div class="card-tilt"></div></div><div class="card skel" aria-hidden="true"><div class="card-tilt"></div></div><div class="card skel" aria-hidden="true"><div class="card-tilt"></div></div></div>
         <p class="grid-empty" id="gridEmpty" hidden>ماكو ساعات بهذا القسم حالياً.</p>
       </div>
     </section>
@@ -550,7 +668,7 @@ img,svg{max-width:100%}
             <p class="eyebrow">موقع المحل</p>
             <h2 class="sec-title split">زورنا بتلعفر</h2>
             <ul class="loc-lines">
-              <li><span class="ic"><svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path d="M12 21.5s-7-6.2-7-11.7a7 7 0 1 1 14 0c0 5.5-7 11.7-7 11.7z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="9.8" r="2.6" fill="currentColor"/></svg></span><span><b>تلعفر، محافظة نينوى</b> · رمز الموقع على الخرائط <b class="digits">9CFQ+5MM</b></span></li>
+              <li><span class="ic"><svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path d="M12 21.5s-7-6.2-7-11.7a7 7 0 1 1 14 0c0 5.5-7 11.7-7 11.7z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="9.8" r="2.6" fill="currentColor"/></svg></span><span><b id="locAddress">تلعفر، محافظة نينوى</b> · رمز الموقع على الخرائط <b class="digits">9CFQ+5MM</b></span></li>
               <li><span class="ic"><svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path d="M12 2.2a9.7 9.7 0 0 0-8.4 14.6L2.3 21.7l5-1.3A9.7 9.7 0 1 0 12 2.2zm0 17.7a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 19.9zm4.4-6c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1l-.8.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.6.3 2.7 2.7 0 0 0-.9 2c0 1.2.9 2.4 1 2.5.1.2 1.8 2.7 4.3 3.8 1.6.7 2.2.7 3 .6.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1l-.5-.3z" fill="currentColor"/></svg></span><span>واتساب <b class="digits" data-phone>+964 750 332 1266</b></span></li>
             </ul>
             <div class="ctas">
@@ -645,6 +763,7 @@ img,svg{max-width:100%}
     </button>
     <div class="sheet-stage" id="sheetStage">
       <div class="sheet-watch" id="sheetWatch"></div>
+      <div class="sheet-gallery" id="sheetGallery" hidden></div>
       <p class="sheet-hint" id="sheetHint" hidden></p>
     </div>
     <div class="sheet-info">
@@ -656,13 +775,164 @@ img,svg{max-width:100%}
         <p class="price big"><b id="sheetPrice">0</b><span class="cur">د.ع</span><s id="sheetOld"></s></p>
         <a class="btn btn-wa" id="sheetOrder" href="https://wa.me/9647503321266" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path d="M12 2.2a9.7 9.7 0 0 0-8.4 14.6L2.3 21.7l5-1.3A9.7 9.7 0 1 0 12 2.2zm0 17.7a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 19.9zm4.4-6c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1l-.8.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.6.3 2.7 2.7 0 0 0-.9 2c0 1.2.9 2.4 1 2.5.1.2 1.8 2.7 4.3 3.8 1.6.7 2.2.7 3 .6.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1l-.5-.3z" fill="currentColor"/></svg>
-          اطلب عبر واتساب
+          <span id="sheetOrderLbl">اطلب عبر واتساب</span>
         </a>
       </div>
       <dl class="specs" id="sheetSpecs"></dl>
       <p class="sheet-note">نسخة تجريبية: السعر والمواصفات أمثلة.</p>
     </div>
   </div>
+</div>
+<div class="owner" id="owner" hidden dir="rtl" lang="ar" role="dialog" aria-modal="true" aria-labelledby="owTitle">
+  <div class="ow-shell">
+    <header class="ow-top">
+      <div class="ow-top-start">
+        <button class="ow-btn icon" type="button" id="owBack" hidden aria-label="رجوع للوحة"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="ow-brand" id="owTitle"><svg viewBox="-20 -20 40 40" width="32" height="32" aria-hidden="true"><circle r="18.5" fill="none" stroke="#C9A15A" stroke-width="1.6"/><circle r="14.5" fill="#0C0F15"/><path d="M0 0V-10M0 0L7 4" stroke="#EAD3A2" stroke-width="1.8" stroke-linecap="round"/></svg>لوحة صاحب المحل</div>
+      </div>
+      <div class="ow-actions">
+        <button class="ow-btn" type="button" id="owLogout" hidden>خروج</button>
+        <button class="ow-btn" type="button" id="owClose">الموقع</button>
+      </div>
+    </header>
+
+    <section id="owOff" class="ow-card ow-lock" hidden>
+      <h2 class="ow-h">اللوحة تشتغل من رابط الموقع العام</h2>
+      <p class="ow-p">افتح رابط الموقع العام وضيف بآخره <b class="digits">#owner</b> حتى تدخل للوحة.</p>
+    </section>
+
+    <section id="owLock" class="ow-card ow-lock" hidden>
+      <div class="ow-lock-ic"><svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true"><path d="M7 11V8a5 5 0 0 1 10 0v3M5 11h14v10H5z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="16" r="1.6" fill="currentColor"/></svg></div>
+      <h2 class="ow-h">أهلاً بيك</h2>
+      <p class="ow-p">اكتب باسورد اللوحة حتى تدير منتجات المحل ومعلوماته.</p>
+      <form id="owLockForm" class="ow-stack">
+        <input type="text" name="username" value="saat-talafar" autocomplete="username" hidden>
+        <div class="ow-field"><label for="owPass">الباسورد</label><input class="ow-input" id="owPass" type="password" autocomplete="current-password" required></div>
+        <button class="btn btn-gold" type="submit">دخول</button>
+        <p class="ow-err" id="owLockErr" role="alert"></p>
+      </form>
+    </section>
+
+    <section id="owSetup" class="ow-card" hidden>
+      <h2 class="ow-h">تجهيز اللوحة (مرة وحدة بس)</h2>
+      <p class="ow-p">هاي الخطوة يسويها صاحب الموقع مرة وحدة. بعدها صاحب المحل يدخل بالباسورد بس.</p>
+      <ol class="ow-steps">
+        <li>افتح <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">صفحة مفتاح GitHub جديد</a> وأنت داخل بحساب <b class="digits">ttbyqdlyl-hue</b>.</li>
+        <li>بخانة <b class="digits">Repository access</b> اختار <b class="digits">Only select repositories</b> ثم <b class="digits">saat-talafar</b>.</li>
+        <li>بخانة <b class="digits">Permissions</b> اختار <b class="digits">Contents</b> وخليها <b class="digits">Read and write</b>، وخلي مدة الانتهاء أطول شي.</li>
+        <li>اضغط <b class="digits">Generate token</b>، انسخ المفتاح، والصقه هنا.</li>
+      </ol>
+      <form id="owSetupForm" class="ow-stack" autocomplete="off">
+        <div class="ow-field"><label for="owToken">مفتاح GitHub</label><input class="ow-input digits" id="owToken" type="password" autocomplete="off" spellcheck="false" required></div>
+        <div class="ow-grid2">
+          <div class="ow-field"><label for="owNew1">باسورد اللوحة (8 حروف أو أكثر)</label><input class="ow-input" id="owNew1" type="password" autocomplete="new-password" minlength="8" required></div>
+          <div class="ow-field"><label for="owNew2">الباسورد مرة ثانية</label><input class="ow-input" id="owNew2" type="password" autocomplete="new-password" minlength="8" required></div>
+        </div>
+        <button class="btn btn-gold" type="submit">احفظ وجهّز اللوحة</button>
+        <p class="ow-err" id="owSetupErr" role="alert"></p>
+      </form>
+    </section>
+
+    <section id="owHome" hidden>
+      <h2 class="ow-h">شتريد تسوي اليوم؟</h2>
+      <p class="ow-p" id="owHomeNote"></p>
+      <div class="ow-tiles">
+        <button type="button" class="ow-tile big" data-go="owProducts"><span class="ow-tile-ic"><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path d="M4 7l8-4 8 4v10l-8 4-8-4zM4 7l8 4 8-4M12 11v10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></span><b>المنتجات</b><small id="owTileProducts">—</small><em>ضيف، عدّل، احذف، أو أشّر «نفد»</em></button>
+        <button type="button" class="ow-tile" data-go="owAbout"><span class="ow-tile-ic"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M5 5h14M5 10h14M5 15h9M5 20h6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span><b>وصف المحل</b><small id="owTileAbout">—</small></button>
+        <button type="button" class="ow-tile" data-go="owWa"><span class="ow-tile-ic wa"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M12 2.2a9.7 9.7 0 0 0-8.4 14.6L2.3 21.7l5-1.3A9.7 9.7 0 1 0 12 2.2zm0 17.7a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 19.9z" fill="currentColor"/></svg></span><b>رقم الواتساب</b><small class="digits" id="owTileWa">—</small></button>
+        <button type="button" class="ow-tile" data-go="owTt"><span class="ow-tile-ic"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M16.6 5.8a4.6 4.6 0 0 1-1.1-3h-3.1v12.4a2.6 2.6 0 1 1-2.6-2.6c.3 0 .5 0 .8.1V9.5a5.8 5.8 0 1 0 5 5.7V9a7.7 7.7 0 0 0 4.4 1.4V7.3a4.6 4.6 0 0 1-3.4-1.5z" fill="currentColor"/></svg></span><b>حساب التيك توك</b><small class="digits" id="owTileTt">—</small></button>
+        <button type="button" class="ow-tile" data-go="owMap"><span class="ow-tile-ic"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M12 21.5s-7-6.2-7-11.7a7 7 0 1 1 14 0c0 5.5-7 11.7-7 11.7z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="9.8" r="2.4" fill="currentColor"/></svg></span><b>موقع المحل</b><small id="owTileMap">—</small></button>
+        <button type="button" class="ow-tile slim" data-go="owPassword"><span class="ow-tile-ic"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M7 11V8a5 5 0 0 1 10 0v3M5 11h14v10H5z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></span><b>الباسورد</b><small>غيّر باسورد اللوحة</small></button>
+      </div>
+    </section>
+
+    <section id="owProducts" hidden>
+      <div class="ow-bar"><div><h2 class="ow-h">المنتجات</h2><p class="ow-count" id="owCount"></p></div><button class="btn btn-gold" type="button" id="owAdd">+ منتج جديد</button></div>
+      <ul class="ow-list" id="owList"></ul>
+      <div class="ow-card ow-section">
+        <label class="ow-switch big"><input type="checkbox" id="owSamples"><span></span><em>إظهار المنتجات التجريبية (الرسومات) بالموقع</em></label>
+        <p class="ow-note">طفّيها بعد ما تضيف منتجات المحل الحقيقية.</p>
+      </div>
+    </section>
+
+    <section id="owAbout" hidden>
+      <form id="owAboutForm" class="ow-card ow-stack">
+        <h2 class="ow-h">وصف المحل</h2>
+        <p class="ow-p">هذا الكلام يطلع بأول الموقع تحت اسم «ساعات تلعفر».</p>
+        <div class="ow-field"><label for="owAboutText">الوصف</label><textarea class="ow-input" id="owAboutText" maxlength="300" rows="4" placeholder="مثلاً: ساعات ومحافظ وسبح وعطور أصلية بأسعار مناسبة. التوصيل لكل أحياء تلعفر."></textarea></div>
+        <div class="ow-foot"><button class="btn btn-gold" type="submit">احفظ الوصف</button><button class="btn btn-ghost" type="button" id="owAboutReset">رجّع النص الأصلي</button></div>
+      </form>
+    </section>
+
+    <section id="owWa" hidden>
+      <form id="owWaForm" class="ow-card ow-stack">
+        <h2 class="ow-h">رقم الواتساب</h2>
+        <p class="ow-p">على هذا الرقم توصل طلبات الزبائن. اكتبه مثل ما تكتبه بالموبايل، مثلاً 07501234567.</p>
+        <div class="ow-field"><label for="owWaInput">الرقم</label><input class="ow-input digits" id="owWaInput" inputmode="tel" autocomplete="tel" required></div>
+        <div class="ow-foot"><button class="btn btn-gold" type="submit">احفظ الرقم</button></div>
+        <p class="ow-err" id="owWaErr" role="alert"></p>
+      </form>
+    </section>
+
+    <section id="owTt" hidden>
+      <form id="owTtForm" class="ow-card ow-stack">
+        <h2 class="ow-h">حساب التيك توك</h2>
+        <p class="ow-p">اكتب يوزر الحساب، أو الصق رابط الحساب من التيك توك. الأزرار بالموقع تفتح هذا الحساب.</p>
+        <div class="ow-field"><label for="owTtInput">اليوزر</label><input class="ow-input digits" id="owTtInput" placeholder="@saat_talafar" autocapitalize="off" spellcheck="false"></div>
+        <div class="ow-foot"><button class="btn btn-gold" type="submit">احفظ الحساب</button></div>
+        <p class="ow-err" id="owTtErr" role="alert"></p>
+      </form>
+    </section>
+
+    <section id="owMap" hidden>
+      <form id="owMapForm" class="ow-card ow-stack">
+        <h2 class="ow-h">موقع المحل</h2>
+        <p class="ow-p">من خرائط كوكل: افتح مكان المحل، اضغط «مشاركة»، انسخ الرابط والصقه هنا.</p>
+        <div class="ow-field"><label for="owMapInput">رابط الخريطة</label><input class="ow-input digits" id="owMapInput" type="url" spellcheck="false"></div>
+        <div class="ow-field"><label for="owAddrInput">العنوان المكتوب (اختياري)</label><input class="ow-input" id="owAddrInput" maxlength="80" placeholder="تلعفر، شارع السوق، قرب …"></div>
+        <div class="ow-foot"><button class="btn btn-gold" type="submit">احفظ الموقع</button></div>
+        <p class="ow-err" id="owMapErr" role="alert"></p>
+      </form>
+    </section>
+
+    <section id="owPassword" hidden>
+      <form id="owPassForm" class="ow-card ow-stack" autocomplete="off">
+        <h2 class="ow-h">تغيير الباسورد</h2>
+        <div class="ow-grid2">
+          <div class="ow-field"><label for="owChg1">الباسورد الجديد</label><input class="ow-input" id="owChg1" type="password" autocomplete="new-password" minlength="8" required></div>
+          <div class="ow-field"><label for="owChg2">الباسورد مرة ثانية</label><input class="ow-input" id="owChg2" type="password" autocomplete="new-password" minlength="8" required></div>
+        </div>
+        <div class="ow-field"><label for="owChgTok">مفتاح GitHub جديد (بس إذا انتهت صلاحية القديم)</label><input class="ow-input digits" id="owChgTok" type="password" autocomplete="off" spellcheck="false"></div>
+        <div class="ow-foot"><button class="btn btn-gold" type="submit">غيّر الباسورد</button></div>
+        <p class="ow-err" id="owPassErr" role="alert"></p>
+      </form>
+    </section>
+  </div>
+
+  <div class="ow-form-wrap" id="owFormWrap" hidden>
+    <form class="ow-form ow-stack" id="owForm" novalidate>
+      <div class="ow-bar"><h2 class="ow-h" id="owFormTitle">منتج جديد</h2><button type="button" class="ow-btn icon" id="owFormX" aria-label="إغلاق"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></div>
+      <div class="ow-field"><span class="ow-label">الصور (لحد 5، وأول صورة هي اللي تطلع بالبطاقة)</span><div class="ow-photos" id="owPhotos"></div></div>
+      <div class="ow-field"><label for="owName">اسم المنتج</label><input class="ow-input" id="owName" maxlength="60" required></div>
+      <div class="ow-grid2">
+        <div class="ow-field"><label for="owPrice">السعر بالدينار</label><input class="ow-input digits" id="owPrice" inputmode="numeric" placeholder="25000" required></div>
+        <div class="ow-field"><label for="owOld">السعر قبل الخصم (اختياري)</label><input class="ow-input digits" id="owOld" inputmode="numeric"></div>
+      </div>
+      <div class="ow-grid2">
+        <div class="ow-field"><label for="owCat">القسم</label><select class="ow-input" id="owCat"><option value="watch">ساعات</option><option value="wallet">محافظ</option><option value="misbaha">سبح</option><option value="glasses">نظارات</option><option value="perfume">عطور</option><option value="acc">إكسسوارات أخرى</option></select></div>
+        <div class="ow-field"><label for="owBadge">شارة على البطاقة</label><select class="ow-input" id="owBadge"><option value="">بدون</option><option>جديد</option><option>الأكثر طلباً</option><option>قطعة مميزة</option><option>كمية محدودة</option></select></div>
+      </div>
+      <div class="ow-field"><span class="ow-label">لمن؟</span><div class="ow-checks"><label class="ow-check"><input type="checkbox" id="owMen" checked> رجالي</label><label class="ow-check"><input type="checkbox" id="owWomen"> نسائي</label></div></div>
+      <div class="ow-field"><label for="owColors">الألوان المتوفرة (افصل بينها بفارزة)</label><input class="ow-input" id="owColors" maxlength="120" placeholder="أسود، ذهبي، فضي"></div>
+      <div class="ow-field"><label for="owShort">سطر قصير تحت الاسم (اختياري)</label><input class="ow-input" id="owShort" maxlength="60" placeholder="41 ملم · ستيل · ضد الماء"></div>
+      <div class="ow-field"><label for="owDesc">الوصف (اختياري)</label><textarea class="ow-input" id="owDesc" maxlength="600" rows="3"></textarea></div>
+      <label class="ow-switch big"><input type="checkbox" id="owSold"><span></span><em>نفد من المحل</em></label>
+      <p class="ow-err" id="owFormErr" role="alert"></p>
+      <div class="ow-foot"><button class="btn btn-gold" type="submit">احفظ المنتج</button><button class="btn btn-ghost" type="button" id="owCancel">إلغاء</button></div>
+    </form>
+  </div>
+
+  <div class="ow-busy" id="owBusy" hidden><span class="ow-spin"></span><p id="owBusyText">جاري الحفظ…</p></div>
 </div>
 <div class="flyer" id="flyer" hidden aria-hidden="true"></div>
 <div class="veil" id="veil" aria-hidden="true"></div>
@@ -680,12 +950,13 @@ img,svg{max-width:100%}
 // Shop settings — swap the TikTok link for the shop's own profile once it is known.
 const SHOP = {
   whatsapp: '9647503321266',
-  phoneLabel: '+964 750 332 1266',
   map: 'https://maps.app.goo.gl/vMUJ7ErkPsaVY9hb8',
   tiktok: 'https://www.tiktok.com/search?q=' + encodeURIComponent('ساعات تلعفر'),
   tiktokLabel: 'ساعات تلعفر'
 };
 const waLink = msg => `https://wa.me/${SHOP.whatsapp}?text=${encodeURIComponent(msg)}`;
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
+const phoneLabel = d => d.length >= 12 ? `+${d.slice(0, 3)} ${d.slice(3, 6)} ${d.slice(6, 9)} ${d.slice(9)}` : '+' + d;
 
 const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
@@ -710,11 +981,16 @@ function now() {
     day: d.getUTCDate(), wd: d.getUTCDay(), mon: d.getUTCMonth(), uh: u.getUTCHours(), um: u.getUTCMinutes() };
 }
 
-$$('[data-tt]').forEach(a => { a.href = SHOP.tiktok; a.target = '_blank'; a.rel = 'noopener'; });
-$$('[data-wa]').forEach(a => { a.href = waLink('مرحبا، عندي سؤال عن محل ساعات تلعفر'); a.target = '_blank'; a.rel = 'noopener'; });
-$$('[data-map]').forEach(a => { a.href = SHOP.map; a.target = '_blank'; a.rel = 'noopener'; });
-$$('[data-phone]').forEach(el => { el.textContent = SHOP.phoneLabel; });
-$('#ttHandle b').textContent = SHOP.tiktokLabel;
+const DEFAULT_ABOUT = $('.hero-sub').textContent.trim();
+const DEFAULT_ADDRESS = $('#locAddress').textContent.trim();
+function wireLinks() {
+  $$('[data-tt]').forEach(a => { a.href = SHOP.tiktok; a.target = '_blank'; a.rel = 'noopener'; });
+  $$('[data-wa]').forEach(a => { a.href = waLink('مرحبا، عندي سؤال عن محل ساعات تلعفر'); a.target = '_blank'; a.rel = 'noopener'; });
+  $$('[data-map]').forEach(a => { a.href = SHOP.map; a.target = '_blank'; a.rel = 'noopener'; });
+  $$('[data-phone]').forEach(el => { el.textContent = phoneLabel(SHOP.whatsapp); });
+  $('#ttHandle').innerHTML = SHOP.tiktokLabel.startsWith('@') ? `الحساب: <b class="digits">${esc(SHOP.tiktokLabel)}</b>` : `ابحث عن: <b>${esc(SHOP.tiktokLabel)}</b>`;
+}
+wireLinks();
 
 /* ---------- watch drawing ---------- */
 const METAL = {
@@ -1491,26 +1767,52 @@ function dustFrame() {
 }
 
 /* ---------- products ---------- */
+// The owner's own products live in data/products.json (written by the owner panel); the drawn pieces are samples.
 const grid = $('#grid');
 const ARROW = '<svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 const HEART_ICON = '<svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path d="M12 20.3s-7.6-4.6-9.4-9.3C1.3 7.6 3.5 4.4 7 4.4c2 0 3.6 1.1 5 3 1.4-1.9 3-3 5-3 3.5 0 5.7 3.2 4.4 6.6-1.8 4.7-9.4 9.3-9.4 9.3z" stroke-width="1.7" stroke-linejoin="round"/></svg>';
-grid.innerHTML = PRODUCTS.map((p, i) => `
-  <article class="card" data-id="${p.id}" data-tags="${p.tags.join(' ')}" style="--tint:${p.tint};--tilt:${p.tilt}deg;--fd:${(-i * .73).toFixed(2)}s">
+const CATS = { watch: 'ساعة', wallet: 'محفظة', misbaha: 'سبحة', glasses: 'نظارة', perfume: 'عطر', acc: 'إكسسوار' };
+const DATA_URL = 'data/products.json';
+let SETTINGS = { showSamples: true, hiddenSamples: [] };
+let LIVE = [];
+let cards = [];
+let currentFilter = 'all';
+let lean = null;
+const localImg = {}; // images just uploaded from this device, shown before GitHub Pages serves them
+const imgSrc = path => localImg[path] || path;
+
+function fromData(d) {
+  const colors = String(d.colors || '').split(/[،,]/).map(s => s.trim()).filter(Boolean);
+  const p = { id: d.id, live: true, name: d.name || '', label: CATS[d.cat] || 'قطعة', cat: d.cat || 'watch',
+    tags: [...(d.gender || []).filter(g => g === 'men' || g === 'women'), ...(d.cat && d.cat !== 'watch' ? [d.cat] : [])],
+    price: +d.price || 0, old: +d.old || 0, soldOut: !!d.soldOut, badge: d.soldOut ? 'نفد' : (d.badge || ''),
+    short: d.short || '', desc: d.desc || '', images: d.images || [], thumb: d.thumb || (d.images || [])[0] || '',
+    tint: '#C9A15A', tilt: 0, specs: [], varLabel: 'اللون', variants: colors.map(n => ({ n })) };
+  if (p.old > p.price && !p.badge) p.badge = `خصم ${Math.round((1 - p.price / p.old) * 100)}%`;
+  return p;
+}
+
+function cardHTML(p, i) {
+  const badge = p.badge ? `<span class="badge${p.soldOut ? ' sold' : ''}">${esc(p.badge)}</span>` : '';
+  const stage = p.live
+    ? `<div class="stage photo">${p.thumb ? `<img class="ph" src="${esc(imgSrc(p.thumb))}" alt="${esc(p.name)}" loading="lazy" decoding="async">` : ''}<span class="ph-shine"></span>${badge}</div>`
+    : `<div class="stage"><div class="stage-floor"></div><div class="watch"><div class="float"></div></div>${badge}</div>`;
+  return `
+  <article class="card${p.soldOut ? ' sold' : ''}" data-id="${esc(p.id)}" data-tags="${p.tags.join(' ')}" style="--tint:${p.tint};--tilt:${p.tilt}deg;--fd:${(-i * .73).toFixed(2)}s">
     <div class="card-tilt">
       <div class="card-spot"></div>
-      <div class="stage"><div class="stage-floor"></div><div class="watch"><div class="float"></div></div>${p.badge ? `<span class="badge">${p.badge}</span>` : ''}</div>
+      ${stage}
       <div class="info">
-        <p class="cat">${catLine(p)}</p>
-        <h3 class="name">${p.name}</h3>
-        <p class="spec">${p.short}</p>
-        <div class="buy"><p class="price"><b>${fmt(p.price)}</b><span class="cur">د.ع</span>${p.old ? `<s>${fmt(p.old)}</s>` : ''}</p><span class="more">التفاصيل ${ARROW}</span></div>
+        <p class="cat">${esc(catLine(p))}</p>
+        <h3 class="name">${esc(p.name)}</h3>
+        ${p.short ? `<p class="spec">${esc(p.short)}</p>` : ''}
+        <div class="buy"><p class="price"><b>${fmt(p.price)}</b><span class="cur">د.ع</span>${p.old > p.price ? `<s>${fmt(p.old)}</s>` : ''}</p><span class="more">التفاصيل ${ARROW}</span></div>
       </div>
-      <button class="card-hit" type="button" aria-label="تفاصيل ${p.name}"></button>
-      <button class="fav" type="button" aria-pressed="false" aria-label="أضف ${p.name} للمفضلة">${HEART_ICON}</button>
+      <button class="card-hit" type="button" aria-label="تفاصيل ${esc(p.name)}"></button>
+      <button class="fav" type="button" aria-pressed="false" aria-label="أضف ${esc(p.name)} للمفضلة">${HEART_ICON}</button>
     </div>
-  </article>`).join('');
-const cards = $$('.card', grid);
-cards.forEach((c, i) => { c._p = PRODUCTS[i]; c._vi = 0; c._w = mountWatch(c.querySelector('.float'), PRODUCTS[i].spec); });
+  </article>`;
+}
 
 let favs = new Set();
 try { favs = new Set(JSON.parse(localStorage.getItem('saat-talafar-favs') || '[]')); } catch (_) {}
@@ -1525,7 +1827,7 @@ function burst(btn) {
   G.fromTo(btn.querySelector('svg'), { scale: .5 }, { scale: 1, duration: .9, ease: 'elastic.out(1,.35)' });
 }
 
-cards.forEach(card => {
+function wireCard(card) {
   const w = card._w, p = card._p, tiltEl = card.querySelector('.card-tilt'), fav = card.querySelector('.fav');
   if (favs.has(p.id)) fav.setAttribute('aria-pressed', 'true');
   fav.addEventListener('click', e => {
@@ -1537,9 +1839,9 @@ cards.forEach(card => {
     toast(on ? `انضافت «${p.name}» للمفضلة.` : `انشالت «${p.name}» من المفضلة.`);
   });
   card.querySelector('.card-hit').addEventListener('click', () => openSheet(card));
-  const rotBezel = to => { if (!w.bezel || !/diver|gmt/.test(p.spec.bezel || '') || !ANIM) return; G.to(w, { bezelAngle: to, duration: .8, ease: 'steps(10)', overwrite: true, onUpdate: () => setBezel(w) }); };
+  const rotBezel = to => { if (!w || !w.bezel || !/diver|gmt/.test(p.spec.bezel || '') || !ANIM) return; G.to(w, { bezelAngle: to, duration: .8, ease: 'steps(10)', overwrite: true, onUpdate: () => setBezel(w) }); };
   card.addEventListener('pointerenter', e => {
-    if (e.pointerType !== 'mouse') return;
+    if (e.pointerType !== 'mouse' || !w) return;
     if (w.chrono) w.chr = { state: 'run', start: performance.now() };
     rotBezel(p.spec.bezel === 'gmt' ? -45 : -30);
   });
@@ -1551,24 +1853,28 @@ cards.forEach(card => {
     tiltEl.style.setProperty('--ry', ((x - .5) * 14).toFixed(2) + 'deg');
     tiltEl.style.setProperty('--mx', (x * 100).toFixed(1) + '%');
     tiltEl.style.setProperty('--my', (y * 100).toFixed(1) + '%');
-    if (w.sheen) w.sheen.setAttribute('transform', `rotate(${(-35 + (x - .5) * 60).toFixed(1)})`);
-    if (w.glare) w.glare.setAttribute('transform', `translate(${((.5 - x) * 26).toFixed(1)} ${((.5 - y) * 26).toFixed(1)})`);
+    tiltEl.style.setProperty('--px', ((.5 - x) * 18).toFixed(1) + 'px');
+    tiltEl.style.setProperty('--py', ((.5 - y) * 18).toFixed(1) + 'px');
+    if (w && w.sheen) w.sheen.setAttribute('transform', `rotate(${(-35 + (x - .5) * 60).toFixed(1)})`);
+    if (w && w.glare) w.glare.setAttribute('transform', `translate(${((.5 - x) * 26).toFixed(1)} ${((.5 - y) * 26).toFixed(1)})`);
   });
   card.addEventListener('pointerleave', e => {
     if (e.pointerType !== 'mouse') return;
     card.classList.remove('tilting');
-    tiltEl.style.setProperty('--rx', '0deg'); tiltEl.style.setProperty('--ry', '0deg');
+    for (const k of ['--rx', '--ry']) tiltEl.style.setProperty(k, '0deg');
+    for (const k of ['--px', '--py']) tiltEl.style.setProperty(k, '0px');
+    if (!w) return;
     if (w.sheen) w.sheen.setAttribute('transform', 'rotate(-35)');
     if (w.glare) w.glare.removeAttribute('transform');
     if (w.chrono && w.chr.state === 'run') { const t = performance.now(); w.chr = { state: 'fly', from: ((t - w.chr.start) / 1000 * 6) % 360, t0: t }; }
     rotBezel(0);
   });
-});
+}
 
 // Touch screens have no hover, so the cards lean with the scroll instead.
 if (!FINE && !RM) {
   let queued = false;
-  const lean = () => {
+  lean = () => {
     queued = false;
     const vh = innerHeight;
     for (const c of cards) {
@@ -1576,34 +1882,41 @@ if (!FINE && !RM) {
       const r = c.getBoundingClientRect();
       if (r.bottom < -50 || r.top > vh + 50) continue;
       const p = Math.max(-1, Math.min(1, ((r.top + r.height / 2) - vh / 2) / (vh / 2)));
-      c.querySelector('.card-tilt').style.setProperty('--rx', (p * -9).toFixed(2) + 'deg');
+      const tiltEl = c.querySelector('.card-tilt');
+      tiltEl.style.setProperty('--rx', (p * -9).toFixed(2) + 'deg');
+      tiltEl.style.setProperty('--py', (p * 14).toFixed(1) + 'px');
       c.classList.toggle('in-focus', Math.abs(p) < .4);
-      if (c._w.sheen) c._w.sheen.setAttribute('transform', `rotate(${(-35 + p * 40).toFixed(1)})`);
+      if (c._w && c._w.sheen) c._w.sheen.setAttribute('transform', `rotate(${(-35 + p * 40).toFixed(1)})`);
     }
   };
   addEventListener('scroll', () => { if (!queued) { queued = true; requestAnimationFrame(lean); } }, { passive: true });
-  lean();
 }
 
 /* ---------- filters ---------- */
 const filtersEl = $('#filters');
-filtersEl.innerHTML = '<span class="chip-ink" aria-hidden="true"></span>' + FILTERS.map(([k, l]) => {
-  const n = k === 'all' ? PRODUCTS.length : PRODUCTS.filter(p => p.tags.includes(k)).length;
-  return `<button class="chip" type="button" data-f="${k}" aria-pressed="${k === 'all'}">${l}<span class="n">${n}</span></button>`;
-}).join('');
-const ink = $('.chip-ink'), chips = $$('.chip', filtersEl);
+let ink = null, chips = [];
 function moveInk(btn, animate) {
+  if (!btn || !ink) return;
   const x = btn.offsetLeft, w = btn.offsetWidth;
   if (ANIM && animate) G.to(ink, { x, width: w, duration: .65, ease: 'expo.out' });
   else if (G) G.set(ink, { x, width: w });
   else { ink.style.transform = `translateX(${x}px)`; ink.style.width = w + 'px'; }
 }
-function setFilter(btn) {
-  const tag = btn.dataset.f;
-  chips.forEach(c => c.setAttribute('aria-pressed', String(c === btn)));
-  moveInk(btn, true);
-  btn.scrollIntoView({ block: 'nearest', inline: 'nearest', behavior: ANIM ? 'smooth' : 'auto' });
-  const state = ANIM && FL ? FL.getState(cards) : null;
+const settleInk = () => moveInk(chips.find(c => c.getAttribute('aria-pressed') === 'true'), false);
+function renderChips(list) {
+  // A category chip shows only when the shop has something in it.
+  filtersEl.innerHTML = '<span class="chip-ink" aria-hidden="true"></span>' + FILTERS.map(([k, l]) => {
+    const n = k === 'all' ? list.length : list.filter(p => p.tags.includes(k)).length;
+    return n || k === 'all' ? `<button class="chip" type="button" data-f="${k}" aria-pressed="${k === currentFilter}">${l}<span class="n">${n}</span></button>` : '';
+  }).join('');
+  ink = $('.chip-ink', filtersEl); chips = $$('.chip', filtersEl);
+  if (!chips.some(c => c.dataset.f === currentFilter)) { currentFilter = 'all'; chips[0].setAttribute('aria-pressed', 'true'); }
+  chips.forEach(c => c.addEventListener('click', () => setFilter(c)));
+  settleInk();
+}
+function applyFilter(animate) {
+  const tag = currentFilter;
+  const state = animate && ANIM && FL ? FL.getState(cards) : null;
   let shown = 0;
   cards.forEach(c => { const on = tag === 'all' || c.dataset.tags.split(' ').includes(tag); c.classList.toggle('is-out', !on); if (on) shown++; });
   $('#gridEmpty').hidden = shown > 0;
@@ -1614,37 +1927,120 @@ function setFilter(btn) {
       onComplete: () => ST && ST.refresh() });
   } else if (ST) ST.refresh();
 }
-chips.forEach(c => c.addEventListener('click', () => setFilter(c)));
-const settleInk = () => moveInk(chips.find(c => c.getAttribute('aria-pressed') === 'true'), false);
-settleInk();
+function setFilter(btn) {
+  currentFilter = btn.dataset.f;
+  chips.forEach(c => c.setAttribute('aria-pressed', String(c === btn)));
+  moveInk(btn, true);
+  btn.scrollIntoView({ block: 'nearest', inline: 'nearest', behavior: ANIM ? 'smooth' : 'auto' });
+  applyFilter(true);
+}
 addEventListener('resize', settleInk);
 if (document.fonts && document.fonts.ready) document.fonts.ready.then(settleInk);
 
+/* ---------- catalogue rendering ---------- */
+function catalogue() {
+  const hidden = SETTINGS.hiddenSamples || [];
+  const samples = SETTINGS.showSamples === false ? [] : PRODUCTS.filter(p => !hidden.includes(p.id));
+  return [...LIVE, ...samples];
+}
+function revealCards() {
+  if (!ANIM || !ST) return;
+  const vh = innerHeight, pending = [];
+  cards.forEach((c, i) => {
+    if (c.getBoundingClientRect().top < vh * .95) G.from(c, { y: 70, opacity: 0, duration: 1.3, delay: .2 + i * .09, ease: 'expo.out', clearProps: 'transform' });
+    else { G.set(c, { opacity: 0, y: 90, rotationX: -12, transformPerspective: 900 }); pending.push(c); }
+  });
+  ST.batch(pending, { start: 'top 90%', once: true,
+    onEnter: batch => G.to(batch, { opacity: 1, y: 0, rotationX: 0, duration: 1.3, stagger: .11, ease: 'expo.out', clearProps: 'transform' }) });
+}
+function renderCatalogue(reveal) {
+  const list = catalogue();
+  cards.forEach(c => { if (c._w) unmountWatch(c._w); });
+  grid.innerHTML = list.map(cardHTML).join('');
+  cards = $$('.card', grid);
+  cards.forEach((c, i) => {
+    const p = list[i];
+    c._p = p; c._vi = 0;
+    c._w = p.live ? null : mountWatch(c.querySelector('.float'), p.spec);
+    wireCard(c);
+  });
+  $('.sample-note').hidden = !list.some(p => !p.live);
+  renderChips(list);
+  applyFilter(false);
+  if (reveal) revealCards();
+  if (lean) lean();
+}
+
+async function loadData() {
+  try {
+    const r = await fetch(`${DATA_URL}?v=${Date.now()}`, { cache: 'no-store' });
+    return r.ok ? await r.json() : null;
+  } catch (_) { return null; }
+}
+function applyData(d) {
+  if (!d) return;
+  SETTINGS = { showSamples: true, hiddenSamples: [], ...(d.settings || {}) };
+  if (SETTINGS.whatsapp) SHOP.whatsapp = String(SETTINGS.whatsapp).replace(/\D/g, '');
+  const user = String(SETTINGS.tiktokUser || '').replace(/^@+/, '').trim();
+  if (user) { SHOP.tiktok = `https://www.tiktok.com/@${encodeURIComponent(user)}`; SHOP.tiktokLabel = '@' + user; }
+  if (SETTINGS.map) SHOP.map = SETTINGS.map;
+  $('.hero-sub').textContent = SETTINGS.about || DEFAULT_ABOUT;
+  $('#locAddress').textContent = SETTINGS.address || DEFAULT_ADDRESS;
+  LIVE = (d.products || []).map(fromData);
+  wireLinks();
+}
+Promise.race([loadData(), new Promise(r => setTimeout(() => r(null), 2500))]).then(d => { applyData(d); renderCatalogue(true); });
+
 /* ---------- product sheet ---------- */
-const sheet = $('#sheet'), panel = $('.sheet-panel'), backdrop = $('.sheet-backdrop'), sWatch = $('#sheetWatch'), flyer = $('#flyer'), stageEl = $('#sheetStage');
+const sheet = $('#sheet'), panel = $('.sheet-panel'), backdrop = $('.sheet-backdrop'), sWatch = $('#sheetWatch'), gallery = $('#sheetGallery'), flyer = $('#flyer'), stageEl = $('#sheetStage');
 let open = null, sheetW = null, busy = false;
+
+function fillGallery(p) {
+  const imgs = p.images.length ? p.images : [p.thumb];
+  gallery.innerHTML = `<div class="gal-track">${imgs.map((src, i) => `<img src="${esc(imgSrc(src))}" alt="${esc(p.name)} ${i + 1}" decoding="async">`).join('')}</div>`
+    + (imgs.length > 1 ? `<div class="gal-dots">${imgs.map((_, i) => `<button type="button" aria-label="صورة ${i + 1}" aria-current="${i === 0}"></button>`).join('')}</div>` : '');
+  const track = $('.gal-track', gallery), slides = $$('img', track), dots = $$('.gal-dots button', gallery);
+  dots.forEach((d, i) => d.addEventListener('click', () => slides[i].scrollIntoView({ inline: 'center', block: 'nearest', behavior: ANIM ? 'smooth' : 'auto' })));
+  if (dots.length) {
+    gallery._io = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { const i = slides.indexOf(e.target); dots.forEach((d, k) => d.setAttribute('aria-current', String(k === i))); }
+    }), { root: track, threshold: .6 });
+    slides.forEach(s => gallery._io.observe(s));
+  }
+}
+function clearGallery() { if (gallery._io) { gallery._io.disconnect(); gallery._io = null; } gallery.innerHTML = ''; }
 
 function fillSheet(p, card) {
   $('#sheetCat').textContent = catLine(p);
   $('#sheetTitle').textContent = p.name;
-  $('#sheetDesc').textContent = p.desc;
-  $('#sheetSpecs').innerHTML = p.specs.map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join('');
+  $('#sheetDesc').textContent = p.desc; $('#sheetDesc').hidden = !p.desc;
+  $('#sheetSpecs').innerHTML = p.specs.map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join('');
+  $('#sheetSpecs').hidden = !p.specs.length;
   $('#sheetVarLabel').textContent = p.varLabel || 'اللون';
-  $('#sheetVariants').innerHTML = p.variants.map((v, i) => `<button type="button" class="var" aria-pressed="${i === card._vi}" data-i="${i}" style="--c:${v.c}"><span class="sw"></span>${v.n}</button>`).join('');
-  $('#sheetOld').textContent = p.old ? fmt(p.old) : '';
+  $('#sheetVarLabel').parentElement.hidden = !p.variants.length;
+  $('#sheetVariants').innerHTML = p.variants.map((v, i) => `<button type="button" class="var${v.c ? '' : ' plain'}" aria-pressed="${i === card._vi}" data-i="${i}"${v.c ? ` style="--c:${v.c}"` : ''}>${v.c ? '<span class="sw"></span>' : ''}${esc(v.n)}</button>`).join('');
+  $('#sheetOld').textContent = p.old > p.price ? fmt(p.old) : '';
   const hint = $('#sheetHint'); hint.textContent = p.hint || ''; hint.hidden = !p.hint;
   stageEl.style.setProperty('--tint', p.tint);
-  stageEl.classList.toggle('interactive', !!(p.spec.chrono || /diver|gmt/.test(p.spec.bezel || '') || ITEMS[p.spec.kind]));
+  stageEl.classList.toggle('interactive', !p.live && !!(p.spec.chrono || /diver|gmt/.test(p.spec.bezel || '') || ITEMS[p.spec.kind]));
+  sWatch.hidden = !!p.live; gallery.hidden = !p.live;
+  $('.sheet-note').hidden = !!p.live;
+  if (p.live) fillGallery(p);
   setOrderLink();
 }
 function setOrderLink() {
   const { p, v } = open;
-  $('#sheetOrder').href = waLink(`مرحبا، أريد أطلب من ساعات تلعفر:\n${p.name} — ${p.varLabel || 'اللون'}: ${v.n}\nالسعر: ${fmt(p.price)} د.ع`);
+  const line = v ? ` — ${p.varLabel || 'اللون'}: ${v.n}` : '';
+  $('#sheetOrder').href = waLink(p.soldOut
+    ? `مرحبا، أريد أسأل عن ${p.name}${line} من ساعات تلعفر، متى يتوفر؟`
+    : `مرحبا، أريد أطلب من ساعات تلعفر:\n${p.name}${line}\nالسعر: ${fmt(p.price)} د.ع`);
+  $('#sheetOrderLbl').textContent = p.soldOut ? 'اسأل عن توفّره' : 'اطلب عبر واتساب';
 }
 const setLabel = (svg, text) => { if (text) svg.querySelectorAll('.pf-l').forEach(t => { t.textContent = text; }); };
 const centerOf = r => [r.left + r.width / 2, r.top + r.height / 2];
-function flight(fromRect, toRect, svgNode, fromRot, toRot, dur, ease) {
-  flyer.innerHTML = ''; flyer.appendChild(svgNode);
+const pieceOf = card => card.querySelector(card._p.live ? '.ph' : '.float svg') || card.querySelector('.stage');
+function flight(fromRect, toRect, node, fromRot, toRot, dur, ease) {
+  flyer.innerHTML = ''; flyer.appendChild(node);
   Object.assign(flyer.style, { left: toRect.left + 'px', top: toRect.top + 'px', width: toRect.width + 'px', height: toRect.height + 'px' });
   flyer.hidden = false;
   const [fx1, fy1] = centerOf(fromRect), [tx, ty] = centerOf(toRect);
@@ -1659,46 +2055,50 @@ function openSheet(card) {
   fillSheet(p, card);
   sheet.hidden = false;
   root.classList.add('locked');
-  if (sheetW) unmountWatch(sheetW);
-  sheetW = mountWatch(sWatch, p.spec, { live: true });
-  sheetW.svg.setAttribute('style', card._w.svg.getAttribute('style'));
-  setLabel(sheetW.svg, open.v.text);
+  if (sheetW) { unmountWatch(sheetW); sheetW = null; }
+  if (!p.live) {
+    sheetW = mountWatch(sWatch, p.spec, { live: true });
+    sheetW.svg.setAttribute('style', card._w.svg.getAttribute('style'));
+    if (open.v) setLabel(sheetW.svg, open.v.text);
+  }
   const priceEl = $('#sheetPrice');
   const done = () => { busy = false; $('.sheet-x').focus({ preventScroll: true }); };
   if (!ANIM) { priceEl.textContent = fmt(p.price); done(); return; }
-  const src = card.querySelector('.float svg');
-  const sr = src.getBoundingClientRect(), dr = sWatch.getBoundingClientRect();
+  const src = pieceOf(card), target = p.live ? gallery : sWatch;
+  const sr = src.getBoundingClientRect(), dr = target.getBoundingClientRect();
   const mobile = innerWidth <= 760, fromRot = card.matches(':hover') ? 0 : p.tilt;
   const node = src.cloneNode(true);
-  sWatch.style.visibility = 'hidden'; src.style.visibility = 'hidden';
+  target.style.visibility = 'hidden'; src.style.visibility = 'hidden';
   const counter = { v: 0 }; priceEl.textContent = '0';
-  G.timeline({ onComplete: () => { sWatch.style.visibility = ''; flyer.hidden = true; flyer.innerHTML = ''; src.style.visibility = ''; done(); } })
+  G.timeline({ onComplete: () => { target.style.visibility = ''; flyer.hidden = true; flyer.innerHTML = ''; src.style.visibility = ''; done(); } })
     .fromTo(backdrop, { opacity: 0 }, { opacity: 1, duration: .5, ease: 'power2.out' }, 0)
     .fromTo(panel, mobile ? { yPercent: 100 } : { y: 50, opacity: 0, scale: .96 }, mobile ? { yPercent: 0, duration: .8, ease: 'expo.out' } : { y: 0, opacity: 1, scale: 1, duration: .8, ease: 'expo.out' }, 0)
     .add(flight(sr, dr, node, fromRot, 0, 1, 'expo.inOut'), 0)
-    .from($$('.sheet-info > *'), { y: 24, opacity: 0, duration: .7, stagger: .05, ease: 'power3.out' }, .3)
+    .from($$('.sheet-info > *:not([hidden])'), { y: 24, opacity: 0, duration: .7, stagger: .05, ease: 'power3.out' }, .3)
     .from($$('.var', sheet), { scale: .6, opacity: 0, duration: .6, stagger: .05, ease: 'back.out(2)' }, .5)
-    .to(counter, { v: p.price, duration: 1.2, ease: 'power3.out', onUpdate: () => { priceEl.textContent = fmt(Math.round(counter.v / 250) * 250); } }, .4);
+    .to(counter, { v: p.price, duration: 1.2, ease: 'power3.out', onUpdate: () => { priceEl.textContent = fmt(Math.round(counter.v / 250) * 250); }, onComplete: () => { priceEl.textContent = fmt(p.price); } }, .4);
 }
 
 function closeSheet() {
   if (!open || busy) return;
   busy = true;
   const { card, p } = open;
-  const src = card.querySelector('.float svg');
+  const src = pieceOf(card), target = p.live ? gallery : sWatch;
   const finish = () => {
     sheet.hidden = true; root.classList.remove('locked');
     if (sheetW) { unmountWatch(sheetW); sheetW = null; }
-    flyer.hidden = true; flyer.innerHTML = ''; src.style.visibility = ''; sWatch.style.visibility = '';
+    flyer.hidden = true; flyer.innerHTML = ''; src.style.visibility = ''; target.style.visibility = '';
+    clearGallery();
     if (G) G.set([panel, backdrop], { clearProps: 'all' });
     open = null; busy = false;
     card.querySelector('.card-hit').focus({ preventScroll: true });
   };
   if (!ANIM) { finish(); return; }
-  const sr = src.getBoundingClientRect(), dr = sWatch.getBoundingClientRect();
+  const sr = src.getBoundingClientRect(), dr = target.getBoundingClientRect();
   const mobile = innerWidth <= 760;
-  const node = sheetW.svg.cloneNode(true);
-  sWatch.style.visibility = 'hidden'; src.style.visibility = 'hidden';
+  const node = p.live ? src.cloneNode(true) : sheetW.svg.cloneNode(true);
+  node.style.visibility = '';
+  target.style.visibility = 'hidden'; src.style.visibility = 'hidden';
   flyer.innerHTML = ''; flyer.appendChild(node);
   Object.assign(flyer.style, { left: sr.left + 'px', top: sr.top + 'px', width: sr.width + 'px', height: sr.height + 'px' });
   flyer.hidden = false;
@@ -1717,12 +2117,14 @@ $('#sheetVariants').addEventListener('click', e => {
   const i = +b.dataset.i, v = open.p.variants[i];
   open.v = v; open.card._vi = i;
   $$('.var', sheet).forEach(x => x.setAttribute('aria-pressed', String(x === b)));
-  for (const svg of [sheetW.svg, open.card._w.svg]) {
-    for (const [k, val] of Object.entries(v.v)) svg.style.setProperty(k, val);
-    setLabel(svg, v.text);
+  if (!open.p.live) {
+    for (const svg of [sheetW.svg, open.card._w.svg]) {
+      for (const [k, val] of Object.entries(v.v)) svg.style.setProperty(k, val);
+      setLabel(svg, v.text);
+    }
+    if (ANIM) G.fromTo(sWatch, { rotation: -6, scale: .95 }, { rotation: 0, scale: 1, duration: 1.1, ease: 'elastic.out(1,.45)' });
   }
   setOrderLink();
-  if (ANIM) G.fromTo(sWatch, { rotation: -6, scale: .95 }, { rotation: 0, scale: 1, duration: 1.1, ease: 'elastic.out(1,.45)' });
 });
 
 stageEl.addEventListener('click', () => {
@@ -1858,13 +2260,6 @@ if (ANIM) {
       G.from(el.querySelectorAll('.wd'), { y: 46, opacity: 0, filter: 'blur(10px)', duration: 1.2, stagger: .09, ease: 'expo.out', clearProps: 'filter', scrollTrigger: { trigger: el, start: 'top 86%' } });
     });
 
-    const vh = innerHeight;
-    cards.forEach((c, i) => {
-      if (c.getBoundingClientRect().top < vh * .95) G.from(c, { y: 70, opacity: 0, duration: 1.3, delay: .5 + i * .09, ease: 'expo.out', clearProps: 'transform' });
-      else { G.set(c, { opacity: 0, y: 90, rotationX: -12, transformPerspective: 900 }); c._pending = true; }
-    });
-    ST.batch(cards.filter(c => c._pending), { start: 'top 90%', once: true,
-      onEnter: batch => G.to(batch, { opacity: 1, y: 0, rotationX: 0, duration: 1.3, stagger: .11, ease: 'expo.out', clearProps: 'transform' }) });
     G.from('.filters', { y: 30, opacity: 0, duration: 1, ease: 'expo.out', scrollTrigger: { trigger: '.filters', start: 'top 92%' } });
     G.from('.sample-note', { y: 20, opacity: 0, duration: 1, ease: 'expo.out', scrollTrigger: { trigger: '.sample-note', start: 'top 92%' } });
 
@@ -1880,6 +2275,363 @@ if (ANIM) {
   $$('.split').forEach(el => { el.innerHTML = el.textContent.trim().split(/\s+/).map(w => `<span class="wd">${w}</span>`).join(' '); });
   $$('.steps-line line').forEach(l => { l.style.strokeDashoffset = 0; });
 }
+
+/* ---------- owner panel (the site's link + #owner) ---------- */
+// Saves go straight to the GitHub repo that hosts the site. The GitHub key is stored in the repo
+// only encrypted with the owner's password (PBKDF2 + AES-GCM), so the password unlocks it on any phone.
+const REPO = { owner: 'ttbyqdlyl-hue', name: 'saat-talafar', branch: 'main', dir: 'docs' };
+const ownerEl = $('#owner');
+const CAN_ADMIN = /(^|\.)github\.io$|^localhost$|^127\.0\.0\.1$/.test(location.hostname);
+const te = new TextEncoder(), td = new TextDecoder();
+const b64 = bytes => { const a = new Uint8Array(bytes); let s = ''; for (let i = 0; i < a.length; i += 0x8000) s += String.fromCharCode.apply(null, a.subarray(i, i + 0x8000)); return btoa(s); };
+const unb64 = s => Uint8Array.from(atob(s), c => c.charCodeAt(0));
+async function deriveKey(pass, salt, iter) {
+  const base = await crypto.subtle.importKey('raw', te.encode(pass), 'PBKDF2', false, ['deriveKey']);
+  return crypto.subtle.deriveKey({ name: 'PBKDF2', salt, iterations: iter, hash: 'SHA-256' }, base, { name: 'AES-GCM', length: 256 }, false, ['encrypt', 'decrypt']);
+}
+async function seal(secret, pass) {
+  const salt = crypto.getRandomValues(new Uint8Array(16)), iv = crypto.getRandomValues(new Uint8Array(12)), iter = 400000;
+  const ct = await crypto.subtle.encrypt({ name: 'AES-GCM', iv }, await deriveKey(pass, salt, iter), te.encode(secret));
+  return { v: 1, iter, salt: b64(salt), iv: b64(iv), ct: b64(ct) };
+}
+async function unseal(box, pass) {
+  const pt = await crypto.subtle.decrypt({ name: 'AES-GCM', iv: unb64(box.iv) }, await deriveKey(pass, unb64(box.salt), box.iter), unb64(box.ct));
+  return td.decode(pt);
+}
+
+let ghToken = null;
+try { ghToken = sessionStorage.getItem('saat-owner') || null; } catch (_) {}
+const keepToken = t => { ghToken = t; try { t ? sessionStorage.setItem('saat-owner', t) : sessionStorage.removeItem('saat-owner'); } catch (_) {} };
+async function gh(path, opts = {}) {
+  const r = await fetch(`https://api.github.com/repos/${REPO.owner}/${REPO.name}${path}`, { ...opts,
+    headers: { Authorization: `Bearer ${ghToken}`, Accept: 'application/vnd.github+json', 'X-GitHub-Api-Version': '2022-11-28', ...(opts.body ? { 'Content-Type': 'application/json' } : {}) } });
+  if (!r.ok) { const e = new Error('github ' + r.status); e.status = r.status; try { e.detail = (await r.json()).message; } catch (_) {} throw e; }
+  return r.status === 204 ? null : r.json();
+}
+async function readRepoJson(path) {
+  try { const f = await gh(`/contents/${REPO.dir}/${path}?ref=${REPO.branch}`); return JSON.parse(td.decode(unb64(f.content.replace(/\s/g, '')))); }
+  catch (e) { if (e.status === 404) return null; throw e; }
+}
+async function commitFiles(files, message) {
+  for (let attempt = 0; ; attempt++) {
+    const ref = await gh(`/git/ref/heads/${REPO.branch}`);
+    const base = await gh(`/git/commits/${ref.object.sha}`);
+    const tree = [];
+    for (const f of files) {
+      if (f.delete) { tree.push({ path: f.path, mode: '100644', type: 'blob', sha: null }); continue; }
+      const blob = await gh('/git/blobs', { method: 'POST', body: JSON.stringify(f.base64 != null ? { content: f.base64, encoding: 'base64' } : { content: f.text, encoding: 'utf-8' }) });
+      tree.push({ path: f.path, mode: '100644', type: 'blob', sha: blob.sha });
+    }
+    const t = await gh('/git/trees', { method: 'POST', body: JSON.stringify({ base_tree: base.tree.sha, tree }) });
+    const c = await gh('/git/commits', { method: 'POST', body: JSON.stringify({ message, tree: t.sha, parents: [ref.object.sha] }) });
+    try { await gh(`/git/refs/heads/${REPO.branch}`, { method: 'PATCH', body: JSON.stringify({ sha: c.sha }) }); return; }
+    catch (e) { if (attempt < 2 && e.status === 422) continue; throw e; }
+  }
+}
+const emptyData = () => ({ settings: { whatsapp: SHOP.whatsapp, map: SHOP.map, showSamples: true, hiddenSamples: [] }, products: [] });
+let ownerData = null;
+// Re-reads the live file before every change so two phones never overwrite each other.
+async function mutate(change, files, message) {
+  const data = (await readRepoJson('data/products.json')) || emptyData();
+  data.settings = data.settings || {};
+  const drops = (await change(data)) || [];
+  data.updatedAt = new Date().toISOString();
+  await commitFiles([...files, ...drops, { path: `${REPO.dir}/data/products.json`, text: JSON.stringify(data, null, 1) + '\n' }], message);
+  ownerData = data;
+  applyData(data);
+  renderCatalogue(false);
+  refreshOwner();
+}
+function ghError(e) {
+  if (!navigator.onLine) return 'ماكو إنترنت. تأكد من الاتصال وجرّب مرة ثانية.';
+  if (e.status === 401) return 'مفتاح GitHub غلط أو انتهت صلاحيته.';
+  if (e.status === 403) return 'المفتاح ما عنده صلاحية كتابة على saat-talafar. لازم Contents تكون Read and write.';
+  if (e.status === 404) return 'ما لكيت مستودع saat-talafar، أو المفتاح ما عنده صلاحية عليه.';
+  return 'صار خطأ بالحفظ. جرّب مرة ثانية.' + (e.detail ? ` (${e.detail})` : '');
+}
+const busyBox = $('#owBusy');
+async function run(label, fn, okMsg) {
+  $('#owBusyText').textContent = label; busyBox.hidden = false;
+  try { await fn(); if (okMsg) toast(`${okMsg} يطلع للزبائن خلال دقيقة تقريباً.`); return true; }
+  catch (e) { if (e.status === 401) { keepToken(null); showOwner(); } toast(ghError(e)); return false; }
+  finally { busyBox.hidden = true; }
+}
+
+/* screens */
+const OW_SCREENS = ['owOff', 'owLock', 'owSetup', 'owHome', 'owProducts', 'owAbout', 'owWa', 'owTt', 'owMap', 'owPassword'];
+const OW_INNER = ['owProducts', 'owAbout', 'owWa', 'owTt', 'owMap', 'owPassword'];
+let owBox = null;
+function goOwner(id) {
+  OW_SCREENS.forEach(s => { $('#' + s).hidden = s !== id; });
+  $('#owBack').hidden = !OW_INNER.includes(id);
+  $('#owLogout').hidden = !(id === 'owHome' || OW_INNER.includes(id));
+  ownerEl.scrollTop = 0;
+  if (ANIM) G.fromTo('#' + id, { y: 18, opacity: 0 }, { y: 0, opacity: 1, duration: .5, ease: 'expo.out', clearProps: 'transform,opacity' });
+  const first = $('#' + id + ' input:not([type=hidden]):not([type=checkbox]), #' + id + ' textarea');
+  if (first && FINE) first.focus({ preventScroll: true });
+}
+async function fetchOwnerBox() {
+  // The API sees a fresh commit at once; GitHub Pages can lag a minute behind it.
+  try {
+    const r = await fetch(`https://api.github.com/repos/${REPO.owner}/${REPO.name}/contents/${REPO.dir}/data/owner.json?ref=${REPO.branch}`, { headers: { Accept: 'application/vnd.github.raw+json' }, cache: 'no-store' });
+    if (r.ok) return await r.json();
+    if (r.status === 404) return null;
+  } catch (_) {}
+  try { const r = await fetch(`data/owner.json?v=${Date.now()}`, { cache: 'no-store' }); return r.ok ? await r.json() : null; } catch (_) { return null; }
+}
+async function showOwner() {
+  if (!CAN_ADMIN) return goOwner('owOff');
+  if (ghToken) { goOwner('owHome'); return loadOwnerData(); }
+  owBox = await fetchOwnerBox();
+  goOwner(owBox ? 'owLock' : 'owSetup');
+}
+function openOwner() { ownerEl.hidden = false; root.classList.add('locked'); showOwner(); }
+function closeOwner() {
+  ownerEl.hidden = true;
+  if (!open) root.classList.remove('locked');
+  if (location.hash === '#owner') history.replaceState(null, '', location.pathname + location.search);
+}
+addEventListener('hashchange', () => { if (location.hash === '#owner') openOwner(); });
+$('#owClose').addEventListener('click', closeOwner);
+$('#owBack').addEventListener('click', () => goOwner('owHome'));
+$('#owLogout').addEventListener('click', () => { keepToken(null); ownerData = null; showOwner(); });
+$$('[data-go]', ownerEl).forEach(b => b.addEventListener('click', () => goOwner(b.dataset.go)));
+
+async function loadOwnerData() {
+  $('#owHomeNote').textContent = 'جاري التحميل…';
+  try { ownerData = (await readRepoJson('data/products.json')) || emptyData(); }
+  catch (e) {
+    if (e.status === 401) { keepToken(null); toast('انتهت صلاحية مفتاح GitHub. ادخل مرة ثانية أو سوّي مفتاح جديد.'); return showOwner(); }
+    $('#owHomeNote').textContent = ghError(e); return;
+  }
+  ownerData.settings = ownerData.settings || {};
+  refreshOwner();
+}
+function refreshOwner() {
+  if (!ownerData) return;
+  const s = ownerData.settings, items = ownerData.products;
+  $('#owHomeNote').textContent = '';
+  $('#owTileProducts').textContent = items.length ? `${items.length} منتج` : 'ما مضاف شي بعد';
+  $('#owTileAbout').textContent = s.about ? s.about.slice(0, 40) + (s.about.length > 40 ? '…' : '') : 'النص الافتراضي';
+  $('#owTileWa').textContent = phoneLabel(String(s.whatsapp || SHOP.whatsapp).replace(/\D/g, ''));
+  $('#owTileTt').textContent = s.tiktokUser ? '@' + s.tiktokUser : 'ما محطوط بعد';
+  $('#owTileMap').textContent = s.address || DEFAULT_ADDRESS;
+  $('#owSamples').checked = s.showSamples !== false;
+  $('#owCount').textContent = items.length ? `${items.length} منتج` : '';
+  $('#owList').innerHTML = items.length ? items.map(d => `
+    <li class="ow-item${d.soldOut ? ' sold' : ''}" data-id="${esc(d.id)}">
+      <img src="${esc(imgSrc(d.thumb || (d.images || [])[0] || ''))}" alt="" loading="lazy">
+      <div class="ow-meta"><b>${esc(d.name)}</b><span>${fmt(+d.price || 0)} د.ع · ${esc(CATS[d.cat] || '')}</span></div>
+      <label class="ow-switch"><input type="checkbox" data-act="sold"${d.soldOut ? ' checked' : ''}><span></span><em>نفد</em></label>
+      <button type="button" class="ow-icon" data-act="edit" aria-label="تعديل ${esc(d.name)}"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16v4zM14 6l4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></button>
+      <button type="button" class="ow-icon danger" data-act="del" aria-label="حذف ${esc(d.name)}"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M5 7h14M10 7V5h4v2M7 7l1 13h8l1-13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><span>متأكد؟ احذف</span></button>
+    </li>`).join('') : '<li class="ow-empty">ما مضاف منتجات بعد. اضغط «منتج جديد» وصوّر أول قطعة.</li>';
+  $('#owAboutText').value = s.about || '';
+  $('#owWaInput').value = String(s.whatsapp || SHOP.whatsapp);
+  $('#owTtInput').value = s.tiktokUser ? '@' + s.tiktokUser : '';
+  $('#owMapInput').value = s.map || SHOP.map;
+  $('#owAddrInput').value = s.address || '';
+}
+
+/* login + one-time setup */
+$('#owLockForm').addEventListener('submit', async e => {
+  e.preventDefault();
+  const err = $('#owLockErr'), pass = $('#owPass').value;
+  err.textContent = '';
+  busyBox.hidden = false; $('#owBusyText').textContent = 'جاري الدخول…';
+  try { keepToken(await unseal(owBox, pass)); }
+  catch (_) { err.textContent = 'الباسورد غلط. جرّب مرة ثانية.'; $('#owLock').classList.remove('shake'); void $('#owLock').offsetWidth; $('#owLock').classList.add('shake'); return; }
+  finally { busyBox.hidden = true; }
+  $('#owPass').value = '';
+  showOwner();
+});
+$('#owSetupForm').addEventListener('submit', async e => {
+  e.preventDefault();
+  const token = $('#owToken').value.trim(), p1 = $('#owNew1').value, p2 = $('#owNew2').value, err = $('#owSetupErr');
+  err.textContent = '';
+  if (!token) return void (err.textContent = 'الصق مفتاح GitHub.');
+  if (p1.length < 8) return void (err.textContent = 'الباسورد لازم يكون 8 حروف أو أكثر.');
+  if (p1 !== p2) return void (err.textContent = 'الباسوردين مو نفس الشي.');
+  keepToken(token);
+  const ok = await run('جاري تجهيز اللوحة…', async () => {
+    const files = [{ path: `${REPO.dir}/data/owner.json`, text: JSON.stringify(await seal(token, p1)) + '\n' }];
+    if (!(await readRepoJson('data/products.json'))) files.push({ path: `${REPO.dir}/data/products.json`, text: JSON.stringify(emptyData(), null, 1) + '\n' });
+    await commitFiles(files, 'تجهيز لوحة صاحب المحل');
+  });
+  if (!ok) { keepToken(null); err.textContent = 'ما زبط. تأكد من المفتاح وصلاحياته وجرّب مرة ثانية.'; return; }
+  $('#owSetupForm').reset();
+  toast('تجهّزت اللوحة. احفظ الباسورد بمكان أمين.');
+  showOwner();
+});
+
+/* settings sections */
+const saveSetting = (label, patch, okMsg) => run(label, () => mutate(data => { Object.assign(data.settings, patch); }, [], okMsg.replace(/\.$/, '')), okMsg);
+$('#owAboutForm').addEventListener('submit', e => {
+  e.preventDefault();
+  saveSetting('جاري الحفظ…', { about: $('#owAboutText').value.trim() }, 'انحفظ وصف المحل.');
+});
+$('#owAboutReset').addEventListener('click', () => { $('#owAboutText').value = ''; });
+$('#owWaForm').addEventListener('submit', e => {
+  e.preventDefault();
+  let n = $('#owWaInput').value.replace(/\D/g, '');
+  if (n.startsWith('00')) n = n.slice(2);
+  if (n.startsWith('07')) n = '964' + n.slice(1);
+  if (!/^\d{10,15}$/.test(n)) return void ($('#owWaErr').textContent = 'اكتب الرقم كامل، مثل 07501234567 أو 9647501234567.');
+  $('#owWaErr').textContent = '';
+  saveSetting('جاري الحفظ…', { whatsapp: n }, 'انحفظ رقم الواتساب.');
+});
+$('#owTtForm').addEventListener('submit', e => {
+  e.preventDefault();
+  const raw = $('#owTtInput').value.trim();
+  const user = ((raw.match(/tiktok\.com\/@?([\w.]+)/i) || [])[1] || raw).replace(/^@+/, '');
+  if (user && !/^[\w.]{2,24}$/.test(user)) return void ($('#owTtErr').textContent = 'اليوزر يتكون من حروف إنكليزية وأرقام ونقطة وشحطة سفلية بس.');
+  $('#owTtErr').textContent = '';
+  saveSetting('جاري الحفظ…', { tiktokUser: user }, user ? 'انحفظ حساب التيك توك.' : 'انشال حساب التيك توك.');
+});
+$('#owMapForm').addEventListener('submit', e => {
+  e.preventDefault();
+  const link = $('#owMapInput').value.trim();
+  if (link && !/^https:\/\/(maps\.app\.goo\.gl|goo\.gl\/maps|(www\.)?google\.[a-z.]+\/maps|maps\.google\.)/i.test(link)) return void ($('#owMapErr').textContent = 'الصق رابط من تطبيق خرائط كوكل (زر مشاركة ← نسخ الرابط).');
+  $('#owMapErr').textContent = '';
+  saveSetting('جاري الحفظ…', { map: link, address: $('#owAddrInput').value.trim() }, 'انحفظ موقع المحل.');
+});
+$('#owSamples').addEventListener('change', e => {
+  const on = e.target.checked;
+  saveSetting('جاري الحفظ…', { showSamples: on }, on ? 'رجعت المنتجات التجريبية للموقع.' : 'انشالت المنتجات التجريبية من الموقع.');
+});
+$('#owPassForm').addEventListener('submit', async e => {
+  e.preventDefault();
+  const p1 = $('#owChg1').value, p2 = $('#owChg2').value, tok = $('#owChgTok').value.trim(), err = $('#owPassErr');
+  err.textContent = '';
+  if (p1.length < 8) return void (err.textContent = 'الباسورد لازم يكون 8 حروف أو أكثر.');
+  if (p1 !== p2) return void (err.textContent = 'الباسوردين مو نفس الشي.');
+  const prev = ghToken;
+  if (tok) keepToken(tok);
+  const ok = await run('جاري تغيير الباسورد…', async () => commitFiles([{ path: `${REPO.dir}/data/owner.json`, text: JSON.stringify(await seal(ghToken, p1)) + '\n' }], 'تغيير باسورد اللوحة'));
+  if (!ok) { if (tok) keepToken(prev); return; }
+  $('#owPassForm').reset();
+  toast('تغيّر الباسورد. من المرة الجاية ادخل بالباسورد الجديد.');
+  goOwner('owHome');
+});
+
+/* products: list, add, edit, delete */
+$('#owList').addEventListener('click', e => {
+  const btn = e.target.closest('button[data-act]');
+  if (!btn) return;
+  const id = btn.closest('.ow-item').dataset.id, d = ownerData.products.find(x => x.id === id);
+  if (!d) return;
+  if (btn.dataset.act === 'edit') return openForm(d);
+  if (!btn.classList.contains('confirm')) { btn.classList.add('confirm'); setTimeout(() => btn.classList.remove('confirm'), 3500); return; }
+  run('جاري الحذف…', () => mutate(data => {
+    const x = data.products.find(p => p.id === id);
+    data.products = data.products.filter(p => p.id !== id);
+    return x ? [...new Set([...(x.images || []), x.thumb].filter(Boolean))].map(path => ({ path: `${REPO.dir}/${path}`, delete: true })) : [];
+  }, [], `حذف: ${d.name}`), `انحذف «${d.name}».`);
+});
+$('#owList').addEventListener('change', e => {
+  if (e.target.dataset.act !== 'sold') return;
+  const id = e.target.closest('.ow-item').dataset.id, on = e.target.checked, d = ownerData.products.find(x => x.id === id);
+  run('جاري الحفظ…', () => mutate(data => { const x = data.products.find(p => p.id === id); if (x) x.soldOut = on; }, [], `${on ? 'نفد' : 'رجع متوفر'}: ${d.name}`), on ? `تأشّرت «${d.name}» نفد.` : `«${d.name}» رجعت متوفرة.`);
+});
+
+let editing = null, photos = [];
+const formWrap = $('#owFormWrap');
+function renderPhotos() {
+  $('#owPhotos').innerHTML = photos.map((ph, i) => `
+    <div class="ow-ph${i === 0 ? ' main' : ''}"><img src="${esc(ph.url || imgSrc(ph.path))}" alt="">
+      ${i === 0 ? '<span class="ow-tag">الرئيسية</span>' : `<button type="button" class="ow-tag" data-main="${i}">اجعلها الرئيسية</button>`}
+      <button type="button" class="ow-rm" data-rm="${i}" aria-label="شيل الصورة">×</button></div>`).join('')
+    + (photos.length < 5 ? '<label class="ow-ph add"><input type="file" accept="image/*" multiple id="owFile"><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z M12 17a4 4 0 1 0 0-8 4 4 0 0 0 0 8z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><span>ضيف صورة</span></label>' : '');
+  const inp = $('#owFile');
+  if (inp) inp.addEventListener('change', () => {
+    for (const file of [...inp.files].slice(0, 5 - photos.length)) photos.push({ file, url: URL.createObjectURL(file) });
+    renderPhotos();
+  });
+}
+$('#owPhotos').addEventListener('click', e => {
+  const rm = e.target.closest('[data-rm]'), mk = e.target.closest('[data-main]');
+  if (rm) { photos.splice(+rm.dataset.rm, 1); renderPhotos(); }
+  else if (mk) { const [x] = photos.splice(+mk.dataset.main, 1); photos.unshift(x); renderPhotos(); }
+});
+function openForm(d) {
+  editing = d || null;
+  $('#owForm').reset();
+  $('#owFormErr').textContent = '';
+  $('#owFormTitle').textContent = d ? 'تعديل منتج' : 'منتج جديد';
+  photos = d ? (d.images || []).map(path => ({ path })) : [];
+  if (d) {
+    $('#owName').value = d.name || ''; $('#owPrice').value = d.price || ''; $('#owOld').value = d.old || '';
+    $('#owCat').value = d.cat || 'watch'; $('#owBadge').value = d.badge || '';
+    $('#owMen').checked = (d.gender || []).includes('men'); $('#owWomen').checked = (d.gender || []).includes('women');
+    $('#owColors').value = d.colors || ''; $('#owShort').value = d.short || ''; $('#owDesc').value = d.desc || ''; $('#owSold').checked = !!d.soldOut;
+  }
+  renderPhotos();
+  formWrap.hidden = false;
+  if (FINE) $('#owName').focus({ preventScroll: true });
+}
+const closeForm = () => { formWrap.hidden = true; photos.forEach(p => { if (p.url && !Object.values(localImg).includes(p.url)) URL.revokeObjectURL(p.url); }); photos = []; editing = null; };
+$('#owAdd').addEventListener('click', () => openForm(null));
+$('#owFormX').addEventListener('click', closeForm);
+$('#owCancel').addEventListener('click', closeForm);
+
+async function toImage(file, max, q) {
+  let src;
+  try { src = await createImageBitmap(file, { imageOrientation: 'from-image' }); }
+  catch (_) { src = await new Promise((res, rej) => { const im = new Image(); im.onload = () => res(im); im.onerror = rej; im.src = URL.createObjectURL(file); }); }
+  const w0 = src.width || src.naturalWidth, h0 = src.height || src.naturalHeight, s = Math.min(1, max / Math.max(w0, h0));
+  const c = document.createElement('canvas'); c.width = Math.round(w0 * s); c.height = Math.round(h0 * s);
+  const ctx = c.getContext('2d'); ctx.imageSmoothingQuality = 'high'; ctx.drawImage(src, 0, 0, c.width, c.height);
+  let blob = await new Promise(r => c.toBlob(r, 'image/webp', q)), ext = 'webp';
+  if (!blob || blob.type !== 'image/webp') { blob = await new Promise(r => c.toBlob(r, 'image/jpeg', q)); ext = 'jpg'; }
+  return { blob, ext };
+}
+const blobToB64 = blob => new Promise((res, rej) => { const fr = new FileReader(); fr.onload = () => res(String(fr.result).split(',')[1]); fr.onerror = rej; fr.readAsDataURL(blob); });
+const toInt = v => parseInt(String(v).replace(/[٠-٩]/g, d => '٠١٢٣٤٥٦٧٨٩'.indexOf(d)).replace(/\D/g, ''), 10) || 0;
+
+$('#owForm').addEventListener('submit', async e => {
+  e.preventDefault();
+  const err = $('#owFormErr'), name = $('#owName').value.trim(), price = toInt($('#owPrice').value), old = toInt($('#owOld').value);
+  err.textContent = '';
+  if (!photos.length) return void (err.textContent = 'ضيف صورة وحدة على الأقل.');
+  if (!name) return void (err.textContent = 'اكتب اسم المنتج.');
+  if (!price) return void (err.textContent = 'اكتب السعر بالدينار.');
+  const gender = [$('#owMen').checked && 'men', $('#owWomen').checked && 'women'].filter(Boolean);
+  const id = editing ? editing.id : 'p' + Date.now().toString(36);
+  const wasEditing = !!editing, stamp = Date.now().toString(36);
+  const ok = await run('جاري تجهيز الصور…', async () => {
+    const files = [], images = [];
+    for (const [n, ph] of photos.entries()) {
+      if (ph.path) { images.push(ph.path); continue; }
+      const img = await toImage(ph.file, 1400, .82), path = `images/${id}-${stamp}${n}.${img.ext}`;
+      files.push({ path: `${REPO.dir}/${path}`, base64: await blobToB64(img.blob) });
+      localImg[path] = ph.url; images.push(path);
+    }
+    let thumb = editing && editing.thumb && (editing.images || [])[0] === images[0] ? editing.thumb : null;
+    if (!thumb) {
+      const first = photos[0], source = first.file || await (await fetch(imgSrc(first.path))).blob();
+      const t = await toImage(source, 640, .8);
+      thumb = `images/${id}-${stamp}t.${t.ext}`;
+      files.push({ path: `${REPO.dir}/${thumb}`, base64: await blobToB64(t.blob) });
+      localImg[thumb] = URL.createObjectURL(t.blob);
+    }
+    $('#owBusyText').textContent = 'جاري الرفع على الموقع…';
+    const now = new Date().toISOString();
+    const rec = { id, name, price, old: old > price ? old : 0, cat: $('#owCat').value, gender: gender.length ? gender : ['men', 'women'],
+      colors: $('#owColors').value.trim(), short: $('#owShort').value.trim(), desc: $('#owDesc').value.trim(), badge: $('#owBadge').value,
+      soldOut: $('#owSold').checked, images, thumb, updatedAt: now };
+    await mutate(data => {
+      const i = data.products.findIndex(p => p.id === id);
+      if (i < 0) { rec.createdAt = now; data.products.unshift(rec); return []; }
+      const prev = data.products[i];
+      rec.createdAt = prev.createdAt || now;
+      data.products[i] = rec;
+      return [...(prev.images || []), prev.thumb].filter(pth => pth && !images.includes(pth) && pth !== thumb).map(pth => ({ path: `${REPO.dir}/${pth}`, delete: true }));
+    }, files, `${wasEditing ? 'تعديل' : 'إضافة'}: ${name}`);
+  }, wasEditing ? `انحفظ تعديل «${name}».` : `انضافت «${name}».`);
+  if (ok) closeForm();
+});
+
+if (location.hash === '#owner') openOwner();
 
 readouts(now());
 requestAnimationFrame(tick);
