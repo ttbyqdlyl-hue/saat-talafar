@@ -1,0 +1,1491 @@
+<title>ساعات تلعفر</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="ساعات تلعفر: ساعات رجالية ونسائية وكلاسيك وذكية. تصفّح التشكيلة واطلب ساعتك برسالة على تيك توك.">
+<meta name="theme-color" content="#07080B">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Readex+Pro:wght@300..600&family=Reem+Kufi:wght@400..700&display=swap">
+<style>
+/* Layout: a night vitrine. Glass header → split hero (copy at the start side, a live signature watch at the end side) → category marquee → filterable grid of tilting product cards → three-step order path → TikTok band → footer. One committed dark look. */
+:root{
+  color-scheme:dark;
+  --obsidian:#07080B;
+  --night:#0C0F15;
+  --panel:#11151D;
+  --panel-2:#161B25;
+  --line:#242B38;
+  --ivory:#F3EEE5;
+  --mist:#9AA2B1;
+  --champagne:#EAD3A2;
+  --gold:#C9A15A;
+  --bronze:#7A5B2B;
+  --lume:#B9FBD0;
+  --ink-dark:#16110A;
+  --tt-cyan:#25F4EE;
+  --tt-red:#FE2C55;
+  --f-display:"Reem Kufi","Noto Kufi Arabic","Segoe UI",Tahoma,sans-serif;
+  --f-body:"Readex Pro","Segoe UI",Tahoma,Arial,sans-serif;
+  --f-latin:"Cormorant Garamond","Times New Roman",Georgia,serif;
+  --ease-out:cubic-bezier(.16,1,.3,1);
+  --ease-io:cubic-bezier(.65,0,.35,1);
+  --r-card:24px;
+  --gold-grad:linear-gradient(135deg,#F5E1AE 0%,#C9A15A 48%,#A27833 100%);
+}
+:root.lume-mode{
+  --obsidian:#020304;--night:#040507;--panel:#06080B;--panel-2:#080A0E;--line:#121720;
+  --ivory:#7E8580;--mist:#4B525C;--champagne:#6E8F7C;--gold:#4F6B5B;--bronze:#2E3D35;
+}
+@property --ang{syntax:"<angle>";inherits:false;initial-value:0deg}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+html.locked{overflow:hidden}
+body{margin:0;background:var(--obsidian);color:var(--ivory);font-family:var(--f-body);font-size:16px;line-height:1.7;transition:background-color .9s,color .9s}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--obsidian)}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+img,svg{max-width:100%}
+:focus-visible{outline:2px solid var(--champagne);outline-offset:3px;border-radius:12px}
+.site{position:relative;isolation:isolate;overflow-x:clip}
+.wrap{max-width:1240px;margin-inline:auto;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
+.digits{font-variant-numeric:tabular-nums;direction:ltr;unicode-bidi:isolate}
+.fx-defs{position:absolute;width:0;height:0;overflow:hidden}
+
+/* ambient light + grain */
+.ambient{position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:
+    radial-gradient(60vw 46vw at 88% -8%, rgba(201,161,90,.17), transparent 62%),
+    radial-gradient(48vw 40vw at -4% 34%, rgba(46,78,130,.15), transparent 62%),
+    radial-gradient(40vw 36vw at 62% 112%, rgba(30,122,85,.11), transparent 62%);
+  transition:opacity .9s}
+.lume-mode .ambient{opacity:.25}
+.grain{position:fixed;inset:0;z-index:400;pointer-events:none;opacity:.055;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  animation:grain 1s steps(5) infinite}
+@keyframes grain{0%{background-position:0 0}20%{background-position:-40px 30px}40%{background-position:30px -50px}60%{background-position:-60px -20px}80%{background-position:50px 60px}100%{background-position:0 0}}
+
+/* header */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;border-bottom:1px solid transparent;transition:background-color .5s,border-color .5s}
+.top.scrolled{background:color-mix(in srgb,var(--obsidian) 74%,transparent);-webkit-backdrop-filter:blur(16px) saturate(1.3);backdrop-filter:blur(16px) saturate(1.3);border-bottom-color:var(--line)}
+.top-in{display:flex;align-items:center;gap:18px;height:70px}
+.brand{display:flex;align-items:center;gap:11px;font-family:var(--f-display);font-weight:700;font-size:21px;white-space:nowrap}
+.brand-dial{width:36px;height:36px;flex:none}
+.nav{display:flex;gap:4px;margin-inline-start:auto}
+.nav a{position:relative;padding:8px 14px;border-radius:999px;color:var(--mist);font-size:14.5px;transition:color .3s}
+.nav a::after{content:"";position:absolute;inset-inline:14px;bottom:4px;height:1px;background:var(--champagne);transform:scaleX(0);transition:transform .5s var(--ease-out)}
+.nav a:hover{color:var(--ivory)}
+.nav a:hover::after{transform:scaleX(1)}
+.top-actions{display:flex;align-items:center;gap:8px}
+.icon-btn{position:relative;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--line);background:color-mix(in srgb,var(--panel) 80%,transparent);color:var(--ivory);transition:border-color .3s,background-color .3s,color .3s}
+.icon-btn:hover{border-color:color-mix(in srgb,var(--champagne) 50%,transparent)}
+.icon-btn[aria-pressed="true"]{color:#06120B;background:var(--lume);border-color:var(--lume);box-shadow:0 0 24px rgba(185,251,208,.5)}
+.pill{display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 18px;border-radius:999px;background:var(--ivory);color:#0B0B0D;font-weight:500;font-size:14px;transition:transform .4s var(--ease-out),background-color .9s}
+.pill:hover{transform:translateY(-2px)}
+@media (max-width:780px){.nav{display:none}.top-actions{margin-inline-start:auto}}
+@media (max-width:420px){.pill .lbl{display:none}.pill{width:44px;padding:0;justify-content:center}}
+
+/* hero */
+.hero{position:relative;padding-block:24px 36px}
+#dust{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.hero-in{position:relative;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);align-items:center;gap:24px}
+.hero-copy{min-width:0}
+.eyebrow{display:inline-flex;align-items:center;gap:12px;margin:0;font-size:13px;letter-spacing:.06em;color:var(--champagne)}
+.eyebrow::before{content:"";width:30px;height:1px;background:linear-gradient(270deg,var(--gold),transparent)}
+.hero-title{font-family:var(--f-display);font-weight:700;font-size:clamp(60px,10.4vw,150px);line-height:1.04;margin:14px 0 18px;text-wrap:balance}
+.hero-title .w{display:inline-block;padding-bottom:.08em}
+.gold-text{background:linear-gradient(100deg,#8A6424 0%,#E9CF93 17%,#C9A15A 33%,#FFF4D6 47%,#C9A15A 61%,#9C7432 79%,#F0D9A2 100%);background-size:260% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shimmer 7s linear infinite}
+.lume-mode .gold-text{filter:brightness(.42) saturate(.5)}
+@keyframes shimmer{to{background-position:-260% 0}}
+.hero-sub{font-size:clamp(16px,1.55vw,19px);color:var(--mist);max-width:33em;margin:0 0 30px;text-wrap:pretty}
+.ctas{display:flex;flex-wrap:wrap;gap:12px}
+.btn{position:relative;isolation:isolate;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:10px;height:56px;padding:0 28px;border-radius:999px;font-weight:500;font-size:15.5px;white-space:nowrap;transition:box-shadow .4s,border-color .3s,filter .9s}
+.btn svg{flex:none}
+.btn-gold{color:var(--ink-dark);background:var(--gold-grad);box-shadow:0 14px 34px -12px rgba(201,161,90,.65),inset 0 1px 0 rgba(255,255,255,.55)}
+.btn-gold::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(105deg,transparent 30%,rgba(255,255,255,.6) 50%,transparent 70%);transform:translateX(120%);animation:btnShine 4.2s 1.6s var(--ease-io) infinite}
+@keyframes btnShine{0%{transform:translateX(120%)}38%,100%{transform:translateX(-120%)}}
+.btn-gold:hover{box-shadow:0 18px 44px -12px rgba(201,161,90,.85),inset 0 1px 0 rgba(255,255,255,.6)}
+.lume-mode .btn-gold{filter:brightness(.45) saturate(.6)}
+.btn-ghost{color:var(--ivory);border:1px solid color-mix(in srgb,var(--champagne) 38%,transparent);background:rgba(255,255,255,.02)}
+.btn-ghost:hover{border-color:var(--champagne)}
+.btn-light{color:#0B0B0D;background:var(--ivory)}
+.readout{display:inline-flex;flex-wrap:wrap;align-items:center;gap:6px 14px;margin-top:30px;padding:12px 18px;border:1px solid var(--line);border-radius:18px;background:color-mix(in srgb,var(--panel) 70%,transparent)}
+.readout .lbl{font-size:12.5px;color:var(--mist)}
+.readout .digits{font-size:23px;font-weight:500;letter-spacing:.02em}
+.readout .ap{font-size:13px;color:var(--champagne)}
+.readout .date{font-size:12.5px;color:var(--mist);flex-basis:100%;padding-inline-start:22px}
+.live-dot{width:8px;height:8px;border-radius:50%;background:var(--lume);animation:ping 2.2s infinite}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(185,251,208,.55)}70%{box-shadow:0 0 0 10px rgba(185,251,208,0)}100%{box-shadow:0 0 0 0 rgba(185,251,208,0)}}
+
+.hero-visual{position:relative;height:clamp(420px,47vw,640px);display:grid;place-items:center}
+.halo{position:absolute;width:80%;aspect-ratio:1;max-width:100%;border-radius:50%;background:radial-gradient(circle,rgba(201,161,90,.30),rgba(201,161,90,.07) 46%,transparent 70%);filter:blur(8px);animation:breathe 7s ease-in-out infinite}
+.lume-mode .halo{background:radial-gradient(circle,rgba(185,251,208,.10),transparent 65%)}
+@keyframes breathe{50%{transform:scale(1.06);opacity:.8}}
+.orbit{position:absolute;aspect-ratio:1;max-width:100%;border-radius:50%;pointer-events:none}
+.orbit.o1{width:92%;border:1px dashed rgba(234,211,162,.16);animation:spin 120s linear infinite reverse}
+.orbit.sec{width:80%;border:1px solid rgba(234,211,162,.10);animation:spin 60s linear infinite}
+.orbit.sec::after{content:"";position:absolute;top:-4px;left:calc(50% - 4px);width:8px;height:8px;border-radius:50%;background:var(--champagne);box-shadow:0 0 16px 2px rgba(201,161,90,.8)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hv-scroll,.hv-tilt{position:relative;height:100%;display:grid;place-items:center}
+.hero-watch{position:relative;height:100%;aspect-ratio:3/4;max-width:100%}
+.hero-watch .wsvg{animation:float 7s ease-in-out infinite}
+.hero-floor{position:absolute;bottom:7%;left:25%;right:25%;height:7%;border-radius:50%;background:radial-gradient(closest-side,rgba(0,0,0,.8),transparent);filter:blur(8px)}
+
+@media (max-width:860px){
+  .hero-in{grid-template-columns:minmax(0,1fr);gap:4px}
+  .hero-visual{order:-1;height:min(400px,96vw)}
+}
+
+/* watch svg (shared) */
+.wsvg{display:block;height:100%;width:auto;max-width:100%;margin-inline:auto;direction:ltr;
+  -webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 19%,#000 81%,transparent 100%);
+  mask-image:linear-gradient(to bottom,transparent 0%,#000 19%,#000 81%,transparent 100%)}
+.wsvg path,.wsvg circle,.wsvg rect,.wsvg stop{transition:fill .7s,stop-color .7s}
+.wsvg .lume{fill:#EFEDE4}
+.lume-mode .wsvg .dm,.lume-mode .wsvg .hm{filter:url(#fDim)}
+.lume-mode .wsvg .lume{fill:var(--lume);filter:url(#fGlow)}
+.lume-mode .wsvg .crystal{opacity:.2}
+.wsvg .bz-n{font:600 12.5px var(--f-body);text-anchor:middle;dominant-baseline:central;fill:var(--bzt)}
+.wsvg .bz-n.sm{font-size:7.4px;font-weight:500}
+.wsvg .rn{font:600 17px var(--f-latin);text-anchor:middle;dominant-baseline:central;fill:var(--idx)}
+.wsvg .an{font:600 15px var(--f-display);text-anchor:middle;dominant-baseline:central;fill:var(--idx)}
+.wsvg .an.big{font-size:19px}
+.wsvg .brand-t{font:700 13.5px var(--f-latin);letter-spacing:3.4px;text-anchor:middle;fill:var(--txt)}
+.wsvg .sub-t{font:500 6.4px var(--f-body);letter-spacing:1.9px;text-anchor:middle;fill:var(--txt);opacity:.82}
+.wsvg .sub-t.lo{font-size:8px;opacity:1;font-weight:600}
+.wsvg .date-t{font:500 11px var(--f-body);text-anchor:middle;dominant-baseline:central;fill:#15171B}
+.wsvg .s-time{font:600 50px var(--f-body);text-anchor:middle;fill:#fff;letter-spacing:-1px;font-variant-numeric:tabular-nums}
+.wsvg .s-date{font:400 13px var(--f-body);text-anchor:middle;fill:var(--accent)}
+.wsvg .s-ampm,.wsvg .s-steps{font:400 10.5px var(--f-body);text-anchor:middle;fill:#8C939E}
+.wsvg .s-bpm{font:600 14px var(--f-body);text-anchor:middle;fill:#fff}
+.wsvg .sweep{transform:translateX(260px)}
+.wsvg.swept .sweep{animation:sweepA 1.6s var(--ease-io) forwards}
+.card:hover .wsvg .sweep{animation:sweepB 1.3s var(--ease-io)}
+.hero-watch .wsvg .sweep{animation:sweepLoop 8s 2.6s var(--ease-io) infinite}
+@keyframes sweepA{from{transform:translateX(260px)}to{transform:translateX(-260px)}}
+@keyframes sweepB{from{transform:translateX(260px)}to{transform:translateX(-260px)}}
+@keyframes sweepLoop{0%{transform:translateX(260px)}24%,100%{transform:translateX(-260px)}}
+.wsvg .tw{opacity:0;animation:tw 3.4s ease-in-out infinite}
+@keyframes tw{0%,64%,100%{opacity:0}80%{opacity:1}}
+@keyframes float{50%{transform:translateY(-9px)}}
+
+/* marquee */
+.marquee{position:relative;direction:ltr;overflow:hidden;border-block:1px solid var(--line);padding-block:20px;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent);mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent)}
+.marquee-track{display:flex;width:max-content;animation:marquee 42s linear infinite}
+.marquee-item{display:flex;align-items:center;gap:30px;padding-inline:15px;direction:rtl;white-space:nowrap;font-family:var(--f-display);font-weight:600;font-size:clamp(24px,3.2vw,38px);line-height:1.3}
+.marquee-item:nth-child(even) .mq-word{color:transparent;-webkit-text-stroke:1px rgba(234,211,162,.55)}
+.mq-gem{width:10px;height:10px;transform:rotate(45deg);background:var(--gold-grad);box-shadow:0 0 12px rgba(201,161,90,.6)}
+@keyframes marquee{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+
+/* sections */
+.section{position:relative;padding-block:clamp(70px,9vw,124px)}
+.sec-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:18px 40px;margin-bottom:30px}
+.sec-head > div{min-width:0}
+.sec-title{font-family:var(--f-display);font-weight:700;font-size:clamp(38px,5.4vw,70px);line-height:1.15;margin:10px 0 0;text-wrap:balance}
+.sec-title .wd{display:inline-block}
+.sample-note{display:inline-flex;align-items:center;gap:9px;margin:0;font-size:13px;color:var(--mist);padding:9px 15px;border:1px dashed var(--line);border-radius:999px}
+.sample-note::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--champagne)}
+
+/* filters */
+.filters{position:relative;display:flex;gap:4px;padding:6px;margin-bottom:34px;width:max-content;max-width:100%;overflow-x:auto;scrollbar-width:none;border:1px solid var(--line);border-radius:999px;background:var(--night)}
+.filters::-webkit-scrollbar{display:none}
+.chip{position:relative;z-index:1;display:inline-flex;align-items:center;gap:9px;height:44px;padding:0 18px;border-radius:999px;white-space:nowrap;color:var(--mist);font-size:14.5px;transition:color .4s}
+.chip:hover{color:var(--ivory)}
+.chip[aria-pressed="true"]{color:var(--ink-dark)}
+.chip .n{min-width:22px;height:22px;padding:0 6px;border-radius:999px;display:grid;place-items:center;font-size:11.5px;font-variant-numeric:tabular-nums;background:rgba(255,255,255,.06)}
+.chip[aria-pressed="true"] .n{background:rgba(0,0,0,.13)}
+.chip-ink{position:absolute;z-index:0;top:6px;left:0;width:0;height:44px;border-radius:999px;background:var(--gold-grad);box-shadow:0 8px 22px -8px rgba(201,161,90,.7)}
+
+/* product grid */
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px}
+@media (max-width:1020px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}}
+@media (max-width:620px){.grid{grid-template-columns:minmax(0,1fr)}}
+.grid-empty{padding:60px 20px;text-align:center;color:var(--mist);border:1px dashed var(--line);border-radius:var(--r-card)}
+
+.card{position:relative;min-width:0}
+.card.is-out{display:none}
+.card-tilt{--rx:0deg;--ry:0deg;--mx:50%;--my:30%;position:relative;height:100%;border-radius:var(--r-card);
+  background:linear-gradient(180deg,var(--panel-2),var(--panel));
+  transform:perspective(1100px) rotateX(var(--rx)) rotateY(var(--ry));transform-style:preserve-3d;
+  transition:transform .8s var(--ease-out),box-shadow .6s,background-color .9s;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.05),0 30px 60px -42px rgba(0,0,0,.9)}
+.card.tilting .card-tilt{transition:transform .14s linear,box-shadow .6s}
+@media (pointer:coarse){.card-tilt{transition:transform .35s linear,box-shadow .6s}}
+.card:hover .card-tilt{box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 44px 80px -34px rgba(0,0,0,.95),0 0 60px -30px color-mix(in srgb,var(--tint) 70%,transparent)}
+.card-tilt::before{content:"";position:absolute;inset:0;z-index:4;border-radius:inherit;padding:1.2px;pointer-events:none;
+  background:conic-gradient(from var(--ang),transparent 0deg,transparent 240deg,rgba(201,161,90,.9) 300deg,#FFF3D1 334deg,transparent 360deg);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;
+  opacity:0;transition:opacity .5s;animation:beam 3.6s linear infinite;animation-play-state:paused}
+.card:hover .card-tilt::before,.card.in-focus .card-tilt::before{opacity:1;animation-play-state:running}
+@keyframes beam{to{--ang:360deg}}
+.card-tilt::after{content:"";position:absolute;inset:0;border-radius:inherit;border:1px solid var(--line);pointer-events:none}
+.card-spot{position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .5s;
+  background:radial-gradient(440px circle at var(--mx) var(--my),rgba(234,211,162,.11),transparent 46%)}
+.card:hover .card-spot{opacity:1}
+.lume-mode .card-spot{display:none}
+
+.stage{position:relative;aspect-ratio:1/1;max-width:100%;margin:8px 8px 0;border-radius:calc(var(--r-card) - 7px);transform-style:preserve-3d;
+  background:
+    radial-gradient(110% 85% at 50% 38%,color-mix(in srgb,var(--tint) 28%,transparent),transparent 64%),
+    repeating-radial-gradient(circle at 50% 42%,rgba(255,255,255,.022) 0 1px,transparent 1px 9px),
+    #0A0D12;transition:background-color .9s}
+.lume-mode .stage{background:#030405}
+@media (max-width:620px){.stage{aspect-ratio:5/4}}
+.stage-floor{position:absolute;left:26%;right:26%;bottom:8%;height:9%;border-radius:50%;background:radial-gradient(closest-side,rgba(0,0,0,.75),transparent);filter:blur(6px)}
+.stage .watch{position:absolute;inset:2% 0;transform:translateZ(36px) rotate(var(--tilt));transition:transform 1s var(--ease-out)}
+.card:hover .stage .watch{transform:translateZ(74px) rotate(0deg) scale(1.05)}
+.float{height:100%;animation:float 6.5s ease-in-out infinite;animation-delay:var(--fd)}
+.badge{position:absolute;top:14px;inset-inline-start:14px;z-index:2;transform:translateZ(60px);padding:5px 12px;border-radius:999px;font-size:12px;font-weight:500;color:var(--ink-dark);background:var(--gold-grad);box-shadow:0 6px 18px -6px rgba(201,161,90,.7)}
+.lume-mode .badge{filter:brightness(.45)}
+.fav{position:absolute;top:16px;inset-inline-end:16px;z-index:6;transform:translateZ(90px);width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:rgba(8,10,14,.66);border:1px solid rgba(255,255,255,.09)}
+.fav path{fill:transparent;stroke:var(--ivory);transition:fill .3s,stroke .3s}
+.fav[aria-pressed="true"] path{fill:var(--tt-red);stroke:var(--tt-red)}
+.spark{position:absolute;left:50%;top:50%;width:6px;height:6px;margin:-3px;border-radius:50%;pointer-events:none;background:var(--tt-red)}
+.info{position:relative;display:grid;gap:5px;padding:18px 22px 22px;transform:translateZ(22px)}
+.cat{margin:0;font-size:12.5px;color:var(--champagne);letter-spacing:.02em}
+.name{margin:0;font-family:var(--f-display);font-weight:600;font-size:24px;line-height:1.3}
+.spec{margin:0;font-size:13.5px;color:var(--mist)}
+.buy{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:12px;padding-top:15px;border-top:1px solid var(--line)}
+.price{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 7px;margin:0;font-variant-numeric:tabular-nums}
+.price b{font-size:22px;font-weight:600;color:var(--ivory)}
+.price .cur{font-size:13px;color:var(--mist)}
+.price s{font-size:13px;color:#6B7280}
+.more{display:inline-flex;align-items:center;gap:6px;height:40px;padding:0 15px;border-radius:999px;font-size:13.5px;white-space:nowrap;color:var(--champagne);border:1px solid color-mix(in srgb,var(--champagne) 34%,transparent);transition:background-color .35s,color .35s,border-color .35s}
+.more svg{transition:transform .5s var(--ease-out)}
+.card:hover .more{background:var(--champagne);color:var(--ink-dark);border-color:var(--champagne)}
+.card:hover .more svg{transform:translateX(-4px)}
+.card-hit{position:absolute;inset:0;z-index:5;border-radius:var(--r-card);transform:translateZ(80px)}
+
+/* steps */
+.steps{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.steps-line{position:absolute;top:58px;inset-inline:9%;width:82%;height:2px;overflow:visible;pointer-events:none}
+.steps-line line{stroke:url(#gLine);stroke-width:2;stroke-dasharray:1;stroke-dashoffset:1}
+.step{position:relative;min-width:0;padding:28px 26px 30px;border:1px solid var(--line);border-radius:22px;background:linear-gradient(180deg,var(--panel),color-mix(in srgb,var(--panel) 30%,transparent))}
+.step-top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.step .num{font-family:var(--f-display);font-weight:700;font-size:62px;line-height:1;color:transparent;-webkit-text-stroke:1px rgba(234,211,162,.6)}
+.step-ic{width:58px;height:58px;border-radius:18px;display:grid;place-items:center;background:var(--night);border:1px solid var(--line);color:var(--champagne)}
+.step h3{margin:18px 0 6px;font-family:var(--f-display);font-weight:600;font-size:23px;line-height:1.35}
+.step p{margin:0;color:var(--mist);font-size:15px}
+@media (max-width:860px){.steps{grid-template-columns:minmax(0,1fr)}.steps-line{display:none}}
+
+/* tiktok band */
+.tt{padding-block:clamp(30px,6vw,80px) clamp(60px,8vw,110px)}
+.tt-card{position:relative;isolation:isolate;overflow:hidden;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);align-items:center;gap:30px;padding:clamp(28px,5vw,66px);border:1px solid var(--line);border-radius:34px;background:var(--night)}
+.tt-blob{position:absolute;z-index:-1;width:440px;height:440px;max-width:90%;border-radius:50%;filter:blur(80px);opacity:.30;animation:blob 16s ease-in-out infinite alternate}
+.tt-blob.c{background:var(--tt-cyan);top:-190px;inset-inline-end:-130px}
+.tt-blob.r{background:var(--tt-red);bottom:-220px;inset-inline-start:18%;animation-delay:-8s}
+.lume-mode .tt-blob{opacity:.07}
+@keyframes blob{0%{transform:translate(0,0) scale(1)}50%{transform:translate(-60px,40px) scale(1.15)}100%{transform:translate(40px,-30px) scale(.95)}}
+.tt-copy{min-width:0}
+.tt-sub{margin:14px 0 26px;color:var(--mist);font-size:clamp(15.5px,1.4vw,18px);max-width:30em}
+.tt-handle{margin:16px 0 0;font-size:14px;color:var(--mist)}
+.tt-handle b{color:var(--ivory);font-weight:500}
+.tt-visual{position:relative;justify-self:center;width:200px;height:200px;display:grid;place-items:center}
+.tt-visual .ring{position:absolute;inset:0;border-radius:50%;border:1px solid rgba(255,255,255,.28);animation:ring 3.6s var(--ease-out) infinite}
+.tt-visual .ring:nth-child(2){animation-delay:1.2s}
+.tt-visual .ring:nth-child(3){animation-delay:2.4s}
+@keyframes ring{0%{transform:scale(.45);opacity:.9}100%{transform:scale(1.25);opacity:0}}
+.tt-icon{position:relative;width:104px;height:104px;border-radius:30px;display:grid;place-items:center;background:#000;border:1px solid rgba(255,255,255,.1);box-shadow:0 30px 60px -20px rgba(0,0,0,.9),0 0 50px -10px rgba(37,244,238,.35);animation:bob 4s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-8px) rotate(-4deg)}}
+@media (max-width:760px){.tt-card{grid-template-columns:minmax(0,1fr)}.tt-visual{order:-1;width:160px;height:160px}}
+
+/* footer */
+.foot{border-top:1px solid var(--line);padding-block:34px calc(34px + env(safe-area-inset-bottom,0px))}
+.foot-in{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px 30px}
+.foot-brand{display:flex;flex-direction:column}
+.foot-brand .brand-name{font-family:var(--f-display);font-weight:700;font-size:22px}
+.foot-loc,.foot-copy,.foot-time{margin:0;font-size:13.5px;color:var(--mist)}
+.foot-time b{color:var(--ivory);font-weight:500;margin-inline-start:6px}
+
+/* product sheet */
+.sheet{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:20px}
+.sheet-backdrop{position:absolute;inset:0;background:rgba(3,4,6,.74);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+.sheet-panel{position:relative;width:min(1020px,100%);max-height:min(90vh,780px);overflow:auto;overscroll-behavior:contain;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);border-radius:30px;border:1px solid var(--line);background:linear-gradient(180deg,var(--panel-2),var(--night));box-shadow:0 60px 120px -40px rgba(0,0,0,.95)}
+.sheet-x{position:absolute;top:16px;inset-inline-end:16px;z-index:3;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:rgba(8,10,14,.7);border:1px solid var(--line);transition:transform .5s var(--ease-out),border-color .3s}
+.sheet-x:hover{transform:rotate(90deg);border-color:var(--champagne)}
+.sheet-stage{position:relative;min-height:470px;display:grid;place-items:center;padding:30px 20px 46px;cursor:default;
+  background:radial-gradient(90% 70% at 50% 42%,color-mix(in srgb,var(--tint,#C9A15A) 30%,transparent),transparent 66%),repeating-radial-gradient(circle at 50% 44%,rgba(255,255,255,.022) 0 1px,transparent 1px 9px),#090B10}
+.sheet-stage.interactive{cursor:pointer}
+.sheet-watch{height:min(440px,54vh);aspect-ratio:3/4;max-width:100%}
+.sheet-hint{position:absolute;bottom:14px;inset-inline:16px;margin:0;text-align:center;font-size:12.5px;color:var(--mist)}
+.sheet-info{display:flex;flex-direction:column;gap:14px;min-width:0;padding:40px 36px 34px}
+.sheet-title{margin:0;font-family:var(--f-display);font-weight:700;font-size:clamp(30px,3.4vw,42px);line-height:1.2}
+.sheet-desc{margin:0;color:var(--mist);font-size:15.5px}
+.var-label{margin:4px 0 8px;font-size:12.5px;color:var(--mist)}
+.variants{display:flex;flex-wrap:wrap;gap:8px}
+.var{display:inline-flex;align-items:center;gap:9px;height:42px;padding:0 15px 0 10px;border-radius:999px;border:1px solid var(--line);font-size:13.5px;color:var(--mist);transition:border-color .3s,color .3s,background-color .3s}
+.var:hover{color:var(--ivory)}
+.var .sw{width:22px;height:22px;border-radius:50%;background:var(--c);box-shadow:inset 0 0 0 1px rgba(255,255,255,.22),0 2px 6px rgba(0,0,0,.5)}
+.var[aria-pressed="true"]{border-color:var(--champagne);color:var(--ivory);background:rgba(234,211,162,.06)}
+.specs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;margin:4px 0;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--line)}
+.specs div{padding:12px 15px;background:var(--panel);min-width:0}
+.specs dt{font-size:12px;color:var(--mist)}
+.specs dd{margin:0;font-size:15px}
+.sheet-buy{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;padding-block:16px;border-block:1px solid var(--line)}
+.price.big b{font-size:30px}
+.sheet-note{margin:0;font-size:12.5px;color:var(--mist)}
+@media (max-width:760px){
+  .sheet{place-items:end center;padding:0}
+  .sheet-panel{grid-template-columns:minmax(0,1fr);max-height:93vh;border-radius:28px 28px 0 0;border-bottom:0;padding-bottom:env(safe-area-inset-bottom,0px)}
+  .sheet-x{top:calc(14px + env(safe-area-inset-top,0px) * 0);inset-inline-end:max(14px, env(safe-area-inset-right, 0px))}
+  .sheet-stage{min-height:0;padding:26px 16px 44px;border-radius:28px 28px 0 0}
+  .sheet-watch{height:300px}
+  .sheet-info{padding:24px max(18px, env(safe-area-inset-right, 0px)) 28px max(18px, env(safe-area-inset-left, 0px))}
+  .sheet-buy .btn{flex:1 1 100%}
+}
+.flyer{position:fixed;z-index:120;pointer-events:none;transform-origin:50% 50%}
+.flyer .wsvg{height:100%}
+
+/* toast, veil, cursor */
+.toast{position:fixed;left:50%;bottom:calc(22px + env(safe-area-inset-bottom,0px));z-index:200;width:max-content;max-width:min(560px,calc(100% - 32px));display:grid;gap:6px;padding:15px 20px;border-radius:18px;background:var(--ivory);color:#0B0B0D;font-size:14.5px;line-height:1.6;box-shadow:0 24px 60px -12px rgba(0,0,0,.7);transform:translate(-50%,calc(100% + 80px));visibility:hidden;transition:transform .7s var(--ease-out),visibility 0s .7s,background-color .9s}
+.toast.show{transform:translate(-50%,0);visibility:visible;transition:transform .7s var(--ease-out),visibility 0s,background-color .9s}
+.toast .t-extra{margin:0;padding:10px 12px;border-radius:12px;background:rgba(0,0,0,.07);white-space:pre-line;user-select:all;-webkit-user-select:all}
+.toast .t-msg{margin:0}
+.veil{position:fixed;inset:0;z-index:250;background:#000;opacity:0;pointer-events:none}
+.cursor,.cursor-dot{position:fixed;top:0;left:0;z-index:300;pointer-events:none;border-radius:50%;opacity:0;transition:opacity .3s}
+.cursor{width:38px;height:38px;margin:-19px 0 0 -19px}
+.cursor i{position:absolute;inset:0;border-radius:50%;border:1px solid rgba(234,211,162,.65);transition:transform .45s var(--ease-out),background-color .3s,border-color .3s}
+.cursor.big i{transform:scale(1.75);background:rgba(234,211,162,.07);border-color:rgba(234,211,162,.35)}
+.cursor-dot{width:5px;height:5px;margin:-2.5px 0 0 -2.5px;background:var(--champagne)}
+.cursor.on,.cursor-dot.on{opacity:1}
+@media (pointer:coarse){.cursor,.cursor-dot{display:none}}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
+}
+</style>
+<!-- page -->
+<svg class="fx-defs" aria-hidden="true" focusable="false">
+  <defs>
+    <filter id="fDim" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values=".15 .04 .02 0 0  .03 .18 .03 0 0  .03 .05 .21 0 0  0 0 0 1 0"/></filter>
+    <filter id="fGlow" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="2.6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <linearGradient id="gLine" gradientUnits="userSpaceOnUse" x1="1000" y1="0" x2="0" y2="0"><stop offset="0" stop-color="#F5E1AE"/><stop offset=".5" stop-color="#C9A15A"/><stop offset="1" stop-color="#C9A15A" stop-opacity=".1"/></linearGradient>
+  </defs>
+</svg>
+
+<div class="site" dir="rtl" lang="ar">
+  <div class="ambient" aria-hidden="true"></div>
+
+  <header class="top" id="top">
+    <div class="wrap top-in">
+      <a class="brand" href="#hero" aria-label="ساعات تلعفر، أعلى الصفحة">
+        <svg class="brand-dial" viewBox="-20 -20 40 40" aria-hidden="true">
+          <defs><linearGradient id="bdG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F5E1AE"/><stop offset=".5" stop-color="#C9A15A"/><stop offset="1" stop-color="#8A6424"/></linearGradient></defs>
+          <circle r="18.5" fill="none" stroke="url(#bdG)" stroke-width="1.6"/>
+          <circle r="14.5" fill="#0C0F15"/>
+          <g id="brandTicks" stroke="#EAD3A2" stroke-width="1.2" stroke-linecap="round"></g>
+          <g id="progHand"><line y1="2.5" y2="-11.5" stroke="#EAD3A2" stroke-width="1.6" stroke-linecap="round"/></g>
+          <circle r="2" fill="#EAD3A2"/>
+        </svg>
+        <span>ساعات تلعفر</span>
+      </a>
+      <nav class="nav" aria-label="أقسام الصفحة">
+        <a href="#collection">التشكيلة</a>
+        <a href="#how">طريقة الطلب</a>
+        <a href="#tiktok">تيك توك</a>
+      </nav>
+      <div class="top-actions">
+        <button class="icon-btn" id="lumeBtn" type="button" aria-pressed="false" aria-label="الإضاءة الليلية للساعات" title="الإضاءة الليلية">
+          <svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path d="M20 14.6A8.2 8.2 0 0 1 9.4 4a8.2 8.2 0 1 0 10.6 10.6z" fill="currentColor"/></svg>
+        </button>
+        <a class="pill" data-tt href="https://www.tiktok.com/search?q=%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA%20%D8%AA%D9%84%D8%B9%D9%81%D8%B1" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M16.6 5.8a4.6 4.6 0 0 1-1.1-3h-3.1v12.4a2.6 2.6 0 1 1-2.6-2.6c.3 0 .5 0 .8.1V9.5a5.8 5.8 0 1 0 5 5.7V9a7.7 7.7 0 0 0 4.4 1.4V7.3a4.6 4.6 0 0 1-3.4-1.5z" fill="currentColor"/></svg>
+          <span class="lbl">تيك توك</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="hero">
+      <canvas id="dust" aria-hidden="true"></canvas>
+      <div class="wrap hero-in">
+        <div class="hero-copy">
+          <p class="eyebrow">تلعفر · نينوى</p>
+          <h1 class="hero-title"><span class="w">ساعات</span> <span class="w gold-text">تلعفر</span></h1>
+          <p class="hero-sub">ساعات رجالية ونسائية وكلاسيك وذكية بمحل واحد. تصفّح التشكيلة، اختار الموديل واللون، واطلبها برسالة على تيك توك.</p>
+          <div class="ctas">
+            <a class="btn btn-gold magnetic" href="#collection">
+              شوف التشكيلة
+              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a class="btn btn-ghost magnetic" data-tt href="https://www.tiktok.com/search?q=%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA%20%D8%AA%D9%84%D8%B9%D9%81%D8%B1" target="_blank" rel="noopener">تابعنا على تيك توك</a>
+          </div>
+          <div class="readout" role="timer" aria-label="توقيت تلعفر الآن">
+            <span class="live-dot" aria-hidden="true"></span>
+            <span class="lbl">توقيت تلعفر الآن</span>
+            <span class="digits" id="tzTime">--:--:--</span>
+            <span class="ap" id="tzAp"></span>
+            <span class="date" id="tzDate"></span>
+          </div>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="halo"></div>
+          <div class="orbit o1"></div>
+          <div class="orbit sec"></div>
+          <div class="hero-floor"></div>
+          <div class="hv-scroll"><div class="hv-tilt" id="heroTilt"><div class="hero-watch" id="heroWatch"></div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true"><div class="marquee-track" id="marquee"></div></div>
+
+    <section class="section" id="collection">
+      <div class="wrap">
+        <div class="sec-head">
+          <div>
+            <p class="eyebrow">التشكيلة</p>
+            <h2 class="sec-title split">اختار ساعتك</h2>
+          </div>
+          <p class="sample-note">نسخة تجريبية: المنتجات والأسعار أمثلة لحد ما توصل صور وأسعار المحل</p>
+        </div>
+        <div class="filters" id="filters" role="group" aria-label="تصفية حسب النوع"></div>
+        <div class="grid" id="grid"></div>
+        <p class="grid-empty" id="gridEmpty" hidden>ماكو ساعات بهذا القسم حالياً.</p>
+      </div>
+    </section>
+
+    <section class="section" id="how">
+      <div class="wrap">
+        <div class="sec-head">
+          <div>
+            <p class="eyebrow">طريقة الطلب</p>
+            <h2 class="sec-title split">ثلاث خطوات للطلب</h2>
+          </div>
+        </div>
+        <div class="steps">
+          <svg class="steps-line" viewBox="0 0 1000 2" preserveAspectRatio="none" aria-hidden="true"><line x1="1000" y1="1" x2="0" y2="1" pathLength="1"/></svg>
+          <article class="step">
+            <div class="step-top"><span class="num">١</span><span class="step-ic"><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="5.6"/><path d="M12 9.4V12l1.6 1.2M9.4 6.9 10 2.5h4l.6 4.4M9.4 17.1 10 21.5h4l.6-4.4"/></g></svg></span></div>
+            <h3>اختار الساعة</h3>
+            <p>اضغط على أي بطاقة حتى تشوف التفاصيل والألوان المتوفرة.</p>
+          </article>
+          <article class="step">
+            <div class="step-top"><span class="num">٢</span><span class="step-ic"><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></g></svg></span></div>
+            <h3>اضغط «اطلب عبر تيك توك»</h3>
+            <p>نكتبلك رسالة الطلب باسم الساعة واللون والسعر، وننسخها تلقائياً.</p>
+          </article>
+          <article class="step">
+            <div class="step-top"><span class="num">٣</span><span class="step-ic"><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path d="M21 3 3 10.5l7 2.5 2.5 7L21 3zM10 13l4.5-4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/></svg></span></div>
+            <h3>ابعثها بالخاص</h3>
+            <p>الصق الرسالة بمحادثة حساب المحل على تيك توك، والمحل يرد عليك ويأكد الطلب.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="tt" id="tiktok">
+      <div class="wrap">
+        <div class="tt-card">
+          <span class="tt-blob c" aria-hidden="true"></span>
+          <span class="tt-blob r" aria-hidden="true"></span>
+          <div class="tt-copy">
+            <p class="eyebrow">تيك توك</p>
+            <h2 class="sec-title split">تابع ساعات تلعفر على تيك توك</h2>
+            <p class="tt-sub">فيديوهات الموديلات الجديدة، وبالخاص تكدر تطلب أو تسأل عن أي ساعة.</p>
+            <a class="btn btn-light magnetic" data-tt href="https://www.tiktok.com/search?q=%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA%20%D8%AA%D9%84%D8%B9%D9%81%D8%B1" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M16.6 5.8a4.6 4.6 0 0 1-1.1-3h-3.1v12.4a2.6 2.6 0 1 1-2.6-2.6c.3 0 .5 0 .8.1V9.5a5.8 5.8 0 1 0 5 5.7V9a7.7 7.7 0 0 0 4.4 1.4V7.3a4.6 4.6 0 0 1-3.4-1.5z" fill="currentColor"/></svg>
+              افتح تيك توك
+            </a>
+            <p class="tt-handle" id="ttHandle">ابحث عن: <b>ساعات تلعفر</b></p>
+          </div>
+          <div class="tt-visual" aria-hidden="true">
+            <span class="ring"></span><span class="ring"></span><span class="ring"></span>
+            <div class="tt-icon">
+              <svg viewBox="0 0 24 24" width="54" height="54">
+                <path transform="translate(-.9 -.7)" d="M16.6 5.8a4.6 4.6 0 0 1-1.1-3h-3.1v12.4a2.6 2.6 0 1 1-2.6-2.6c.3 0 .5 0 .8.1V9.5a5.8 5.8 0 1 0 5 5.7V9a7.7 7.7 0 0 0 4.4 1.4V7.3a4.6 4.6 0 0 1-3.4-1.5z" fill="#25F4EE"/>
+                <path transform="translate(.9 .7)" d="M16.6 5.8a4.6 4.6 0 0 1-1.1-3h-3.1v12.4a2.6 2.6 0 1 1-2.6-2.6c.3 0 .5 0 .8.1V9.5a5.8 5.8 0 1 0 5 5.7V9a7.7 7.7 0 0 0 4.4 1.4V7.3a4.6 4.6 0 0 1-3.4-1.5z" fill="#FE2C55"/>
+                <path d="M16.6 5.8a4.6 4.6 0 0 1-1.1-3h-3.1v12.4a2.6 2.6 0 1 1-2.6-2.6c.3 0 .5 0 .8.1V9.5a5.8 5.8 0 1 0 5 5.7V9a7.7 7.7 0 0 0 4.4 1.4V7.3a4.6 4.6 0 0 1-3.4-1.5z" fill="#fff"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot-in">
+      <div class="foot-brand"><span class="brand-name">ساعات تلعفر</span><span class="foot-loc">تلعفر · نينوى · العراق</span></div>
+      <p class="foot-time">توقيت تلعفر<b class="digits" id="footTime">--:--</b></p>
+      <p class="foot-copy">© 2026 ساعات تلعفر</p>
+    </div>
+  </footer>
+</div>
+
+<div class="sheet" id="sheet" hidden dir="rtl" lang="ar" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+  <div class="sheet-backdrop" data-close></div>
+  <div class="sheet-panel">
+    <button class="sheet-x" type="button" data-close aria-label="إغلاق">
+      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+    <div class="sheet-stage" id="sheetStage">
+      <div class="sheet-watch" id="sheetWatch"></div>
+      <p class="sheet-hint" id="sheetHint" hidden></p>
+    </div>
+    <div class="sheet-info">
+      <p class="cat" id="sheetCat"></p>
+      <h3 class="sheet-title" id="sheetTitle"></h3>
+      <p class="sheet-desc" id="sheetDesc"></p>
+      <div><p class="var-label" id="sheetVarLabel">اللون</p><div class="variants" id="sheetVariants"></div></div>
+      <div class="sheet-buy">
+        <p class="price big"><b id="sheetPrice">0</b><span class="cur">د.ع</span><s id="sheetOld"></s></p>
+        <a class="btn btn-gold" id="sheetOrder" data-tt href="https://www.tiktok.com/search?q=%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA%20%D8%AA%D9%84%D8%B9%D9%81%D8%B1" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M16.6 5.8a4.6 4.6 0 0 1-1.1-3h-3.1v12.4a2.6 2.6 0 1 1-2.6-2.6c.3 0 .5 0 .8.1V9.5a5.8 5.8 0 1 0 5 5.7V9a7.7 7.7 0 0 0 4.4 1.4V7.3a4.6 4.6 0 0 1-3.4-1.5z" fill="currentColor"/></svg>
+          اطلب عبر تيك توك
+        </a>
+      </div>
+      <dl class="specs" id="sheetSpecs"></dl>
+      <p class="sheet-note">نسخة تجريبية: السعر والمواصفات أمثلة.</p>
+    </div>
+  </div>
+</div>
+<div class="flyer" id="flyer" hidden aria-hidden="true"></div>
+<div class="veil" id="veil" aria-hidden="true"></div>
+<div class="toast" id="toast" role="status" aria-live="polite" dir="rtl" lang="ar"><p class="t-msg"></p><p class="t-extra" hidden></p></div>
+<div class="cursor" aria-hidden="true"><i></i></div><div class="cursor-dot" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Flip.min.js"></script>
+<script>
+(() => {
+'use strict';
+
+// Shop settings — swap the TikTok link for the shop's own profile once it is known.
+const SHOP = {
+  tiktok: 'https://www.tiktok.com/search?q=' + encodeURIComponent('ساعات تلعفر'),
+  tiktokLabel: 'ساعات تلعفر'
+};
+
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const root = document.documentElement;
+root.lang = 'ar'; root.dir = 'rtl';
+const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const FINE = matchMedia('(pointer: fine)').matches;
+const G = window.gsap, ST = window.ScrollTrigger, FL = window.Flip;
+if (G) { if (ST) G.registerPlugin(ST); if (FL) G.registerPlugin(FL); }
+const ANIM = !!G && !RM;
+
+const fmt = n => Math.round(n).toLocaleString('en-US');
+const pad = n => String(n).padStart(2, '0');
+const fx = n => +(+n).toFixed(2);
+const DAYS = ['الأحد', 'الاثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة', 'السبت'];
+const MONTHS = ['كانون الثاني', 'شباط', 'آذار', 'نيسان', 'أيار', 'حزيران', 'تموز', 'آب', 'أيلول', 'تشرين الأول', 'تشرين الثاني', 'كانون الأول'];
+
+// Iraq keeps UTC+3 all year, so Tal Afar time is UTC plus three hours.
+function now() {
+  const ms = Date.now(), d = new Date(ms + 3 * 3600e3), u = new Date(ms);
+  return { h: d.getUTCHours(), m: d.getUTCMinutes(), s: d.getUTCSeconds(), ms: d.getUTCMilliseconds(),
+    day: d.getUTCDate(), wd: d.getUTCDay(), mon: d.getUTCMonth(), uh: u.getUTCHours(), um: u.getUTCMinutes() };
+}
+
+$$('[data-tt]').forEach(a => { a.href = SHOP.tiktok; a.target = '_blank'; a.rel = 'noopener'; });
+$('#ttHandle b').textContent = SHOP.tiktokLabel;
+
+/* ---------- watch drawing ---------- */
+const METAL = {
+  gold:  ['#FFF3CF', '#D8B263', '#F8E2A6', '#9A6F2E', '#E9C77F', '#5E421A'],
+  steel: ['#FFFFFF', '#A9B1BB', '#EDF0F3', '#6A737E', '#D4DAE0', '#3F4650'],
+  rose:  ['#FFE9DE', '#D59B82', '#F7D0BD', '#925646', '#EBB59E', '#5F3428'],
+  black: ['#646A75', '#1B1E23', '#40454D', '#0B0C0F', '#2C3036', '#000000']
+};
+const rad = d => d * Math.PI / 180;
+const pt = (a, r) => [fx(Math.sin(rad(a)) * r), fx(-Math.cos(rad(a)) * r)];
+const ln = (a, r1, r2) => { const [x1, y1] = pt(a, r1), [x2, y2] = pt(a, r2); return `M${x1} ${y1}L${x2} ${y2}`; };
+const arcD = (a1, a2, r) => { const [x1, y1] = pt(a1, r), [x2, y2] = pt(a2, r); return `M${x1} ${y1}A${r} ${r} 0 0 1 ${x2} ${y2}`; };
+const sty = o => `style="${Object.entries(o).map(([k, v]) => `${k}:${v}`).join(';')}"`;
+const star = (x, y, r, d) => `<path class="tw" style="animation-delay:${fx(d)}s" d="M${x} ${fx(y - r)}Q${x} ${y} ${fx(x + r)} ${y}Q${x} ${y} ${x} ${fx(y + r)}Q${x} ${y} ${fx(x - r)} ${y}Q${x} ${y} ${x} ${fx(y - r)}Z" fill="#fff"/>`;
+const HEART = 'M0 7C-11-1-10-10-4.6-10-1.8-10 0-8 0-6.4 0-8 1.8-10 4.6-10 10-10 11-1 0 7Z';
+
+function grad(id, m, x2, y2) {
+  return `<linearGradient id="${id}" x1="0" y1="0" x2="${x2}" y2="${y2}"><stop offset="0" stop-color="${m[0]}"/><stop offset=".22" stop-color="${m[1]}"/><stop offset=".45" stop-color="${m[2]}"/><stop offset=".62" stop-color="${m[3]}"/><stop offset=".82" stop-color="${m[4]}"/><stop offset="1" stop-color="${m[1]}"/></linearGradient>`;
+}
+
+function defs(id, s, m, Rd) {
+  const im = METAL[s.idxMetal || s.metal];
+  const pearls = [['p1', '#FFB8D9'], ['p2', '#A8EEFF'], ['p3', '#D9C8FF']]
+    .map(([k, c]) => `<radialGradient id="${id}${k}"><stop offset="0" stop-color="${c}" stop-opacity=".95"/><stop offset="1" stop-color="${c}" stop-opacity="0"/></radialGradient>`).join('');
+  return `<defs>${grad(id + 'mc', m, 1, 1)}${grad(id + 'mv', m, 1, 0)}${grad(id + 'im', im, 1, 1)}${grad(id + 'gear', METAL.gold, 1, 1)}
+    <linearGradient id="${id}mp" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${m[0]}"/><stop offset=".3" stop-color="${m[3]}"/><stop offset=".5" stop-color="${m[2]}"/><stop offset=".72" stop-color="${m[3]}"/><stop offset="1" stop-color="${m[0]}"/></linearGradient>
+    <radialGradient id="${id}dial" cx=".5" cy=".36" r=".72"><stop offset="0" style="stop-color:var(--dialA)"/><stop offset="1" style="stop-color:var(--dialB)"/></radialGradient>
+    <linearGradient id="${id}sh" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#000" stop-opacity=".55"/><stop offset=".22" stop-color="#000" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".08"/><stop offset=".78" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".55"/></linearGradient>
+    <radialGradient id="${id}shn"><stop offset="0" stop-color="#fff" stop-opacity=".17"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+    <linearGradient id="${id}gl" x1="0" y1="0" x2=".9" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".22"/><stop offset=".38" stop-color="#fff" stop-opacity=".04"/><stop offset=".52" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#fff" stop-opacity=".06"/></linearGradient>
+    <linearGradient id="${id}sw" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".42"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+    <radialGradient id="${id}gem" cx=".38" cy=".34" r=".72"><stop offset="0" stop-color="#fff"/><stop offset=".4" stop-color="#E4F0FF"/><stop offset=".75" stop-color="#9DB3D1"/><stop offset="1" stop-color="#5F6F88"/></radialGradient>
+    ${pearls}
+    <pattern id="${id}mesh" width="3.4" height="3.4" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><path d="M0 0H3.4M0 0V3.4" stroke="#000" stroke-opacity=".35" stroke-width=".9"/></pattern>
+    <clipPath id="${id}dc"><circle r="${Rd}"/></clipPath>
+    <clipPath id="${id}oh"><circle r="20.5"/></clipPath></defs>`;
+}
+
+function strap(s, id, m, R, W) {
+  const t = s.strap || 'leather', h = W / 2, f = h - 7, a = R - 14;
+  const top = `M${-h} ${-a}L${h} ${-a}L${f} -330L${-f} -330Z`;
+  const bot = `M${-h} ${a}L${h} ${a}L${f} 330L${-f} 330Z`;
+  const shade = `<path d="${top}" fill="url(#${id}sh)"/><path d="${bot}" fill="url(#${id}sh)"/>`;
+  const sf = sty({ fill: 'var(--strap)' });
+  if (t === 'leather' || t === 'rubber') {
+    let o = `<path d="${top}" ${sf}/><path d="${bot}" ${sf}/>` + shade;
+    if (t === 'leather') {
+      o += `<g fill="none" stroke="rgba(255,244,228,.34)" stroke-width="1.2" stroke-dasharray="5 4"><path d="M${-h + 7} ${-a - 8}L${-f + 7} -330"/><path d="M${h - 7} ${-a - 8}L${f - 7} -330"/><path d="M${-h + 7} ${a + 8}L${-f + 7} 330"/><path d="M${h - 7} ${a + 8}L${f - 7} 330"/></g>`;
+      o += `<rect x="${-h - 2}" y="${a + 76}" width="${W + 4}" height="13" rx="4" ${sf} stroke="rgba(0,0,0,.45)"/><rect x="${-h - 2}" y="${a + 76}" width="${W + 4}" height="13" rx="4" fill="url(#${id}sh)"/>`;
+    } else {
+      let g = '';
+      for (let y = a + 24; y < 330; y += 20) { const k = (y - a) / (330 - a) * 7; g += `M${fx(-h + 10 + k)} ${-y}H${fx(h - 10 - k)}`; }
+      o += `<path d="${g}" stroke="rgba(0,0,0,.32)" stroke-width="2" stroke-linecap="round"/>`;
+      let ho = '';
+      for (let y = a + 58; y < 330; y += 22) ho += `<circle cy="${y}" r="3.4"/>`;
+      o += `<g fill="rgba(0,0,0,.55)">${ho}</g>`;
+    }
+    return o;
+  }
+  if (t === 'mesh') return `<path d="${top}" fill="url(#${id}mv)"/><path d="${bot}" fill="url(#${id}mv)"/><path d="${top}" fill="url(#${id}mesh)"/><path d="${bot}" fill="url(#${id}mesh)"/>` + shade;
+  const jub = t === 'jubilee';
+  const cols = jub ? [[-1, -.54], [-.48, -.18], [-.12, .12], [.18, .48], [.54, 1]] : [[-1, -.42], [-.38, .38], [.42, 1]];
+  const step = jub ? 15 : 22;
+  let o = '';
+  for (let y0 = a; y0 < 330; y0 += step) {
+    const k = 1 - (y0 - a) / (330 - a) * (7 / h);
+    cols.forEach((c, i) => {
+      const x1 = c[0] * h * k + .8, x2 = c[1] * h * k - .8;
+      const g = (jub ? (i >= 1 && i <= 3) : i === 1) ? 'mp' : 'mv';
+      for (const y of [-(y0 + step - 1.5), y0 + 1.5]) {
+        o += `<rect x="${fx(x1)}" y="${fx(y)}" width="${fx(x2 - x1)}" height="${step - 3}" rx="${jub ? 2.5 : 4}" fill="url(#${id}${g})" stroke="${m[5]}" stroke-opacity=".55" stroke-width=".6"/>`;
+      }
+    });
+  }
+  return o + shade;
+}
+
+function lugs(id, m, R, W) {
+  const x = -(W / 2 + 15), w = W + 30;
+  return `<rect x="${x}" y="${-(R + 34)}" width="${w}" height="72" rx="18" fill="url(#${id}mv)" stroke="${m[5]}"/><rect x="${x}" y="${R - 38}" width="${w}" height="72" rx="18" fill="url(#${id}mv)" stroke="${m[5]}"/>`;
+}
+
+function crown(id, m, R, pushers) {
+  let o = `<g transform="translate(${R - 2} 0)"><rect y="-13" width="17" height="26" rx="4" fill="url(#${id}mv)" stroke="${m[5]}"/><path d="M3 -8H15M3 -4H15M3 0H15M3 4H15M3 8H15" stroke="${m[5]}" stroke-opacity=".5"/></g>`;
+  if (pushers) for (const a of [60, 120]) o += `<g transform="rotate(${a - 90})"><rect x="${R - 6}" y="-6" width="16" height="12" rx="3" fill="url(#${id}mv)" stroke="${m[5]}"/></g>`;
+  return o;
+}
+
+function bezel(s, id, m, R, ring) {
+  const BR = R - 13;
+  if (ring === 'smooth') return `<g class="dm"><circle r="${R - 8}" fill="none" stroke="url(#${id}mp)" stroke-width="13"/><circle r="${R - 15}" fill="none" stroke="rgba(0,0,0,.35)"/></g>`;
+  if (ring === 'diamond') {
+    let gems = '', tw = '';
+    for (let i = 0; i < 40; i++) {
+      const [x, y] = pt(i * 9, R - 10);
+      gems += `<circle cx="${x}" cy="${y}" r="4.4" fill="url(#${id}gem)"/>`;
+      if (i % 5 === 0) tw += star(x, y, 7.5, (i * .43) % 3.4);
+    }
+    return `<g class="dm"><circle r="${R - 10}" fill="none" stroke="url(#${id}mp)" stroke-width="15"/>${gems}</g>${tw}`;
+  }
+  let o = `<g class="bezel"><g class="dm"><circle r="${R - 3}" fill="none" stroke="url(#${id}mp)" stroke-width="4"/>`;
+  if (ring === 'gmt') {
+    o += `<path d="M${-BR} 0A${BR} ${BR} 0 0 1 ${BR} 0" fill="none" ${sty({ stroke: 'var(--gmtA)' })} stroke-width="20"/><path d="M${BR} 0A${BR} ${BR} 0 0 1 ${-BR} 0" fill="none" ${sty({ stroke: 'var(--gmtB)' })} stroke-width="20"/>`;
+    for (let h = 1; h < 24; h++) {
+      const a = h * 15;
+      if (h % 2 === 0) o += `<text transform="rotate(${a}) translate(0 ${-BR})" class="bz-n">${h}</text>`;
+      else { const [x, y] = pt(a, BR); o += `<circle cx="${x}" cy="${y}" r="1.8" ${sty({ fill: 'var(--bzt)' })}/>`; }
+    }
+  } else {
+    o += `<circle r="${BR}" fill="none" ${sty({ stroke: 'var(--bezel)' })} stroke-width="20"/>`;
+    if (ring === 'diver') {
+      let tk = '', big = '';
+      for (let i = 1; i < 60; i++) {
+        const a = i * 6;
+        if (i % 10 === 0) o += `<text transform="rotate(${a}) translate(0 ${-BR})" class="bz-n">${i}</text>`;
+        else if (i % 5 === 0) big += ln(a, BR + 6, BR - 5);
+        else if (i < 15) tk += ln(a, BR + 6, BR + 1);
+      }
+      o += `<path d="${tk}" ${sty({ stroke: 'var(--bzt)' })} stroke-width="1.3"/><path d="${big}" ${sty({ stroke: 'var(--bzt)' })} stroke-width="3.2"/>`;
+    } else {
+      let tk = '';
+      for (const v of [500, 400, 300, 250, 200, 180, 160, 140, 120, 110, 100, 90, 85, 80, 75, 70, 65]) tk += ln(3600 / v * 6, BR + 7, BR + 3);
+      o += `<circle r="${BR + 7}" fill="none" ${sty({ stroke: 'var(--bzt)' })} stroke-opacity=".5" stroke-width=".6"/><path d="${tk}" ${sty({ stroke: 'var(--bzt)' })} stroke-width="1"/>`;
+      for (const v of [500, 300, 200, 150, 120, 100, 80, 70, 60]) o += `<text transform="rotate(${fx(v === 60 ? 0 : 3600 / v * 6)}) translate(0 ${-BR + 2})" class="bz-n sm">${v}</text>`;
+    }
+  }
+  o += `</g>`;
+  if (ring !== 'tachy') o += `<path class="dm" d="M0 ${-(BR + 8)}L-8.5 ${-(BR - 6)}L8.5 ${-(BR - 6)}Z" fill="url(#${id}mp)" stroke="${m[5]}" stroke-width=".6"/><circle class="lume" cy="${-(BR + 1)}" r="3.4"/>`;
+  return o + `</g>`;
+}
+
+function gearPath(r, teeth, depth) {
+  const st = 360 / teeth; let d = '';
+  for (let i = 0; i < teeth; i++) {
+    const a = i * st;
+    const p = [pt(a, r - depth), pt(a + st * .18, r), pt(a + st * .5, r), pt(a + st * .68, r - depth)];
+    d += (i ? 'L' : 'M') + p.map(q => q[0] + ' ' + q[1]).join('L');
+  }
+  return d + 'Z';
+}
+const spinAnim = (to, dur) => `<animateTransform attributeName="transform" type="rotate" from="0" to="${to}" dur="${dur}s" repeatCount="indefinite"/>`;
+function gear(id, x, y, r, teeth, dur, dir, spokes) {
+  let sp = '';
+  for (let i = 0; i < spokes; i++) sp += `<rect x="-1.6" y="${fx(-r * .78)}" width="3.2" height="${fx(r * .78)}" transform="rotate(${fx(i * 360 / spokes)})"/>`;
+  return `<g transform="translate(${x} ${y})"><g>${spinAnim(dir * 360, dur)}<path d="${gearPath(r, teeth, Math.max(1.6, r * .09))}" fill="url(#${id}gear)"/><circle r="${fx(r * .8)}" fill="#08090B"/><g fill="url(#${id}gear)">${sp}</g><circle r="${fx(r * .24)}" fill="url(#${id}gear)"/><circle r="${fx(Math.max(1.4, r * .1))}" fill="#B0172B"/></g></g>`;
+}
+function balance(id, x, y, r) {
+  let sp = '';
+  for (let i = 0; i <= 140; i++) { const t = i / 140; const [px, py] = pt(t * 7 * 360, 2 + t * (r * .72 - 2)); sp += (i ? 'L' : 'M') + px + ' ' + py; }
+  let screws = '';
+  for (let i = 0; i < 10; i++) { const [px, py] = pt(i * 36, r); screws += `<circle cx="${px}" cy="${py}" r="1.5"/>`; }
+  const arms = [0, 120, 240].map(a => { const [px, py] = pt(a, r); return `M0 0L${px} ${py}`; }).join('');
+  return `<g transform="translate(${x} ${y})"><path d="${sp}" fill="none" stroke="#E8DCC4" stroke-opacity=".55" stroke-width=".55"/><g><animateTransform attributeName="transform" type="rotate" values="-150;150;-150" keyTimes="0;.5;1" calcMode="spline" keySplines=".45 0 .55 1;.45 0 .55 1" dur=".55s" repeatCount="indefinite"/><circle r="${r}" fill="none" stroke="url(#${id}gear)" stroke-width="2.8"/><path d="${arms}" stroke="#D9B66C" stroke-width="1.8"/><g fill="url(#${id}gear)">${screws}</g></g><circle r="2.3" fill="#B0172B"/></g>`;
+}
+const screw = (x, y) => `<g transform="translate(${x} ${y})"><circle r="3.6" fill="#2E4FA8"/><circle r="3.6" fill="none" stroke="#9FB3E6" stroke-opacity=".6" stroke-width=".6"/><path d="M-2.6 -1L2.6 1" stroke="#0D1838"/></g>`;
+const bridge = (x1, y1, x2, y2, w) => `<path d="M${x1} ${y1}L${x2} ${y2}" stroke="#2A2D33" stroke-width="${w}" stroke-linecap="round"/><path d="M${x1} ${y1}L${x2} ${y2}" stroke="#6A707A" stroke-opacity=".55" stroke-width="1"/>`;
+function movement(id, Rd) {
+  return `<rect x="${-Rd}" y="${-Rd}" width="${Rd * 2}" height="${Rd * 2}" fill="#060708"/>`
+    + gear(id, 0, -36, 30, 54, 240, 1, 5) + gear(id, -38, 16, 17, 28, 24, -1, 4) + gear(id, 36, 18, 16, 26, 14, 1, 4)
+    + gear(id, 0, 0, 19, 32, 60, -1, 5) + gear(id, -20, 46, 10, 15, 4, 1, 3)
+    + bridge(-62, -22, 60, -58, 14) + bridge(22, 48, 58, 70, 11)
+    + balance(id, 22, 48, 20)
+    + screw(-62, -22) + screw(60, -58) + screw(58, 70);
+}
+function pearl(id) {
+  return `<g opacity=".44">${[['p1', -30, -30, 82, 56, 22], ['p2', 36, 10, 72, 60, 30], ['p3', -10, 46, 86, 46, 26]]
+    .map(([g, x, y, rx, ry, d]) => `<g>${spinAnim(360, d)}<ellipse cx="${x}" cy="${y}" rx="${rx}" ry="${ry}" fill="url(#${id}${g})"/></g>`).join('')}</g>`;
+}
+
+function dial(s, id, m, Rd, Ri) {
+  const n = now();
+  const im = `url(#${id}im)`;
+  let o = `<g class="dm"><circle r="${Rd + 1}" fill="#000" opacity=".5"/><circle r="${Rd}" fill="url(#${id}dial)"/><g clip-path="url(#${id}dc)">`;
+  if (s.sunburst) { let l = ''; for (let i = 0; i < 120; i++) { const [x, y] = pt(i * 3, Rd); l += `M0 0L${x} ${y}`; } o += `<path d="${l}" stroke="#fff" stroke-opacity=".045" stroke-width=".8"/>`; }
+  if (s.pearl) o += pearl(id);
+  if (s.skeleton) o += movement(id, Rd);
+  o += `<g class="sheen" transform="rotate(-35)"><ellipse rx="${fx(Rd * 1.1)}" ry="${fx(Rd * .34)}" fill="url(#${id}shn)"/></g></g>`;
+  if (s.skeleton) o += `<circle r="${Rd - 12}" fill="none" stroke="#15171B" stroke-width="24"/><circle r="${Rd - 24}" fill="none" stroke="url(#${id}mp)" stroke-width="1.4"/>`;
+  let t = '';
+  for (let i = 0; i < 60; i++) t += ln(i * 6, Rd - 3, Rd - (i % 5 === 0 ? 9 : 6));
+  o += `<path d="${t}" ${sty({ stroke: 'var(--txt)' })} stroke-opacity=".55" stroke-width="1"/>`;
+
+  const skip = i => (s.date && i === 3) || (s.chrono && (i === 3 || i === 6 || i === 9)) || (s.openHeart && i === 6);
+  let ix = '', lm = '', tw = '';
+  for (let i = 0; i < 12; i++) {
+    if (skip(i)) continue;
+    const a = i * 30;
+    if (s.idx === 'baton') {
+      const len = s.skeleton ? 13 : 20;
+      for (const dx of (i === 0 ? [-5, 5] : [0])) {
+        ix += `<rect transform="rotate(${a})" x="${dx - 3.2}" y="${-Ri}" width="6.4" height="${len}" rx="1.2" fill="${im}"/>`;
+        if (s.lume) lm += `<rect class="lume" transform="rotate(${a})" x="${dx - 1.6}" y="${-Ri + 2}" width="3.2" height="${len - 4}" rx=".8"/>`;
+      }
+    } else if (s.idx === 'dots') {
+      if (i === 0) { ix += `<path d="M0 ${-Ri + 24}L-10 ${-Ri + 2}L10 ${-Ri + 2}Z" fill="${im}"/>`; lm += `<path class="lume" d="M0 ${-Ri + 20}L-7 ${-Ri + 4.5}L7 ${-Ri + 4.5}Z"/>`; }
+      else if (i % 3 === 0) { ix += `<rect transform="rotate(${a})" x="-5" y="${-Ri + 1}" width="10" height="23" rx="1.5" fill="${im}"/>`; lm += `<rect class="lume" transform="rotate(${a})" x="-3.2" y="${-Ri + 3}" width="6.4" height="19" rx="1"/>`; }
+      else { const [x, y] = pt(a, Ri - 8); ix += `<circle cx="${x}" cy="${y}" r="8" fill="${im}"/>`; lm += `<circle class="lume" cx="${x}" cy="${y}" r="6.3"/>`; }
+    } else if (s.idx === 'roman') {
+      const N = ['XII', 'I', 'II', 'III', 'IIII', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI'];
+      ix += `<text class="rn" transform="rotate(${a}) translate(0 ${-Ri + 9})">${N[i]}</text>`;
+    } else if (s.idx === 'arabic') {
+      const N = ['١٢', '١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩', '١٠', '١١'];
+      const [x, y] = pt(a, Ri - 12);
+      ix += `<text class="an${i % 3 === 0 ? ' big' : ''}" x="${x}" y="${y}">${N[i]}</text>`;
+    } else if (s.idx === 'diamonds') {
+      const [x, y] = pt(a, Ri - 6), r = i % 3 === 0 ? 5.6 : 3.8;
+      ix += `<circle cx="${x}" cy="${y}" r="${r + 1}" fill="${im}"/><circle cx="${x}" cy="${y}" r="${r}" fill="url(#${id}gem)"/>`;
+      if (i % 3 === 0) tw += star(x, y, 9, i * .41);
+    }
+  }
+  o += ix;
+
+  const ty = s.chrono ? -Rd * .58 : -Rd * .44;
+  if (s.text) {
+    o += `<text class="brand-t" y="${fx(ty)}">${s.text[0]}</text>`;
+    if (s.text[1]) o += `<text class="sub-t" y="${fx(ty + 12)}">${s.text[1]}</text>`;
+  }
+  if (s.lower) o += `<text class="sub-t lo" y="${fx(Rd * .38)}" ${sty({ fill: s.lowerC || 'var(--txt)' })}>${s.lower}</text>`;
+  if (s.date) { const x = Ri - 35; o += `<rect x="${x}" y="-8.5" width="24" height="17" rx="2" fill="#F6F4EE" stroke="${im}" stroke-width="2"/><text class="date-t" x="${x + 12}" y=".5">${n.day}</text>`; }
+  if (s.chrono) {
+    const rs = Rd * .2;
+    for (const [x, y] of [[-Rd * .46, 0], [Rd * .46, 0], [0, Rd * .46]]) {
+      let tk = '', az = '';
+      for (let i = 0; i < 12; i++) tk += ln(i * 30, rs - 1.5, rs - (i % 3 === 0 ? 6 : 4));
+      for (let r = 3; r < rs - 2; r += 2.2) az += `<circle r="${fx(r)}"/>`;
+      o += `<g transform="translate(${fx(x)} ${fx(y)})"><circle r="${fx(rs)}" fill="rgba(0,0,0,.24)"/><g fill="none" stroke="#fff" stroke-opacity=".05" stroke-width=".6">${az}</g><circle r="${fx(rs)}" fill="none" ${sty({ stroke: 'var(--txt)' })} stroke-opacity=".35" stroke-width=".8"/><path d="${tk}" ${sty({ stroke: 'var(--txt)' })} stroke-opacity=".75" stroke-width=".9"/></g>`;
+    }
+  }
+  if (s.openHeart) {
+    o += `<g transform="translate(0 ${fx(Rd * .47)})"><circle r="23" fill="url(#${id}mp)"/><circle r="20.5" fill="#050506"/><g clip-path="url(#${id}oh)">${gear(id, -9, 7, 13, 18, 5, 1, 4)}${balance(id, 5, -3, 13)}</g></g>`;
+  }
+  return o + `</g><g class="lume-layer">${lm}</g>${tw}`;
+}
+
+const HANDS = {
+  dauphine: (L, w) => ({ full: `M0 ${-L}L${w} 0L0 14L${-w} 0Z`, half: `M0 ${-L}L${w} 0L0 14Z` }),
+  sword: (L, w) => ({ full: `M${-w} 14L${-w} ${fx(-L + w * 2.2)}L0 ${-L}L${w} ${fx(-L + w * 2.2)}L${w} 14Z`, half: `M0 ${-L}L${w} ${fx(-L + w * 2.2)}L${w} 14L0 14Z`,
+    lume: `M${fx(-w + 2.2)} 0L${fx(-w + 2.2)} ${fx(-L + w * 2.2 + 1.5)}L0 ${fx(-L + 5)}L${fx(w - 2.2)} ${fx(-L + w * 2.2 + 1.5)}L${fx(w - 2.2)} 0Z` }),
+  leaf: (L, w) => ({ full: `M0 ${-L}C${fx(w * 1.5)} ${fx(-L * .55)} ${fx(w * 1.15)} ${fx(-L * .12)} 0 12C${fx(-w * 1.15)} ${fx(-L * .12)} ${fx(-w * 1.5)} ${fx(-L * .55)} 0 ${-L}Z`, half: `M0 ${-L}C${fx(w * 1.5)} ${fx(-L * .55)} ${fx(w * 1.15)} ${fx(-L * .12)} 0 12Z` })
+};
+function hands(s, id, Rd) {
+  const shape = s.hands || 'dauphine';
+  const W = { dauphine: [6.5, 5], sword: [7.5, 5.6], leaf: [6, 4.6] }[shape];
+  const Lh = fx(Rd * .56), Lm = fx(Rd * .86);
+  const hand = (cls, L, w) => {
+    const h = HANDS[shape](L, w);
+    return `<g class="${cls}"><path class="hm" d="${h.full}" ${sty({ fill: 'var(--hand)' })}/><path class="hm" d="${h.half}" fill="rgba(0,0,0,.28)"/>${s.lume && h.lume ? `<path class="lume" d="${h.lume}"/>` : ''}</g>`;
+  };
+  const sub = cls => `<g class="${cls}"><path class="hm" d="M0 3L0 ${fx(-Rd * .2 * .86)}" ${sty({ stroke: 'var(--hand)' })} stroke-width="1.5" stroke-linecap="round"/><circle class="hm" r="2.4" ${sty({ fill: 'var(--hand)' })}/></g>`;
+  const secLume = s.lume && !s.chrono;
+  let o = `<g transform="translate(2.5 4)" fill="#000" opacity=".3"><g class="h-hour"><path d="${HANDS[shape](Lh, W[0]).full}"/></g><g class="h-min"><path d="${HANDS[shape](Lm, W[1]).full}"/></g><g class="h-sec"><path d="M0 24L0 ${-(Rd - 5)}" stroke="#000" stroke-width="1.8"/></g></g>`;
+  if (s.chrono) o += `<g transform="translate(${fx(-Rd * .46)} 0)">${sub('sub-s')}</g><g transform="translate(${fx(Rd * .46)} 0)">${sub('sub-m')}</g><g transform="translate(0 ${fx(Rd * .46)})">${sub('sub-h')}</g>`;
+  if (s.gmt) o += `<g class="h-gmt"><path class="hm" d="M-1.3 12L-1.3 ${-(Rd - 24)}L1.3 ${-(Rd - 24)}L1.3 12Z" ${sty({ fill: 'var(--hand)' })}/><path class="hm" d="M0 ${-(Rd - 7)}L-7.5 ${-(Rd - 24)}L7.5 ${-(Rd - 24)}Z" ${sty({ fill: 'var(--gmtC)' })}/><path class="lume" d="M0 ${-(Rd - 12)}L-3.6 ${-(Rd - 21)}L3.6 ${-(Rd - 21)}Z"/></g>`;
+  o += hand('h-hour', Lh, W[0]) + hand('h-min', Lm, W[1]);
+  o += `<g class="h-sec"><path class="hm" d="M0 26L0 ${-(Rd - 5)}" ${sty({ stroke: 'var(--sec)' })} stroke-width="1.6" stroke-linecap="round"/><circle class="hm" cy="22" r="4.4" ${sty({ fill: 'var(--sec)' })}/>`
+    + (secLume ? `<circle class="hm" cy="${fx(-Rd * .68)}" r="4.8" ${sty({ fill: 'var(--sec)' })}/><circle class="lume" cy="${fx(-Rd * .68)}" r="3.4"/>` : '')
+    + `<circle class="hm" r="4.6" ${sty({ fill: 'var(--sec)' })}/></g>`;
+  return o + `<circle class="hm" r="2.4" fill="url(#${id}mp)"/>`;
+}
+
+function crystal(id, Rd) {
+  return `<g class="crystal" pointer-events="none"><g clip-path="url(#${id}dc)"><g class="glare"><circle r="${Rd + 20}" fill="url(#${id}gl)"/></g><g transform="rotate(28)"><rect class="sweep" x="-22" y="-240" width="44" height="480" fill="url(#${id}sw)"/></g></g><path d="${arcD(-62, -18, Rd - 7)}" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="2.6" stroke-linecap="round"/></g>`;
+}
+
+function smartRings(rs) {
+  return rs.map(([r, c, p]) => {
+    const C = fx(2 * Math.PI * r);
+    return `<circle r="${r}" fill="none" stroke="${c}" stroke-opacity=".2" stroke-width="4.4"/><circle class="ring" r="${r}" data-c="${C}" data-p="${p}" fill="none" stroke="${c}" stroke-width="4.4" stroke-linecap="round" stroke-dasharray="${C}" stroke-dashoffset="${C}" style="transition:stroke-dashoffset 1.8s cubic-bezier(.16,1,.3,1)"/>`;
+  }).join('');
+}
+const heartBeat = `<animateTransform attributeName="transform" type="scale" values="1;1.22;1;1.12;1" keyTimes="0;.14;.3;.44;1" dur=".9s" repeatCount="indefinite"/>`;
+
+function smartSquare(s, id, m) {
+  const R = 110;
+  let o = defs(id, s, m, 90) + `<g class="dm">${strap({ ...s, strap: 'rubber' }, id, m, R, 146)}
+    <rect x="-97" y="-115" width="194" height="230" rx="52" fill="url(#${id}mc)" stroke="${m[5]}" stroke-width="1.4"/>
+    <rect x="-94" y="-112" width="188" height="224" rx="49" fill="none" stroke="rgba(255,255,255,.3)"/>
+    <rect x="93" y="-62" width="12" height="34" rx="5.5" fill="url(#${id}mv)" stroke="${m[5]}"/>
+    <path d="M95 -56H104M95 -51H104M95 -46H104M95 -41H104M95 -36H104" stroke="${m[5]}" stroke-opacity=".5"/>
+    <rect x="94" y="-8" width="6" height="42" rx="3" fill="url(#${id}mv)" stroke="${m[5]}"/></g>
+    <rect x="-85" y="-103" width="170" height="206" rx="42" fill="#020203"/>
+    <g class="screen">
+      <text class="s-date" y="-60" direction="rtl">—</text>
+      <text class="s-time" y="4">--:--</text>
+      <text class="s-ampm" y="24" direction="rtl"></text>
+      <g transform="translate(-36 62) rotate(-90)">${smartRings([[19, '#FF3B5C', .78], [13.5, '#A3FF4A', .56], [8, '#3BE3FF', .86]])}</g>
+      <g transform="translate(34 52)"><g>${heartBeat}<path d="${HEART}" fill="#FF3B5C"/></g></g>
+      <text class="s-bpm" x="34" y="80">74</text>
+    </g>
+    <rect x="-85" y="-103" width="170" height="206" rx="42" fill="url(#${id}gl)"/>`;
+  return o;
+}
+
+function roundScreen(s, id, Rd) {
+  let dots = '';
+  for (let i = 0; i < 60; i++) { const [x, y] = pt(i * 6, Rd - 8); dots += `<circle cx="${x}" cy="${y}" r="${i % 5 === 0 ? 2.4 : 1.6}" fill="#1E232A"/>`; }
+  return `<circle r="${Rd}" fill="#030405"/><g class="s-dots">${dots}</g>
+    <text class="s-date" y="-30" direction="rtl">—</text>
+    <text class="s-time" y="12" style="font-size:42px">--:--</text>
+    <text class="s-steps" y="36" direction="rtl">6,482 خطوة</text>
+    <path d="${arcD(150, 210, Rd - 22)}" fill="none" stroke="#1E232A" stroke-width="3.5" stroke-linecap="round"/>
+    <path d="${arcD(150, 201, Rd - 22)}" fill="none" ${sty({ stroke: 'var(--accent)' })} stroke-width="3.5" stroke-linecap="round"/>
+    <text class="s-ampm" y="${Rd - 34}">87%</text>`;
+}
+
+function roundWatch(s, id, m) {
+  const R = 112;
+  const ring = s.bezel || 'smooth';
+  const Rd = s.smart ? R - 16 : { diver: R - 25, gmt: R - 25, tachy: R - 25, diamond: R - 19, smooth: R - 16 }[ring];
+  const Ri = Rd - 11, W = s.smart ? 112 : 104;
+  let o = defs(id, s, m, Rd);
+  o += `<g class="dm">${lugs(id, m, R, W)}${strap(s, id, m, R, W)}${crown(id, m, R, s.chrono || s.smart)}<circle r="${R}" fill="url(#${id}mc)" stroke="${m[5]}" stroke-width="1.4"/><circle r="${R - 2.5}" fill="none" stroke="rgba(255,255,255,.38)"/></g>`;
+  o += bezel(s, id, m, R, ring);
+  o += s.smart ? roundScreen(s, id, Rd) : dial(s, id, m, Rd, Ri) + hands(s, id, Rd);
+  return o + crystal(id, Rd);
+}
+
+let UID = 0;
+function buildWatch(s) {
+  const id = 'w' + (++UID) + '-';
+  const m = METAL[s.metal];
+  const vars = {
+    '--dialA': s.dial ? s.dial.a : '#111', '--dialB': s.dial ? s.dial.b : '#000', '--txt': s.dial ? s.dial.txt : '#eee',
+    '--idx': s.idxC || '#eee', '--hand': s.handC || '#eee', '--sec': s.secC || '#eee', '--strap': s.strapC || '#222',
+    '--bezel': s.bezelC || '#111', '--bzt': s.bezelT || '#eee', '--gmtA': s.gmtA || '#0F5A3F', '--gmtB': s.gmtB || '#0A0C0E',
+    '--gmtC': s.gmtC || '#D9B66C', '--accent': s.accent || '#4BE3A6'
+  };
+  const body = s.smart === 'square' ? smartSquare(s, id, m) : roundWatch(s, id, m);
+  return `<svg class="wsvg" viewBox="-150 -200 300 400" xmlns="http://www.w3.org/2000/svg" ${sty(vars)} aria-hidden="true" focusable="false"><g transform="scale(${s.size || 1})">${body}</g></svg>`;
+}
+
+/* ---------- catalogue (examples until the shop sends its real list) ---------- */
+const TAGS = { men: 'رجالي', women: 'نسائي', classic: 'كلاسيك', sport: 'رياضية', smart: 'ذكية' };
+const FILTERS = [['all', 'الكل'], ['men', 'رجالي'], ['women', 'نسائي'], ['classic', 'كلاسيك'], ['sport', 'رياضية'], ['smart', 'ذكية']];
+const HERO = { metal: 'gold', bezel: 'diver', bezelC: '#0B0C0F', bezelT: '#E9CF93', dial: { a: '#1D2026', b: '#060708', txt: '#E9CF93' }, sunburst: true,
+  idx: 'baton', idxMetal: 'gold', hands: 'dauphine', handC: '#E2C27E', secC: '#E2C27E', lume: true, date: true, openHeart: true,
+  text: ['TAL AFAR', 'AUTOMATIC'], strap: 'leather', strapC: '#121214' };
+
+const PRODUCTS = [
+  { id: 'royal', name: 'رويال الذهبية', tags: ['men', 'classic'], price: 145000, old: 175000, badge: 'الأكثر طلباً', tint: '#C9A15A', tilt: -7,
+    short: '41 ملم · كوارتز · سوار جلد', desc: 'علبة ذهبية ومينا عاجي بأرقام عربية، ويا نافذة تاريخ وسوار جلد مخيّط.',
+    specs: [['قطر العلبة', '41 ملم'], ['الحركة', 'كوارتز'], ['مقاومة الماء', '30 متر'], ['السوار', 'جلد طبيعي']], varLabel: 'لون السوار',
+    spec: { metal: 'gold', bezel: 'smooth', dial: { a: '#F8F1E0', b: '#D9C7A1', txt: '#6B5226' }, sunburst: true, idx: 'arabic', idxC: '#7E5A1F',
+      hands: 'dauphine', handC: '#A87E35', secC: '#A87E35', date: true, text: ['TAL AFAR', 'QUARTZ'], strap: 'leather', strapC: '#5A3721' },
+    variants: [{ n: 'بني', c: '#5A3721', v: { '--strap': '#5A3721' } }, { n: 'أسود', c: '#17171A', v: { '--strap': '#17171A' } }, { n: 'عسلي', c: '#94602C', v: { '--strap': '#94602C' } }] },
+  { id: 'abyss', name: 'غواص الأعماق', tags: ['men', 'sport'], price: 120000, badge: 'جديد', tint: '#3B6A9A', tilt: 6,
+    short: '42 ملم · أوتوماتيك · 200 متر', desc: 'ساعة غواص بإطار يدور باتجاه واحد، ومؤشرات تضوي بالظلام، وسوار ستيل متين.', hint: 'اضغط على الساعة حتى يدور الإطار. جرّب الإضاءة الليلية من الزر فوك.',
+    specs: [['قطر العلبة', '42 ملم'], ['الحركة', 'أوتوماتيك'], ['مقاومة الماء', '200 متر'], ['السوار', 'ستيل']], varLabel: 'لون المينا',
+    spec: { metal: 'steel', bezel: 'diver', bezelC: '#0E1013', bezelT: '#EDEDEA', dial: { a: '#1A1E24', b: '#07090B', txt: '#EDEDEA' }, idx: 'dots', idxMetal: 'steel',
+      hands: 'sword', handC: '#E8ECF0', secC: '#E2574C', lume: true, date: true, text: ['TAL AFAR', 'DIVER'], lower: '200 M', lowerC: '#E2574C', strap: 'bracelet' },
+    variants: [{ n: 'أسود', c: '#14171C', v: { '--dialA': '#1A1E24', '--dialB': '#07090B', '--bezel': '#0E1013' } }, { n: 'أزرق', c: '#123A6B', v: { '--dialA': '#164682', '--dialB': '#06162B', '--bezel': '#0B2142' } }, { n: 'أخضر', c: '#14503A', v: { '--dialA': '#17603F', '--dialB': '#06231A', '--bezel': '#0C3526' } }] },
+  { id: 'pilot', name: 'كرونو أزرق', tags: ['men', 'sport'], price: 165000, tint: '#2A5DA8', tilt: -5,
+    short: '43 ملم · كرونوغراف · 100 متر', desc: 'كرونوغراف بثلاث عدادات ومقياس سرعة على الإطار، ومينا لامع يتغير لونه ويه الضو.', hint: 'اضغط على الساعة: تشغيل، إيقاف، تصفير، مثل الكرونوغراف الحقيقي.',
+    specs: [['قطر العلبة', '43 ملم'], ['الحركة', 'كرونوغراف كوارتز'], ['مقاومة الماء', '100 متر'], ['السوار', 'ستيل']], varLabel: 'لون المينا',
+    spec: { metal: 'steel', bezel: 'tachy', bezelC: '#101215', bezelT: '#E6E8EA', dial: { a: '#2A5DA8', b: '#0B2147', txt: '#F1F4F8' }, sunburst: true, idx: 'baton', idxMetal: 'steel',
+      hands: 'sword', handC: '#F2F4F6', secC: '#F08A3C', lume: true, chrono: true, text: ['TAL AFAR', 'CHRONOGRAPH'], strap: 'bracelet' },
+    variants: [{ n: 'أزرق', c: '#2A5DA8', v: { '--dialA': '#2A5DA8', '--dialB': '#0B2147', '--txt': '#F1F4F8', '--hand': '#F2F4F6' } }, { n: 'أسود', c: '#1E2126', v: { '--dialA': '#2B2F36', '--dialB': '#0A0B0D', '--txt': '#F1F4F8', '--hand': '#F2F4F6' } }, { n: 'باندا', c: '#EFEEE8', v: { '--dialA': '#F7F6F1', '--dialB': '#D8D7D0', '--txt': '#1A1C20', '--hand': '#1E2125' } }] },
+  { id: 'rosa', name: 'روزا الماسية', tags: ['women'], price: 135000, old: 150000, tint: '#D59B82', tilt: 7,
+    short: '34 ملم · كوارتز · سوار شبك', desc: 'علبة ذهبي وردي بإطار مرصّع ومينا صدفي يلمع ويه الضو، ويا سوار شبك ناعم.',
+    specs: [['قطر العلبة', '34 ملم'], ['الحركة', 'كوارتز'], ['مقاومة الماء', '30 متر'], ['السوار', 'شبك ستيل']], varLabel: 'لون المينا',
+    spec: { metal: 'rose', size: .86, bezel: 'diamond', dial: { a: '#FBF1EE', b: '#E6D3D0', txt: '#8C5A4B' }, pearl: true, idx: 'diamonds', idxMetal: 'rose',
+      hands: 'leaf', handC: '#B9775F', secC: '#B9775F', text: ['TAL AFAR', 'LADY'], strap: 'mesh' },
+    variants: [{ n: 'صدفي', c: '#F6E7E3', v: { '--dialA': '#FBF1EE', '--dialB': '#E6D3D0', '--txt': '#8C5A4B' } }, { n: 'وردي', c: '#E9B3BD', v: { '--dialA': '#F6CFD6', '--dialB': '#D99AA6', '--txt': '#7A3E4A' } }, { n: 'لؤلؤ أسود', c: '#2A2427', v: { '--dialA': '#3A3236', '--dialB': '#0D0B0C', '--txt': '#E9C2B4' } }] },
+  { id: 'skeleton', name: 'سكلتون أوتوماتيك', tags: ['men', 'classic'], price: 210000, badge: 'قطعة مميزة', tint: '#B08A45', tilt: -6,
+    short: '42 ملم · أوتوماتيك مكشوف · جلد', desc: 'مينا مفتوح تشوف بيه التروس والميزان وهي تشتغل، بعلبة سودة وسوار جلد.', hint: 'الميزان الصغير يتحرك ذهاب وإياب مثل قلب الساعة الأوتوماتيك.',
+    specs: [['قطر العلبة', '42 ملم'], ['الحركة', 'أوتوماتيك هيكلي'], ['مقاومة الماء', '50 متر'], ['السوار', 'جلد طبيعي']], varLabel: 'لون السوار',
+    spec: { metal: 'black', bezel: 'smooth', dial: { a: '#0B0C0F', b: '#050506', txt: '#D9B66C' }, skeleton: true, idx: 'baton', idxMetal: 'gold',
+      hands: 'dauphine', handC: '#D9B66C', secC: '#D9B66C', text: ['TAL AFAR', 'SKELETON'], strap: 'leather', strapC: '#141416' },
+    variants: [{ n: 'أسود', c: '#141416', v: { '--strap': '#141416' } }, { n: 'بني غامق', c: '#4A2C1A', v: { '--strap': '#4A2C1A' } }, { n: 'كحلي', c: '#16213A', v: { '--strap': '#16213A' } }] },
+  { id: 'gmt', name: 'جي إم تي الزمردية', tags: ['men', 'sport'], price: 175000, tint: '#1E7A55', tilt: 5,
+    short: '40 ملم · أوتوماتيك GMT · جوبيلي', desc: 'عقرب رابع يبيّن توقيت غرينتش، وإطار 24 ساعة بلونين، وسوار جوبيلي.', hint: 'العقرب أبو السهم الذهبي يبيّن توقيت غرينتش. اضغط على الساعة حتى يدور الإطار.',
+    specs: [['قطر العلبة', '40 ملم'], ['الحركة', 'أوتوماتيك GMT'], ['مقاومة الماء', '100 متر'], ['السوار', 'ستيل جوبيلي']], varLabel: 'لون الإطار',
+    spec: { metal: 'steel', bezel: 'gmt', gmtA: '#0F5A3F', gmtB: '#0A0C0E', bezelT: '#EDEDEA', dial: { a: '#167052', b: '#06261B', txt: '#EDEDEA' }, sunburst: true, idx: 'dots', idxMetal: 'steel',
+      hands: 'sword', handC: '#EDEFF2', secC: '#EDEFF2', gmt: true, gmtC: '#D9B66C', lume: true, date: true, text: ['TAL AFAR', 'GMT · MASTER'], strap: 'jubilee' },
+    variants: [{ n: 'أخضر وأسود', c: '#0F5A3F', v: { '--gmtA': '#0F5A3F', '--gmtB': '#0A0C0E', '--dialA': '#167052', '--dialB': '#06261B' } }, { n: 'أزرق وأسود', c: '#1C3F7A', v: { '--gmtA': '#1C3F7A', '--gmtB': '#0A0C0E', '--dialA': '#22262D', '--dialB': '#08090B' } }, { n: 'أحمر وأزرق', c: '#9E1F2A', v: { '--gmtA': '#9E1F2A', '--gmtB': '#1C3F7A', '--dialA': '#22262D', '--dialB': '#08090B' } }] },
+  { id: 'pulse', name: 'نبض الذكية', tags: ['smart'], price: 85000, badge: 'جديد', tint: '#FF7A45', tilt: -6,
+    short: '45 ملم · شاشة AMOLED · IP68', desc: 'ساعة ذكية بشاشة واضحة، تحسب الخطوات ونبض القلب، ويا سوار سيليكون مريح.',
+    specs: [['حجم الشاشة', '45 ملم'], ['الشاشة', 'AMOLED'], ['مقاومة الماء', 'IP68'], ['البطارية', 'لحد 5 أيام']], varLabel: 'لون السوار',
+    spec: { metal: 'black', smart: 'square', accent: '#FF7A45', strapC: '#17181B' },
+    variants: [{ n: 'أسود', c: '#17181B', v: { '--strap': '#17181B', '--accent': '#FF7A45' } }, { n: 'برتقالي', c: '#E8642F', v: { '--strap': '#E8642F', '--accent': '#FFB08A' } }, { n: 'ثلجي', c: '#B9CCDD', v: { '--strap': '#B9CCDD', '--accent': '#7FC4FF' } }, { n: 'وردي', c: '#E7A6B6', v: { '--strap': '#E7A6B6', '--accent': '#FF8FB1' } }] },
+  { id: 'orbit', name: 'أوربت الدائرية', tags: ['smart', 'sport'], price: 95000, old: 110000, tint: '#4BE3A6', tilt: 6,
+    short: '46 ملم · شاشة دائرية · 5ATM', desc: 'ساعة ذكية دائرية بشكل كلاسيكي، شاشتها تبيّن الثواني والخطوات والبطارية.',
+    specs: [['قطر العلبة', '46 ملم'], ['الشاشة', 'AMOLED دائرية'], ['مقاومة الماء', '5ATM'], ['السوار', 'سيليكون']], varLabel: 'لون السوار',
+    spec: { metal: 'steel', smart: 'round', bezel: 'smooth', accent: '#4BE3A6', strap: 'rubber', strapC: '#2A2E35' },
+    variants: [{ n: 'رمادي', c: '#2A2E35', v: { '--strap': '#2A2E35', '--accent': '#4BE3A6' } }, { n: 'زيتوني', c: '#47553A', v: { '--strap': '#47553A', '--accent': '#C5E86C' } }, { n: 'كحلي', c: '#1B2A44', v: { '--strap': '#1B2A44', '--accent': '#6CB6FF' } }] },
+  { id: 'luna', name: 'لونا الفضية', tags: ['women', 'classic'], price: 99000, tint: '#7D8FB8', tilt: -7,
+    short: '30 ملم · كوارتز · سوار جلد', desc: 'ساعة ناعمة بمينا أبيض وأرقام رومانية وعقارب زرقاء، ويا سوار جلد.',
+    specs: [['قطر العلبة', '30 ملم'], ['الحركة', 'كوارتز'], ['مقاومة الماء', '30 متر'], ['السوار', 'جلد طبيعي']], varLabel: 'لون السوار',
+    spec: { metal: 'steel', size: .82, bezel: 'smooth', dial: { a: '#FCFCF9', b: '#E6E5DE', txt: '#2E3238' }, idx: 'roman', idxC: '#1E2125',
+      hands: 'leaf', handC: '#2E57B8', secC: '#2E57B8', text: ['TAL AFAR', 'PETITE'], strap: 'leather', strapC: '#7D1C2A' },
+    variants: [{ n: 'خمري', c: '#7D1C2A', v: { '--strap': '#7D1C2A' } }, { n: 'أبيض', c: '#E9E3D8', v: { '--strap': '#E9E3D8' } }, { n: 'أسود', c: '#141416', v: { '--strap': '#141416' } }] }
+];
+PRODUCTS.forEach(p => { if (p.old && !p.badge) p.badge = `خصم ${Math.round((1 - p.price / p.old) * 100)}%`; });
+
+/* ---------- live watch engine ---------- */
+const watches = [];
+const POSE = { h: 305, m: 60, s: 210 }; // the 10:10 display pose
+const cw = (a, b) => ((b - a) % 360 + 360) % 360;
+const ease4 = k => 1 - Math.pow(1 - k, 4);
+const rot = (list, a) => { const v = 'rotate(' + a.toFixed(2) + ')'; for (let i = 0; i < list.length; i++) list[i].setAttribute('transform', v); };
+const setBezel = w => { if (w.bezel) w.bezel.setAttribute('transform', `rotate(${(w.bezelAngle + w.bezelScroll).toFixed(2)})`); };
+
+const io = new IntersectionObserver(entries => {
+  for (const e of entries) {
+    const w = e.target._w; if (!w) continue;
+    w.visible = e.isIntersecting;
+    try { if (w.visible && !RM) w.svg.unpauseAnimations(); else w.svg.pauseAnimations(); } catch (_) {}
+    if (e.isIntersecting && e.intersectionRatio >= .3 && w.phase === 'pose') startSettle(w, w.settleDelay == null ? 120 : w.settleDelay);
+  }
+}, { threshold: [0, .3] });
+
+function mountWatch(el, spec, opts = {}) {
+  el.innerHTML = buildWatch(spec);
+  const svg = el.querySelector('svg'), q = s => svg.querySelectorAll(s);
+  const w = { el, svg, spec, visible: false, phase: (opts.live || RM) ? 'live' : 'pose', settleDelay: opts.delay, bezelAngle: 0, bezelScroll: 0, lastSec: -1,
+    hr: q('.h-hour'), mn: q('.h-min'), sec: q('.h-sec'), gm: q('.h-gmt'), subS: q('.sub-s'), subM: q('.sub-m'),
+    bezel: svg.querySelector('.bezel'), sheen: svg.querySelector('.sheen'), glare: svg.querySelector('.glare'),
+    chrono: !!spec.chrono, chr: { state: 'idle' }, smart: !!spec.smart };
+  if (w.smart) {
+    w.tTime = svg.querySelector('.s-time'); w.tDate = svg.querySelector('.s-date'); w.tAmpm = svg.querySelector('.s-ampm');
+    w.tBpm = svg.querySelector('.s-bpm'); w.dots = [...q('.s-dots circle')]; w.rings = [...q('.ring')];
+    if (w.phase === 'live') fillRings(w);
+  }
+  svg.addEventListener('animationend', e => { if (e.animationName === 'sweepA') svg.classList.remove('swept'); });
+  el._w = w; watches.push(w); io.observe(el);
+  return w;
+}
+function unmountWatch(w) { io.unobserve(w.el); const i = watches.indexOf(w); if (i >= 0) watches.splice(i, 1); w.el.innerHTML = ''; w.el._w = null; }
+function fillRings(w) { (w.rings || []).forEach(r => { r.style.strokeDashoffset = (r.dataset.c * (1 - r.dataset.p)).toFixed(2) + 'px'; }); }
+function startSettle(w, delay = 0) {
+  if (RM) { w.phase = 'live'; fillRings(w); return; }
+  w.phase = 'settle'; w.t0 = performance.now() + delay; w.dur = 1900;
+  setTimeout(() => fillRings(w), delay + 150);
+  setTimeout(() => w.svg.classList.add('swept'), delay + 950);
+}
+function chronoAngle(w, t) {
+  const c = w.chr;
+  if (c.state === 'run') return ((t - c.start) / 1000 * 6) % 360;
+  if (c.state === 'stop') return c.at;
+  if (c.state === 'fly') { const k = Math.min(1, (t - c.t0) / 450); if (k >= 1) c.state = 'idle'; return c.from * (1 - (1 - Math.pow(1 - k, 3))); }
+  return 0;
+}
+function smartTick(w, n) {
+  if (n.s === w.lastSec) return;
+  w.lastSec = n.s;
+  w.tTime.textContent = `${n.h % 12 || 12}:${pad(n.m)}`;
+  if (w.tDate) w.tDate.textContent = `${DAYS[n.wd]} ${n.day}`;
+  if (w.tAmpm && w.spec.smart === 'square') w.tAmpm.textContent = n.h < 12 ? 'صباحاً' : 'مساءً';
+  if (w.dots.length) w.dots.forEach((d, i) => { d.style.fill = i === n.s ? '#FFFFFF' : i < n.s ? 'var(--accent)' : ''; });
+  if (w.tBpm && n.s % 3 === 0) w.tBpm.textContent = 68 + Math.round(Math.random() * 12);
+}
+
+const tzTime = $('#tzTime'), tzAp = $('#tzAp'), tzDate = $('#tzDate'), footTime = $('#footTime');
+function readouts(n) {
+  const h12 = n.h % 12 || 12, ap = n.h < 12 ? 'صباحاً' : 'مساءً';
+  tzTime.textContent = `${pad(h12)}:${pad(n.m)}:${pad(n.s)}`;
+  tzAp.textContent = ap;
+  tzDate.textContent = `${DAYS[n.wd]} ${n.day} ${MONTHS[n.mon]}`;
+  footTime.textContent = `${pad(h12)}:${pad(n.m)} ${ap}`;
+}
+
+let lastSecond = -1;
+function tick(t) {
+  const n = now();
+  const S = (n.s + n.ms / 1000) * 6, M = (n.m + n.s / 60) * 6, H = (n.h % 12 + n.m / 60 + n.s / 3600) * 30, GM = (n.uh + n.um / 60) * 15;
+  if (n.s !== lastSecond) { lastSecond = n.s; readouts(n); }
+  for (const w of watches) {
+    if (!w.visible) continue;
+    if (w.smart) { smartTick(w, n); continue; }
+    let h = H, m = M, s = S, g = GM;
+    if (w.phase === 'pose') { h = POSE.h; m = POSE.m; s = POSE.s; g = POSE.h; }
+    else if (w.phase === 'settle') {
+      const k = Math.max(0, Math.min(1, (t - w.t0) / w.dur)), e = ease4(k);
+      h = POSE.h + cw(POSE.h, H) * e; m = POSE.m + (cw(POSE.m, M) + 360) * e; s = POSE.s + (cw(POSE.s, S) + 360) * e; g = POSE.h + cw(POSE.h, GM) * e;
+      if (k >= 1) w.phase = 'live';
+    }
+    rot(w.hr, h); rot(w.mn, m);
+    if (w.chrono) {
+      rot(w.sec, chronoAngle(w, t));
+      rot(w.subS, w.phase === 'pose' ? 0 : s);
+      const c = w.chr, el = c.state === 'run' ? t - c.start : c.state === 'stop' ? c.stopT - c.start : 0;
+      rot(w.subM, el / 60000 * 12);
+    } else rot(w.sec, s);
+    if (w.gm.length) rot(w.gm, g);
+  }
+  dustFrame();
+  cursorFrame();
+  requestAnimationFrame(tick);
+}
+
+/* ---------- hero ---------- */
+(function brandTicks() {
+  let d = '';
+  for (let i = 0; i < 12; i++) d += ln(i * 30, 12.6, i % 3 === 0 ? 9.6 : 11);
+  $('#brandTicks').innerHTML = `<path d="${d}"/>`;
+})();
+const heroW = mountWatch($('#heroWatch'), HERO, { delay: ANIM ? 700 : 0 });
+{ const n = now(); $('.orbit.sec').style.animationDelay = `-${(n.s + n.ms / 1000).toFixed(2)}s`; }
+
+$('#marquee').innerHTML = Array(2).fill(['ساعات رجالية', 'ساعات نسائية', 'كلاسيك', 'رياضية', 'ساعات ذكية', 'هدايا', 'أوتوماتيك', 'كرونوغراف'])
+  .flat().map(t => `<span class="marquee-item"><span class="mq-word">${t}</span><span class="mq-gem"></span></span>`).join('');
+
+const dust = { on: false, parts: [], ctx: null, W: 0, H: 0 };
+(function dustInit() {
+  const c = $('#dust');
+  if (RM || !c.getContext) return;
+  dust.ctx = c.getContext('2d');
+  const size = () => {
+    const dpr = Math.min(2, devicePixelRatio || 1);
+    dust.W = c.clientWidth; dust.H = c.clientHeight;
+    c.width = dust.W * dpr; c.height = dust.H * dpr; dust.ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  };
+  size(); addEventListener('resize', size);
+  const N = innerWidth < 700 ? 34 : 72;
+  for (let i = 0; i < N; i++) dust.parts.push({ x: Math.random() * dust.W, y: Math.random() * dust.H, r: Math.random() * 1.7 + .3,
+    vx: (Math.random() - .5) * .14, vy: -(Math.random() * .26 + .05), a: Math.random() * 6.28, s: Math.random() * .02 + .006 });
+  new IntersectionObserver(([e]) => { dust.on = e.isIntersecting; }).observe($('.hero'));
+})();
+function dustFrame() {
+  if (!dust.on || !dust.ctx) return;
+  const { ctx, W, H } = dust;
+  ctx.clearRect(0, 0, W, H);
+  const col = root.classList.contains('lume-mode') ? '185,251,208' : '234,211,162';
+  for (const p of dust.parts) {
+    p.x += p.vx; p.y += p.vy; p.a += p.s;
+    if (p.y < -10) { p.y = H + 10; p.x = Math.random() * W; }
+    ctx.fillStyle = `rgba(${col},${(.18 + .32 * Math.sin(p.a) ** 2).toFixed(3)})`;
+    ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, 6.283); ctx.fill();
+  }
+}
+
+/* ---------- products ---------- */
+const grid = $('#grid');
+const ARROW = '<svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+const HEART_ICON = '<svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path d="M12 20.3s-7.6-4.6-9.4-9.3C1.3 7.6 3.5 4.4 7 4.4c2 0 3.6 1.1 5 3 1.4-1.9 3-3 5-3 3.5 0 5.7 3.2 4.4 6.6-1.8 4.7-9.4 9.3-9.4 9.3z" stroke-width="1.7" stroke-linejoin="round"/></svg>';
+grid.innerHTML = PRODUCTS.map((p, i) => `
+  <article class="card" data-id="${p.id}" data-tags="${p.tags.join(' ')}" style="--tint:${p.tint};--tilt:${p.tilt}deg;--fd:${(-i * .73).toFixed(2)}s">
+    <div class="card-tilt">
+      <div class="card-spot"></div>
+      <div class="stage"><div class="stage-floor"></div><div class="watch"><div class="float"></div></div>${p.badge ? `<span class="badge">${p.badge}</span>` : ''}</div>
+      <div class="info">
+        <p class="cat">${p.tags.map(t => TAGS[t]).join(' · ')}</p>
+        <h3 class="name">${p.name}</h3>
+        <p class="spec">${p.short}</p>
+        <div class="buy"><p class="price"><b>${fmt(p.price)}</b><span class="cur">د.ع</span>${p.old ? `<s>${fmt(p.old)}</s>` : ''}</p><span class="more">التفاصيل ${ARROW}</span></div>
+      </div>
+      <button class="card-hit" type="button" aria-label="تفاصيل ${p.name}"></button>
+      <button class="fav" type="button" aria-pressed="false" aria-label="أضف ${p.name} للمفضلة">${HEART_ICON}</button>
+    </div>
+  </article>`).join('');
+const cards = $$('.card', grid);
+cards.forEach((c, i) => { c._p = PRODUCTS[i]; c._vi = 0; c._w = mountWatch(c.querySelector('.float'), PRODUCTS[i].spec); });
+
+let favs = new Set();
+try { favs = new Set(JSON.parse(localStorage.getItem('saat-talafar-favs') || '[]')); } catch (_) {}
+const saveFavs = () => { try { localStorage.setItem('saat-talafar-favs', JSON.stringify([...favs])); } catch (_) {} };
+function burst(btn) {
+  if (!ANIM) return;
+  for (let i = 0; i < 10; i++) {
+    const s = document.createElement('span'); s.className = 'spark'; btn.appendChild(s);
+    const a = i / 10 * Math.PI * 2, d = 26 + Math.random() * 14;
+    G.fromTo(s, { x: 0, y: 0, scale: 1, opacity: 1 }, { x: Math.cos(a) * d, y: Math.sin(a) * d, scale: 0, opacity: 0, duration: .7, ease: 'power3.out', onComplete: () => s.remove() });
+  }
+  G.fromTo(btn.querySelector('svg'), { scale: .5 }, { scale: 1, duration: .9, ease: 'elastic.out(1,.35)' });
+}
+
+cards.forEach(card => {
+  const w = card._w, p = card._p, tiltEl = card.querySelector('.card-tilt'), fav = card.querySelector('.fav');
+  if (favs.has(p.id)) fav.setAttribute('aria-pressed', 'true');
+  fav.addEventListener('click', e => {
+    e.stopPropagation();
+    const on = !favs.has(p.id);
+    on ? favs.add(p.id) : favs.delete(p.id);
+    fav.setAttribute('aria-pressed', String(on)); saveFavs();
+    if (on) burst(fav);
+    toast(on ? `انضافت «${p.name}» للمفضلة.` : `انشالت «${p.name}» من المفضلة.`);
+  });
+  card.querySelector('.card-hit').addEventListener('click', () => openSheet(card));
+  const rotBezel = to => { if (!w.bezel || !/diver|gmt/.test(p.spec.bezel || '') || !ANIM) return; G.to(w, { bezelAngle: to, duration: .8, ease: 'steps(10)', overwrite: true, onUpdate: () => setBezel(w) }); };
+  card.addEventListener('pointerenter', e => {
+    if (e.pointerType !== 'mouse') return;
+    if (w.chrono) w.chr = { state: 'run', start: performance.now() };
+    rotBezel(p.spec.bezel === 'gmt' ? -45 : -30);
+  });
+  card.addEventListener('pointermove', e => {
+    if (e.pointerType !== 'mouse' || RM) return;
+    const r = tiltEl.getBoundingClientRect(), x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
+    card.classList.add('tilting');
+    tiltEl.style.setProperty('--rx', ((.5 - y) * 12).toFixed(2) + 'deg');
+    tiltEl.style.setProperty('--ry', ((x - .5) * 14).toFixed(2) + 'deg');
+    tiltEl.style.setProperty('--mx', (x * 100).toFixed(1) + '%');
+    tiltEl.style.setProperty('--my', (y * 100).toFixed(1) + '%');
+    if (w.sheen) w.sheen.setAttribute('transform', `rotate(${(-35 + (x - .5) * 60).toFixed(1)})`);
+    if (w.glare) w.glare.setAttribute('transform', `translate(${((.5 - x) * 26).toFixed(1)} ${((.5 - y) * 26).toFixed(1)})`);
+  });
+  card.addEventListener('pointerleave', e => {
+    if (e.pointerType !== 'mouse') return;
+    card.classList.remove('tilting');
+    tiltEl.style.setProperty('--rx', '0deg'); tiltEl.style.setProperty('--ry', '0deg');
+    if (w.sheen) w.sheen.setAttribute('transform', 'rotate(-35)');
+    if (w.glare) w.glare.removeAttribute('transform');
+    if (w.chrono && w.chr.state === 'run') { const t = performance.now(); w.chr = { state: 'fly', from: ((t - w.chr.start) / 1000 * 6) % 360, t0: t }; }
+    rotBezel(0);
+  });
+});
+
+// Touch screens have no hover, so the cards lean with the scroll instead.
+if (!FINE && !RM) {
+  let queued = false;
+  const lean = () => {
+    queued = false;
+    const vh = innerHeight;
+    for (const c of cards) {
+      if (c.classList.contains('is-out')) continue;
+      const r = c.getBoundingClientRect();
+      if (r.bottom < -50 || r.top > vh + 50) continue;
+      const p = Math.max(-1, Math.min(1, ((r.top + r.height / 2) - vh / 2) / (vh / 2)));
+      c.querySelector('.card-tilt').style.setProperty('--rx', (p * -9).toFixed(2) + 'deg');
+      c.classList.toggle('in-focus', Math.abs(p) < .4);
+      if (c._w.sheen) c._w.sheen.setAttribute('transform', `rotate(${(-35 + p * 40).toFixed(1)})`);
+    }
+  };
+  addEventListener('scroll', () => { if (!queued) { queued = true; requestAnimationFrame(lean); } }, { passive: true });
+  lean();
+}
+
+/* ---------- filters ---------- */
+const filtersEl = $('#filters');
+filtersEl.innerHTML = '<span class="chip-ink" aria-hidden="true"></span>' + FILTERS.map(([k, l]) => {
+  const n = k === 'all' ? PRODUCTS.length : PRODUCTS.filter(p => p.tags.includes(k)).length;
+  return `<button class="chip" type="button" data-f="${k}" aria-pressed="${k === 'all'}">${l}<span class="n">${n}</span></button>`;
+}).join('');
+const ink = $('.chip-ink'), chips = $$('.chip', filtersEl);
+function moveInk(btn, animate) {
+  const x = btn.offsetLeft, w = btn.offsetWidth;
+  if (ANIM && animate) G.to(ink, { x, width: w, duration: .65, ease: 'expo.out' });
+  else if (G) G.set(ink, { x, width: w });
+  else { ink.style.transform = `translateX(${x}px)`; ink.style.width = w + 'px'; }
+}
+function setFilter(btn) {
+  const tag = btn.dataset.f;
+  chips.forEach(c => c.setAttribute('aria-pressed', String(c === btn)));
+  moveInk(btn, true);
+  btn.scrollIntoView({ block: 'nearest', inline: 'nearest', behavior: ANIM ? 'smooth' : 'auto' });
+  const state = ANIM && FL ? FL.getState(cards) : null;
+  let shown = 0;
+  cards.forEach(c => { const on = tag === 'all' || c.dataset.tags.split(' ').includes(tag); c.classList.toggle('is-out', !on); if (on) shown++; });
+  $('#gridEmpty').hidden = shown > 0;
+  if (state) {
+    FL.from(state, { duration: .75, ease: 'power3.inOut', absolute: true, stagger: .025,
+      onEnter: els => G.fromTo(els, { opacity: 0, scale: .86, y: 34 }, { opacity: 1, scale: 1, y: 0, duration: .75, ease: 'back.out(1.5)', stagger: .06, clearProps: 'transform' }),
+      onLeave: els => G.to(els, { opacity: 0, scale: .86, duration: .35, ease: 'power2.in' }),
+      onComplete: () => ST && ST.refresh() });
+  } else if (ST) ST.refresh();
+}
+chips.forEach(c => c.addEventListener('click', () => setFilter(c)));
+const settleInk = () => moveInk(chips.find(c => c.getAttribute('aria-pressed') === 'true'), false);
+settleInk();
+addEventListener('resize', settleInk);
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(settleInk);
+
+/* ---------- product sheet ---------- */
+const sheet = $('#sheet'), panel = $('.sheet-panel'), backdrop = $('.sheet-backdrop'), sWatch = $('#sheetWatch'), flyer = $('#flyer'), stageEl = $('#sheetStage');
+let open = null, sheetW = null, busy = false;
+
+function fillSheet(p, card) {
+  $('#sheetCat').textContent = p.tags.map(t => TAGS[t]).join(' · ');
+  $('#sheetTitle').textContent = p.name;
+  $('#sheetDesc').textContent = p.desc;
+  $('#sheetSpecs').innerHTML = p.specs.map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join('');
+  $('#sheetVarLabel').textContent = p.varLabel || 'اللون';
+  $('#sheetVariants').innerHTML = p.variants.map((v, i) => `<button type="button" class="var" aria-pressed="${i === card._vi}" data-i="${i}" style="--c:${v.c}"><span class="sw"></span>${v.n}</button>`).join('');
+  $('#sheetOld').textContent = p.old ? fmt(p.old) : '';
+  const hint = $('#sheetHint'); hint.textContent = p.hint || ''; hint.hidden = !p.hint;
+  stageEl.style.setProperty('--tint', p.tint);
+  stageEl.classList.toggle('interactive', !!(p.spec.chrono || /diver|gmt/.test(p.spec.bezel || '')));
+}
+const centerOf = r => [r.left + r.width / 2, r.top + r.height / 2];
+function flight(fromRect, toRect, svgNode, fromRot, toRot, dur, ease) {
+  flyer.innerHTML = ''; flyer.appendChild(svgNode);
+  Object.assign(flyer.style, { left: toRect.left + 'px', top: toRect.top + 'px', width: toRect.width + 'px', height: toRect.height + 'px' });
+  flyer.hidden = false;
+  const [fx1, fy1] = centerOf(fromRect), [tx, ty] = centerOf(toRect);
+  return G.fromTo(flyer, { x: fx1 - tx, y: fy1 - ty, scale: fromRect.height / toRect.height, rotation: fromRot }, { x: 0, y: 0, scale: 1, rotation: toRot, duration: dur, ease });
+}
+
+function openSheet(card) {
+  if (busy || open) return;
+  busy = true;
+  const p = card._p;
+  open = { p, card, v: p.variants[card._vi] };
+  fillSheet(p, card);
+  sheet.hidden = false;
+  root.classList.add('locked');
+  if (sheetW) unmountWatch(sheetW);
+  sheetW = mountWatch(sWatch, p.spec, { live: true });
+  sheetW.svg.setAttribute('style', card._w.svg.getAttribute('style'));
+  const priceEl = $('#sheetPrice');
+  const done = () => { busy = false; $('.sheet-x').focus({ preventScroll: true }); };
+  if (!ANIM) { priceEl.textContent = fmt(p.price); done(); return; }
+  const src = card.querySelector('.float svg');
+  const sr = src.getBoundingClientRect(), dr = sWatch.getBoundingClientRect();
+  const mobile = innerWidth <= 760, fromRot = card.matches(':hover') ? 0 : p.tilt;
+  const node = src.cloneNode(true);
+  sWatch.style.visibility = 'hidden'; src.style.visibility = 'hidden';
+  const counter = { v: 0 }; priceEl.textContent = '0';
+  G.timeline({ onComplete: () => { sWatch.style.visibility = ''; flyer.hidden = true; flyer.innerHTML = ''; src.style.visibility = ''; done(); } })
+    .fromTo(backdrop, { opacity: 0 }, { opacity: 1, duration: .5, ease: 'power2.out' }, 0)
+    .fromTo(panel, mobile ? { yPercent: 100 } : { y: 50, opacity: 0, scale: .96 }, mobile ? { yPercent: 0, duration: .8, ease: 'expo.out' } : { y: 0, opacity: 1, scale: 1, duration: .8, ease: 'expo.out' }, 0)
+    .add(flight(sr, dr, node, fromRot, 0, 1, 'expo.inOut'), 0)
+    .from($$('.sheet-info > *'), { y: 24, opacity: 0, duration: .7, stagger: .05, ease: 'power3.out' }, .3)
+    .from($$('.var', sheet), { scale: .6, opacity: 0, duration: .6, stagger: .05, ease: 'back.out(2)' }, .5)
+    .to(counter, { v: p.price, duration: 1.2, ease: 'power3.out', onUpdate: () => { priceEl.textContent = fmt(Math.round(counter.v / 250) * 250); } }, .4);
+}
+
+function closeSheet() {
+  if (!open || busy) return;
+  busy = true;
+  const { card, p } = open;
+  const src = card.querySelector('.float svg');
+  const finish = () => {
+    sheet.hidden = true; root.classList.remove('locked');
+    if (sheetW) { unmountWatch(sheetW); sheetW = null; }
+    flyer.hidden = true; flyer.innerHTML = ''; src.style.visibility = ''; sWatch.style.visibility = '';
+    if (G) G.set([panel, backdrop], { clearProps: 'all' });
+    open = null; busy = false;
+    card.querySelector('.card-hit').focus({ preventScroll: true });
+  };
+  if (!ANIM) { finish(); return; }
+  const sr = src.getBoundingClientRect(), dr = sWatch.getBoundingClientRect();
+  const mobile = innerWidth <= 760;
+  const node = sheetW.svg.cloneNode(true);
+  sWatch.style.visibility = 'hidden'; src.style.visibility = 'hidden';
+  flyer.innerHTML = ''; flyer.appendChild(node);
+  Object.assign(flyer.style, { left: sr.left + 'px', top: sr.top + 'px', width: sr.width + 'px', height: sr.height + 'px' });
+  flyer.hidden = false;
+  const [ax, ay] = centerOf(dr), [bx, by] = centerOf(sr);
+  G.timeline({ onComplete: finish })
+    .fromTo(flyer, { x: ax - bx, y: ay - by, scale: dr.height / sr.height, rotation: 0 }, { x: 0, y: 0, scale: 1, rotation: card.matches(':hover') ? 0 : p.tilt, duration: .85, ease: 'expo.inOut' }, 0)
+    .to(panel, mobile ? { yPercent: 100, duration: .6, ease: 'expo.in' } : { y: 40, opacity: 0, scale: .97, duration: .45, ease: 'power2.in' }, 0)
+    .to(backdrop, { opacity: 0, duration: .6, ease: 'power2.inOut' }, .12);
+}
+$$('[data-close]', sheet).forEach(b => b.addEventListener('click', closeSheet));
+addEventListener('keydown', e => { if (e.key === 'Escape' && open) closeSheet(); });
+
+$('#sheetVariants').addEventListener('click', e => {
+  const b = e.target.closest('.var');
+  if (!b || !open) return;
+  const i = +b.dataset.i, v = open.p.variants[i];
+  open.v = v; open.card._vi = i;
+  $$('.var', sheet).forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+  for (const svg of [sheetW.svg, open.card._w.svg]) for (const [k, val] of Object.entries(v.v)) svg.style.setProperty(k, val);
+  if (ANIM) G.fromTo(sWatch, { rotation: -6, scale: .95 }, { rotation: 0, scale: 1, duration: 1.1, ease: 'elastic.out(1,.45)' });
+});
+
+stageEl.addEventListener('click', () => {
+  const w = sheetW;
+  if (!w) return;
+  const t = performance.now();
+  if (w.chrono) {
+    const c = w.chr;
+    if (c.state === 'idle' || c.state === 'fly') w.chr = { state: 'run', start: t };
+    else if (c.state === 'run') w.chr = { state: 'stop', at: ((t - c.start) / 1000 * 6) % 360, start: c.start, stopT: t };
+    else w.chr = { state: 'fly', from: c.at, t0: t };
+  } else if (w.bezel && /diver|gmt/.test(w.spec.bezel || '')) {
+    const step = w.spec.bezel === 'gmt' ? -15 : -6;
+    if (ANIM) G.to(w, { bezelAngle: w.bezelAngle + step * 5, duration: .6, ease: 'steps(5)', onUpdate: () => setBezel(w) });
+    else { w.bezelAngle += step * 5; setBezel(w); }
+  }
+});
+
+function copyText(text) {
+  try { if (navigator.clipboard && navigator.clipboard.writeText) return navigator.clipboard.writeText(text).then(() => true, () => false); } catch (_) {}
+  return Promise.resolve(false);
+}
+$('#sheetOrder').addEventListener('click', () => {
+  if (!open) return;
+  const { p, v } = open;
+  const msg = `مرحبا، أريد أطلب من ساعات تلعفر:\n${p.name} — ${p.varLabel || 'اللون'}: ${v.n}\nالسعر: ${fmt(p.price)} د.ع`;
+  copyText(msg).then(ok => ok
+    ? toast('نسخنا رسالة الطلب. الصقها برسالة خاصة لحساب المحل على تيك توك.')
+    : toast('انسخ هالرسالة وابعثها لحساب المحل على تيك توك:', msg));
+});
+
+let toastTimer;
+function toast(msg, extra) {
+  const el = $('#toast'), ex = $('.t-extra', el);
+  $('.t-msg', el).textContent = msg;
+  ex.textContent = extra || ''; ex.hidden = !extra;
+  el.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => el.classList.remove('show'), extra ? 9000 : 3800);
+}
+
+/* ---------- lume (night) mode ---------- */
+let lumeHinted = false;
+$('#lumeBtn').addEventListener('click', e => {
+  const btn = e.currentTarget, on = !root.classList.contains('lume-mode');
+  const apply = () => { root.classList.toggle('lume-mode', on); btn.setAttribute('aria-pressed', String(on)); };
+  if (ANIM) G.timeline().to('#veil', { opacity: .9, duration: .28, ease: 'power2.in' }).add(apply).to('#veil', { opacity: 0, duration: 1, ease: 'power2.out' });
+  else apply();
+  if (on && !lumeHinted) { lumeHinted = true; toast('الإضاءة الليلية: شوف العقارب والمؤشرات كيف تضوي بالظلام مثل الساعات الحقيقية.'); }
+});
+
+/* ---------- header ---------- */
+const topEl = $('#top'), progHand = $('#progHand');
+let hq = false;
+const onScroll = () => {
+  hq = false;
+  topEl.classList.toggle('scrolled', scrollY > 16);
+  const max = document.documentElement.scrollHeight - innerHeight;
+  progHand.setAttribute('transform', `rotate(${(max > 0 ? scrollY / max * 360 : 0).toFixed(1)})`);
+};
+addEventListener('scroll', () => { if (!hq) { hq = true; requestAnimationFrame(onScroll); } }, { passive: true });
+onScroll();
+
+/* ---------- cursor + magnetic buttons ---------- */
+const cur = $('.cursor'), dot = $('.cursor-dot');
+const cursorPos = { x: -100, y: -100, tx: -100, ty: -100 };
+if (FINE && !RM) {
+  addEventListener('pointermove', e => {
+    if (e.pointerType !== 'mouse') return;
+    cursorPos.tx = e.clientX; cursorPos.ty = e.clientY;
+    cur.classList.add('on'); dot.classList.add('on');
+    dot.style.transform = `translate(${e.clientX}px,${e.clientY}px)`;
+    cur.classList.toggle('big', !!(e.target.closest && e.target.closest('a,button,.card')));
+  }, { passive: true });
+  document.addEventListener('pointerleave', () => { cur.classList.remove('on'); dot.classList.remove('on'); });
+}
+function cursorFrame() {
+  if (!FINE || RM) return;
+  cursorPos.x += (cursorPos.tx - cursorPos.x) * .2; cursorPos.y += (cursorPos.ty - cursorPos.y) * .2;
+  cur.style.transform = `translate(${cursorPos.x.toFixed(1)}px,${cursorPos.y.toFixed(1)}px)`;
+}
+if (FINE && ANIM) $$('.magnetic').forEach(el => {
+  el.addEventListener('pointermove', e => {
+    const r = el.getBoundingClientRect();
+    G.to(el, { x: (e.clientX - r.left - r.width / 2) * .22, y: (e.clientY - r.top - r.height / 2) * .32, duration: .4, ease: 'power3.out' });
+  });
+  el.addEventListener('pointerleave', () => G.to(el, { x: 0, y: 0, duration: 1, ease: 'elastic.out(1,.35)' }));
+});
+
+/* ---------- choreography ---------- */
+if (ANIM) {
+  heroW.bezelAngle = -240; setBezel(heroW);
+  G.to(heroW, { bezelAngle: 0, duration: 2.8, ease: 'expo.out', delay: .35, onUpdate: () => setBezel(heroW) });
+  G.timeline({ defaults: { ease: 'expo.out' } })
+    .from('.top-in > *', { y: -26, opacity: 0, duration: 1.1, stagger: .08 })
+    .from('.hero .eyebrow', { x: 30, opacity: 0, duration: 1.1 }, .1)
+    .from('.hero-title .w', { y: 70, opacity: 0, filter: 'blur(16px)', duration: 1.5, stagger: .16, clearProps: 'filter' }, .15)
+    .from(['.hero-sub', '.hero .ctas', '.readout'], { y: 28, opacity: 0, duration: 1.1, stagger: .1 }, .5)
+    .from('.halo', { scale: .55, opacity: 0, duration: 2 }, .1)
+    .from('.orbit', { scale: .8, opacity: 0, duration: 1.8, stagger: .14 }, .25)
+    .from('#heroWatch', { y: 80, scale: .8, rotation: -26, opacity: 0, duration: 2, ease: 'expo.out' }, .2)
+    .from('.marquee', { opacity: 0, duration: 1.2 }, .9);
+
+  if (FINE) {
+    const hv = $('.hero-visual'), tg = $('#heroTilt');
+    G.set(tg, { transformPerspective: 1000 });
+    const rx = G.quickTo(tg, 'rotationX', { duration: .9, ease: 'power3.out' }), ry = G.quickTo(tg, 'rotationY', { duration: .9, ease: 'power3.out' });
+    hv.addEventListener('pointermove', e => {
+      const r = hv.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+      rx(-y * 16); ry(x * 18);
+      if (heroW.sheen) heroW.sheen.setAttribute('transform', `rotate(${(-35 + x * 70).toFixed(1)})`);
+      if (heroW.glare) heroW.glare.setAttribute('transform', `translate(${(-x * 30).toFixed(1)} ${(-y * 30).toFixed(1)})`);
+    });
+    hv.addEventListener('pointerleave', () => { rx(0); ry(0); });
+  }
+
+  if (ST) {
+    G.to('.hv-scroll', { yPercent: 14, rotation: 9, scale: .9, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: .7 } });
+    G.to('.hero-copy', { yPercent: -10, opacity: .35, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: .7 } });
+    ST.create({ trigger: '.hero', start: 'top top', end: 'bottom top', onUpdate: self => { heroW.bezelScroll = -self.progress * 160; setBezel(heroW); } });
+
+    $$('.split').forEach(el => {
+      el.innerHTML = el.textContent.trim().split(/\s+/).map(w => `<span class="wd">${w}</span>`).join(' ');
+      G.from(el.querySelectorAll('.wd'), { y: 46, opacity: 0, filter: 'blur(10px)', duration: 1.2, stagger: .09, ease: 'expo.out', clearProps: 'filter', scrollTrigger: { trigger: el, start: 'top 86%' } });
+    });
+
+    const vh = innerHeight;
+    cards.forEach((c, i) => {
+      if (c.getBoundingClientRect().top < vh * .95) G.from(c, { y: 70, opacity: 0, duration: 1.3, delay: .5 + i * .09, ease: 'expo.out', clearProps: 'transform' });
+      else { G.set(c, { opacity: 0, y: 90, rotationX: -12, transformPerspective: 900 }); c._pending = true; }
+    });
+    ST.batch(cards.filter(c => c._pending), { start: 'top 90%', once: true,
+      onEnter: batch => G.to(batch, { opacity: 1, y: 0, rotationX: 0, duration: 1.3, stagger: .11, ease: 'expo.out', clearProps: 'transform' }) });
+    G.from('.filters', { y: 30, opacity: 0, duration: 1, ease: 'expo.out', scrollTrigger: { trigger: '.filters', start: 'top 92%' } });
+    G.from('.sample-note', { y: 20, opacity: 0, duration: 1, ease: 'expo.out', scrollTrigger: { trigger: '.sample-note', start: 'top 92%' } });
+
+    G.from('.step', { y: 60, opacity: 0, duration: 1.2, stagger: .14, ease: 'expo.out', scrollTrigger: { trigger: '.steps', start: 'top 82%' } });
+    G.from('.step .num', { scale: .4, opacity: 0, duration: 1.2, stagger: .14, ease: 'back.out(2)', scrollTrigger: { trigger: '.steps', start: 'top 82%' } });
+    G.to('.steps-line line', { strokeDashoffset: 0, ease: 'none', scrollTrigger: { trigger: '.steps', start: 'top 78%', end: 'bottom 62%', scrub: .6 } });
+    G.from('.tt-card', { y: 70, opacity: 0, scale: .96, duration: 1.3, ease: 'expo.out', scrollTrigger: { trigger: '.tt-card', start: 'top 86%' } });
+    G.from('.foot-in > *', { y: 20, opacity: 0, duration: 1, stagger: .08, ease: 'expo.out', scrollTrigger: { trigger: '.foot', start: 'top 96%' } });
+  }
+} else {
+  $$('.split').forEach(el => { el.innerHTML = el.textContent.trim().split(/\s+/).map(w => `<span class="wd">${w}</span>`).join(' '); });
+  $$('.steps-line line').forEach(l => { l.style.strokeDashoffset = 0; });
+}
+
+readouts(now());
+requestAnimationFrame(tick);
+})();
+</script>
