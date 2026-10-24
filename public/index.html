@@ -7,11 +7,11 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ar_IQ">
 <meta property="og:title" content="ساعات تلعفر">
-<meta property="og:description" content="ساعات رجالية ونسائية وكلاسيك وذكية. تصفّح التشكيلة واطلب ساعتك برسالة على تيك توك.">
+<meta property="og:description" content="ساعات ومحافظ وسبح ونظارات وعطور وإكسسوارات بتلعفر. تصفّح التشكيلة واطلب على واتساب.">
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}[hidden]{display:none!important}</style>
 <title>ساعات تلعفر</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="ساعات تلعفر: ساعات رجالية ونسائية وكلاسيك وذكية. تصفّح التشكيلة واطلب ساعتك برسالة على تيك توك.">
+<meta name="description" content="ساعات تلعفر: ساعات ومحافظ وسبح ونظارات وعطور وإكسسوارات، رجالي ونسائي. تصفّح التشكيلة واطلب على واتساب.">
 <meta name="theme-color" content="#07080B">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -147,7 +147,8 @@ img,svg{max-width:100%}
 }
 
 /* watch svg (shared) */
-.wsvg{display:block;height:100%;width:auto;max-width:100%;margin-inline:auto;direction:ltr;
+.wsvg{display:block;height:100%;width:auto;max-width:100%;margin-inline:auto;direction:ltr}
+.wsvg.strap-fade{
   -webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 19%,#000 81%,transparent 100%);
   mask-image:linear-gradient(to bottom,transparent 0%,#000 19%,#000 81%,transparent 100%)}
 .wsvg path,.wsvg circle,.wsvg rect,.wsvg stop{transition:fill .7s,stop-color .7s}
@@ -178,6 +179,40 @@ img,svg{max-width:100%}
 .wsvg .tw{opacity:0;animation:tw 3.4s ease-in-out infinite}
 @keyframes tw{0%,64%,100%{opacity:0}80%{opacity:1}}
 @keyframes float{50%{transform:translateY(-9px)}}
+
+/* shop items: wallets, misbaha, glasses, perfume, ring, bracelet */
+.wsvg .wl-card{transform-box:fill-box;transform-origin:50% 100%;transition:transform .8s var(--ease-out);transition-delay:calc(var(--i) * 60ms)}
+.wsvg .wl-notes{transition:transform .9s var(--ease-out)}
+.card:hover .wsvg .wl-card{transform:translateY(-12px)}
+.card:hover .wsvg .wl-notes{transform:translateY(-8px)}
+.wsvg.fan .wl-card{transform:translateY(calc(-30px - var(--i) * 6px)) rotate(calc((var(--i) - 1) * 9deg))}
+.wsvg .wl-flap{transform-box:fill-box;transform-origin:50% 0;transition:transform .9s var(--ease-out)}
+.card:hover .wsvg .wl-flap{transform:scaleY(.72)}
+.wsvg.fan .wl-flap{transform:scaleY(.42)}
+.wsvg.entered .wl-card{animation:riseIn 1s var(--ease-out) backwards;animation-delay:calc(.25s + var(--i) * .12s)}
+@keyframes riseIn{from{transform:translateY(40px);opacity:0}}
+.wsvg .bd-hi,.wsvg .lk-hi{opacity:.4;animation:glint 3.4s ease-in-out infinite;animation-delay:calc(var(--i) * -.09s)}
+.wsvg .lk-hi{animation-duration:2.8s}
+@keyframes glint{0%,100%{opacity:.14}50%{opacity:.88}}
+.card:hover .wsvg .bd-hi,.card:hover .wsvg .lk-hi{animation-duration:1.3s}
+.wsvg.entered .bd{animation:beadIn .7s var(--ease-out) backwards;animation-delay:calc(var(--i) * 28ms)}
+@keyframes beadIn{from{opacity:0;transform:translateY(-16px)}}
+.wsvg .bd.counted circle:first-child{stroke:#FFE7A8;stroke-width:1.8}
+.wsvg .bd.counted{animation:beadTick .45s var(--ease-out)}
+@keyframes beadTick{40%{transform:translateY(5px)}}
+.wsvg .draw{stroke-dasharray:1}
+.wsvg.entered .draw{animation:drawIn 1.7s var(--ease-io) backwards}
+@keyframes drawIn{from{stroke-dashoffset:1}}
+.wsvg.entered .lens-fill{animation:tintIn 1.4s .6s ease-out backwards}
+@keyframes tintIn{from{opacity:.05}}
+.wsvg .pf-cap{transform-box:fill-box;transform-origin:50% 100%;transition:transform .8s var(--ease-out)}
+.card:hover .wsvg .pf-cap,.wsvg.spray .pf-cap{transform:translate(-28px,-54px) rotate(-14deg)}
+.wsvg .pf-mist circle{opacity:0;transform-box:fill-box;transform-origin:center}
+.card:hover .wsvg .pf-mist circle,.wsvg.spray .pf-mist circle{animation:mist 1.5s var(--ease-out) .45s}
+@keyframes mist{0%{opacity:0;transform:translate(0,0) scale(.3)}18%{opacity:.75}100%{opacity:0;transform:translate(var(--dx),var(--dy)) scale(2.6)}}
+.wsvg .pf-l{font:700 18px var(--f-display);text-anchor:middle;dominant-baseline:central;fill:#2A1E0C}
+.wsvg .pf-s{font:500 5.6px var(--f-body);letter-spacing:1.2px;text-anchor:middle;fill:#2A1E0C;opacity:.8}
+.wsvg.shine .tw{animation:tw .9s ease-in-out 2}
 
 /* marquee */
 .marquee{position:relative;direction:ltr;overflow:hidden;border-block:1px solid var(--line);padding-block:20px;
@@ -300,12 +335,38 @@ img,svg{max-width:100%}
 @keyframes bob{50%{transform:translateY(-8px) rotate(-4deg)}}
 @media (max-width:760px){.tt-card{grid-template-columns:minmax(0,1fr)}.tt-visual{order:-1;width:160px;height:160px}}
 
+/* shop location */
+.loc{padding-block:clamp(20px,4vw,50px) clamp(40px,6vw,80px)}
+.loc-card{position:relative;overflow:hidden;display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);align-items:stretch;border:1px solid var(--line);border-radius:34px;background:var(--night)}
+.loc-copy{display:flex;flex-direction:column;justify-content:center;gap:16px;min-width:0;padding:clamp(28px,4.5vw,60px)}
+.loc-copy .sec-title{margin:0}
+.loc-lines{display:grid;gap:10px;margin:0;padding:0;list-style:none}
+.loc-lines li{display:flex;align-items:center;gap:12px;font-size:15.5px;color:var(--mist);min-width:0}
+.loc-lines .ic{flex:none;width:38px;height:38px;border-radius:12px;display:grid;place-items:center;background:var(--panel);border:1px solid var(--line);color:var(--champagne)}
+.loc-lines b{color:var(--ivory);font-weight:500}
+.loc-map{position:relative;min-height:340px;background:#0B0E14;border-inline-start:1px solid var(--line)}
+.loc-map svg{position:absolute;inset:0;width:100%;height:100%}
+.lume-mode .loc-map{filter:brightness(.45)}
+.route{stroke-dasharray:10 12;animation:route 1.6s linear infinite}
+@keyframes route{to{stroke-dashoffset:-44}}
+.pin-ring{transform-box:fill-box;transform-origin:center;animation:pinRing 2.6s var(--ease-out) infinite}
+.pin-ring.r2{animation-delay:1.3s}
+@keyframes pinRing{0%{transform:scale(.3);opacity:.9}100%{transform:scale(2.4);opacity:0}}
+.pin{animation:pinBob 2.6s ease-in-out infinite}
+@keyframes pinBob{50%{transform:translateY(-7px)}}
+@media (max-width:820px){.loc-card{grid-template-columns:minmax(0,1fr)}.loc-map{order:-1;min-height:260px;border-inline-start:0;border-bottom:1px solid var(--line)}}
+.btn-wa{color:#05210F;background:linear-gradient(135deg,#5BEA8E,#25D366 55%,#18A84E);box-shadow:0 14px 34px -14px rgba(37,211,102,.7),inset 0 1px 0 rgba(255,255,255,.45)}
+.lume-mode .btn-wa{filter:brightness(.5)}
+.pill .wa-ic{color:#1FAF55}
+
 /* footer */
 .foot{border-top:1px solid var(--line);padding-block:34px calc(34px + env(safe-area-inset-bottom,0px))}
 .foot-in{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px 30px}
 .foot-brand{display:flex;flex-direction:column}
 .foot-brand .brand-name{font-family:var(--f-display);font-weight:700;font-size:22px}
-.foot-loc,.foot-copy,.foot-time{margin:0;font-size:13.5px;color:var(--mist)}
+.foot-loc,.foot-copy,.foot-time,.foot-links{margin:0;font-size:13.5px;color:var(--mist)}
+.foot-links{display:flex;flex-wrap:wrap;gap:6px 18px}
+.foot-links a{color:var(--ivory);border-bottom:1px solid color-mix(in srgb,var(--champagne) 40%,transparent)}
 .foot-time b{color:var(--ivory);font-weight:500;margin-inline-start:6px}
 
 /* product sheet */
@@ -394,15 +455,19 @@ img,svg{max-width:100%}
       <nav class="nav" aria-label="أقسام الصفحة">
         <a href="#collection">التشكيلة</a>
         <a href="#how">طريقة الطلب</a>
+        <a href="#location">موقع المحل</a>
         <a href="#tiktok">تيك توك</a>
       </nav>
       <div class="top-actions">
         <button class="icon-btn" id="lumeBtn" type="button" aria-pressed="false" aria-label="الإضاءة الليلية للساعات" title="الإضاءة الليلية">
           <svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path d="M20 14.6A8.2 8.2 0 0 1 9.4 4a8.2 8.2 0 1 0 10.6 10.6z" fill="currentColor"/></svg>
         </button>
-        <a class="pill" data-tt href="https://www.tiktok.com/search?q=%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA%20%D8%AA%D9%84%D8%B9%D9%81%D8%B1" target="_blank" rel="noopener">
+        <a class="icon-btn" data-tt href="https://www.tiktok.com/search?q=%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA%20%D8%AA%D9%84%D8%B9%D9%81%D8%B1" target="_blank" rel="noopener" aria-label="حساب المحل على تيك توك" title="تيك توك">
           <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M16.6 5.8a4.6 4.6 0 0 1-1.1-3h-3.1v12.4a2.6 2.6 0 1 1-2.6-2.6c.3 0 .5 0 .8.1V9.5a5.8 5.8 0 1 0 5 5.7V9a7.7 7.7 0 0 0 4.4 1.4V7.3a4.6 4.6 0 0 1-3.4-1.5z" fill="currentColor"/></svg>
-          <span class="lbl">تيك توك</span>
+        </a>
+        <a class="pill" data-wa href="https://wa.me/9647503321266" target="_blank" rel="noopener" aria-label="راسل المحل على واتساب">
+          <svg class="wa-ic" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path d="M12 2.2a9.7 9.7 0 0 0-8.4 14.6L2.3 21.7l5-1.3A9.7 9.7 0 1 0 12 2.2zm0 17.7a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 19.9zm4.4-6c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1l-.8.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.6.3 2.7 2.7 0 0 0-.9 2c0 1.2.9 2.4 1 2.5.1.2 1.8 2.7 4.3 3.8 1.6.7 2.2.7 3 .6.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1l-.5-.3z" fill="currentColor"/></svg>
+          <span class="lbl">واتساب</span>
         </a>
       </div>
     </div>
@@ -415,13 +480,16 @@ img,svg{max-width:100%}
         <div class="hero-copy">
           <p class="eyebrow">تلعفر · نينوى</p>
           <h1 class="hero-title"><span class="w">ساعات</span> <span class="w gold-text">تلعفر</span></h1>
-          <p class="hero-sub">ساعات رجالية ونسائية وكلاسيك وذكية بمحل واحد. تصفّح التشكيلة، اختار الموديل واللون، واطلبها برسالة على تيك توك.</p>
+          <p class="hero-sub">ساعات ومحافظ وسبح ونظارات وعطور وإكسسوارات، رجالي ونسائي، بمحل واحد. تصفّح التشكيلة، اختار الموديل واللون، واطلبه برسالة واتساب.</p>
           <div class="ctas">
             <a class="btn btn-gold magnetic" href="#collection">
               شوف التشكيلة
               <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
-            <a class="btn btn-ghost magnetic" data-tt href="https://www.tiktok.com/search?q=%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA%20%D8%AA%D9%84%D8%B9%D9%81%D8%B1" target="_blank" rel="noopener">تابعنا على تيك توك</a>
+            <a class="btn btn-ghost magnetic" data-wa href="https://wa.me/9647503321266" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true" style="color:#25D366"><path d="M12 2.2a9.7 9.7 0 0 0-8.4 14.6L2.3 21.7l5-1.3A9.7 9.7 0 1 0 12 2.2zm0 17.7a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 19.9zm4.4-6c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1l-.8.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.6.3 2.7 2.7 0 0 0-.9 2c0 1.2.9 2.4 1 2.5.1.2 1.8 2.7 4.3 3.8 1.6.7 2.2.7 3 .6.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1l-.5-.3z" fill="currentColor"/></svg>
+              راسلنا على واتساب
+            </a>
           </div>
           <div class="readout" role="timer" aria-label="توقيت تلعفر الآن">
             <span class="live-dot" aria-hidden="true"></span>
@@ -448,7 +516,7 @@ img,svg{max-width:100%}
         <div class="sec-head">
           <div>
             <p class="eyebrow">التشكيلة</p>
-            <h2 class="sec-title split">اختار ساعتك</h2>
+            <h2 class="sec-title split">اختار اللي يعجبك</h2>
           </div>
           <p class="sample-note">نسخة تجريبية: المنتجات والأسعار أمثلة لحد ما توصل صور وأسعار المحل</p>
         </div>
@@ -470,19 +538,73 @@ img,svg{max-width:100%}
           <svg class="steps-line" viewBox="0 0 1000 2" preserveAspectRatio="none" aria-hidden="true"><line x1="1000" y1="1" x2="0" y2="1" pathLength="1"/></svg>
           <article class="step">
             <div class="step-top"><span class="num">١</span><span class="step-ic"><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="5.6"/><path d="M12 9.4V12l1.6 1.2M9.4 6.9 10 2.5h4l.6 4.4M9.4 17.1 10 21.5h4l.6-4.4"/></g></svg></span></div>
-            <h3>اختار الساعة</h3>
+            <h3>اختار القطعة</h3>
             <p>اضغط على أي بطاقة حتى تشوف التفاصيل والألوان المتوفرة.</p>
           </article>
           <article class="step">
-            <div class="step-top"><span class="num">٢</span><span class="step-ic"><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></g></svg></span></div>
-            <h3>اضغط «اطلب عبر تيك توك»</h3>
-            <p>نكتبلك رسالة الطلب باسم الساعة واللون والسعر، وننسخها تلقائياً.</p>
+            <div class="step-top"><span class="num">٢</span><span class="step-ic"><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path d="M12 2.2a9.7 9.7 0 0 0-8.4 14.6L2.3 21.7l5-1.3A9.7 9.7 0 1 0 12 2.2zm0 17.7a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 19.9zm4.4-6c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1l-.8.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.6.3 2.7 2.7 0 0 0-.9 2c0 1.2.9 2.4 1 2.5.1.2 1.8 2.7 4.3 3.8 1.6.7 2.2.7 3 .6.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1l-.5-.3z" fill="currentColor"/></svg></span></div>
+            <h3>اضغط «اطلب عبر واتساب»</h3>
+            <p>تنفتح محادثة ويا المحل، ورسالة الطلب مكتوبة بيها اسم القطعة واللون والسعر.</p>
           </article>
           <article class="step">
             <div class="step-top"><span class="num">٣</span><span class="step-ic"><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path d="M21 3 3 10.5l7 2.5 2.5 7L21 3zM10 13l4.5-4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/></svg></span></div>
-            <h3>ابعثها بالخاص</h3>
-            <p>الصق الرسالة بمحادثة حساب المحل على تيك توك، والمحل يرد عليك ويأكد الطلب.</p>
+            <h3>اضغط إرسال</h3>
+            <p>المحل يرد عليك على واتساب ويأكد وياك الطلب.</p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="loc" id="location">
+      <div class="wrap">
+        <div class="loc-card">
+          <div class="loc-copy">
+            <p class="eyebrow">موقع المحل</p>
+            <h2 class="sec-title split">زورنا بتلعفر</h2>
+            <ul class="loc-lines">
+              <li><span class="ic"><svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path d="M12 21.5s-7-6.2-7-11.7a7 7 0 1 1 14 0c0 5.5-7 11.7-7 11.7z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="9.8" r="2.6" fill="currentColor"/></svg></span><span><b>تلعفر، محافظة نينوى</b> · رمز الموقع على الخرائط <b class="digits">9CFQ+5MM</b></span></li>
+              <li><span class="ic"><svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path d="M12 2.2a9.7 9.7 0 0 0-8.4 14.6L2.3 21.7l5-1.3A9.7 9.7 0 1 0 12 2.2zm0 17.7a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 19.9zm4.4-6c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1l-.8.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.6.3 2.7 2.7 0 0 0-.9 2c0 1.2.9 2.4 1 2.5.1.2 1.8 2.7 4.3 3.8 1.6.7 2.2.7 3 .6.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1l-.5-.3z" fill="currentColor"/></svg></span><span>واتساب <b class="digits" data-phone>+964 750 332 1266</b></span></li>
+            </ul>
+            <div class="ctas">
+              <a class="btn btn-gold magnetic" data-map href="https://maps.app.goo.gl/vMUJ7ErkPsaVY9hb8" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 21.5s-7-6.2-7-11.7a7 7 0 1 1 14 0c0 5.5-7 11.7-7 11.7z" fill="none" stroke="currentColor" stroke-width="1.9"/><circle cx="12" cy="9.8" r="2.4" fill="currentColor"/></svg>
+                افتح الموقع بالخرائط
+              </a>
+              <a class="btn btn-wa magnetic" data-wa href="https://wa.me/9647503321266" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path d="M12 2.2a9.7 9.7 0 0 0-8.4 14.6L2.3 21.7l5-1.3A9.7 9.7 0 1 0 12 2.2zm0 17.7a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 19.9zm4.4-6c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1l-.8.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.6.3 2.7 2.7 0 0 0-.9 2c0 1.2.9 2.4 1 2.5.1.2 1.8 2.7 4.3 3.8 1.6.7 2.2.7 3 .6.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1l-.5-.3z" fill="currentColor"/></svg>
+                واتساب
+              </a>
+            </div>
+          </div>
+          <div class="loc-map" aria-hidden="true">
+            <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
+              <rect width="400" height="300" fill="#0B0E14"/>
+              <g fill="#121823">
+                <rect x="14" y="16" width="86" height="58" rx="6"/><rect x="118" y="16" width="70" height="42" rx="6"/><rect x="206" y="10" width="96" height="60" rx="6"/><rect x="320" y="20" width="70" height="80" rx="6"/>
+                <rect x="20" y="98" width="70" height="70" rx="6"/><rect x="110" y="84" width="60" height="62" rx="6"/><rect x="262" y="96" width="44" height="54" rx="6"/><rect x="326" y="124" width="64" height="58" rx="6"/>
+                <rect x="10" y="194" width="92" height="50" rx="6"/><rect x="124" y="174" width="74" height="70" rx="6"/><rect x="250" y="190" width="58" height="46" rx="6"/><rect x="330" y="208" width="60" height="78" rx="6"/>
+                <rect x="30" y="262" width="80" height="34" rx="6"/><rect x="140" y="262" width="96" height="34" rx="6"/>
+              </g>
+              <path d="M-10 240 C80 230 120 260 200 250 S330 210 410 236" fill="none" stroke="#10243A" stroke-width="16" stroke-linecap="round"/>
+              <g fill="none" stroke="#1C2330" stroke-linecap="round">
+                <path d="M0 84H400" stroke-width="12"/><path d="M0 182H400" stroke-width="10"/><path d="M106 0V300" stroke-width="10"/><path d="M240 0V300" stroke-width="14"/><path d="M314 0V300" stroke-width="8"/>
+                <path d="M0 0L400 300" stroke-width="7" opacity=".7"/>
+              </g>
+              <g fill="none" stroke="#2A3242" stroke-dasharray="6 8" stroke-width="1.2"><path d="M0 84H400"/><path d="M240 0V300"/></g>
+              <path class="route" d="M30 300 C60 230 106 214 106 182 S180 170 240 160 S240 120 230 120" fill="none" stroke="#E9CF93" stroke-width="4" stroke-linecap="round"/>
+              <g transform="translate(230 120)">
+                <circle class="pin-ring" r="16" fill="none" stroke="#E9CF93" stroke-width="2"/>
+                <circle class="pin-ring r2" r="16" fill="none" stroke="#E9CF93" stroke-width="2"/>
+                <ellipse cy="2" rx="10" ry="3.5" fill="#000" opacity=".5"/>
+                <g class="pin">
+                  <path d="M0 0C-4 -10 -18 -22 -18 -36A18 18 0 1 1 18 -36C18 -22 4 -10 0 0Z" fill="url(#gPin)"/>
+                  <circle cy="-36" r="10.5" fill="#0C0F15"/>
+                  <path d="M0 -36V-43M0 -36L5 -33" stroke="#EAD3A2" stroke-width="1.8" stroke-linecap="round"/>
+                </g>
+              </g>
+              <defs><linearGradient id="gPin" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F5E1AE"/><stop offset=".5" stop-color="#C9A15A"/><stop offset="1" stop-color="#8A6424"/></linearGradient></defs>
+            </svg>
+          </div>
         </div>
       </div>
     </section>
@@ -495,7 +617,7 @@ img,svg{max-width:100%}
           <div class="tt-copy">
             <p class="eyebrow">تيك توك</p>
             <h2 class="sec-title split">تابع ساعات تلعفر على تيك توك</h2>
-            <p class="tt-sub">فيديوهات الموديلات الجديدة، وبالخاص تكدر تطلب أو تسأل عن أي ساعة.</p>
+            <p class="tt-sub">فيديوهات الموديلات الجديدة من ساعات ومحافظ وسبح وعطور، أول بأول.</p>
             <a class="btn btn-light magnetic" data-tt href="https://www.tiktok.com/search?q=%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA%20%D8%AA%D9%84%D8%B9%D9%81%D8%B1" target="_blank" rel="noopener">
               <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M16.6 5.8a4.6 4.6 0 0 1-1.1-3h-3.1v12.4a2.6 2.6 0 1 1-2.6-2.6c.3 0 .5 0 .8.1V9.5a5.8 5.8 0 1 0 5 5.7V9a7.7 7.7 0 0 0 4.4 1.4V7.3a4.6 4.6 0 0 1-3.4-1.5z" fill="currentColor"/></svg>
               افتح تيك توك
@@ -520,6 +642,7 @@ img,svg{max-width:100%}
   <footer class="foot">
     <div class="wrap foot-in">
       <div class="foot-brand"><span class="brand-name">ساعات تلعفر</span><span class="foot-loc">تلعفر · نينوى · العراق</span></div>
+      <p class="foot-links"><a data-wa href="https://wa.me/9647503321266" target="_blank" rel="noopener">واتساب <span class="digits" data-phone>+964 750 332 1266</span></a><a data-map href="https://maps.app.goo.gl/vMUJ7ErkPsaVY9hb8" target="_blank" rel="noopener">موقع المحل</a><a data-tt href="https://www.tiktok.com/search?q=%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA%20%D8%AA%D9%84%D8%B9%D9%81%D8%B1" target="_blank" rel="noopener">تيك توك</a></p>
       <p class="foot-time">توقيت تلعفر<b class="digits" id="footTime">--:--</b></p>
       <p class="foot-copy">© 2026 ساعات تلعفر</p>
     </div>
@@ -543,9 +666,9 @@ img,svg{max-width:100%}
       <div><p class="var-label" id="sheetVarLabel">اللون</p><div class="variants" id="sheetVariants"></div></div>
       <div class="sheet-buy">
         <p class="price big"><b id="sheetPrice">0</b><span class="cur">د.ع</span><s id="sheetOld"></s></p>
-        <a class="btn btn-gold" id="sheetOrder" data-tt href="https://www.tiktok.com/search?q=%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA%20%D8%AA%D9%84%D8%B9%D9%81%D8%B1" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M16.6 5.8a4.6 4.6 0 0 1-1.1-3h-3.1v12.4a2.6 2.6 0 1 1-2.6-2.6c.3 0 .5 0 .8.1V9.5a5.8 5.8 0 1 0 5 5.7V9a7.7 7.7 0 0 0 4.4 1.4V7.3a4.6 4.6 0 0 1-3.4-1.5z" fill="currentColor"/></svg>
-          اطلب عبر تيك توك
+        <a class="btn btn-wa" id="sheetOrder" href="https://wa.me/9647503321266" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path d="M12 2.2a9.7 9.7 0 0 0-8.4 14.6L2.3 21.7l5-1.3A9.7 9.7 0 1 0 12 2.2zm0 17.7a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 19.9zm4.4-6c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1l-.8.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.6.3 2.7 2.7 0 0 0-.9 2c0 1.2.9 2.4 1 2.5.1.2 1.8 2.7 4.3 3.8 1.6.7 2.2.7 3 .6.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1l-.5-.3z" fill="currentColor"/></svg>
+          اطلب عبر واتساب
         </a>
       </div>
       <dl class="specs" id="sheetSpecs"></dl>
@@ -568,9 +691,13 @@ img,svg{max-width:100%}
 
 // Shop settings — swap the TikTok link for the shop's own profile once it is known.
 const SHOP = {
+  whatsapp: '9647503321266',
+  phoneLabel: '+964 750 332 1266',
+  map: 'https://maps.app.goo.gl/vMUJ7ErkPsaVY9hb8',
   tiktok: 'https://www.tiktok.com/search?q=' + encodeURIComponent('ساعات تلعفر'),
   tiktokLabel: 'ساعات تلعفر'
 };
+const waLink = msg => `https://wa.me/${SHOP.whatsapp}?text=${encodeURIComponent(msg)}`;
 
 const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
@@ -596,6 +723,9 @@ function now() {
 }
 
 $$('[data-tt]').forEach(a => { a.href = SHOP.tiktok; a.target = '_blank'; a.rel = 'noopener'; });
+$$('[data-wa]').forEach(a => { a.href = waLink('مرحبا، عندي سؤال عن محل ساعات تلعفر'); a.target = '_blank'; a.rel = 'noopener'; });
+$$('[data-map]').forEach(a => { a.href = SHOP.map; a.target = '_blank'; a.rel = 'noopener'; });
+$$('[data-phone]').forEach(el => { el.textContent = SHOP.phoneLabel; });
 $('#ttHandle b').textContent = SHOP.tiktokLabel;
 
 /* ---------- watch drawing ---------- */
@@ -914,9 +1044,199 @@ function roundWatch(s, id, m) {
   return o + crystal(id, Rd);
 }
 
+/* ---------- other shop items (metal colours come from --m0…--m5 so variants can swap them) ---------- */
+const metalVars = name => Object.fromEntries(METAL[name].map((c, i) => ['--m' + i, c]));
+const varGrad = (id, x2, y2) => `<linearGradient id="${id}" x1="0" y1="0" x2="${x2}" y2="${y2}">${[[0, 0], [.22, 1], [.45, 2], [.62, 3], [.82, 4], [1, 1]].map(([o, k]) => `<stop offset="${o}" style="stop-color:var(--m${k})"/>`).join('')}</linearGradient>`;
+const mEdge = sty({ stroke: 'var(--m5)' });
+const STITCH = 'fill="none" stroke="rgba(255,240,222,.42)" stroke-width="1.2" stroke-dasharray="4 3"';
+const sweep = id => `<g transform="rotate(28)"><rect class="sweep" x="-22" y="-240" width="44" height="480" fill="url(#${id}sw)"/></g>`;
+function itemDefs(id, extra = '') {
+  return `<defs>${varGrad(id + 'vm', 1, 1)}${varGrad(id + 'vh', 1, 0)}
+    <linearGradient id="${id}lv" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".12"/><stop offset=".45" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".38"/></linearGradient>
+    <linearGradient id="${id}sw" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".45"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+    <radialGradient id="${id}gem" cx=".38" cy=".34" r=".72"><stop offset="0" stop-color="#fff"/><stop offset=".4" stop-color="#E4F0FF"/><stop offset=".75" stop-color="#9DB3D1"/><stop offset="1" stop-color="#5F6F88"/></radialGradient>
+    ${extra}</defs>`;
+}
+function chain(id, n, at, rx, ry, closed) {
+  let o = '';
+  for (let i = 0; i < (closed ? n : n + 1); i++) {
+    const t = i / n, [x, y] = at(t), [x1, y1] = at(t - .002), [x2, y2] = at(t + .002);
+    const ang = fx(Math.atan2(y2 - y1, x2 - x1) * 180 / Math.PI), X = fx(x), Y = fx(y), r = `transform="rotate(${ang} ${X} ${Y})"`;
+    o += i % 2
+      ? `<ellipse cx="${X}" cy="${Y}" rx="${rx}" ry="${fx(ry * .4)}" ${r} fill="url(#${id}vm)"/>`
+      : `<ellipse cx="${X}" cy="${Y}" rx="${rx}" ry="${ry}" ${r} fill="none" stroke="url(#${id}vm)" stroke-width="2.2"/>`;
+    o += `<ellipse class="lk-hi" style="--i:${i}" cx="${X}" cy="${Y}" rx="${fx(rx * .6)}" ry=".9" ${r} fill="#fff"/>`;
+  }
+  return `<g class="chain">${o}</g>`;
+}
+
+function walletBifold(s, id) {
+  const L = sty({ fill: 'var(--leather)' });
+  const skin = d => `<path d="${d}" ${L}/><path d="${d}" fill="url(#${id}gr)"/><path d="${d}" fill="url(#${id}lv)"/>`;
+  const cards = ['#D9B66C', '#2B4C8C', '#9E2B2B'];
+  let o = itemDefs(id, `<pattern id="${id}gr" width="5" height="5" patternUnits="userSpaceOnUse"><circle cx="1.2" cy="1.4" r=".55" fill="#000" fill-opacity=".22"/><circle cx="3.8" cy="3.6" r=".45" fill="#fff" fill-opacity=".07"/></pattern>`);
+  o += `<g class="dm" transform="translate(0 4) scale(1.06)">`;
+  o += `<g class="wl-notes"><g transform="rotate(-4 64 -70)"><rect x="14" y="-100" width="104" height="70" rx="3" fill="#7FAF94"/><path d="M22 -92H110M22 -86H96" stroke="#3F6F55" stroke-width="1.2"/><circle cx="98" cy="-74" r="9" fill="none" stroke="#3F6F55"/></g><g transform="rotate(3 64 -70)"><rect x="18" y="-92" width="104" height="66" rx="3" fill="#D6BF86"/><path d="M26 -84H114M26 -78H100" stroke="#8C7038" stroke-width="1.2"/></g></g>`;
+  o += skin('M-116 -80H-4V92H-116Q-128 92 -128 80V-68Q-128 -80 -116 -80Z') + skin('M4 -80H116Q128 -80 128 -68V80Q128 92 116 92H4Z');
+  o += `<rect x="-121" y="-73" width="110" height="158" rx="7" ${STITCH}/><rect x="11" y="-73" width="110" height="158" rx="7" ${STITCH}/>`;
+  [-44, -16, 12].forEach((y, i) => {
+    o += `<g class="wl-card" style="--i:${i}"><rect x="-116" y="${y - 26}" width="100" height="62" rx="6" fill="${cards[i]}"/><rect x="-116" y="${y - 26}" width="100" height="62" rx="6" fill="url(#${id}lv)"/><rect x="-104" y="${y - 18}" width="15" height="11" rx="2" fill="#EAD59B"/></g>`;
+    o += skin(`M-128 ${y}H-4V92H-116Q-128 92 -128 80Z`) + `<path d="M-122 ${y + 6}H-10" ${STITCH}/>`;
+  });
+  o += skin('M4 -50H128V80Q128 92 116 92H4Z') + `<path d="M10 -44H122" ${STITCH}/>`;
+  o += `<rect x="24" y="-24" width="86" height="56" rx="5" fill="rgba(210,225,235,.14)" stroke="rgba(255,255,255,.28)"/><circle cx="46" cy="-2" r="9" fill="rgba(255,255,255,.22)"/><path d="M62 -8H98M62 2H90M36 18H98" stroke="rgba(255,255,255,.22)" stroke-width="3" stroke-linecap="round"/>`;
+  o += `<rect x="-6" y="-80" width="12" height="172" rx="4" ${L}/><rect x="-6" y="-80" width="12" height="172" rx="4" fill="#000" opacity=".38"/>`;
+  return o + `</g>`;
+}
+
+function walletLong(s, id) {
+  const L = sty({ fill: 'var(--leather)' });
+  const skin = d => `<path d="${d}" ${L}/><path d="${d}" fill="url(#${id}q)"/><path d="${d}" fill="url(#${id}lv)"/>`;
+  let o = itemDefs(id, `<pattern id="${id}q" width="18" height="18" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><path d="M0 0H18M0 0V18" stroke="#000" stroke-opacity=".2" stroke-width="1.4"/><path d="M0 1.6H18M1.6 0V18" stroke="#fff" stroke-opacity=".1"/></pattern>`);
+  o += `<g class="dm" transform="translate(0 20)">`;
+  o += chain(id, 34, t => { const u = 1 - t; return [-112 * u * u + 112 * t * t, -48 * u * u - 460 * u * t - 48 * t * t]; }, 6, 3.4);
+  o += skin('M-118 -56H118Q132 -56 132 -42V66Q132 80 118 80H-118Q-132 80 -132 66V-42Q-132 -56 -118 -56Z');
+  o += `<rect x="-125" y="-49" width="250" height="122" rx="9" ${STITCH}/>`;
+  o += ['#F2D7A0', '#9FB8D8', '#E9E1D3'].map((c, i) => `<g class="wl-card" style="--i:${i}"><rect x="${-100 + i * 70}" y="-42" width="60" height="40" rx="4" fill="${c}"/><rect x="${-100 + i * 70}" y="-42" width="60" height="40" rx="4" fill="url(#${id}lv)"/></g>`).join('');
+  o += `<g class="wl-flap">` + skin('M-118 -60H118Q132 -60 132 -46V-6Q0 40 -132 -6V-46Q-132 -60 -118 -60Z') + `<path d="M-124 -10Q0 30 124 -10" ${STITCH}/>`;
+  o += `<g transform="translate(0 18)"><ellipse rx="18" ry="12.5" fill="url(#${id}vm)" ${mEdge}/><ellipse rx="10.5" ry="6.8" fill="none" stroke="#fff" stroke-opacity=".45" stroke-width="1.4"/>${star(-8, -5, 7, 0)}</g></g>`;
+  return o + `</g>`;
+}
+
+function misbaha(s, id) {
+  const N = 360, raw = [], cy = -50, rx = 98, ry = 115;
+  for (let i = 0; i <= N; i++) {
+    const th = i / N * Math.PI * 2, k = .2 + .8 * Math.pow((1 - Math.cos(th)) / 2, .55);
+    raw.push([rx * Math.sin(th) * k, cy - ry * Math.cos(th)]);
+  }
+  const cum = [0];
+  for (let i = 1; i <= N; i++) cum.push(cum[i - 1] + Math.hypot(raw[i][0] - raw[i - 1][0], raw[i][1] - raw[i - 1][1]));
+  const L = cum[N];
+  const at = s0 => {
+    const s1 = ((s0 % L) + L) % L;
+    let i = 1;
+    while (i < N && cum[i] < s1) i++;
+    const t = (s1 - cum[i - 1]) / (cum[i] - cum[i - 1] || 1), a = raw[i - 1], b = raw[i];
+    return [fx(a[0] + (b[0] - a[0]) * t), fx(a[1] + (b[1] - a[1]) * t), Math.atan2(b[1] - a[1], b[0] - a[0]) * 180 / Math.PI];
+  };
+  const count = 35, gap = 15, step = (L - 2 * gap) / (count - 1), r = fx(Math.min(8.6, step * .47));
+  let beads = '';
+  for (let j = 0; j < count; j++) {
+    const [x, y, ang] = at(L / 2 + gap + j * step);
+    if (j === 11 || j === 23) { beads += `<g class="bd sep" style="--i:${j}"><ellipse cx="${x}" cy="${y}" rx="2.8" ry="${fx(r * .95)}" transform="rotate(${fx(ang)} ${x} ${y})" fill="url(#${id}vm)"/></g>`; continue; }
+    beads += `<g class="bd" style="--i:${j}"><circle cx="${x}" cy="${y}" r="${r}" fill="url(#${id}bead)"/><circle cx="${fx(x + r * .25)}" cy="${fx(y + r * .3)}" r="${fx(r * .45)}" ${sty({ fill: 'var(--beadHi)' })} opacity=".28"/><ellipse class="bd-hi" style="--i:${j}" cx="${fx(x - r * .32)}" cy="${fx(y - r * .36)}" rx="${fx(r * .36)}" ry="${fx(r * .22)}" fill="#fff"/></g>`;
+  }
+  const iy = cy + ry + 4;
+  let tassel = '';
+  for (let k = -10; k <= 10; k++) tassel += `M0 4Q${fx(k * .6)} 30 ${fx(k * 1.5)} ${58 + (k & 3) * 2}`;
+  const swing = (v, cx, cyy, dur) => `<animateTransform attributeName="transform" type="rotate" values="${-v} ${cx} ${cyy};${v} ${cx} ${cyy};${-v} ${cx} ${cyy}" keyTimes="0;.5;1" calcMode="spline" keySplines=".45 0 .55 1;.45 0 .55 1" dur="${dur}s" repeatCount="indefinite"/>`;
+  return itemDefs(id, `<radialGradient id="${id}bead" cx=".36" cy=".3" r=".78"><stop offset="0" style="stop-color:var(--beadHi)"/><stop offset=".5" style="stop-color:var(--beadA)"/><stop offset="1" style="stop-color:var(--beadB)"/></radialGradient>`)
+    + `<g class="dm"><g>${swing(2.2, 0, cy - ry - 11, 5.5)}
+      <circle cy="${cy - ry - 11}" r="7" fill="none" stroke="url(#${id}vm)" stroke-width="3"/>
+      <path d="M${raw.map(p => fx(p[0]) + ' ' + fx(p[1])).join('L')}Z" fill="none" ${sty({ stroke: 'var(--tassel)' })} stroke-width="1.3" opacity=".75"/>
+      ${beads}
+      <path d="M-5 ${iy}H5L3 ${iy + 8}H-3Z" fill="url(#${id}vm)"/>
+      <ellipse cy="${iy + 30}" rx="10" ry="22" fill="url(#${id}bead)"/><ellipse class="bd-hi" style="--i:0" cx="-3.5" cy="${iy + 20}" rx="3" ry="7" fill="#fff"/>
+      <path d="M-6 ${iy + 51}H6L4 ${iy + 58}H-4Z" fill="url(#${id}vm)"/><circle cy="${iy + 63}" r="5" fill="url(#${id}vm)"/>
+      <g transform="translate(0 ${iy + 66})"><g>${swing(7, 0, 0, 2.6)}<path d="${tassel}" fill="none" ${sty({ stroke: 'var(--tassel)' })} stroke-width="1.1" stroke-linecap="round"/><rect x="-6" y="-2" width="12" height="9" rx="3" fill="url(#${id}vm)"/></g></g>
+    </g></g>`;
+}
+
+function glasses(s, id) {
+  const cat = s.style === 'cateye';
+  const lensD = cat
+    ? 'M14 -22C40 -34 96 -40 124 -48C128 -30 120 -2 106 18C92 36 54 40 33 32C19 26 12 7 12 -6C12 -14 12 -18 14 -22Z'
+    : 'M16 -26C34 -40 92 -42 110 -30C124 -20 122 8 108 30C94 52 62 60 40 50C22 42 14 22 13 2C12 -10 12 -20 16 -26Z';
+  const frame = cat ? `stroke="url(#${id}tort)" stroke-width="9"` : `stroke="url(#${id}vm)" stroke-width="4.6"`;
+  const blot = [[4, 5, 4], [15, 3, 3], [21, 14, 4.5], [8, 18, 3.5], [16, 22, 2.5], [2, 12, 2]]
+    .map(([x, y, r], i) => `<circle cx="${x}" cy="${y}" r="${r}" fill="${i % 2 ? 'rgba(214,140,60,.35)' : 'rgba(20,8,2,.55)'}"/>`).join('');
+  const lens = `<g class="lens"><path class="lens-fill" d="${lensD}" fill="url(#${id}lens)"/><g clip-path="url(#${id}lc)"><ellipse cx="66" cy="-14" rx="64" ry="22" fill="#fff" opacity=".12"/><path d="M0 10Q60 -4 130 14" stroke="#fff" stroke-opacity=".16" stroke-width="2" fill="none"/>${sweep(id)}</g><path class="draw" pathLength="1" d="${lensD}" fill="none" ${frame}/></g>`;
+  const temple = cat ? `<path class="draw" pathLength="1" d="M120 -44L138 -40L142 40" fill="none" ${frame} stroke-linecap="round"/>`
+    : `<path class="draw" pathLength="1" d="M110 -30L136 -24L140 46" fill="none" ${frame} stroke-linecap="round"/><path d="M140 30L141 60" stroke="#1A1A1C" stroke-width="5" stroke-linecap="round"/>`;
+  const bridge = cat ? `<path class="draw" pathLength="1" d="M-14 -14Q0 -26 14 -14" fill="none" ${frame}/>`
+    : `<path class="draw" pathLength="1" d="M-16 -30Q0 -33 16 -30" fill="none" ${frame}/><path class="draw" pathLength="1" d="M-13 -6Q0 -16 13 -6" fill="none" ${frame}/>`;
+  const pads = cat ? `<circle cx="116" cy="-38" r="2.6" fill="url(#${id}vm)"/><circle cx="-116" cy="-38" r="2.6" fill="url(#${id}vm)"/>`
+    : `<ellipse cx="17" cy="16" rx="4.5" ry="8" fill="rgba(255,255,255,.22)" stroke="rgba(255,255,255,.35)"/><ellipse cx="-17" cy="16" rx="4.5" ry="8" fill="rgba(255,255,255,.22)" stroke="rgba(255,255,255,.35)"/>`;
+  return itemDefs(id, `<linearGradient id="${id}lens" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:var(--lensA)" stop-opacity=".96"/><stop offset="1" style="stop-color:var(--lensB)" stop-opacity=".9"/></linearGradient>
+      <clipPath id="${id}lc"><path d="${lensD}"/></clipPath>
+      <pattern id="${id}tort" width="26" height="26" patternUnits="userSpaceOnUse"><rect width="26" height="26" ${sty({ fill: 'var(--frame)' })}/>${blot}</pattern>`)
+    + `<g class="dm" transform="translate(0 -6) scale(1.04)">${temple}<g transform="scale(-1 1)">${temple}</g>${lens}<g transform="scale(-1 1)">${lens}</g>${bridge}${pads}</g>`;
+}
+
+function perfume(s, id) {
+  const round = s.style === 'round';
+  const outer = round ? 'M0 -50A94 94 0 1 1 -.01 -50Z' : 'M-74 -80H74Q90 -80 90 -64V146Q90 162 74 162H-74Q-90 162 -90 146V-64Q-90 -80 -74 -80Z';
+  const inner = round ? 'M0 -40A84 84 0 1 1 -.01 -40Z' : 'M-68 -70H68Q80 -70 80 -58V140Q80 152 68 152H-68Q-80 152 -80 140V-58Q-80 -70 -68 -70Z';
+  const lv = round ? 10 : -20;
+  const wave = d => `M-100 ${lv}C-60 ${lv - d} -20 ${lv + d} 20 ${lv}S80 ${lv - d} 100 ${lv}V170H-100Z`;
+  const capD = round ? 'M-30 -132Q-30 -140 -22 -140H22Q30 -140 30 -132V-76Q30 -70 24 -70H-24Q-30 -70 -30 -76Z' : 'M-34 -170H34L46 -158V-114L34 -102H-34L-46 -114V-158Z';
+  const nz = round ? -84 : -114;
+  let bubbles = '';
+  [[-40, 3, 4.2, 0], [12, 2.2, 3.4, 1.1], [44, 2.8, 5, 2.3], [-14, 1.8, 3.8, 3], [30, 2, 4.6, .6], [-56, 1.6, 3.2, 1.9]].forEach(([x, r, d, b]) => {
+    bubbles += `<circle cx="${x}" cy="150" r="${r}" fill="#fff" opacity="0"><animate attributeName="cy" values="150;${lv + 8}" dur="${d}s" begin="${b}s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;.55;0" dur="${d}s" begin="${b}s" repeatCount="indefinite"/></circle>`;
+  });
+  let mist = '';
+  [[70, -40, 4], [96, -70, 5.5], [120, -30, 3.5], [58, -84, 4.5], [104, -98, 6], [132, -60, 4], [80, -12, 3]].forEach(([dx, dy, r], i) => {
+    mist += `<circle cx="0" cy="${nz}" r="${r}" fill="#fff" style="--dx:${dx}px;--dy:${dy}px;animation-delay:${.45 + i * .05}s"/>`;
+  });
+  const label = round
+    ? `<ellipse cy="74" rx="46" ry="24" fill="url(#${id}vm)"/><ellipse cy="74" rx="41" ry="19.5" fill="none" stroke="rgba(0,0,0,.3)"/><text class="pf-l" y="70" direction="rtl">${s.label}</text><text class="pf-s" y="85">EAU DE PARFUM</text>`
+    : `<rect x="-50" y="44" width="100" height="54" rx="4" fill="url(#${id}vm)"/><rect x="-46" y="48" width="92" height="46" rx="2" fill="none" stroke="rgba(0,0,0,.32)"/><text class="pf-l" y="67" direction="rtl">${s.label}</text><text class="pf-s" y="84">EAU DE PARFUM · 100 ML</text>`;
+  const hl = round
+    ? `<g transform="translate(0 44)"><path d="${arcD(-62, -18, 80)}" fill="none" stroke="#fff" stroke-opacity=".45" stroke-width="5" stroke-linecap="round"/></g>`
+    : `<rect x="-82" y="-60" width="5" height="196" rx="2.5" fill="#fff" opacity=".38"/><rect x="74" y="-50" width="3" height="170" rx="1.5" fill="#fff" opacity=".2"/><rect x="-80" y="140" width="160" height="12" rx="4" fill="#fff" opacity=".1"/>`;
+  const facets = round ? `<circle cy="-150" r="10" fill="url(#${id}vm)" ${mEdge}/>` : `<path d="M-26 -160H26L36 -150V-122L26 -112H-26L-36 -122V-150Z" fill="none" stroke="#fff" stroke-opacity=".45"/><path d="M-34 -170L-26 -160M34 -170L26 -160M46 -158L36 -150M46 -114L36 -122M34 -102L26 -112M-34 -102L-26 -112M-46 -114L-36 -122M-46 -158L-36 -150" stroke="#000" stroke-opacity=".25"/>`;
+  return itemDefs(id, `<linearGradient id="${id}gs" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity=".34"/><stop offset=".12" stop-color="#fff" stop-opacity=".08"/><stop offset=".5" stop-color="#fff" stop-opacity=".03"/><stop offset=".88" stop-color="#fff" stop-opacity=".08"/><stop offset="1" stop-color="#fff" stop-opacity=".28"/></linearGradient>
+      <linearGradient id="${id}lq" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:var(--liquidA)"/><stop offset="1" style="stop-color:var(--liquidB)"/></linearGradient>
+      <clipPath id="${id}in"><path d="${inner}"/></clipPath><clipPath id="${id}cp"><path d="${capD}"/></clipPath>`)
+    + `<g class="dm" transform="translate(0 6)">
+      <path d="${outer}" fill="rgba(255,255,255,.05)" stroke="rgba(255,255,255,.35)" stroke-width="1.4"/>
+      <g clip-path="url(#${id}in)">
+        <path d="${wave(7)}" fill="url(#${id}lq)" opacity=".9"><animate attributeName="d" values="${wave(7)};${wave(-7)};${wave(7)}" keyTimes="0;.5;1" calcMode="spline" keySplines=".45 0 .55 1;.45 0 .55 1" dur="3.6s" repeatCount="indefinite"/></path>
+        <rect x="-30" y="-100" width="22" height="300" fill="#fff" opacity=".09"/>${bubbles}${sweep(id)}
+      </g>
+      <path d="${outer}" fill="url(#${id}gs)"/><path d="${inner}" fill="none" stroke="#fff" stroke-opacity=".18"/>${hl}${label}
+      <rect x="${round ? -15 : -17}" y="${round ? -66 : -98}" width="${round ? 30 : 34}" height="${round ? 18 : 20}" fill="rgba(255,255,255,.16)" stroke="rgba(255,255,255,.35)"/>
+      <rect x="-5" y="${nz}" width="10" height="16" rx="2" fill="url(#${id}vm)"/>
+      <rect x="${round ? -18 : -20}" y="${round ? -70 : -102}" width="${round ? 36 : 40}" height="6" rx="2" fill="url(#${id}vm)"/>
+      <g class="pf-cap"><path d="${capD}" fill="url(#${id}vm)" ${mEdge}/>${facets}<g clip-path="url(#${id}cp)">${sweep(id)}</g></g>
+      <g class="pf-mist">${mist}</g>
+    </g>`;
+}
+
+function ring(s, id) {
+  let o = itemDefs(id, `<radialGradient id="${id}st" cx=".38" cy=".32" r=".8"><stop offset="0" style="stop-color:var(--stoneHi)"/><stop offset=".45" style="stop-color:var(--stoneA)"/><stop offset="1" style="stop-color:var(--stoneB)"/></radialGradient><clipPath id="${id}sc"><ellipse rx="34" ry="25"/></clipPath>`);
+  o += `<g class="dm" transform="translate(0 10)"><g><animateTransform attributeName="transform" type="rotate" values="-5 0 40;5 0 40;-5 0 40" keyTimes="0;.5;1" calcMode="spline" keySplines=".45 0 .55 1;.45 0 .55 1" dur="6s" repeatCount="indefinite"/>`;
+  o += `<path d="M0 -38A78 78 0 1 1 -.01 -38ZM0 -22A62 62 0 1 0 .01 -22Z" fill-rule="evenodd" fill="url(#${id}vm)" ${mEdge}/>`;
+  o += `<circle cy="40" r="62" fill="none" stroke="#000" stroke-opacity=".35" stroke-width="3"/><g transform="translate(0 40)"><path d="${arcD(-140, -60, 71)}" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="2.4" stroke-linecap="round"/><path d="${arcD(70, 160, 71)}" fill="none" stroke="#000" stroke-opacity=".25" stroke-width="3" stroke-linecap="round"/></g>`;
+  o += `<path d="M-42 -16Q-32 -34 -16 -30M42 -16Q32 -34 16 -30" fill="none" ${mEdge} stroke-width="1.6"/>`;
+  o += `<g transform="translate(0 -52)"><ellipse rx="47" ry="37" fill="url(#${id}vm)" ${mEdge}/><ellipse rx="41" ry="31" fill="none" ${sty({ stroke: 'var(--m0)' })} stroke-dasharray="2.6 2" stroke-width="2.6" opacity=".85"/>`
+    + [[-31, -22], [31, -22], [-31, 22], [31, 22]].map(([x, y]) => `<circle cx="${x}" cy="${y}" r="3.8" fill="url(#${id}vm)" ${mEdge}/>`).join('')
+    + `<ellipse rx="34" ry="25" fill="url(#${id}st)"/><g clip-path="url(#${id}sc)"><g fill="none" stroke="#fff" stroke-opacity=".12"><ellipse rx="27" ry="18" cx="2"/><ellipse rx="20" ry="12" cx="4" cy="1"/><ellipse rx="12" ry="7" cx="6" cy="2"/></g>${sweep(id)}</g>`
+    + `<ellipse cx="-12" cy="-10" rx="12" ry="5.5" fill="#fff" opacity=".5" transform="rotate(-22 -12 -10)"/></g>`;
+  return o + `</g>` + star(-56, -84, 9, .2) + star(50, -96, 7, 1.4) + star(64, -36, 6, 2.3) + `</g>`;
+}
+
+function bracelet(s, id) {
+  const rx = 104, ry = 62, cy = -30;
+  return itemDefs(id) + `<g class="dm" transform="translate(0 -8) scale(1.14)">`
+    + chain(id, 44, t => { const th = t * Math.PI * 2; return [rx * Math.sin(th), cy - ry * Math.cos(th)]; }, 7.2, 4.4, true)
+    + `<g transform="translate(${rx} ${cy}) rotate(90)"><rect x="-11" y="-5.5" width="22" height="11" rx="5.5" fill="url(#${id}vm)" ${mEdge}/></g>`
+    + `<g transform="translate(0 ${cy + ry})"><g><animateTransform attributeName="transform" type="rotate" values="-12;12;-12" keyTimes="0;.5;1" calcMode="spline" keySplines=".45 0 .55 1;.45 0 .55 1" dur="2.4s" repeatCount="indefinite"/>
+        <circle cy="7" r="5.5" fill="none" stroke="url(#${id}vm)" stroke-width="2"/>
+        <g transform="translate(0 34) scale(2.5)"><path d="${HEART}" fill="url(#${id}vm)" ${mEdge} stroke-width=".4"/></g>
+        <circle cy="29" r="5.4" fill="url(#${id}gem)"/>${star(0, 29, 10, .6)}</g></g></g>`;
+}
+
+const ITEMS = { wallet: (s, id) => (s.style === 'long' ? walletLong : walletBifold)(s, id), misbaha, glasses, perfume, ring, bracelet };
+
 let UID = 0;
-function buildWatch(s) {
+function buildPiece(s) {
   const id = 'w' + (++UID) + '-';
+  if (ITEMS[s.kind]) {
+    const vars = { ...metalVars(s.metal || 'gold'), ...(s.vars || {}) };
+    return `<svg class="wsvg item ${s.kind}" viewBox="-150 -200 300 400" xmlns="http://www.w3.org/2000/svg" ${sty(vars)} aria-hidden="true" focusable="false"><g transform="scale(${s.size || 1})">${ITEMS[s.kind](s, id)}</g></svg>`;
+  }
   const m = METAL[s.metal];
   const vars = {
     '--dialA': s.dial ? s.dial.a : '#111', '--dialB': s.dial ? s.dial.b : '#000', '--txt': s.dial ? s.dial.txt : '#eee',
@@ -925,70 +1245,121 @@ function buildWatch(s) {
     '--gmtC': s.gmtC || '#D9B66C', '--accent': s.accent || '#4BE3A6'
   };
   const body = s.smart === 'square' ? smartSquare(s, id, m) : roundWatch(s, id, m);
-  return `<svg class="wsvg" viewBox="-150 -200 300 400" xmlns="http://www.w3.org/2000/svg" ${sty(vars)} aria-hidden="true" focusable="false"><g transform="scale(${s.size || 1})">${body}</g></svg>`;
+  return `<svg class="wsvg strap-fade" viewBox="-150 -200 300 400" xmlns="http://www.w3.org/2000/svg" ${sty(vars)} aria-hidden="true" focusable="false"><g transform="scale(${s.size || 1})">${body}</g></svg>`;
 }
 
 /* ---------- catalogue (examples until the shop sends its real list) ---------- */
-const TAGS = { men: 'رجالي', women: 'نسائي', classic: 'كلاسيك', sport: 'رياضية', smart: 'ذكية' };
-const FILTERS = [['all', 'الكل'], ['men', 'رجالي'], ['women', 'نسائي'], ['classic', 'كلاسيك'], ['sport', 'رياضية'], ['smart', 'ذكية']];
+const TAGS = { men: 'رجالي', women: 'نسائي', wallet: 'محافظ', misbaha: 'سبح', glasses: 'نظارات', perfume: 'عطور', acc: 'إكسسوارات أخرى' };
+const FILTERS = [['all', 'الكل'], ['men', 'رجالي'], ['women', 'نسائي'], ['wallet', 'محافظ'], ['misbaha', 'سبح'], ['glasses', 'نظارات'], ['perfume', 'عطور'], ['acc', 'إكسسوارات أخرى']];
+const catLine = p => [p.label, ...p.tags.filter(t => t === 'men' || t === 'women').map(t => TAGS[t])].join(' · ');
 const HERO = { metal: 'gold', bezel: 'diver', bezelC: '#0B0C0F', bezelT: '#E9CF93', dial: { a: '#1D2026', b: '#060708', txt: '#E9CF93' }, sunburst: true,
   idx: 'baton', idxMetal: 'gold', hands: 'dauphine', handC: '#E2C27E', secC: '#E2C27E', lume: true, date: true, openHeart: true,
   text: ['TAL AFAR', 'AUTOMATIC'], strap: 'leather', strapC: '#121214' };
 
 const PRODUCTS = [
-  { id: 'royal', name: 'رويال الذهبية', tags: ['men', 'classic'], price: 145000, old: 175000, badge: 'الأكثر طلباً', tint: '#C9A15A', tilt: -7,
+  { id: 'royal', name: 'رويال الذهبية', tags: ['men'], label: 'ساعة', price: 145000, old: 175000, badge: 'الأكثر طلباً', tint: '#C9A15A', tilt: -7,
     short: '41 ملم · كوارتز · سوار جلد', desc: 'علبة ذهبية ومينا عاجي بأرقام عربية، ويا نافذة تاريخ وسوار جلد مخيّط.',
     specs: [['قطر العلبة', '41 ملم'], ['الحركة', 'كوارتز'], ['مقاومة الماء', '30 متر'], ['السوار', 'جلد طبيعي']], varLabel: 'لون السوار',
     spec: { metal: 'gold', bezel: 'smooth', dial: { a: '#F8F1E0', b: '#D9C7A1', txt: '#6B5226' }, sunburst: true, idx: 'arabic', idxC: '#7E5A1F',
       hands: 'dauphine', handC: '#A87E35', secC: '#A87E35', date: true, text: ['TAL AFAR', 'QUARTZ'], strap: 'leather', strapC: '#5A3721' },
     variants: [{ n: 'بني', c: '#5A3721', v: { '--strap': '#5A3721' } }, { n: 'أسود', c: '#17171A', v: { '--strap': '#17171A' } }, { n: 'عسلي', c: '#94602C', v: { '--strap': '#94602C' } }] },
-  { id: 'abyss', name: 'غواص الأعماق', tags: ['men', 'sport'], price: 120000, badge: 'جديد', tint: '#3B6A9A', tilt: 6,
+  { id: 'abyss', name: 'غواص الأعماق', tags: ['men'], label: 'ساعة', price: 120000, badge: 'جديد', tint: '#3B6A9A', tilt: 6,
     short: '42 ملم · أوتوماتيك · 200 متر', desc: 'ساعة غواص بإطار يدور باتجاه واحد، ومؤشرات تضوي بالظلام، وسوار ستيل متين.', hint: 'اضغط على الساعة حتى يدور الإطار. جرّب الإضاءة الليلية من الزر فوك.',
     specs: [['قطر العلبة', '42 ملم'], ['الحركة', 'أوتوماتيك'], ['مقاومة الماء', '200 متر'], ['السوار', 'ستيل']], varLabel: 'لون المينا',
     spec: { metal: 'steel', bezel: 'diver', bezelC: '#0E1013', bezelT: '#EDEDEA', dial: { a: '#1A1E24', b: '#07090B', txt: '#EDEDEA' }, idx: 'dots', idxMetal: 'steel',
       hands: 'sword', handC: '#E8ECF0', secC: '#E2574C', lume: true, date: true, text: ['TAL AFAR', 'DIVER'], lower: '200 M', lowerC: '#E2574C', strap: 'bracelet' },
     variants: [{ n: 'أسود', c: '#14171C', v: { '--dialA': '#1A1E24', '--dialB': '#07090B', '--bezel': '#0E1013' } }, { n: 'أزرق', c: '#123A6B', v: { '--dialA': '#164682', '--dialB': '#06162B', '--bezel': '#0B2142' } }, { n: 'أخضر', c: '#14503A', v: { '--dialA': '#17603F', '--dialB': '#06231A', '--bezel': '#0C3526' } }] },
-  { id: 'pilot', name: 'كرونو أزرق', tags: ['men', 'sport'], price: 165000, tint: '#2A5DA8', tilt: -5,
+  { id: 'pilot', name: 'كرونو أزرق', tags: ['men'], label: 'ساعة', price: 165000, tint: '#2A5DA8', tilt: -5,
     short: '43 ملم · كرونوغراف · 100 متر', desc: 'كرونوغراف بثلاث عدادات ومقياس سرعة على الإطار، ومينا لامع يتغير لونه ويه الضو.', hint: 'اضغط على الساعة: تشغيل، إيقاف، تصفير، مثل الكرونوغراف الحقيقي.',
     specs: [['قطر العلبة', '43 ملم'], ['الحركة', 'كرونوغراف كوارتز'], ['مقاومة الماء', '100 متر'], ['السوار', 'ستيل']], varLabel: 'لون المينا',
     spec: { metal: 'steel', bezel: 'tachy', bezelC: '#101215', bezelT: '#E6E8EA', dial: { a: '#2A5DA8', b: '#0B2147', txt: '#F1F4F8' }, sunburst: true, idx: 'baton', idxMetal: 'steel',
       hands: 'sword', handC: '#F2F4F6', secC: '#F08A3C', lume: true, chrono: true, text: ['TAL AFAR', 'CHRONOGRAPH'], strap: 'bracelet' },
     variants: [{ n: 'أزرق', c: '#2A5DA8', v: { '--dialA': '#2A5DA8', '--dialB': '#0B2147', '--txt': '#F1F4F8', '--hand': '#F2F4F6' } }, { n: 'أسود', c: '#1E2126', v: { '--dialA': '#2B2F36', '--dialB': '#0A0B0D', '--txt': '#F1F4F8', '--hand': '#F2F4F6' } }, { n: 'باندا', c: '#EFEEE8', v: { '--dialA': '#F7F6F1', '--dialB': '#D8D7D0', '--txt': '#1A1C20', '--hand': '#1E2125' } }] },
-  { id: 'rosa', name: 'روزا الماسية', tags: ['women'], price: 135000, old: 150000, tint: '#D59B82', tilt: 7,
+  { id: 'rosa', name: 'روزا الماسية', tags: ['women'], label: 'ساعة', price: 135000, old: 150000, tint: '#D59B82', tilt: 7,
     short: '34 ملم · كوارتز · سوار شبك', desc: 'علبة ذهبي وردي بإطار مرصّع ومينا صدفي يلمع ويه الضو، ويا سوار شبك ناعم.',
     specs: [['قطر العلبة', '34 ملم'], ['الحركة', 'كوارتز'], ['مقاومة الماء', '30 متر'], ['السوار', 'شبك ستيل']], varLabel: 'لون المينا',
     spec: { metal: 'rose', size: .86, bezel: 'diamond', dial: { a: '#FBF1EE', b: '#E6D3D0', txt: '#8C5A4B' }, pearl: true, idx: 'diamonds', idxMetal: 'rose',
       hands: 'leaf', handC: '#B9775F', secC: '#B9775F', text: ['TAL AFAR', 'LADY'], strap: 'mesh' },
     variants: [{ n: 'صدفي', c: '#F6E7E3', v: { '--dialA': '#FBF1EE', '--dialB': '#E6D3D0', '--txt': '#8C5A4B' } }, { n: 'وردي', c: '#E9B3BD', v: { '--dialA': '#F6CFD6', '--dialB': '#D99AA6', '--txt': '#7A3E4A' } }, { n: 'لؤلؤ أسود', c: '#2A2427', v: { '--dialA': '#3A3236', '--dialB': '#0D0B0C', '--txt': '#E9C2B4' } }] },
-  { id: 'skeleton', name: 'سكلتون أوتوماتيك', tags: ['men', 'classic'], price: 210000, badge: 'قطعة مميزة', tint: '#B08A45', tilt: -6,
+  { id: 'skeleton', name: 'سكلتون أوتوماتيك', tags: ['men'], label: 'ساعة', price: 210000, badge: 'قطعة مميزة', tint: '#B08A45', tilt: -6,
     short: '42 ملم · أوتوماتيك مكشوف · جلد', desc: 'مينا مفتوح تشوف بيه التروس والميزان وهي تشتغل، بعلبة سودة وسوار جلد.', hint: 'الميزان الصغير يتحرك ذهاب وإياب مثل قلب الساعة الأوتوماتيك.',
     specs: [['قطر العلبة', '42 ملم'], ['الحركة', 'أوتوماتيك هيكلي'], ['مقاومة الماء', '50 متر'], ['السوار', 'جلد طبيعي']], varLabel: 'لون السوار',
     spec: { metal: 'black', bezel: 'smooth', dial: { a: '#0B0C0F', b: '#050506', txt: '#D9B66C' }, skeleton: true, idx: 'baton', idxMetal: 'gold',
       hands: 'dauphine', handC: '#D9B66C', secC: '#D9B66C', text: ['TAL AFAR', 'SKELETON'], strap: 'leather', strapC: '#141416' },
     variants: [{ n: 'أسود', c: '#141416', v: { '--strap': '#141416' } }, { n: 'بني غامق', c: '#4A2C1A', v: { '--strap': '#4A2C1A' } }, { n: 'كحلي', c: '#16213A', v: { '--strap': '#16213A' } }] },
-  { id: 'gmt', name: 'جي إم تي الزمردية', tags: ['men', 'sport'], price: 175000, tint: '#1E7A55', tilt: 5,
+  { id: 'gmt', name: 'جي إم تي الزمردية', tags: ['men'], label: 'ساعة', price: 175000, tint: '#1E7A55', tilt: 5,
     short: '40 ملم · أوتوماتيك GMT · جوبيلي', desc: 'عقرب رابع يبيّن توقيت غرينتش، وإطار 24 ساعة بلونين، وسوار جوبيلي.', hint: 'العقرب أبو السهم الذهبي يبيّن توقيت غرينتش. اضغط على الساعة حتى يدور الإطار.',
     specs: [['قطر العلبة', '40 ملم'], ['الحركة', 'أوتوماتيك GMT'], ['مقاومة الماء', '100 متر'], ['السوار', 'ستيل جوبيلي']], varLabel: 'لون الإطار',
     spec: { metal: 'steel', bezel: 'gmt', gmtA: '#0F5A3F', gmtB: '#0A0C0E', bezelT: '#EDEDEA', dial: { a: '#167052', b: '#06261B', txt: '#EDEDEA' }, sunburst: true, idx: 'dots', idxMetal: 'steel',
       hands: 'sword', handC: '#EDEFF2', secC: '#EDEFF2', gmt: true, gmtC: '#D9B66C', lume: true, date: true, text: ['TAL AFAR', 'GMT · MASTER'], strap: 'jubilee' },
     variants: [{ n: 'أخضر وأسود', c: '#0F5A3F', v: { '--gmtA': '#0F5A3F', '--gmtB': '#0A0C0E', '--dialA': '#167052', '--dialB': '#06261B' } }, { n: 'أزرق وأسود', c: '#1C3F7A', v: { '--gmtA': '#1C3F7A', '--gmtB': '#0A0C0E', '--dialA': '#22262D', '--dialB': '#08090B' } }, { n: 'أحمر وأزرق', c: '#9E1F2A', v: { '--gmtA': '#9E1F2A', '--gmtB': '#1C3F7A', '--dialA': '#22262D', '--dialB': '#08090B' } }] },
-  { id: 'pulse', name: 'نبض الذكية', tags: ['smart'], price: 85000, badge: 'جديد', tint: '#FF7A45', tilt: -6,
+  { id: 'pulse', name: 'نبض الذكية', tags: ['men', 'women'], label: 'ساعة ذكية', price: 85000, badge: 'جديد', tint: '#FF7A45', tilt: -6,
     short: '45 ملم · شاشة AMOLED · IP68', desc: 'ساعة ذكية بشاشة واضحة، تحسب الخطوات ونبض القلب، ويا سوار سيليكون مريح.',
     specs: [['حجم الشاشة', '45 ملم'], ['الشاشة', 'AMOLED'], ['مقاومة الماء', 'IP68'], ['البطارية', 'لحد 5 أيام']], varLabel: 'لون السوار',
     spec: { metal: 'black', smart: 'square', accent: '#FF7A45', strapC: '#17181B' },
     variants: [{ n: 'أسود', c: '#17181B', v: { '--strap': '#17181B', '--accent': '#FF7A45' } }, { n: 'برتقالي', c: '#E8642F', v: { '--strap': '#E8642F', '--accent': '#FFB08A' } }, { n: 'ثلجي', c: '#B9CCDD', v: { '--strap': '#B9CCDD', '--accent': '#7FC4FF' } }, { n: 'وردي', c: '#E7A6B6', v: { '--strap': '#E7A6B6', '--accent': '#FF8FB1' } }] },
-  { id: 'orbit', name: 'أوربت الدائرية', tags: ['smart', 'sport'], price: 95000, old: 110000, tint: '#4BE3A6', tilt: 6,
+  { id: 'orbit', name: 'أوربت الدائرية', tags: ['men', 'women'], label: 'ساعة ذكية', price: 95000, old: 110000, tint: '#4BE3A6', tilt: 6,
     short: '46 ملم · شاشة دائرية · 5ATM', desc: 'ساعة ذكية دائرية بشكل كلاسيكي، شاشتها تبيّن الثواني والخطوات والبطارية.',
     specs: [['قطر العلبة', '46 ملم'], ['الشاشة', 'AMOLED دائرية'], ['مقاومة الماء', '5ATM'], ['السوار', 'سيليكون']], varLabel: 'لون السوار',
     spec: { metal: 'steel', smart: 'round', bezel: 'smooth', accent: '#4BE3A6', strap: 'rubber', strapC: '#2A2E35' },
     variants: [{ n: 'رمادي', c: '#2A2E35', v: { '--strap': '#2A2E35', '--accent': '#4BE3A6' } }, { n: 'زيتوني', c: '#47553A', v: { '--strap': '#47553A', '--accent': '#C5E86C' } }, { n: 'كحلي', c: '#1B2A44', v: { '--strap': '#1B2A44', '--accent': '#6CB6FF' } }] },
-  { id: 'luna', name: 'لونا الفضية', tags: ['women', 'classic'], price: 99000, tint: '#7D8FB8', tilt: -7,
+  { id: 'luna', name: 'لونا الفضية', tags: ['women'], label: 'ساعة', price: 99000, tint: '#7D8FB8', tilt: -7,
     short: '30 ملم · كوارتز · سوار جلد', desc: 'ساعة ناعمة بمينا أبيض وأرقام رومانية وعقارب زرقاء، ويا سوار جلد.',
     specs: [['قطر العلبة', '30 ملم'], ['الحركة', 'كوارتز'], ['مقاومة الماء', '30 متر'], ['السوار', 'جلد طبيعي']], varLabel: 'لون السوار',
     spec: { metal: 'steel', size: .82, bezel: 'smooth', dial: { a: '#FCFCF9', b: '#E6E5DE', txt: '#2E3238' }, idx: 'roman', idxC: '#1E2125',
       hands: 'leaf', handC: '#2E57B8', secC: '#2E57B8', text: ['TAL AFAR', 'PETITE'], strap: 'leather', strapC: '#7D1C2A' },
     variants: [{ n: 'خمري', c: '#7D1C2A', v: { '--strap': '#7D1C2A' } }, { n: 'أبيض', c: '#E9E3D8', v: { '--strap': '#E9E3D8' } }, { n: 'أسود', c: '#141416', v: { '--strap': '#141416' } }] }
 ];
+PRODUCTS.push(
+  { id: 'misbaha', name: 'سبحة كهرب', tags: ['men', 'misbaha'], label: 'سبحة', price: 45000, badge: 'جديد', tint: '#E8932A', tilt: 5,
+    short: '33 حبة · كهرب · شرابة ذهبية', desc: 'سبحة 33 حبة بفاصلين، حبّاتها تلمع ويه الضو، ويا شرابة ذهبية.', hint: 'اضغط على السبحة حتى تعد الخرز.',
+    specs: [['عدد الحبات', '33 حبة'], ['المادة', 'كهرب'], ['حجم الحبة', '10 ملم'], ['الشرابة', 'خيط ذهبي']], varLabel: 'نوع الحجر',
+    spec: { kind: 'misbaha', metal: 'gold', vars: { '--beadHi': '#FFE3A3', '--beadA': '#E8932A', '--beadB': '#7A3306', '--tassel': '#C9A15A' } },
+    variants: [{ n: 'كهرب عسلي', c: '#E8932A', v: { '--beadHi': '#FFE3A3', '--beadA': '#E8932A', '--beadB': '#7A3306' } }, { n: 'كهرب كرزي', c: '#C2412B', v: { '--beadHi': '#FFB199', '--beadA': '#C2412B', '--beadB': '#4E0F06' } }, { n: 'يسر أسود', c: '#2A2C31', v: { '--beadHi': '#8A8F99', '--beadA': '#2A2C31', '--beadB': '#050506' } }, { n: 'فيروز', c: '#3FB8AF', v: { '--beadHi': '#C9FFF8', '--beadA': '#3FB8AF', '--beadB': '#0B4A46' } }] },
+  { id: 'wallet-m', name: 'محفظة جلد كلاسيك', tags: ['men', 'wallet'], label: 'محفظة', price: 25000, tint: '#8A5A2B', tilt: -5,
+    short: 'جلد طبيعي · 6 بطاقات · جيب هوية', desc: 'محفظة جلد ناعمة بجيوب للبطاقات وجيب للهوية ومكان للفلوس.', hint: 'اضغط على المحفظة حتى تطلع البطاقات.',
+    specs: [['المادة', 'جلد طبيعي'], ['الجيوب', '6 بطاقات وهوية'], ['المقاس', '11 × 9 سم'], ['النوع', 'رجالي']], varLabel: 'لون الجلد',
+    spec: { kind: 'wallet', metal: 'gold', vars: { '--leather': '#6B4226' } },
+    variants: [{ n: 'بني', c: '#6B4226', v: { '--leather': '#6B4226' } }, { n: 'أسود', c: '#1C1C1F', v: { '--leather': '#1C1C1F' } }, { n: 'كحلي', c: '#1E2A44', v: { '--leather': '#1E2A44' } }] },
+  { id: 'wallet-w', name: 'محفظة نسائية مبطّنة', tags: ['women', 'wallet'], label: 'محفظة', price: 30000, tint: '#E3B5B8', tilt: 6,
+    short: 'جلد مبطّن · قفل ذهبي · سلسلة', desc: 'محفظة طويلة بجلد مبطّن وقفل ذهبي، ويا سلسلة تكدرين تشيلينها.', hint: 'اضغطي على المحفظة حتى تنفتح.',
+    specs: [['المادة', 'جلد مبطّن'], ['الإغلاق', 'قفل ذهبي'], ['المقاس', '19 × 10 سم'], ['السلسلة', 'تنشال وتنرجع']], varLabel: 'اللون',
+    spec: { kind: 'wallet', style: 'long', metal: 'gold', vars: { '--leather': '#E3B5B8' } },
+    variants: [{ n: 'وردي', c: '#E3B5B8', v: { '--leather': '#E3B5B8' } }, { n: 'أسود', c: '#1E1C20', v: { '--leather': '#1E1C20' } }, { n: 'بيج', c: '#D8C2A2', v: { '--leather': '#D8C2A2' } }] },
+  { id: 'aviator', name: 'نظارة أفييتور', tags: ['men', 'glasses'], label: 'نظارة شمسية', price: 35000, tint: '#4B6B52', tilt: -4,
+    short: 'إطار معدني ذهبي · UV400', desc: 'إطار معدني ذهبي وعدسات متدرجة تحمي من الشمس.', hint: 'اضغط على النظارة حتى تشوف لمعة العدسة.',
+    specs: [['الإطار', 'معدن ذهبي'], ['العدسات', 'حماية UV400'], ['عرض العدسة', '58 ملم'], ['ويّاها', 'علبة وقطعة تنظيف']], varLabel: 'لون العدسة',
+    spec: { kind: 'glasses', metal: 'gold', vars: { '--lensA': '#4B6B52', '--lensB': '#16241A' } },
+    variants: [{ n: 'أخضر كلاسيك', c: '#3E5B45', v: { '--lensA': '#4B6B52', '--lensB': '#16241A' } }, { n: 'أزرق مرآة', c: '#2F6BD8', v: { '--lensA': '#3D7BE0', '--lensB': '#0A1A44' } }, { n: 'بني متدرج', c: '#7A4A22', v: { '--lensA': '#8A5A2E', '--lensB': '#24130A' } }] },
+  { id: 'cateye', name: 'نظارة كات آي', tags: ['women', 'glasses'], label: 'نظارة شمسية', price: 32000, tint: '#9A5A30', tilt: 5,
+    short: 'إطار أسيتات · UV400', desc: 'إطار أسيتات بشكل عين القطة، وعدسات غامقة تحمي من الشمس.', hint: 'اضغطي على النظارة حتى تشوفين لمعة العدسة.',
+    specs: [['الإطار', 'أسيتات'], ['العدسات', 'حماية UV400'], ['عرض العدسة', '53 ملم'], ['ويّاها', 'علبة وقطعة تنظيف']], varLabel: 'لون الإطار',
+    spec: { kind: 'glasses', style: 'cateye', metal: 'gold', vars: { '--frame': '#6B3A1E', '--lensA': '#4A3426', '--lensB': '#140C08' } },
+    variants: [{ n: 'تورتواز', c: '#6B3A1E', v: { '--frame': '#6B3A1E' } }, { n: 'أسود', c: '#141416', v: { '--frame': '#141416' } }, { n: 'وردي', c: '#D98FA5', v: { '--frame': '#D98FA5' } }] },
+  { id: 'oud', name: 'عطر عود ملكي', tags: ['men', 'perfume'], label: 'عطر', price: 55000, tint: '#E3A447', tilt: -6,
+    short: '100 مل · أو دو بارفان', desc: 'عطر شرقي بقنينة زجاج سميكة وغطا ذهبي. لون العطر يتغير حسب الرائحة اللي تختارها.', hint: 'اضغط على العطر حتى يرش.',
+    specs: [['الحجم', '100 مل'], ['التركيز', 'أو دو بارفان'], ['العائلة', 'شرقي خشبي'], ['النوع', 'رجالي']], varLabel: 'الرائحة',
+    spec: { kind: 'perfume', metal: 'gold', label: 'عود', vars: { '--liquidA': '#E3A447', '--liquidB': '#8A4A0E' } },
+    variants: [{ n: 'عود', c: '#C9862A', text: 'عود', v: { '--liquidA': '#E3A447', '--liquidB': '#8A4A0E' } }, { n: 'عنبر', c: '#B5481E', text: 'عنبر', v: { '--liquidA': '#D9653B', '--liquidB': '#6E1E08' } }, { n: 'فريش', c: '#5DAEE0', text: 'فريش', v: { '--liquidA': '#8FD0F2', '--liquidB': '#2A6FA8' } }] },
+  { id: 'jouri', name: 'عطر ورد جوري', tags: ['women', 'perfume'], label: 'عطر', price: 50000, tint: '#E58FA6', tilt: 6,
+    short: '80 مل · أو دو بارفان', desc: 'عطر زهري ناعم بقنينة دائرية وغطا ذهبي وردي.', hint: 'اضغطي على العطر حتى يرش.',
+    specs: [['الحجم', '80 مل'], ['التركيز', 'أو دو بارفان'], ['العائلة', 'زهري'], ['النوع', 'نسائي']], varLabel: 'الرائحة',
+    spec: { kind: 'perfume', style: 'round', metal: 'rose', label: 'جوري', vars: { '--liquidA': '#F6B3C4', '--liquidB': '#C2557A' } },
+    variants: [{ n: 'ورد جوري', c: '#E58FA6', text: 'جوري', v: { '--liquidA': '#F6B3C4', '--liquidB': '#C2557A' } }, { n: 'فانيلا', c: '#E2B66F', text: 'فانيلا', v: { '--liquidA': '#F5D9A6', '--liquidB': '#C08A3E' } }, { n: 'ياسمين', c: '#EDE3C4', text: 'ياسمين', v: { '--liquidA': '#FBF3DC', '--liquidB': '#D9C48E' } }] },
+  { id: 'ring', name: 'خاتم فضة عقيق', tags: ['men', 'acc'], label: 'خاتم', price: 40000, tint: '#C4401F', tilt: -5,
+    short: 'فضة 925 · حجر عقيق', desc: 'خاتم فضة بحجر عقيق بيضوي وإطار مبروم حوالين الحجر.', hint: 'اضغط على الخاتم حتى يلمع.',
+    specs: [['المعدن', 'فضة عيار 925'], ['الحجر', 'عقيق'], ['المقاسات', 'من 8 إلى 13'], ['النقشة', 'يدوية']], varLabel: 'الحجر',
+    spec: { kind: 'ring', metal: 'steel', vars: { '--stoneHi': '#FFB59A', '--stoneA': '#C4401F', '--stoneB': '#4A0E05' } },
+    variants: [{ n: 'عقيق أحمر', c: '#C4401F', v: { '--stoneHi': '#FFB59A', '--stoneA': '#C4401F', '--stoneB': '#4A0E05' } }, { n: 'فيروز', c: '#2FA9A0', v: { '--stoneHi': '#C8FFF6', '--stoneA': '#2FA9A0', '--stoneB': '#0B4441' } }, { n: 'أونيكس أسود', c: '#1A1B1E', v: { '--stoneHi': '#7E848C', '--stoneA': '#1A1B1E', '--stoneB': '#020203' } }] },
+  { id: 'bracelet', name: 'إسوارة القلب', tags: ['women', 'acc'], label: 'إسوارة', price: 28000, old: 35000, tint: '#D8B263', tilt: 5,
+    short: 'سلسلة ناعمة · تعليقة قلب', desc: 'إسوارة سلسلة ناعمة ويا تعليقة قلب بفص لامع.', hint: 'اضغطي على الإسوارة حتى تلمع.',
+    specs: [['المعدن', 'ستيل مطلي'], ['التعليقة', 'قلب بفص'], ['الطول', 'يتعدّل'], ['النوع', 'نسائي']], varLabel: 'اللون',
+    spec: { kind: 'bracelet', metal: 'gold' },
+    variants: [{ n: 'ذهبي', c: '#D8B263', v: metalVars('gold') }, { n: 'فضي', c: '#C9CFD6', v: metalVars('steel') }, { n: 'روز', c: '#D59B82', v: metalVars('rose') }] }
+);
+// Mixed order so the first rows show the whole range, not only watches.
+const ORDER = ['royal', 'misbaha', 'aviator', 'abyss', 'rosa', 'oud', 'wallet-m', 'pilot', 'cateye', 'jouri', 'skeleton', 'ring', 'gmt', 'wallet-w', 'bracelet', 'pulse', 'orbit', 'luna'];
+PRODUCTS.sort((a, b) => ORDER.indexOf(a.id) - ORDER.indexOf(b.id));
 PRODUCTS.forEach(p => { if (p.old && !p.badge) p.badge = `خصم ${Math.round((1 - p.price / p.old) * 100)}%`; });
 
 /* ---------- live watch engine ---------- */
@@ -1009,9 +1380,11 @@ const io = new IntersectionObserver(entries => {
 }, { threshold: [0, .3] });
 
 function mountWatch(el, spec, opts = {}) {
-  el.innerHTML = buildWatch(spec);
+  el.innerHTML = buildPiece(spec);
   const svg = el.querySelector('svg'), q = s => svg.querySelectorAll(s);
+  if (opts.live || RM) svg.classList.add('entered');
   const w = { el, svg, spec, visible: false, phase: (opts.live || RM) ? 'live' : 'pose', settleDelay: opts.delay, bezelAngle: 0, bezelScroll: 0, lastSec: -1,
+    item: ITEMS[spec.kind] ? spec.kind : null, count: 0,
     hr: q('.h-hour'), mn: q('.h-min'), sec: q('.h-sec'), gm: q('.h-gmt'), subS: q('.sub-s'), subM: q('.sub-m'),
     bezel: svg.querySelector('.bezel'), sheen: svg.querySelector('.sheen'), glare: svg.querySelector('.glare'),
     chrono: !!spec.chrono, chr: { state: 'idle' }, smart: !!spec.smart };
@@ -1029,6 +1402,7 @@ function fillRings(w) { (w.rings || []).forEach(r => { r.style.strokeDashoffset 
 function startSettle(w, delay = 0) {
   if (RM) { w.phase = 'live'; fillRings(w); return; }
   w.phase = 'settle'; w.t0 = performance.now() + delay; w.dur = 1900;
+  setTimeout(() => w.svg.classList.add('entered'), delay);
   setTimeout(() => fillRings(w), delay + 150);
   setTimeout(() => w.svg.classList.add('swept'), delay + 950);
 }
@@ -1096,7 +1470,7 @@ function tick(t) {
 const heroW = mountWatch($('#heroWatch'), HERO, { delay: ANIM ? 700 : 0 });
 { const n = now(); $('.orbit.sec').style.animationDelay = `-${(n.s + n.ms / 1000).toFixed(2)}s`; }
 
-$('#marquee').innerHTML = Array(2).fill(['ساعات رجالية', 'ساعات نسائية', 'كلاسيك', 'رياضية', 'ساعات ذكية', 'هدايا', 'أوتوماتيك', 'كرونوغراف'])
+$('#marquee').innerHTML = Array(2).fill(['ساعات رجالية', 'ساعات نسائية', 'محافظ', 'سبح', 'نظارات', 'عطور', 'إكسسوارات', 'هدايا'])
   .flat().map(t => `<span class="marquee-item"><span class="mq-word">${t}</span><span class="mq-gem"></span></span>`).join('');
 
 const dust = { on: false, parts: [], ctx: null, W: 0, H: 0 };
@@ -1138,7 +1512,7 @@ grid.innerHTML = PRODUCTS.map((p, i) => `
       <div class="card-spot"></div>
       <div class="stage"><div class="stage-floor"></div><div class="watch"><div class="float"></div></div>${p.badge ? `<span class="badge">${p.badge}</span>` : ''}</div>
       <div class="info">
-        <p class="cat">${p.tags.map(t => TAGS[t]).join(' · ')}</p>
+        <p class="cat">${catLine(p)}</p>
         <h3 class="name">${p.name}</h3>
         <p class="spec">${p.short}</p>
         <div class="buy"><p class="price"><b>${fmt(p.price)}</b><span class="cur">د.ع</span>${p.old ? `<s>${fmt(p.old)}</s>` : ''}</p><span class="more">التفاصيل ${ARROW}</span></div>
@@ -1263,7 +1637,7 @@ const sheet = $('#sheet'), panel = $('.sheet-panel'), backdrop = $('.sheet-backd
 let open = null, sheetW = null, busy = false;
 
 function fillSheet(p, card) {
-  $('#sheetCat').textContent = p.tags.map(t => TAGS[t]).join(' · ');
+  $('#sheetCat').textContent = catLine(p);
   $('#sheetTitle').textContent = p.name;
   $('#sheetDesc').textContent = p.desc;
   $('#sheetSpecs').innerHTML = p.specs.map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join('');
@@ -1272,8 +1646,14 @@ function fillSheet(p, card) {
   $('#sheetOld').textContent = p.old ? fmt(p.old) : '';
   const hint = $('#sheetHint'); hint.textContent = p.hint || ''; hint.hidden = !p.hint;
   stageEl.style.setProperty('--tint', p.tint);
-  stageEl.classList.toggle('interactive', !!(p.spec.chrono || /diver|gmt/.test(p.spec.bezel || '')));
+  stageEl.classList.toggle('interactive', !!(p.spec.chrono || /diver|gmt/.test(p.spec.bezel || '') || ITEMS[p.spec.kind]));
+  setOrderLink();
 }
+function setOrderLink() {
+  const { p, v } = open;
+  $('#sheetOrder').href = waLink(`مرحبا، أريد أطلب من ساعات تلعفر:\n${p.name} — ${p.varLabel || 'اللون'}: ${v.n}\nالسعر: ${fmt(p.price)} د.ع`);
+}
+const setLabel = (svg, text) => { if (text) svg.querySelectorAll('.pf-l').forEach(t => { t.textContent = text; }); };
 const centerOf = r => [r.left + r.width / 2, r.top + r.height / 2];
 function flight(fromRect, toRect, svgNode, fromRot, toRot, dur, ease) {
   flyer.innerHTML = ''; flyer.appendChild(svgNode);
@@ -1294,6 +1674,7 @@ function openSheet(card) {
   if (sheetW) unmountWatch(sheetW);
   sheetW = mountWatch(sWatch, p.spec, { live: true });
   sheetW.svg.setAttribute('style', card._w.svg.getAttribute('style'));
+  setLabel(sheetW.svg, open.v.text);
   const priceEl = $('#sheetPrice');
   const done = () => { busy = false; $('.sheet-x').focus({ preventScroll: true }); };
   if (!ANIM) { priceEl.textContent = fmt(p.price); done(); return; }
@@ -1348,7 +1729,11 @@ $('#sheetVariants').addEventListener('click', e => {
   const i = +b.dataset.i, v = open.p.variants[i];
   open.v = v; open.card._vi = i;
   $$('.var', sheet).forEach(x => x.setAttribute('aria-pressed', String(x === b)));
-  for (const svg of [sheetW.svg, open.card._w.svg]) for (const [k, val] of Object.entries(v.v)) svg.style.setProperty(k, val);
+  for (const svg of [sheetW.svg, open.card._w.svg]) {
+    for (const [k, val] of Object.entries(v.v)) svg.style.setProperty(k, val);
+    setLabel(svg, v.text);
+  }
+  setOrderLink();
   if (ANIM) G.fromTo(sWatch, { rotation: -6, scale: .95 }, { rotation: 0, scale: 1, duration: 1.1, ease: 'elastic.out(1,.45)' });
 });
 
@@ -1365,20 +1750,29 @@ stageEl.addEventListener('click', () => {
     const step = w.spec.bezel === 'gmt' ? -15 : -6;
     if (ANIM) G.to(w, { bezelAngle: w.bezelAngle + step * 5, duration: .6, ease: 'steps(5)', onUpdate: () => setBezel(w) });
     else { w.bezelAngle += step * 5; setBezel(w); }
-  }
+  } else if (w.item) itemAction(w);
 });
 
-function copyText(text) {
-  try { if (navigator.clipboard && navigator.clipboard.writeText) return navigator.clipboard.writeText(text).then(() => true, () => false); } catch (_) {}
-  return Promise.resolve(false);
+const pulseClass = (svg, cls, ms) => {
+  svg.classList.remove(cls); void svg.getBoundingClientRect(); svg.classList.add(cls);
+  clearTimeout(svg['_' + cls]); svg['_' + cls] = setTimeout(() => svg.classList.remove(cls), ms);
+};
+function itemAction(w) {
+  const svg = w.svg, hint = $('#sheetHint');
+  if (w.item === 'misbaha') {
+    const beads = $$('.bd:not(.sep)', svg);
+    if (w.count >= beads.length) { w.count = 0; beads.forEach(b => b.classList.remove('counted')); hint.textContent = open.p.hint; return; }
+    beads[w.count++].classList.add('counted');
+    hint.textContent = `العدد: ${w.count} من ${beads.length}`;
+    if (w.count === beads.length) toast(`كمّلت ${beads.length}. اضغط مرة ثانية حتى تبدي من جديد.`);
+  } else if (w.item === 'wallet') svg.classList.toggle('fan');
+  else if (w.item === 'perfume') pulseClass(svg, 'spray', 2300);
+  else if (w.item === 'glasses') pulseClass(svg, 'swept', 1700);
+  else { pulseClass(svg, 'shine', 1900); pulseClass(svg, 'swept', 1700); }
 }
+
 $('#sheetOrder').addEventListener('click', () => {
-  if (!open) return;
-  const { p, v } = open;
-  const msg = `مرحبا، أريد أطلب من ساعات تلعفر:\n${p.name} — ${p.varLabel || 'اللون'}: ${v.n}\nالسعر: ${fmt(p.price)} د.ع`;
-  copyText(msg).then(ok => ok
-    ? toast('نسخنا رسالة الطلب. الصقها برسالة خاصة لحساب المحل على تيك توك.')
-    : toast('انسخ هالرسالة وابعثها لحساب المحل على تيك توك:', msg));
+  toast('تنفتح محادثة واتساب ويا المحل والرسالة جاهزة. بس اضغط إرسال.');
 });
 
 let toastTimer;
@@ -1489,6 +1883,8 @@ if (ANIM) {
     G.from('.step', { y: 60, opacity: 0, duration: 1.2, stagger: .14, ease: 'expo.out', scrollTrigger: { trigger: '.steps', start: 'top 82%' } });
     G.from('.step .num', { scale: .4, opacity: 0, duration: 1.2, stagger: .14, ease: 'back.out(2)', scrollTrigger: { trigger: '.steps', start: 'top 82%' } });
     G.to('.steps-line line', { strokeDashoffset: 0, ease: 'none', scrollTrigger: { trigger: '.steps', start: 'top 78%', end: 'bottom 62%', scrub: .6 } });
+    G.from('.loc-card', { y: 70, opacity: 0, scale: .96, duration: 1.3, ease: 'expo.out', scrollTrigger: { trigger: '.loc-card', start: 'top 86%' } });
+    G.from('.loc-lines li, .loc .ctas', { x: 40, opacity: 0, duration: 1, stagger: .1, ease: 'expo.out', scrollTrigger: { trigger: '.loc-card', start: 'top 80%' } });
     G.from('.tt-card', { y: 70, opacity: 0, scale: .96, duration: 1.3, ease: 'expo.out', scrollTrigger: { trigger: '.tt-card', start: 'top 86%' } });
     G.from('.foot-in > *', { y: 20, opacity: 0, duration: 1, stagger: .08, ease: 'expo.out', scrollTrigger: { trigger: '.foot', start: 'top 96%' } });
   }

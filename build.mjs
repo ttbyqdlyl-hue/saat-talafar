@@ -17,7 +17,7 @@ const html = `<!doctype html>
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ar_IQ">
 <meta property="og:title" content="ساعات تلعفر">
-<meta property="og:description" content="ساعات رجالية ونسائية وكلاسيك وذكية. تصفّح التشكيلة واطلب ساعتك برسالة على تيك توك.">
+<meta property="og:description" content="ساعات ومحافظ وسبح ونظارات وعطور وإكسسوارات بتلعفر. تصفّح التشكيلة واطلب على واتساب.">
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}[hidden]{display:none!important}</style>
 ${head.trim()}
 </head>
