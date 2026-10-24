@@ -410,9 +410,11 @@ img,svg{max-width:100%}
 
 /* photo products (added by the owner) */
 .stage.photo{overflow:hidden;background:#0A0D12;transform-style:flat}
-.stage.photo .ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:translate3d(var(--px,0px),var(--py,0px),0) scale(1.06);transition:transform 1.2s var(--ease-out),filter .6s}
-.card:hover .stage.photo .ph{transform:translate3d(var(--px,0px),var(--py,0px),0) scale(1.13)}
-.stage.photo::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(7,8,11,.25),transparent 30%,transparent 62%,rgba(7,8,11,.6))}
+/* the whole photo stays visible (contain); a blurred copy fills the frame behind it */
+.stage.photo .ph-bg{position:absolute;inset:-8%;width:116%;height:116%;max-width:none;object-fit:cover;filter:blur(26px) brightness(.5) saturate(1.15);pointer-events:none}
+.stage.photo .ph{position:absolute;inset:0;width:100%;height:100%;padding:5%;object-fit:contain;filter:drop-shadow(0 18px 26px rgba(0,0,0,.5));transform:translate3d(var(--px,0px),var(--py,0px),0);transition:transform 1.2s var(--ease-out),filter .6s}
+.card:hover .stage.photo .ph{transform:translate3d(var(--px,0px),var(--py,0px),0) scale(1.05)}
+.stage.photo::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,transparent 74%,rgba(7,8,11,.35))}
 .ph-shine{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(105deg,transparent 35%,rgba(255,244,214,.32) 50%,transparent 65%);transform:translateX(130%)}
 .card:hover .ph-shine,.card.in-focus .ph-shine{animation:phShine 1.3s var(--ease-io)}
 @keyframes phShine{from{transform:translateX(130%)}to{transform:translateX(-130%)}}
@@ -431,6 +433,24 @@ img,svg{max-width:100%}
 .gal-dots button{width:8px;height:8px;border-radius:999px;background:rgba(255,255,255,.28);transition:width .4s var(--ease-out),background-color .3s}
 .gal-dots button[aria-current="true"]{width:24px;background:var(--champagne)}
 .flyer img{width:100%;height:100%;object-fit:contain}
+.flyer .ph{padding:0;transform:none;filter:none}
+.gal-track img{cursor:zoom-in}
+.gal-zoom{position:absolute;top:10px;inset-inline-start:10px;z-index:2;display:inline-flex;align-items:center;gap:6px;height:38px;padding:0 14px;border-radius:999px;background:rgba(7,8,11,.72);border:1px solid rgba(255,255,255,.14);font-size:13px;color:var(--ivory)}
+.zoom{position:fixed;inset:0;z-index:130;display:grid;grid-template-rows:minmax(0,1fr) auto;padding-block:env(safe-area-inset-top,0px) env(safe-area-inset-bottom,0px);background:var(--obsidian)}
+.zoom-stage{position:relative;min-height:0;overflow:hidden;display:grid;place-items:center;touch-action:none;cursor:zoom-in;user-select:none;-webkit-user-select:none}
+.zoom-stage.zoomed{cursor:grab}
+.zoom-stage img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;transform-origin:center;will-change:transform;-webkit-user-drag:none}
+.zoom-x,.zoom-nav{position:absolute;z-index:2;width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:rgba(20,24,32,.86);border:1px solid var(--line);color:var(--ivory)}
+.zoom-x{top:calc(14px + env(safe-area-inset-top,0px));inset-inline-end:max(14px, env(safe-area-inset-left, 0px))}
+.zoom-nav{top:50%;margin-top:-24px}
+.zoom-nav.prev{inset-inline-start:max(12px, env(safe-area-inset-right, 0px))}
+.zoom-nav.next{inset-inline-end:max(12px, env(safe-area-inset-left, 0px))}
+.zoom-bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px;padding:14px max(16px, env(safe-area-inset-right, 0px)) 18px max(16px, env(safe-area-inset-left, 0px))}
+.zoom-bar button{min-width:48px;height:48px;padding:0 16px;border-radius:999px;border:1px solid var(--line);background:var(--panel);font-size:22px;line-height:1}
+.zoom-bar .zr{font-size:14px}
+#zoomPct{min-width:60px;text-align:center;font-size:14px;color:var(--mist)}
+#zoomCount{font-size:13px;color:var(--mist)}
+.zoom-hint{flex-basis:100%;margin:0;text-align:center;font-size:12.5px;color:var(--mist)}
 @media (max-width:760px){.sheet-gallery{height:300px}}
 
 /* owner panel */
@@ -935,7 +955,7 @@ select.ow-input{appearance:none;-webkit-appearance:none;padding-inline-end:44px;
         <div class="ow-field"><label for="owBadge">شارة على البطاقة</label><select class="ow-input" id="owBadge"><option value="">بدون</option><option>جديد</option><option>الأكثر طلباً</option><option>قطعة مميزة</option><option>كمية محدودة</option></select></div>
       </div>
       <div class="ow-field"><span class="ow-label">لمن؟</span><div class="ow-checks"><label class="ow-check"><input type="checkbox" id="owMen" checked> رجالي</label><label class="ow-check"><input type="checkbox" id="owWomen"> نسائي</label></div></div>
-      <div class="ow-field"><label for="owColors">الألوان المتوفرة (افصل بينها بفارزة)</label><input class="ow-input" id="owColors" maxlength="120" placeholder="أسود، ذهبي، فضي"></div>
+      <div class="ow-field"><label for="owColors">الألوان المتوفرة (افصل بينها بفراغ أو فارزة)</label><input class="ow-input" id="owColors" maxlength="120" placeholder="أسود ذهبي فضي"></div>
       <div class="ow-field"><label for="owShort">سطر قصير تحت الاسم (اختياري)</label><input class="ow-input" id="owShort" maxlength="60" placeholder="41 ملم · ستيل · ضد الماء"></div>
       <div class="ow-field"><label for="owDesc">الوصف (اختياري)</label><textarea class="ow-input" id="owDesc" maxlength="600" rows="3"></textarea></div>
       <label class="ow-switch big"><input type="checkbox" id="owSold"><span></span><em>نفد من المحل</em></label>
@@ -945,6 +965,20 @@ select.ow-input{appearance:none;-webkit-appearance:none;padding-inline-end:44px;
   </div>
 
   <div class="ow-busy" id="owBusy" hidden><span class="ow-spin"></span><p id="owBusyText">جاري الحفظ…</p></div>
+</div>
+<div class="zoom" id="zoom" hidden dir="rtl" lang="ar" role="dialog" aria-modal="true" aria-label="تكبير الصورة">
+  <div class="zoom-stage" id="zoomStage"><img id="zoomImg" alt="صورة المنتج مكبّرة" draggable="false"></div>
+  <button class="zoom-x" type="button" id="zoomX" aria-label="إغلاق"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg></button>
+  <button class="zoom-nav prev" type="button" id="zoomPrev" aria-label="الصورة السابقة"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  <button class="zoom-nav next" type="button" id="zoomNext" aria-label="الصورة التالية"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  <div class="zoom-bar">
+    <button type="button" id="zoomOut" aria-label="تصغير">−</button>
+    <span class="digits" id="zoomPct">100%</span>
+    <button type="button" id="zoomIn" aria-label="تكبير">+</button>
+    <button type="button" class="zr" id="zoomReset">رجّعها</button>
+    <span class="digits" id="zoomCount"></span>
+    <p class="zoom-hint" id="zoomHint">قرّب بإصبعين، أو اضغط مرتين على الصورة حتى تتكبر</p>
+  </div>
 </div>
 <div class="flyer" id="flyer" hidden aria-hidden="true"></div>
 <div class="veil" id="veil" aria-hidden="true"></div>
@@ -1783,6 +1817,7 @@ function dustFrame() {
 const grid = $('#grid');
 const ARROW = '<svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 const HEART_ICON = '<svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path d="M12 20.3s-7.6-4.6-9.4-9.3C1.3 7.6 3.5 4.4 7 4.4c2 0 3.6 1.1 5 3 1.4-1.9 3-3 5-3 3.5 0 5.7 3.2 4.4 6.6-1.8 4.7-9.4 9.3-9.4 9.3z" stroke-width="1.7" stroke-linejoin="round"/></svg>';
+const MAG_ICON = '<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="1.9"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>';
 const CATS = { watch: 'ساعة', wallet: 'محفظة', misbaha: 'سبحة', glasses: 'نظارة', perfume: 'عطر', acc: 'إكسسوار' };
 const DATA_URL = 'data/products.json';
 let SETTINGS = { showSamples: true, hiddenSamples: [] };
@@ -1794,7 +1829,8 @@ const localImg = {}; // images just uploaded from this device, shown before GitH
 const imgSrc = path => localImg[path] || path;
 
 function fromData(d) {
-  const colors = String(d.colors || '').split(/[،,]/).map(s => s.trim()).filter(Boolean);
+  // Owners separate colours with spaces, commas or whatever their keyboard gives (، , ‘ - / ...).
+  const colors = String(d.colors || '').split(/[\s،,؛;‘’'"`\-–—/|.]+/).map(s => s.trim()).filter(Boolean);
   const p = { id: d.id, live: true, name: d.name || '', label: CATS[d.cat] || 'قطعة', cat: d.cat || 'watch',
     tags: [...(d.gender || []).filter(g => g === 'men' || g === 'women'), ...(d.cat && d.cat !== 'watch' ? [d.cat] : [])],
     price: +d.price || 0, old: +d.old || 0, soldOut: !!d.soldOut, badge: d.soldOut ? 'نفد' : (d.badge || ''),
@@ -1807,7 +1843,7 @@ function fromData(d) {
 function cardHTML(p, i) {
   const badge = p.badge ? `<span class="badge${p.soldOut ? ' sold' : ''}">${esc(p.badge)}</span>` : '';
   const stage = p.live
-    ? `<div class="stage photo">${p.thumb ? `<img class="ph" src="${esc(imgSrc(p.thumb))}" alt="${esc(p.name)}" loading="lazy" decoding="async">` : ''}<span class="ph-shine"></span>${badge}</div>`
+    ? `<div class="stage photo">${p.thumb ? `<img class="ph-bg" src="${esc(imgSrc(p.thumb))}" alt="" aria-hidden="true" loading="lazy" decoding="async"><img class="ph" src="${esc(imgSrc(p.images[0] || p.thumb))}" alt="${esc(p.name)}" loading="lazy" decoding="async">` : ''}<span class="ph-shine"></span>${badge}</div>`
     : `<div class="stage"><div class="stage-floor"></div><div class="watch"><div class="float"></div></div>${badge}</div>`;
   return `
   <article class="card${p.soldOut ? ' sold' : ''}" data-id="${esc(p.id)}" data-tags="${p.tags.join(' ')}" style="--tint:${p.tint};--tilt:${p.tilt}deg;--fd:${(-i * .73).toFixed(2)}s">
@@ -2011,14 +2047,92 @@ function fillGallery(p) {
   const imgs = p.images.length ? p.images : [p.thumb];
   gallery.innerHTML = `<div class="gal-track">${imgs.map((src, i) => `<img src="${esc(imgSrc(src))}" alt="${esc(p.name)} ${i + 1}" decoding="async">`).join('')}</div>`
     + (imgs.length > 1 ? `<div class="gal-dots">${imgs.map((_, i) => `<button type="button" aria-label="صورة ${i + 1}" aria-current="${i === 0}"></button>`).join('')}</div>` : '');
-  const track = $('.gal-track', gallery), slides = $$('img', track), dots = $$('.gal-dots button', gallery);
+  gallery.insertAdjacentHTML('beforeend', `<button type="button" class="gal-zoom" aria-label="كبّر الصورة">${MAG_ICON}<span>تكبير</span></button>`);
+  const track = $('.gal-track', gallery), slides = $$('img', track), dots = $$('.gal-dots button', gallery), list = imgs.map(imgSrc);
+  gallery._i = 0;
   dots.forEach((d, i) => d.addEventListener('click', () => slides[i].scrollIntoView({ inline: 'center', block: 'nearest', behavior: ANIM ? 'smooth' : 'auto' })));
+  slides.forEach((s, i) => s.addEventListener('click', () => openZoom(list, i)));
+  $('.gal-zoom', gallery).addEventListener('click', () => openZoom(list, gallery._i));
   if (dots.length) {
     gallery._io = new IntersectionObserver(es => es.forEach(e => {
-      if (e.isIntersecting) { const i = slides.indexOf(e.target); dots.forEach((d, k) => d.setAttribute('aria-current', String(k === i))); }
+      if (e.isIntersecting) { const i = slides.indexOf(e.target); gallery._i = i; dots.forEach((d, k) => d.setAttribute('aria-current', String(k === i))); }
     }), { root: track, threshold: .6 });
     slides.forEach(s => gallery._io.observe(s));
   }
+}
+
+/* ---------- full-screen photo zoom: pinch, wheel, double-tap, buttons, drag to pan ---------- */
+const zoomEl = $('#zoom'), zImg = $('#zoomImg'), zStage = $('#zoomStage');
+const Z_MAX = 5;
+let zList = [], zIdx = 0, zs = 1, zx = 0, zy = 0;
+function zApply(anim) {
+  // keep the photo's edges from leaving the screen while panning
+  const r = zStage.getBoundingClientRect(), mx = Math.max(0, (zImg.offsetWidth * zs - r.width) / 2), my = Math.max(0, (zImg.offsetHeight * zs - r.height) / 2);
+  zx = Math.min(mx, Math.max(-mx, zx)); zy = Math.min(my, Math.max(-my, zy));
+  zImg.style.transition = anim && !RM ? 'transform .35s cubic-bezier(.16,1,.3,1)' : 'none';
+  zImg.style.transform = `translate(${zx.toFixed(1)}px, ${zy.toFixed(1)}px) scale(${zs.toFixed(3)})`;
+  $('#zoomPct').textContent = Math.round(zs * 100) + '%';
+  zStage.classList.toggle('zoomed', zs > 1.01);
+}
+// Zooms toward a screen point so whatever is under the finger or cursor stays put.
+function zSet(s, cx, cy, anim) {
+  const r = zStage.getBoundingClientRect();
+  const ox = (cx == null ? r.left + r.width / 2 : cx) - (r.left + r.width / 2), oy = (cy == null ? r.top + r.height / 2 : cy) - (r.top + r.height / 2);
+  const ns = Math.min(Z_MAX, Math.max(1, s)), k = ns / zs;
+  zx = ox - (ox - zx) * k; zy = oy - (oy - zy) * k; zs = ns;
+  if (zs <= 1.001) { zs = 1; zx = 0; zy = 0; }
+  zApply(anim);
+  $('#zoomHint').hidden = true;
+}
+function zShow(i) {
+  zIdx = (i + zList.length) % zList.length; zs = 1; zx = 0; zy = 0;
+  zImg.src = zList[zIdx];
+  zApply(false);
+  $('#zoomCount').textContent = zList.length > 1 ? `${zIdx + 1} / ${zList.length}` : '';
+  $('#zoomPrev').hidden = $('#zoomNext').hidden = zList.length < 2;
+}
+function openZoom(list, i) {
+  zList = list; zoomEl.hidden = false; $('#zoomHint').hidden = false;
+  zShow(i);
+  if (ANIM) G.fromTo(zoomEl, { opacity: 0 }, { opacity: 1, duration: .35, ease: 'power2.out' });
+  $('#zoomX').focus({ preventScroll: true });
+}
+function closeZoom() { zoomEl.hidden = true; zImg.removeAttribute('src'); }
+$('#zoomX').addEventListener('click', closeZoom);
+$('#zoomIn').addEventListener('click', () => zSet(zs * 1.6, null, null, true));
+$('#zoomOut').addEventListener('click', () => zSet(zs / 1.6, null, null, true));
+$('#zoomReset').addEventListener('click', () => zSet(1, null, null, true));
+// In right-to-left order the next photo sits to the left.
+$('#zoomPrev').addEventListener('click', () => zShow(zIdx - 1));
+$('#zoomNext').addEventListener('click', () => zShow(zIdx + 1));
+zImg.addEventListener('load', () => zApply(false));
+zStage.addEventListener('wheel', e => { e.preventDefault(); zSet(zs * Math.exp(-e.deltaY * .0016), e.clientX, e.clientY, false); }, { passive: false });
+{
+  const ptrs = new Map();
+  let pinch = null, drag = null, lastTap = 0;
+  zStage.addEventListener('pointerdown', e => {
+    try { zStage.setPointerCapture(e.pointerId); } catch (_) {}
+    ptrs.set(e.pointerId, { x: e.clientX, y: e.clientY });
+    if (ptrs.size === 2) { const [a, b] = [...ptrs.values()]; pinch = { d: Math.hypot(a.x - b.x, a.y - b.y) || 1, s: zs }; drag = null; return; }
+    const t = Date.now();
+    if (t - lastTap < 300) { zSet(zs > 1.01 ? 1 : 2.5, e.clientX, e.clientY, true); lastTap = 0; drag = null; return; }
+    lastTap = t; drag = { x: e.clientX, y: e.clientY, zx, zy };
+  });
+  zStage.addEventListener('pointermove', e => {
+    if (!ptrs.has(e.pointerId)) return;
+    ptrs.set(e.pointerId, { x: e.clientX, y: e.clientY });
+    if (pinch && ptrs.size >= 2) { const [a, b] = [...ptrs.values()]; zSet(pinch.s * Math.hypot(a.x - b.x, a.y - b.y) / pinch.d, (a.x + b.x) / 2, (a.y + b.y) / 2, false); }
+    else if (drag && zs > 1.01) { zx = drag.zx + e.clientX - drag.x; zy = drag.zy + e.clientY - drag.y; zApply(false); }
+  });
+  const up = e => {
+    ptrs.delete(e.pointerId);
+    if (ptrs.size < 2) pinch = null;
+    if (ptrs.size) return;
+    if (drag && zs <= 1.01 && zList.length > 1) { const dx = e.clientX - drag.x; if (Math.abs(dx) > 60) zShow(zIdx + (dx > 0 ? 1 : -1)); }
+    drag = null;
+  };
+  zStage.addEventListener('pointerup', up);
+  zStage.addEventListener('pointercancel', up);
 }
 function clearGallery() { if (gallery._io) { gallery._io.disconnect(); gallery._io = null; } gallery.innerHTML = ''; }
 
@@ -2121,7 +2235,15 @@ function closeSheet() {
     .to(backdrop, { opacity: 0, duration: .6, ease: 'power2.inOut' }, .12);
 }
 $$('[data-close]', sheet).forEach(b => b.addEventListener('click', closeSheet));
-addEventListener('keydown', e => { if (e.key === 'Escape' && open) closeSheet(); });
+addEventListener('keydown', e => {
+  if (!zoomEl.hidden) {
+    if (e.key === 'Escape') closeZoom();
+    else if (e.key === '+' || e.key === '=') zSet(zs * 1.6, null, null, true);
+    else if (e.key === '-') zSet(zs / 1.6, null, null, true);
+    return;
+  }
+  if (e.key === 'Escape' && open) closeSheet();
+});
 
 $('#sheetVariants').addEventListener('click', e => {
   const b = e.target.closest('.var');
@@ -2614,14 +2736,14 @@ $('#owForm').addEventListener('submit', async e => {
     const files = [], images = [];
     for (const [n, ph] of photos.entries()) {
       if (ph.path) { images.push(ph.path); continue; }
-      const img = await toImage(ph.file, 1400, .82), path = `images/${id}-${stamp}${n}.${img.ext}`;
+      const img = await toImage(ph.file, 2000, .86), path = `images/${id}-${stamp}${n}.${img.ext}`;
       files.push({ path: `${REPO.dir}/${path}`, base64: await blobToB64(img.blob) });
       localImg[path] = ph.url; images.push(path);
     }
     let thumb = editing && editing.thumb && (editing.images || [])[0] === images[0] ? editing.thumb : null;
     if (!thumb) {
       const first = photos[0], source = first.file || await (await fetch(imgSrc(first.path))).blob();
-      const t = await toImage(source, 640, .8);
+      const t = await toImage(source, 900, .82);
       thumb = `images/${id}-${stamp}t.${t.ext}`;
       files.push({ path: `${REPO.dir}/${thumb}`, base64: await blobToB64(t.blob) });
       localImg[thumb] = URL.createObjectURL(t.blob);
