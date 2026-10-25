@@ -7,6 +7,28 @@
  },
  "products": [
   {
+   "id": "pmvnur4o0",
+   "name": "ساعة رجالي جلد",
+   "price": 25000,
+   "old": 0,
+   "cat": "watch",
+   "gender": [
+    "men"
+   ],
+   "colors": "اسود",
+   "short": "ضد الماء طلاء تابت",
+   "desc": "",
+   "badge": "",
+   "soldOut": false,
+   "images": [
+    "images/pmvnur4o0-mvnutnmu0.jpg",
+    "images/pmvnur4o0-mvnutnmu1.jpg"
+   ],
+   "thumb": "images/pmvnur4o0-mvnutnmut.jpg",
+   "updatedAt": "2026-10-25T13:19:17.130Z",
+   "createdAt": "2026-10-25T13:19:17.130Z"
+  },
+  {
    "id": "pmvn0qg16",
    "name": "للاتع",
    "price": 10000,
@@ -28,5 +50,5 @@
    "createdAt": "2026-10-24T23:16:58.830Z"
   }
  ],
- "updatedAt": "2026-10-25T10:54:35.279Z"
+ "updatedAt": "2026-10-25T13:19:21.730Z"
 }
