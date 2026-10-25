@@ -66,7 +66,7 @@ img,svg{max-width:100%}
 
 /* header */
 .top{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;border-bottom:1px solid transparent;transition:background-color .5s,border-color .5s}
-.top.scrolled{background:color-mix(in srgb,var(--obsidian) 74%,transparent);-webkit-backdrop-filter:blur(16px) saturate(1.3);backdrop-filter:blur(16px) saturate(1.3);border-bottom-color:var(--line)}
+.top.scrolled{background:rgba(7,8,11,.8);background:color-mix(in srgb,var(--obsidian) 74%,transparent);-webkit-backdrop-filter:blur(16px) saturate(1.3);backdrop-filter:blur(16px) saturate(1.3);border-bottom-color:var(--line)}
 .top-in{display:flex;align-items:center;gap:18px;height:70px}
 .brand{display:flex;align-items:center;gap:11px;font-family:var(--f-display);font-weight:700;font-size:21px;white-space:nowrap}
 .brand-dial{width:36px;height:36px;flex:none}
@@ -76,7 +76,7 @@ img,svg{max-width:100%}
 .nav a:hover{color:var(--ivory)}
 .nav a:hover::after{transform:scaleX(1)}
 .top-actions{display:flex;align-items:center;gap:8px}
-.icon-btn{position:relative;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--line);background:color-mix(in srgb,var(--panel) 80%,transparent);color:var(--ivory);transition:border-color .3s,background-color .3s,color .3s}
+.icon-btn{position:relative;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--line);background:var(--panel);background:color-mix(in srgb,var(--panel) 80%,transparent);color:var(--ivory);transition:border-color .3s,background-color .3s,color .3s}
 .icon-btn:hover{border-color:color-mix(in srgb,var(--champagne) 50%,transparent)}
 .icon-btn[aria-pressed="true"]{color:#06120B;background:var(--lume);border-color:var(--lume);box-shadow:0 0 24px rgba(185,251,208,.5)}
 .pill{display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 18px;border-radius:999px;background:var(--ivory);color:#0B0B0D;font-weight:500;font-size:14px;transition:transform .4s var(--ease-out),background-color .9s}
@@ -89,7 +89,7 @@ img,svg{max-width:100%}
 #dust{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
 .hero-in{position:relative;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);align-items:center;gap:24px}
 .hero-copy{min-width:0}
-.eyebrow{display:inline-flex;align-items:center;gap:12px;margin:0;font-size:13px;letter-spacing:.06em;color:var(--champagne)}
+.eyebrow{display:inline-flex;align-items:center;gap:12px;margin:0;font-size:13px;color:var(--champagne)}
 .eyebrow::before{content:"";width:30px;height:1px;background:linear-gradient(270deg,var(--gold),transparent)}
 .hero-title{font-family:var(--f-display);font-weight:700;font-size:clamp(60px,10.4vw,150px);line-height:1.04;margin:14px 0 18px;text-wrap:balance}
 .hero-title .w{display:inline-block;padding-bottom:.08em}
@@ -277,14 +277,14 @@ img,svg{max-width:100%}
 .fav[aria-pressed="true"] path{fill:var(--tt-red);stroke:var(--tt-red)}
 .spark{position:absolute;left:50%;top:50%;width:6px;height:6px;margin:-3px;border-radius:50%;pointer-events:none;background:var(--tt-red)}
 .info{position:relative;display:grid;gap:5px;padding:18px 22px 22px;transform:translateZ(22px)}
-.cat{margin:0;font-size:12.5px;color:var(--champagne);letter-spacing:.02em}
+.cat{margin:0;font-size:12.5px;color:var(--champagne)}
 .name{margin:0;font-family:var(--f-display);font-weight:600;font-size:24px;line-height:1.3}
 .spec{margin:0;font-size:13.5px;color:var(--mist)}
 .buy{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:12px;padding-top:15px;border-top:1px solid var(--line)}
 .price{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 7px;margin:0;font-variant-numeric:tabular-nums}
 .price b{font-size:22px;font-weight:600;color:var(--ivory)}
 .price .cur{font-size:13px;color:var(--mist)}
-.price s{font-size:13px;color:#6B7280}
+.price s{font-size:13px;color:#8E97A6}
 .more{display:inline-flex;align-items:center;gap:6px;height:40px;padding:0 15px;border-radius:999px;font-size:13.5px;white-space:nowrap;color:var(--champagne);border:1px solid color-mix(in srgb,var(--champagne) 34%,transparent);transition:background-color .35s,color .35s,border-color .35s}
 .more svg{transition:transform .5s var(--ease-out)}
 .card:hover .more{background:var(--champagne);color:var(--ink-dark);border-color:var(--champagne)}
@@ -361,7 +361,7 @@ img,svg{max-width:100%}
 /* product sheet */
 .sheet{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:20px}
 .sheet-backdrop{position:absolute;inset:0;background:rgba(3,4,6,.74);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
-.sheet-panel{position:relative;width:min(1020px,100%);max-height:min(90vh,780px);overflow:auto;overscroll-behavior:contain;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);border-radius:30px;border:1px solid var(--line);background:linear-gradient(180deg,var(--panel-2),var(--night));box-shadow:0 60px 120px -40px rgba(0,0,0,.95)}
+.sheet-panel{position:relative;width:min(1020px,100%);max-height:min(90vh,780px);max-height:min(90dvh,780px);overflow:auto;overscroll-behavior:contain;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);border-radius:30px;border:1px solid var(--line);background:linear-gradient(180deg,var(--panel-2),var(--night));box-shadow:0 60px 120px -40px rgba(0,0,0,.95)}
 .sheet-x{position:absolute;top:16px;inset-inline-end:16px;z-index:3;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:rgba(8,10,14,.7);border:1px solid var(--line);transition:transform .5s var(--ease-out),border-color .3s}
 .sheet-x:hover{transform:rotate(90deg);border-color:var(--champagne)}
 .sheet-stage{position:relative;min-height:470px;display:grid;place-items:center;padding:30px 20px 46px;cursor:default;
@@ -387,7 +387,7 @@ img,svg{max-width:100%}
 .sheet-note{margin:0;font-size:12.5px;color:var(--mist)}
 @media (max-width:760px){
   .sheet{place-items:end center;padding:0}
-  .sheet-panel{grid-template-columns:minmax(0,1fr);max-height:93vh;border-radius:28px 28px 0 0;border-bottom:0;padding-bottom:env(safe-area-inset-bottom,0px)}
+  .sheet-panel{grid-template-columns:minmax(0,1fr);max-height:93vh;max-height:93dvh;border-radius:28px 28px 0 0;border-bottom:0;padding-bottom:env(safe-area-inset-bottom,0px)}
   .sheet-x{top:calc(14px + env(safe-area-inset-top,0px) * 0);inset-inline-end:max(14px, env(safe-area-inset-right, 0px))}
   .sheet-stage{min-height:0;padding:26px 16px 44px;border-radius:28px 28px 0 0}
   .sheet-watch{height:300px}
@@ -419,7 +419,8 @@ img,svg{max-width:100%}
 .gal-track::-webkit-scrollbar{display:none}
 .gal-track img{flex:0 0 100%;width:100%;height:100%;object-fit:contain;scroll-snap-align:center}
 .gal-dots{position:absolute;bottom:-28px;inset-inline:0;display:flex;justify-content:center;gap:6px}
-.gal-dots button{width:8px;height:8px;border-radius:999px;background:rgba(255,255,255,.28);transition:width .4s var(--ease-out),background-color .3s}
+.gal-dots button{position:relative;width:8px;height:8px;border-radius:999px;background:rgba(255,255,255,.28);transition:width .4s var(--ease-out),background-color .3s}
+.gal-dots button::before{content:"";position:absolute;inset:-12px -6px}
 .gal-dots button[aria-current="true"]{width:24px;background:var(--champagne)}
 .flyer img{width:100%;height:100%;object-fit:contain}
 .flyer .ph{padding:0;transform:none;filter:none}
@@ -441,6 +442,14 @@ img,svg{max-width:100%}
 #zoomCount{font-size:13px;color:var(--mist)}
 .zoom-hint{flex-basis:100%;margin:0;text-align:center;font-size:12.5px;color:var(--mist)}
 @media (max-width:760px){.sheet-gallery{height:300px}}
+
+.card.off *{animation-play-state:paused!important}
+.gal-none{display:grid;place-items:center;height:100%;margin:0;color:var(--mist)}
+.sheet-deliv{margin:0;padding:10px 14px;border:1px dashed var(--line);border-radius:14px;font-size:13.5px;color:var(--mist)}
+.sheet-share{height:56px;padding:0 20px}
+.ow-hint{min-height:1.2em;font-size:12.5px;color:var(--champagne)}
+/* phones: drop the costliest always-on effects */
+@media (pointer:coarse){.grain{display:none}.tt-blob{animation:none;filter:blur(50px)}.halo{animation:none}}
 
 /* owner panel */
 .owner{position:fixed;inset:0;z-index:150;overflow:auto;overscroll-behavior:contain;padding-block:env(safe-area-inset-top,0px) env(safe-area-inset-bottom,0px);
@@ -515,7 +524,7 @@ select.ow-input{appearance:none;-webkit-appearance:none;padding-inline-end:44px;
 .ow-note{margin:8px 0 0;font-size:13px;color:var(--mist)}
 .ow-foot{display:flex;flex-wrap:wrap;gap:10px}
 .ow-form-wrap{position:fixed;inset:0;z-index:3;display:grid;place-items:end center;background:rgba(3,4,6,.72);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
-.ow-form{width:min(720px,100%);max-height:94vh;overflow:auto;overscroll-behavior:contain;border:1px solid var(--line);border-bottom:0;border-radius:28px 28px 0 0;background:linear-gradient(180deg,var(--panel-2),var(--night));padding:24px max(18px, env(safe-area-inset-right, 0px)) calc(26px + env(safe-area-inset-bottom,0px)) max(18px, env(safe-area-inset-left, 0px));animation:owUp .55s var(--ease-out)}
+.ow-form{width:min(720px,100%);max-height:94vh;max-height:94dvh;overflow:auto;overscroll-behavior:contain;border:1px solid var(--line);border-bottom:0;border-radius:28px 28px 0 0;background:linear-gradient(180deg,var(--panel-2),var(--night));padding:24px max(18px, env(safe-area-inset-right, 0px)) calc(26px + env(safe-area-inset-bottom,0px)) max(18px, env(safe-area-inset-left, 0px));animation:owUp .55s var(--ease-out)}
 @media (min-width:761px){.ow-form-wrap{place-items:center}.ow-form{border-bottom:1px solid var(--line);border-radius:28px}}
 @keyframes owUp{from{transform:translateY(40px);opacity:0}}
 .ow-photos{display:grid;grid-template-columns:repeat(auto-fill,minmax(100px,1fr));gap:10px}
@@ -690,6 +699,8 @@ select.ow-input{appearance:none;-webkit-appearance:none;padding-inline-end:44px;
             <ul class="loc-lines">
               <li><span class="ic"><svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path d="M12 21.5s-7-6.2-7-11.7a7 7 0 1 1 14 0c0 5.5-7 11.7-7 11.7z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="9.8" r="2.6" fill="currentColor"/></svg></span><span><b id="locAddress">تلعفر، محافظة نينوى</b> · رمز الموقع على الخرائط <b class="digits">9CFQ+5MM</b></span></li>
               <li><span class="ic"><svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path d="M12 2.2a9.7 9.7 0 0 0-8.4 14.6L2.3 21.7l5-1.3A9.7 9.7 0 1 0 12 2.2zm0 17.7a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 19.9zm4.4-6c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1l-.8.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.6.3 2.7 2.7 0 0 0-.9 2c0 1.2.9 2.4 1 2.5.1.2 1.8 2.7 4.3 3.8 1.6.7 2.2.7 3 .6.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1l-.5-.3z" fill="currentColor"/></svg></span><span>واتساب <b class="digits" data-phone>+964 750 332 1266</b></span></li>
+              <li id="locHours" hidden><span class="ic"><svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 7.5V12l3 2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span><span>الدوام: <b class="v"></b></span></li>
+              <li id="locDelivery" hidden><span class="ic"><svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7M7.5 19a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM17.5 19a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></span><span>التوصيل والدفع: <b class="v"></b></span></li>
             </ul>
             <div class="ctas">
               <a class="btn btn-gold magnetic" data-map href="https://maps.app.goo.gl/vMUJ7ErkPsaVY9hb8" target="_blank" rel="noopener">
@@ -797,7 +808,12 @@ select.ow-input{appearance:none;-webkit-appearance:none;padding-inline-end:44px;
           <svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path d="M12 2.2a9.7 9.7 0 0 0-8.4 14.6L2.3 21.7l5-1.3A9.7 9.7 0 1 0 12 2.2zm0 17.7a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 19.9zm4.4-6c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1l-.8.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.6.3 2.7 2.7 0 0 0-.9 2c0 1.2.9 2.4 1 2.5.1.2 1.8 2.7 4.3 3.8 1.6.7 2.2.7 3 .6.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1l-.5-.3z" fill="currentColor"/></svg>
           <span id="sheetOrderLbl">اطلب عبر واتساب</span>
         </a>
+        <button class="btn btn-ghost sheet-share" type="button" id="sheetShare" aria-label="شارك رابط المنتج">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 15V3M7 8l5-5 5 5M5 13v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          شارك
+        </button>
       </div>
+      <p class="sheet-deliv" id="sheetDelivery" hidden></p>
       <dl class="specs" id="sheetSpecs"></dl>
       <p class="sheet-note">نسخة تجريبية: السعر والمواصفات أمثلة.</p>
     </div>
@@ -831,6 +847,28 @@ select.ow-input{appearance:none;-webkit-appearance:none;padding-inline-end:44px;
         <button class="btn btn-gold" type="submit">دخول</button>
         <p class="ow-err" id="owLockErr" role="alert"></p>
       </form>
+      <p class="ow-note">نسيت الباسورد؟ اللي سوّالك الموقع يكدر يرجّع اللوحة لشاشة التجهيز، وتختار باسورد جديد.</p>
+    </section>
+
+    <section id="owNet" class="ow-card ow-lock" hidden>
+      <h2 class="ow-h">ماكو اتصال بالإنترنت</h2>
+      <p class="ow-p">اللوحة تحتاج نت حتى تفتح. تأكد من الاتصال واضغط «جرّب مرة ثانية».</p>
+      <button class="btn btn-gold" type="button" id="owNetRetry">جرّب مرة ثانية</button>
+    </section>
+
+    <section id="owRenew" class="ow-card" hidden>
+      <h2 class="ow-h">مفتاح GitHub انتهى</h2>
+      <p class="ow-p">الباسورد صحيح، بس مفتاح GitHub اللي بداخل اللوحة انتهت صلاحيته. سوّي مفتاح جديد بنفس الخطوات والصقه هنا، والباسورد يبقى نفسه.</p>
+      <ol class="ow-steps">
+        <li>افتح <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">صفحة مفتاح GitHub جديد</a>.</li>
+        <li><b class="digits">Only select repositories</b> ← <b class="digits">saat-talafar</b>، و<b class="digits">Contents</b> ← <b class="digits">Read and write</b>.</li>
+        <li>اضغط <b class="digits">Generate token</b> وانسخ المفتاح.</li>
+      </ol>
+      <form id="owRenewForm" class="ow-stack" autocomplete="off">
+        <div class="ow-field"><label for="owRenewTok">مفتاح GitHub الجديد</label><input class="ow-input digits" id="owRenewTok" type="password" autocomplete="off" spellcheck="false" required></div>
+        <button class="btn btn-gold" type="submit">جدّد المفتاح</button>
+        <p class="ow-err" id="owRenewErr" role="alert"></p>
+      </form>
     </section>
 
     <section id="owSetup" class="ow-card" hidden>
@@ -845,8 +883,8 @@ select.ow-input{appearance:none;-webkit-appearance:none;padding-inline-end:44px;
       <form id="owSetupForm" class="ow-stack" autocomplete="off">
         <div class="ow-field"><label for="owToken">مفتاح GitHub</label><input class="ow-input digits" id="owToken" type="password" autocomplete="off" spellcheck="false" required></div>
         <div class="ow-grid2">
-          <div class="ow-field"><label for="owNew1">باسورد اللوحة (8 حروف أو أكثر)</label><input class="ow-input" id="owNew1" type="password" autocomplete="new-password" minlength="8" required></div>
-          <div class="ow-field"><label for="owNew2">الباسورد مرة ثانية</label><input class="ow-input" id="owNew2" type="password" autocomplete="new-password" minlength="8" required></div>
+          <div class="ow-field"><label for="owNew1">باسورد اللوحة (10 حروف أو أكثر، مو أرقام بس)</label><input class="ow-input" id="owNew1" type="password" autocomplete="new-password" minlength="10" required></div>
+          <div class="ow-field"><label for="owNew2">الباسورد مرة ثانية</label><input class="ow-input" id="owNew2" type="password" autocomplete="new-password" minlength="10" required></div>
         </div>
         <button class="btn btn-gold" type="submit">احفظ وجهّز اللوحة</button>
         <p class="ow-err" id="owSetupErr" role="alert"></p>
@@ -856,9 +894,10 @@ select.ow-input{appearance:none;-webkit-appearance:none;padding-inline-end:44px;
     <section id="owHome" hidden>
       <h2 class="ow-h">شتريد تسوي اليوم؟</h2>
       <p class="ow-p" id="owHomeNote"></p>
+      <button class="btn btn-ghost" type="button" id="owHomeRetry" hidden>جرّب مرة ثانية</button>
       <div class="ow-tiles">
         <button type="button" class="ow-tile big" data-go="owProducts"><span class="ow-tile-ic"><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path d="M4 7l8-4 8 4v10l-8 4-8-4zM4 7l8 4 8-4M12 11v10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></span><b>المنتجات</b><small id="owTileProducts">—</small><em>ضيف، عدّل، احذف، أو أشّر «نفد»</em></button>
-        <button type="button" class="ow-tile" data-go="owAbout"><span class="ow-tile-ic"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M5 5h14M5 10h14M5 15h9M5 20h6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span><b>وصف المحل</b><small id="owTileAbout">—</small></button>
+        <button type="button" class="ow-tile" data-go="owAbout"><span class="ow-tile-ic"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M5 5h14M5 10h14M5 15h9M5 20h6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span><b>معلومات المحل</b><small id="owTileAbout">—</small></button>
         <button type="button" class="ow-tile" data-go="owWa"><span class="ow-tile-ic wa"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M12 2.2a9.7 9.7 0 0 0-8.4 14.6L2.3 21.7l5-1.3A9.7 9.7 0 1 0 12 2.2zm0 17.7a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 19.9z" fill="currentColor"/></svg></span><b>رقم الواتساب</b><small class="digits" id="owTileWa">—</small></button>
         <button type="button" class="ow-tile" data-go="owTt"><span class="ow-tile-ic"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M16.6 5.8a4.6 4.6 0 0 1-1.1-3h-3.1v12.4a2.6 2.6 0 1 1-2.6-2.6c.3 0 .5 0 .8.1V9.5a5.8 5.8 0 1 0 5 5.7V9a7.7 7.7 0 0 0 4.4 1.4V7.3a4.6 4.6 0 0 1-3.4-1.5z" fill="currentColor"/></svg></span><b>التيك توك</b><small class="digits" id="owTileTt">—</small></button>
         <button type="button" class="ow-tile" data-go="owMap"><span class="ow-tile-ic"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M12 21.5s-7-6.2-7-11.7a7 7 0 1 1 14 0c0 5.5-7 11.7-7 11.7z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="9.8" r="2.4" fill="currentColor"/></svg></span><b>موقع المحل</b><small id="owTileMap">—</small></button>
@@ -877,10 +916,12 @@ select.ow-input{appearance:none;-webkit-appearance:none;padding-inline-end:44px;
 
     <section id="owAbout" hidden>
       <form id="owAboutForm" class="ow-card ow-stack">
-        <h2 class="ow-h">وصف المحل</h2>
-        <p class="ow-p">هذا الكلام يطلع بأول الموقع تحت اسم «ساعات تلعفر».</p>
-        <div class="ow-field"><label for="owAboutText">الوصف</label><textarea class="ow-input" id="owAboutText" maxlength="300" rows="4" placeholder="مثلاً: ساعات ومحافظ وسبح وعطور أصلية بأسعار مناسبة. التوصيل لكل أحياء تلعفر."></textarea></div>
-        <div class="ow-foot"><button class="btn btn-gold" type="submit">احفظ الوصف</button><button class="btn btn-ghost" type="button" id="owAboutReset">رجّع النص الأصلي</button></div>
+        <h2 class="ow-h">معلومات المحل</h2>
+        <p class="ow-p">الوصف يطلع بأول الموقع. الدوام والتوصيل يطلعن بقسم «موقع المحل» وبنافذة كل منتج، حتى يعرف الزبون قبل ما يطلب.</p>
+        <div class="ow-field"><label for="owAboutText">وصف المحل</label><textarea class="ow-input" id="owAboutText" maxlength="300" rows="4" placeholder="مثلاً: ساعات ومحافظ وسبح وعطور بأسعار مناسبة."></textarea></div>
+        <div class="ow-field"><label for="owHoursInput">ساعات الدوام (اختياري)</label><input class="ow-input" id="owHoursInput" maxlength="80" placeholder="مثلاً: كل يوم من 10 الصبح لحد 10 بالليل"></div>
+        <div class="ow-field"><label for="owDeliveryInput">التوصيل والدفع (اختياري)</label><textarea class="ow-input" id="owDeliveryInput" maxlength="200" rows="2" placeholder="مثلاً: توصيل لكل أحياء تلعفر بـ 3000 د.ع، والدفع عند الاستلام"></textarea></div>
+        <div class="ow-foot"><button class="btn btn-gold" type="submit">احفظ المعلومات</button><button class="btn btn-ghost" type="button" id="owAboutReset">رجّع الوصف الأصلي</button></div>
       </form>
     </section>
 
@@ -918,9 +959,10 @@ select.ow-input{appearance:none;-webkit-appearance:none;padding-inline-end:44px;
     <section id="owPassword" hidden>
       <form id="owPassForm" class="ow-card ow-stack" autocomplete="off">
         <h2 class="ow-h">تغيير الباسورد</h2>
+        <div class="ow-field"><label for="owChgCur">الباسورد الحالي</label><input class="ow-input" id="owChgCur" type="password" autocomplete="current-password" required></div>
         <div class="ow-grid2">
-          <div class="ow-field"><label for="owChg1">الباسورد الجديد</label><input class="ow-input" id="owChg1" type="password" autocomplete="new-password" minlength="8" required></div>
-          <div class="ow-field"><label for="owChg2">الباسورد مرة ثانية</label><input class="ow-input" id="owChg2" type="password" autocomplete="new-password" minlength="8" required></div>
+          <div class="ow-field"><label for="owChg1">الباسورد الجديد (10 حروف أو أكثر)</label><input class="ow-input" id="owChg1" type="password" autocomplete="new-password" minlength="10" required></div>
+          <div class="ow-field"><label for="owChg2">الباسورد الجديد مرة ثانية</label><input class="ow-input" id="owChg2" type="password" autocomplete="new-password" minlength="10" required></div>
         </div>
         <div class="ow-field"><label for="owChgTok">مفتاح GitHub جديد (بس إذا انتهت صلاحية القديم)</label><input class="ow-input digits" id="owChgTok" type="password" autocomplete="off" spellcheck="false"></div>
         <div class="ow-foot"><button class="btn btn-gold" type="submit">غيّر الباسورد</button></div>
@@ -935,7 +977,7 @@ select.ow-input{appearance:none;-webkit-appearance:none;padding-inline-end:44px;
       <div class="ow-field"><span class="ow-label">الصور (لحد 5، وأول صورة هي اللي تطلع بالبطاقة)</span><div class="ow-photos" id="owPhotos"></div></div>
       <div class="ow-field"><label for="owName">اسم المنتج</label><input class="ow-input" id="owName" maxlength="60" required></div>
       <div class="ow-grid2">
-        <div class="ow-field"><label for="owPrice">السعر بالدينار</label><input class="ow-input digits" id="owPrice" inputmode="numeric" placeholder="25000" required></div>
+        <div class="ow-field"><label for="owPrice">السعر بالدينار</label><input class="ow-input digits" id="owPrice" inputmode="numeric" placeholder="25000" required><small class="ow-hint" id="owPriceHint" aria-live="polite"></small></div>
         <div class="ow-field"><label for="owOld">السعر قبل الخصم (اختياري)</label><input class="ow-input digits" id="owOld" inputmode="numeric"></div>
       </div>
       <div class="ow-grid2">
@@ -974,9 +1016,9 @@ select.ow-input{appearance:none;-webkit-appearance:none;padding-inline-end:44px;
 <div class="cursor" aria-hidden="true"><i></i></div><div class="cursor-dot" aria-hidden="true"></div>
 <div class="grain" aria-hidden="true"></div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Flip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha384-g4NTh/Iv5PPU4xPyhEWqPcwtNXOvdaDI8LLnyYfyNZOjKJeYQyjzQ9X5275eBjpt" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha384-Z3REaz79l2IaAZqJsSABtTbhjgOUYyV3p90XNnAPCSHg3EMTz1fouunq9WZRtj3d" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Flip.min.js" integrity="sha384-CHvG5TSBYWY4gs18D+se5IrGOZ6r8JlhAWob7LbkaUcfqD8PWzaYz2pqZdH7LsXQ" crossorigin="anonymous"></script>
 <script>
 (() => {
 'use strict';
@@ -1730,11 +1772,15 @@ function readouts(n) {
   footTime.textContent = `${pad(h12)}:${pad(n.m)} ${ap}`;
 }
 
-let lastSecond = -1;
+let lastSecond = -1, lastDay = now().day;
 function tick(t) {
   const n = now();
   const S = (n.s + n.ms / 1000) * 6, M = (n.m + n.s / 60) * 6, H = (n.h % 12 + n.m / 60 + n.s / 3600) * 30, GM = (n.uh + n.um / 60) * 15;
-  if (n.s !== lastSecond) { lastSecond = n.s; readouts(n); }
+  if (n.s !== lastSecond) {
+    lastSecond = n.s; readouts(n);
+    // The date windows are drawn once; roll them over at Tal Afar midnight.
+    if (n.day !== lastDay) { lastDay = n.day; $$('.wsvg .date-t').forEach(el => { el.textContent = n.day; }); }
+  }
   for (const w of watches) {
     if (!w.visible) continue;
     if (w.smart) { smartTick(w, n); continue; }
@@ -1816,17 +1862,30 @@ let lean = null;
 const localImg = {}; // images just uploaded from this device, shown before GitHub Pages serves them
 const imgSrc = path => localImg[path] || path;
 
+// products.json is written by the owner panel, but read it defensively: one bad entry must not blank the shop.
+const ID_RE = /^p[a-z0-9]{3,24}$/, IMG_RE = /^images\/[\w-]+\.(webp|jpe?g|png)$/i;
+function splitColors(s) {
+  s = String(s || '');
+  // Comma-type separators win so two-word colours («أزرق غامق») stay whole; otherwise spaces and stray marks (‘ - / .) split.
+  const parts = /[،,؛;]/.test(s) ? s.split(/[،,؛;]+/) : s.split(/[\s‘’'"`\-–—/|.]+/);
+  return parts.map(x => x.trim()).filter(Boolean).slice(0, 12);
+}
 function fromData(d) {
-  // Owners separate colours with spaces, commas or whatever their keyboard gives (، , ‘ - / ...).
-  const colors = String(d.colors || '').split(/[\s،,؛;‘’'"`\-–—/|.]+/).map(s => s.trim()).filter(Boolean);
-  const p = { id: d.id, live: true, name: d.name || '', label: CATS[d.cat] || 'قطعة', cat: d.cat || 'watch',
-    tags: [...(d.gender || []).filter(g => g === 'men' || g === 'women'), ...(d.cat && d.cat !== 'watch' ? [d.cat] : [])],
-    price: +d.price || 0, old: +d.old || 0, soldOut: !!d.soldOut, badge: d.soldOut ? 'نفد' : (d.badge || ''),
-    short: d.short || '', desc: d.desc || '', images: d.images || [], thumb: d.thumb || (d.images || [])[0] || '',
-    tint: '#C9A15A', tilt: 0, specs: [], varLabel: 'اللون', variants: colors.map(n => ({ n })) };
+  if (!d || typeof d !== 'object' || !ID_RE.test(String(d.id))) return null;
+  const images = (Array.isArray(d.images) ? d.images : []).filter(x => IMG_RE.test(String(x)));
+  const cat = Object.prototype.hasOwnProperty.call(CATS, d.cat) ? d.cat : 'watch';
+  const gender = (Array.isArray(d.gender) ? d.gender : []).filter(g => g === 'men' || g === 'women');
+  const p = { id: d.id, live: true, name: String(d.name || ''), label: CATS[cat], cat,
+    tags: [...gender, ...(cat !== 'watch' ? [cat] : [])],
+    price: Math.max(0, +d.price || 0), old: Math.max(0, +d.old || 0), soldOut: !!d.soldOut, badge: d.soldOut ? 'نفد' : String(d.badge || ''),
+    short: String(d.short || ''), desc: String(d.desc || ''), images, thumb: IMG_RE.test(String(d.thumb)) ? d.thumb : images[0] || '',
+    tint: '#C9A15A', tilt: 0, specs: [], varLabel: 'اللون', variants: splitColors(d.colors).map(n => ({ n })) };
   if (p.old > p.price && !p.badge) p.badge = `خصم ${Math.round((1 - p.price / p.old) * 100)}%`;
   return p;
 }
+const MAP_HOSTS = /^(maps\.app\.goo\.gl|goo\.gl|(www\.)?google\.[a-z]{2,3}(\.[a-z]{2})?|maps\.google\.[a-z]{2,3}(\.[a-z]{2})?)$/i;
+const safeMap = u => { try { const x = new URL(String(u)); return x.protocol === 'https:' && !x.username && MAP_HOSTS.test(x.hostname) ? x.href : ''; } catch (_) { return ''; } };
+const productUrl = id => `${location.origin}${location.pathname}#p-${id}`;
 
 function cardHTML(p, i) {
   const badge = p.badge ? `<span class="badge${p.soldOut ? ' sold' : ''}">${esc(p.badge)}</span>` : '';
@@ -1912,12 +1971,15 @@ if (!FINE && !RM) {
   let queued = false;
   lean = () => {
     queued = false;
-    const vh = innerHeight;
+    const vh = innerHeight, seen = [];
     for (const c of cards) {
       if (c.classList.contains('is-out')) continue;
       const r = c.getBoundingClientRect();
       if (r.bottom < -50 || r.top > vh + 50) continue;
-      const p = Math.max(-1, Math.min(1, ((r.top + r.height / 2) - vh / 2) / (vh / 2)));
+      seen.push([c, Math.max(-1, Math.min(1, ((r.top + r.height / 2) - vh / 2) / (vh / 2)))]);
+    }
+    // All reads above, all writes below: mixing them forces a layout per card on every scroll frame.
+    for (const [c, p] of seen) {
       const tiltEl = c.querySelector('.card-tilt');
       tiltEl.style.setProperty('--rx', (p * -9).toFixed(2) + 'deg');
       tiltEl.style.setProperty('--py', (p * 14).toFixed(1) + 'px');
@@ -1952,6 +2014,8 @@ function renderChips(list) {
 }
 function applyFilter(animate) {
   const tag = currentFilter;
+  // Finish any reveal tween first so it does not fight Flip over the same transforms.
+  if (animate && ANIM && FL) G.getTweensOf(cards).forEach(t => t.progress(1));
   const state = animate && ANIM && FL ? FL.getState(cards) : null;
   let shown = 0;
   cards.forEach(c => { const on = tag === 'all' || c.dataset.tags.split(' ').includes(tag); c.classList.toggle('is-out', !on); if (on) shown++; });
@@ -1975,7 +2039,7 @@ if (document.fonts && document.fonts.ready) document.fonts.ready.then(settleInk)
 
 /* ---------- catalogue rendering ---------- */
 function catalogue() {
-  const hidden = SETTINGS.hiddenSamples || [];
+  const hidden = Array.isArray(SETTINGS.hiddenSamples) ? SETTINGS.hiddenSamples : [];
   const samples = SETTINGS.showSamples === false ? [] : PRODUCTS.filter(p => !hidden.includes(p.id));
   return [...LIVE, ...samples];
 }
@@ -1989,9 +2053,11 @@ function revealCards() {
   ST.batch(pending, { start: 'top 90%', once: true,
     onEnter: batch => G.to(batch, { opacity: 1, y: 0, rotationX: 0, duration: 1.3, stagger: .11, ease: 'expo.out', clearProps: 'transform' }) });
 }
+// Pauses the endless CSS animations of cards that are off screen (glints, floats, twinkles).
+const cardIO = new IntersectionObserver(es => es.forEach(e => e.target.classList.toggle('off', !e.isIntersecting)), { rootMargin: '150px 0px' });
 function renderCatalogue(reveal) {
   const list = catalogue();
-  cards.forEach(c => { if (c._w) unmountWatch(c._w); });
+  cards.forEach(c => { if (c._w) unmountWatch(c._w); cardIO.unobserve(c); });
   grid.innerHTML = list.map(cardHTML).join('');
   cards = $$('.card', grid);
   cards.forEach((c, i) => {
@@ -1999,12 +2065,14 @@ function renderCatalogue(reveal) {
     c._p = p; c._vi = 0;
     c._w = p.live ? null : mountWatch(c.querySelector('.float'), p.spec);
     wireCard(c);
+    cardIO.observe(c);
   });
   $('.sample-note').hidden = !list.some(p => !p.live);
   renderChips(list);
   applyFilter(false);
   if (reveal) revealCards();
   if (lean) lean();
+  if (open) repointSheet();
 }
 
 async function loadData() {
@@ -2014,25 +2082,44 @@ async function loadData() {
   } catch (_) { return null; }
 }
 function applyData(d) {
-  if (!d) return;
-  SETTINGS = { showSamples: true, hiddenSamples: [], ...(d.settings || {}) };
-  if (SETTINGS.whatsapp) SHOP.whatsapp = String(SETTINGS.whatsapp).replace(/\D/g, '');
+  if (!d || typeof d !== 'object') return;
+  const s = d.settings && typeof d.settings === 'object' && !Array.isArray(d.settings) ? d.settings : {};
+  SETTINGS = { showSamples: true, hiddenSamples: [], ...s };
+  const wa = String(SETTINGS.whatsapp || '').replace(/\D/g, '');
+  if (wa.length >= 10) SHOP.whatsapp = wa;
   const user = String(SETTINGS.tiktokUser || '').replace(/^@+/, '').trim();
-  if (user) { SHOP.tiktok = `https://www.tiktok.com/@${encodeURIComponent(user)}`; SHOP.tiktokLabel = '@' + user; }
-  if (SETTINGS.map) SHOP.map = SETTINGS.map;
-  $('.hero-sub').textContent = SETTINGS.about || DEFAULT_ABOUT;
-  $('#locAddress').textContent = SETTINGS.address || DEFAULT_ADDRESS;
-  LIVE = (d.products || []).map(fromData);
+  if (/^[\w.]{2,24}$/.test(user)) { SHOP.tiktok = `https://www.tiktok.com/@${encodeURIComponent(user)}`; SHOP.tiktokLabel = '@' + user; }
+  const map = safeMap(SETTINGS.map);
+  if (map) SHOP.map = map;
+  $('.hero-sub').textContent = String(SETTINGS.about || '') || DEFAULT_ABOUT;
+  $('#locAddress').textContent = String(SETTINGS.address || '') || DEFAULT_ADDRESS;
+  for (const [id, key] of [['locHours', 'hours'], ['locDelivery', 'delivery']]) {
+    const v = String(SETTINGS[key] || '').trim();
+    $('#' + id).hidden = !v;
+    $('#' + id + ' .v').textContent = v;
+  }
+  LIVE = (Array.isArray(d.products) ? d.products : []).map(fromData).filter(Boolean);
   wireLinks();
 }
-Promise.race([loadData(), new Promise(r => setTimeout(() => r(null), 2500))]).then(d => { applyData(d); renderCatalogue(true); });
+// Show the samples after 2.5 s on a slow line, but still swap in the shop's own data whenever it arrives.
+let rendered = false;
+const firstPaint = setTimeout(() => { if (!rendered) { rendered = true; renderCatalogue(true); openFromHash(); } }, 2500);
+loadData().then(d => {
+  try { applyData(d); } catch (_) {}
+  clearTimeout(firstPaint);
+  const first = !rendered;
+  rendered = true;
+  if (d || first) renderCatalogue(first);
+  openFromHash();
+});
 
 /* ---------- product sheet ---------- */
 const sheet = $('#sheet'), panel = $('.sheet-panel'), backdrop = $('.sheet-backdrop'), sWatch = $('#sheetWatch'), gallery = $('#sheetGallery'), flyer = $('#flyer'), stageEl = $('#sheetStage');
 let open = null, sheetW = null, busy = false;
 
 function fillGallery(p) {
-  const imgs = p.images.length ? p.images : [p.thumb];
+  const imgs = p.images.length ? p.images : p.thumb ? [p.thumb] : [];
+  if (!imgs.length) { gallery.innerHTML = '<p class="gal-none">ماكو صورة لهذا المنتج بعد.</p>'; return; }
   gallery.innerHTML = `<div class="gal-track">${imgs.map((src, i) => `<img src="${esc(imgSrc(src))}" alt="${esc(p.name)} ${i + 1}" decoding="async">`).join('')}</div>`
     + (imgs.length > 1 ? `<div class="gal-dots">${imgs.map((_, i) => `<button type="button" aria-label="صورة ${i + 1}" aria-current="${i === 0}"></button>`).join('')}</div>` : '');
   gallery.insertAdjacentHTML('beforeend', `<button type="button" class="gal-zoom" aria-label="كبّر الصورة">${MAG_ICON}<span>تكبير</span></button>`);
@@ -2082,11 +2169,14 @@ function zShow(i) {
 function openZoom(list, i) {
   zList = list; zoomEl.hidden = false; $('#zoomHint').hidden = false;
   zShow(i);
+  // A history entry lets the phone's Back button close the zoom instead of leaving the site.
+  try { history.pushState({ zoom: true, sheet: history.state && history.state.sheet }, '', location.href); } catch (_) {}
   if (ANIM) G.fromTo(zoomEl, { opacity: 0 }, { opacity: 1, duration: .35, ease: 'power2.out' });
   $('#zoomX').focus({ preventScroll: true });
 }
 function closeZoom() { zoomEl.hidden = true; zImg.removeAttribute('src'); }
-$('#zoomX').addEventListener('click', closeZoom);
+const requestCloseZoom = () => { if (history.state && history.state.zoom) history.back(); else closeZoom(); };
+$('#zoomX').addEventListener('click', requestCloseZoom);
 $('#zoomIn').addEventListener('click', () => zSet(zs * 1.6, null, null, true));
 $('#zoomOut').addEventListener('click', () => zSet(zs / 1.6, null, null, true));
 $('#zoomReset').addEventListener('click', () => zSet(1, null, null, true));
@@ -2116,7 +2206,8 @@ zStage.addEventListener('wheel', e => { e.preventDefault(); zSet(zs * Math.exp(-
     ptrs.delete(e.pointerId);
     if (ptrs.size < 2) pinch = null;
     if (ptrs.size) return;
-    if (drag && zs <= 1.01 && zList.length > 1) { const dx = e.clientX - drag.x; if (Math.abs(dx) > 60) zShow(zIdx + (dx > 0 ? 1 : -1)); }
+    // A cancelled pointer (e.g. an iOS edge swipe) is not a deliberate swipe to the next photo.
+    if (e.type === 'pointerup' && drag && zs <= 1.01 && zList.length > 1) { const dx = e.clientX - drag.x; if (Math.abs(dx) > 60) zShow(zIdx + (dx > 0 ? 1 : -1)); }
     drag = null;
   };
   zStage.addEventListener('pointerup', up);
@@ -2139,17 +2230,28 @@ function fillSheet(p, card) {
   stageEl.classList.toggle('interactive', !p.live && !!(p.spec.chrono || /diver|gmt/.test(p.spec.bezel || '') || ITEMS[p.spec.kind]));
   sWatch.hidden = !!p.live; gallery.hidden = !p.live;
   $('.sheet-note').hidden = !!p.live;
+  const dv = String(SETTINGS.delivery || '').trim();
+  $('#sheetDelivery').textContent = dv ? `التوصيل والدفع: ${dv}` : '';
+  $('#sheetDelivery').hidden = !dv;
   if (p.live) fillGallery(p);
   setOrderLink();
 }
 function setOrderLink() {
   const { p, v } = open;
   const line = v ? ` — ${p.varLabel || 'اللون'}: ${v.n}` : '';
+  // The product link tells the shop exactly which item the customer means.
   $('#sheetOrder').href = waLink(p.soldOut
-    ? `مرحبا، أريد أسأل عن ${p.name}${line} من ساعات تلعفر، متى يتوفر؟`
-    : `مرحبا، أريد أطلب من ساعات تلعفر:\n${p.name}${line}\nالسعر: ${fmt(p.price)} د.ع`);
+    ? `مرحبا، أريد أسأل عن ${p.name}${line} من ساعات تلعفر، متى يتوفر؟\n${productUrl(p.id)}`
+    : `مرحبا، أريد أطلب من ساعات تلعفر:\n${p.name}${line}\nالسعر: ${fmt(p.price)} د.ع\n${productUrl(p.id)}`);
   $('#sheetOrderLbl').textContent = p.soldOut ? 'اسأل عن توفّره' : 'اطلب عبر واتساب';
 }
+$('#sheetShare').addEventListener('click', async () => {
+  if (!open) return;
+  const url = productUrl(open.p.id), title = open.p.name;
+  if (navigator.share) { try { await navigator.share({ title, text: `${title} من ساعات تلعفر`, url }); } catch (_) {} return; }
+  try { await navigator.clipboard.writeText(url); toast('انسخ رابط المنتج. الصقه بالواتساب أو وين ما تريد.'); }
+  catch (_) { toast('هذا رابط المنتج، انسخه:', url); }
+});
 const setLabel = (svg, text) => { if (text) svg.querySelectorAll('.pf-l').forEach(t => { t.textContent = text; }); };
 const centerOf = r => [r.left + r.width / 2, r.top + r.height / 2];
 const pieceOf = card => card.querySelector(card._p.live ? '.ph' : '.float svg') || card.querySelector('.stage');
@@ -2161,7 +2263,8 @@ function flight(fromRect, toRect, node, fromRot, toRot, dur, ease) {
   return G.fromTo(flyer, { x: fx1 - tx, y: fy1 - ty, scale: fromRect.height / toRect.height, rotation: fromRot }, { x: 0, y: 0, scale: 1, rotation: toRot, duration: dur, ease });
 }
 
-function openSheet(card) {
+let openTl = null;
+function openSheet(card, fromLink) {
   if (busy || open) return;
   busy = true;
   const p = card._p;
@@ -2169,6 +2272,8 @@ function openSheet(card) {
   fillSheet(p, card);
   sheet.hidden = false;
   root.classList.add('locked');
+  // Each open product gets its own link (#p-…) and a history entry, so Back closes it and the link can be shared.
+  if (!fromLink) try { history.pushState({ sheet: p.id }, '', `#p-${p.id}`); } catch (_) {}
   if (sheetW) { unmountWatch(sheetW); sheetW = null; }
   if (!p.live) {
     sheetW = mountWatch(sWatch, p.spec, { live: true });
@@ -2184,7 +2289,7 @@ function openSheet(card) {
   const node = src.cloneNode(true);
   target.style.visibility = 'hidden'; src.style.visibility = 'hidden';
   const counter = { v: 0 }; priceEl.textContent = '0';
-  G.timeline({ onComplete: () => { target.style.visibility = ''; flyer.hidden = true; flyer.innerHTML = ''; src.style.visibility = ''; done(); } })
+  openTl = G.timeline({ onComplete: () => { openTl = null; target.style.visibility = ''; flyer.hidden = true; flyer.innerHTML = ''; src.style.visibility = ''; done(); } })
     .fromTo(backdrop, { opacity: 0 }, { opacity: 1, duration: .5, ease: 'power2.out' }, 0)
     .fromTo(panel, mobile ? { yPercent: 100 } : { y: 50, opacity: 0, scale: .96 }, mobile ? { yPercent: 0, duration: .8, ease: 'expo.out' } : { y: 0, opacity: 1, scale: 1, duration: .8, ease: 'expo.out' }, 0)
     .add(flight(sr, dr, node, fromRot, 0, 1, 'expo.inOut'), 0)
@@ -2193,8 +2298,10 @@ function openSheet(card) {
     .to(counter, { v: p.price, duration: 1.2, ease: 'power3.out', onUpdate: () => { priceEl.textContent = fmt(Math.round(counter.v / 250) * 250); }, onComplete: () => { priceEl.textContent = fmt(p.price); } }, .4);
 }
 
-function closeSheet() {
-  if (!open || busy) return;
+function closeSheet(instant) {
+  if (!open) return;
+  if (openTl) openTl.progress(1); // closing mid-open: jump the opening to its end first
+  if (busy) return;
   busy = true;
   const { card, p } = open;
   const src = pieceOf(card), target = p.live ? gallery : sWatch;
@@ -2205,9 +2312,11 @@ function closeSheet() {
     clearGallery();
     if (G) G.set([panel, backdrop], { clearProps: 'all' });
     open = null; busy = false;
-    card.querySelector('.card-hit').focus({ preventScroll: true });
+    // Opened from a shared link (no entry of ours to go back to): drop the #p-… from the address.
+    if (/^#p-/.test(location.hash) && !(history.state && history.state.sheet)) try { history.replaceState(null, '', location.pathname + location.search); } catch (_) {}
+    if (card.isConnected) card.querySelector('.card-hit').focus({ preventScroll: true });
   };
-  if (!ANIM) { finish(); return; }
+  if (!ANIM || instant || !card.isConnected) { finish(); return; }
   const sr = src.getBoundingClientRect(), dr = target.getBoundingClientRect();
   const mobile = innerWidth <= 760;
   const node = p.live ? src.cloneNode(true) : sheetW.svg.cloneNode(true);
@@ -2222,16 +2331,49 @@ function closeSheet() {
     .to(panel, mobile ? { yPercent: 100, duration: .6, ease: 'expo.in' } : { y: 40, opacity: 0, scale: .97, duration: .45, ease: 'power2.in' }, 0)
     .to(backdrop, { opacity: 0, duration: .6, ease: 'power2.inOut' }, .12);
 }
-$$('[data-close]', sheet).forEach(b => b.addEventListener('click', closeSheet));
+const requestCloseSheet = () => { if (history.state && history.state.sheet && !history.state.zoom) history.back(); else closeSheet(); };
+$$('[data-close]', sheet).forEach(b => b.addEventListener('click', requestCloseSheet));
+addEventListener('popstate', () => {
+  const st = history.state || {};
+  if (!zoomEl.hidden) { if (!st.zoom) closeZoom(); return; } // Back with the zoom open closes only the zoom
+  if (open && !st.sheet) closeSheet();
+});
 addEventListener('keydown', e => {
   if (!zoomEl.hidden) {
-    if (e.key === 'Escape') closeZoom();
+    if (e.key === 'Escape') requestCloseZoom();
     else if (e.key === '+' || e.key === '=') zSet(zs * 1.6, null, null, true);
     else if (e.key === '-') zSet(zs / 1.6, null, null, true);
     return;
   }
-  if (e.key === 'Escape' && open) closeSheet();
+  if (e.key === 'Escape' && open) requestCloseSheet();
 });
+// After the owner saves, the grid is rebuilt; keep an open sheet tied to the fresh card (or close it if the product is gone).
+function repointSheet() {
+  const again = cards.find(c => c.dataset.id === open.card.dataset.id);
+  if (!again) { closeSheet(true); return; }
+  again._vi = Math.max(0, Math.min(open.card._vi, again._p.variants.length - 1));
+  if (!again._p.live && open.v && open.v.v && again._w) {
+    for (const [k, val] of Object.entries(open.v.v)) again._w.svg.style.setProperty(k, val);
+    setLabel(again._w.svg, open.v.text);
+  }
+  open.card = again;
+  if (again._p.live) {
+    open.p = again._p; open.v = open.p.variants[again._vi];
+    fillSheet(open.p, again);
+    $('#sheetPrice').textContent = fmt(open.p.price);
+  }
+}
+let hashDone = false;
+function openFromHash() {
+  if (hashDone || open) return;
+  const m = location.hash.match(/^#p-([a-z0-9-]+)$/i);
+  if (!m) { hashDone = true; return; }
+  const card = cards.find(c => c.dataset.id === m[1]);
+  if (!card) return; // the owner's products may still be loading
+  hashDone = true;
+  card.scrollIntoView({ block: 'center' });
+  setTimeout(() => openSheet(card, true), 450);
+}
 
 $('#sheetVariants').addEventListener('click', e => {
   const b = e.target.closest('.var');
@@ -2299,10 +2441,12 @@ function toast(msg, extra) {
 
 /* ---------- lume (night) mode ---------- */
 let lumeHinted = false;
+let lumeSwitching = false;
 $('#lumeBtn').addEventListener('click', e => {
+  if (lumeSwitching) return; // a second tap during the fade would leave the mode stuck
   const btn = e.currentTarget, on = !root.classList.contains('lume-mode');
   const apply = () => { root.classList.toggle('lume-mode', on); btn.setAttribute('aria-pressed', String(on)); };
-  if (ANIM) G.timeline().to('#veil', { opacity: .9, duration: .28, ease: 'power2.in' }).add(apply).to('#veil', { opacity: 0, duration: 1, ease: 'power2.out' });
+  if (ANIM) { lumeSwitching = true; G.timeline({ onComplete: () => { lumeSwitching = false; } }).to('#veil', { opacity: .9, duration: .28, ease: 'power2.in' }).add(apply).to('#veil', { opacity: 0, duration: 1, ease: 'power2.out' }); }
   else apply();
   if (on && !lumeHinted) { lumeHinted = true; toast('الإضاءة الليلية: شوف العقارب والمؤشرات كيف تضوي بالظلام مثل الساعات الحقيقية.'); }
 });
@@ -2401,9 +2545,11 @@ if (ANIM) {
 /* ---------- owner panel (the site's link + #owner) ---------- */
 // Saves go straight to the GitHub repo that hosts the site. The GitHub key is stored in the repo
 // only encrypted with the owner's password (PBKDF2 + AES-GCM), so the password unlocks it on any phone.
+// owner.json is public, so the password is the only thing between a guesser and the repo: keep it long.
 const REPO = { owner: 'ttbyqdlyl-hue', name: 'saat-talafar', branch: 'main', dir: 'docs' };
 const ownerEl = $('#owner');
 const CAN_ADMIN = /(^|\.)github\.io$|^localhost$|^127\.0\.0\.1$/.test(location.hostname);
+const ITER = 600000;
 const te = new TextEncoder(), td = new TextDecoder();
 const b64 = bytes => { const a = new Uint8Array(bytes); let s = ''; for (let i = 0; i < a.length; i += 0x8000) s += String.fromCharCode.apply(null, a.subarray(i, i + 0x8000)); return btoa(s); };
 const unb64 = s => Uint8Array.from(atob(s), c => c.charCodeAt(0));
@@ -2412,77 +2558,132 @@ async function deriveKey(pass, salt, iter) {
   return crypto.subtle.deriveKey({ name: 'PBKDF2', salt, iterations: iter, hash: 'SHA-256' }, base, { name: 'AES-GCM', length: 256 }, false, ['encrypt', 'decrypt']);
 }
 async function seal(secret, pass) {
-  const salt = crypto.getRandomValues(new Uint8Array(16)), iv = crypto.getRandomValues(new Uint8Array(12)), iter = 400000;
-  const ct = await crypto.subtle.encrypt({ name: 'AES-GCM', iv }, await deriveKey(pass, salt, iter), te.encode(secret));
-  return { v: 1, iter, salt: b64(salt), iv: b64(iv), ct: b64(ct) };
+  const salt = crypto.getRandomValues(new Uint8Array(16)), iv = crypto.getRandomValues(new Uint8Array(12));
+  const ct = await crypto.subtle.encrypt({ name: 'AES-GCM', iv }, await deriveKey(pass, salt, ITER), te.encode(secret));
+  return { v: 1, iter: ITER, salt: b64(salt), iv: b64(iv), ct: b64(ct) };
 }
 async function unseal(box, pass) {
   const pt = await crypto.subtle.decrypt({ name: 'AES-GCM', iv: unb64(box.iv) }, await deriveKey(pass, unb64(box.salt), box.iter), unb64(box.ct));
   return td.decode(pt);
 }
+function passProblem(p) {
+  if (p.length < 10) return 'الباسورد لازم يكون 10 حروف أو أكثر.';
+  if (/^\d+$/.test(p)) return 'لا تخليه أرقام بس. اخلط حروف ويا أرقام، مثل: saat2026tlf';
+  return '';
+}
+// Arabic-Indic (٠-٩) and Persian (۰-۹) digits → ASCII, so phone and price fields accept whatever the keyboard types.
+const normDigits = s => String(s).replace(/[٠-٩]/g, d => d.charCodeAt(0) - 1632).replace(/[۰-۹]/g, d => d.charCodeAt(0) - 1776);
 
 let ghToken = null;
 try { ghToken = sessionStorage.getItem('saat-owner') || null; } catch (_) {}
 const keepToken = t => { ghToken = t; try { t ? sessionStorage.setItem('saat-owner', t) : sessionStorage.removeItem('saat-owner'); } catch (_) {} };
 async function gh(path, opts = {}) {
-  const r = await fetch(`https://api.github.com/repos/${REPO.owner}/${REPO.name}${path}`, { ...opts,
-    headers: { Authorization: `Bearer ${ghToken}`, Accept: 'application/vnd.github+json', 'X-GitHub-Api-Version': '2022-11-28', ...(opts.body ? { 'Content-Type': 'application/json' } : {}) } });
-  if (!r.ok) { const e = new Error('github ' + r.status); e.status = r.status; try { e.detail = (await r.json()).message; } catch (_) {} throw e; }
-  return r.status === 204 ? null : r.json();
+  // no-store: GitHub marks API reads cacheable for 60 s, and a cached branch pointer makes the next save fail.
+  const ctl = new AbortController(), timer = setTimeout(() => ctl.abort(), 45000);
+  let r;
+  try {
+    r = await fetch(`https://api.github.com/repos/${REPO.owner}/${REPO.name}${path}`, { ...opts, cache: 'no-store', signal: ctl.signal,
+      headers: { Authorization: `Bearer ${ghToken}`, Accept: opts.raw ? 'application/vnd.github.raw+json' : 'application/vnd.github+json', 'X-GitHub-Api-Version': '2022-11-28', ...(opts.body ? { 'Content-Type': 'application/json' } : {}) } });
+  } catch (x) { const e = new Error('network'); e.net = true; e.timeout = x && x.name === 'AbortError'; throw e; }
+  finally { clearTimeout(timer); }
+  if (!r.ok) {
+    const e = new Error('github ' + r.status); e.status = r.status;
+    try { e.detail = (await r.json()).message || ''; } catch (_) { e.detail = ''; }
+    e.rate = r.status === 429 || r.headers.get('x-ratelimit-remaining') === '0' || /rate limit/i.test(e.detail);
+    throw e;
+  }
+  if (r.status === 204) return null;
+  return opts.raw ? r.text() : r.json();
 }
 async function readRepoJson(path) {
-  try { const f = await gh(`/contents/${REPO.dir}/${path}?ref=${REPO.branch}`); return JSON.parse(td.decode(unb64(f.content.replace(/\s/g, '')))); }
+  try { return JSON.parse(await gh(`/contents/${REPO.dir}/${path}?ref=${REPO.branch}`, { raw: true })); }
   catch (e) { if (e.status === 404) return null; throw e; }
 }
-async function commitFiles(files, message) {
-  for (let attempt = 0; ; attempt++) {
-    const ref = await gh(`/git/ref/heads/${REPO.branch}`);
-    const base = await gh(`/git/commits/${ref.object.sha}`);
-    const tree = [];
-    for (const f of files) {
-      if (f.delete) { tree.push({ path: f.path, mode: '100644', type: 'blob', sha: null }); continue; }
-      const blob = await gh('/git/blobs', { method: 'POST', body: JSON.stringify(f.base64 != null ? { content: f.base64, encoding: 'base64' } : { content: f.text, encoding: 'utf-8' }) });
-      tree.push({ path: f.path, mode: '100644', type: 'blob', sha: blob.sha });
-    }
-    const t = await gh('/git/trees', { method: 'POST', body: JSON.stringify({ base_tree: base.tree.sha, tree }) });
-    const c = await gh('/git/commits', { method: 'POST', body: JSON.stringify({ message, tree: t.sha, parents: [ref.object.sha] }) });
-    try { await gh(`/git/refs/heads/${REPO.branch}`, { method: 'PATCH', body: JSON.stringify({ sha: c.sha }) }); return; }
-    catch (e) { if (attempt < 2 && e.status === 422) continue; throw e; }
+async function uploadBlobs(files) {
+  const out = [];
+  for (const f of files) {
+    if (f.delete) { out.push(f); continue; }
+    const blob = await gh('/git/blobs', { method: 'POST', body: JSON.stringify(f.base64 != null ? { content: f.base64, encoding: 'base64' } : { content: f.text, encoding: 'utf-8' }) });
+    out.push({ path: f.path, sha: blob.sha });
   }
+  return out;
 }
+// One commit on top of the branch tip. Deletes are kept only for files that really exist (GitHub rejects the rest).
+async function commitOnce(entries, message) {
+  const ref = await gh(`/git/ref/heads/${REPO.branch}`);
+  const base = await gh(`/git/commits/${ref.object.sha}`);
+  let have = null;
+  if (entries.some(f => f.delete)) {
+    const t = await gh(`/git/trees/${base.tree.sha}?recursive=1`);
+    have = new Set((t.tree || []).map(x => x.path));
+  }
+  const tree = [], seen = new Set();
+  for (const f of entries) {
+    if (seen.has(f.path)) continue;
+    seen.add(f.path);
+    if (f.delete) { if (have.has(f.path)) tree.push({ path: f.path, mode: '100644', type: 'blob', sha: null }); }
+    else tree.push({ path: f.path, mode: '100644', type: 'blob', sha: f.sha });
+  }
+  const t = await gh('/git/trees', { method: 'POST', body: JSON.stringify({ base_tree: base.tree.sha, tree }) });
+  const c = await gh('/git/commits', { method: 'POST', body: JSON.stringify({ message, tree: t.sha, parents: [ref.object.sha] }) });
+  await gh(`/git/refs/heads/${REPO.branch}`, { method: 'PATCH', body: JSON.stringify({ sha: c.sha }) });
+}
+async function commitFiles(files, message) { await commitOnce(await uploadBlobs(files), message); }
 const emptyData = () => ({ settings: { whatsapp: SHOP.whatsapp, map: SHOP.map, showSamples: true, hiddenSamples: [] }, products: [] });
 let ownerData = null;
-// Re-reads the live file before every change so two phones never overwrite each other.
+// Photos are uploaded once; then read-change-commit is retried on a fresh copy if another phone saved in between.
 async function mutate(change, files, message) {
-  const data = (await readRepoJson('data/products.json')) || emptyData();
-  data.settings = data.settings || {};
-  const drops = (await change(data)) || [];
-  data.updatedAt = new Date().toISOString();
-  await commitFiles([...files, ...drops, { path: `${REPO.dir}/data/products.json`, text: JSON.stringify(data, null, 1) + '\n' }], message);
-  ownerData = data;
-  applyData(data);
-  renderCatalogue(false);
-  refreshOwner();
+  const uploaded = await uploadBlobs(files);
+  for (let attempt = 0; ; attempt++) {
+    const data = (await readRepoJson('data/products.json')) || emptyData();
+    if (!data.settings || typeof data.settings !== 'object') data.settings = {};
+    if (!Array.isArray(data.products)) data.products = [];
+    const drops = (await change(data)) || [];
+    data.updatedAt = new Date().toISOString();
+    const [json] = await uploadBlobs([{ path: `${REPO.dir}/data/products.json`, text: JSON.stringify(data, null, 1) + '\n' }]);
+    try { await commitOnce([...uploaded, ...drops, json], message); }
+    catch (e) { if (attempt < 2 && e.status === 422) continue; throw e; }
+    ownerData = data;
+    applyData(data);
+    renderCatalogue(false);
+    refreshOwner();
+    return;
+  }
 }
 function ghError(e) {
-  if (!navigator.onLine) return 'ماكو إنترنت. تأكد من الاتصال وجرّب مرة ثانية.';
-  if (e.status === 401) return 'مفتاح GitHub غلط أو انتهت صلاحيته.';
+  if (e.net || !navigator.onLine) return e.timeout ? 'النت بطيء كلش والحفظ ما كمل. جرّب مرة ثانية.' : 'ماكو إنترنت. تأكد من الاتصال وجرّب مرة ثانية.';
+  if (e.photo) return e.photo;
+  if (e.badKey) return 'المفتاح ما اشتغل. تأكد إنه جديد وبيه صلاحية Contents: Read and write.';
+  if (e.rate) return 'GitHub طلب نستنى شوية لأن صار حفظ كثير. جرّب بعد دقيقة.';
+  if (e.status === 401) return 'مفتاح GitHub انتهت صلاحيته. ادخل الباسورد حتى تجدده.';
   if (e.status === 403) return 'المفتاح ما عنده صلاحية كتابة على saat-talafar. لازم Contents تكون Read and write.';
   if (e.status === 404) return 'ما لكيت مستودع saat-talafar، أو المفتاح ما عنده صلاحية عليه.';
   return 'صار خطأ بالحفظ. جرّب مرة ثانية.' + (e.detail ? ` (${e.detail})` : '');
 }
 const busyBox = $('#owBusy');
+let running = false, lastError = '', resumeForm = false;
 async function run(label, fn, okMsg) {
+  if (running) return false; // a second tap on Save while the first save is still going
+  running = true; lastError = '';
   $('#owBusyText').textContent = label; busyBox.hidden = false;
   try { await fn(); if (okMsg) toast(`${okMsg} يطلع للزبائن خلال دقيقة تقريباً.`); return true; }
-  catch (e) { if (e.status === 401) { keepToken(null); showOwner(); } toast(ghError(e)); return false; }
-  finally { busyBox.hidden = true; }
+  catch (e) {
+    lastError = ghError(e);
+    if (e.status === 401) {
+      // The key expired: keep any half-filled product form and come back to it after the key is renewed.
+      if (!formWrap.hidden) { formWrap.hidden = true; resumeForm = true; }
+      keepToken(null); owNote = 'مفتاح GitHub انتهى. ادخل الباسورد حتى تجدده.'; showOwner();
+    }
+    toast(lastError);
+    return false;
+  }
+  finally { busyBox.hidden = true; running = false; }
 }
 
 /* screens */
-const OW_SCREENS = ['owOff', 'owLock', 'owSetup', 'owHome', 'owProducts', 'owAbout', 'owWa', 'owTt', 'owMap', 'owPassword'];
+const OW_SCREENS = ['owOff', 'owNet', 'owLock', 'owRenew', 'owSetup', 'owHome', 'owProducts', 'owAbout', 'owWa', 'owTt', 'owMap', 'owPassword'];
 const OW_INNER = ['owProducts', 'owAbout', 'owWa', 'owTt', 'owMap', 'owPassword'];
-let owBox = null;
+let owBox = null, owNote = '', pendingPass = null;
 function goOwner(id) {
   OW_SCREENS.forEach(s => { $('#' + s).hidden = s !== id; });
   $('#owBack').hidden = !OW_INNER.includes(id);
@@ -2492,6 +2693,7 @@ function goOwner(id) {
   const first = $('#' + id + ' input:not([type=hidden]):not([type=checkbox]), #' + id + ' textarea');
   if (first && FINE) first.focus({ preventScroll: true });
 }
+// undefined = no connection, null = not set up yet, object = the encrypted key.
 async function fetchOwnerBox() {
   // The API sees a fresh commit at once; GitHub Pages can lag a minute behind it.
   try {
@@ -2499,15 +2701,24 @@ async function fetchOwnerBox() {
     if (r.ok) return await r.json();
     if (r.status === 404) return null;
   } catch (_) {}
-  try { const r = await fetch(`data/owner.json?v=${Date.now()}`, { cache: 'no-store' }); return r.ok ? await r.json() : null; } catch (_) { return null; }
+  try {
+    const r = await fetch(`data/owner.json?v=${Date.now()}`, { cache: 'no-store' });
+    if (r.ok) return await r.json();
+    return r.status === 404 ? null : undefined;
+  } catch (_) { return undefined; }
 }
 async function showOwner() {
   if (!CAN_ADMIN) return goOwner('owOff');
   if (ghToken) { goOwner('owHome'); return loadOwnerData(); }
   owBox = await fetchOwnerBox();
+  if (owBox === undefined) return goOwner('owNet');
   goOwner(owBox ? 'owLock' : 'owSetup');
+  $('#owLockErr').textContent = owNote; owNote = '';
 }
-function openOwner() { ownerEl.hidden = false; root.classList.add('locked'); showOwner(); }
+function openOwner() {
+  if (window.top !== window.self) return; // never inside someone else's frame
+  ownerEl.hidden = false; root.classList.add('locked'); showOwner();
+}
 function closeOwner() {
   ownerEl.hidden = true;
   if (!open) root.classList.remove('locked');
@@ -2517,22 +2728,26 @@ addEventListener('hashchange', () => { if (location.hash === '#owner') openOwner
 $('#owClose').addEventListener('click', closeOwner);
 $('#owBack').addEventListener('click', () => goOwner('owHome'));
 $('#owLogout').addEventListener('click', () => { keepToken(null); ownerData = null; showOwner(); });
+$('#owNetRetry').addEventListener('click', showOwner);
+$('#owHomeRetry').addEventListener('click', loadOwnerData);
 $$('[data-go]', ownerEl).forEach(b => b.addEventListener('click', () => goOwner(b.dataset.go)));
 
 async function loadOwnerData() {
-  $('#owHomeNote').textContent = 'جاري التحميل…';
+  $('#owHomeNote').textContent = 'جاري التحميل…'; $('#owHomeRetry').hidden = true;
   try { ownerData = (await readRepoJson('data/products.json')) || emptyData(); }
   catch (e) {
-    if (e.status === 401) { keepToken(null); toast('انتهت صلاحية مفتاح GitHub. ادخل مرة ثانية أو سوّي مفتاح جديد.'); return showOwner(); }
-    $('#owHomeNote').textContent = ghError(e); return;
+    if (e.status === 401) { keepToken(null); owNote = 'مفتاح GitHub انتهى. ادخل الباسورد حتى تجدده.'; return showOwner(); }
+    $('#owHomeNote').textContent = ghError(e); $('#owHomeRetry').hidden = false; return;
   }
-  ownerData.settings = ownerData.settings || {};
+  if (!ownerData.settings || typeof ownerData.settings !== 'object') ownerData.settings = {};
+  if (!Array.isArray(ownerData.products)) ownerData.products = [];
   refreshOwner();
+  if (resumeForm) { resumeForm = false; formWrap.hidden = false; }
 }
 function refreshOwner() {
   if (!ownerData) return;
   const s = ownerData.settings, items = ownerData.products;
-  $('#owHomeNote').textContent = '';
+  $('#owHomeNote').textContent = ''; $('#owHomeRetry').hidden = true;
   $('#owTileProducts').textContent = items.length ? `${items.length} منتج` : 'ما مضاف شي بعد';
   $('#owTileAbout').textContent = s.about ? s.about.slice(0, 40) + (s.about.length > 40 ? '…' : '') : 'النص الافتراضي';
   $('#owTileWa').textContent = phoneLabel(String(s.whatsapp || SHOP.whatsapp).replace(/\D/g, ''));
@@ -2542,29 +2757,53 @@ function refreshOwner() {
   $('#owCount').textContent = items.length ? `${items.length} منتج` : '';
   $('#owList').innerHTML = items.length ? items.map(d => `
     <li class="ow-item${d.soldOut ? ' sold' : ''}" data-id="${esc(d.id)}">
-      <img src="${esc(imgSrc(d.thumb || (d.images || [])[0] || ''))}" alt="" loading="lazy">
+      <img src="${esc(imgSrc(IMG_RE.test(String(d.thumb)) ? d.thumb : (d.images || [])[0] || ''))}" alt="" loading="lazy">
       <div class="ow-meta"><b>${esc(d.name)}</b><span>${fmt(+d.price || 0)} د.ع · ${esc(CATS[d.cat] || '')}</span></div>
       <label class="ow-switch"><input type="checkbox" data-act="sold"${d.soldOut ? ' checked' : ''}><span></span><em>نفد</em></label>
       <button type="button" class="ow-icon" data-act="edit" aria-label="تعديل ${esc(d.name)}"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16v4zM14 6l4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></button>
       <button type="button" class="ow-icon danger" data-act="del" aria-label="حذف ${esc(d.name)}"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M5 7h14M10 7V5h4v2M7 7l1 13h8l1-13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><span>متأكد؟ احذف</span></button>
     </li>`).join('') : '<li class="ow-empty">ما مضاف منتجات بعد. اضغط «منتج جديد» وصوّر أول قطعة.</li>';
   $('#owAboutText').value = s.about || '';
+  $('#owHoursInput').value = s.hours || '';
+  $('#owDeliveryInput').value = s.delivery || '';
   $('#owWaInput').value = String(s.whatsapp || SHOP.whatsapp);
   $('#owTtInput').value = s.tiktokUser ? '@' + s.tiktokUser : '';
   $('#owMapInput').value = s.map || SHOP.map;
   $('#owAddrInput').value = s.address || '';
 }
 
-/* login + one-time setup */
+/* login, renewing an expired key, one-time setup */
+async function keyWorks() {
+  try { await gh(`/git/ref/heads/${REPO.branch}`); return true; }
+  catch (e) { if (e.status === 401) return false; return true; } // offline etc.: let the home screen report it
+}
 $('#owLockForm').addEventListener('submit', async e => {
   e.preventDefault();
   const err = $('#owLockErr'), pass = $('#owPass').value;
   err.textContent = '';
   busyBox.hidden = false; $('#owBusyText').textContent = 'جاري الدخول…';
-  try { keepToken(await unseal(owBox, pass)); }
-  catch (_) { err.textContent = 'الباسورد غلط. جرّب مرة ثانية.'; $('#owLock').classList.remove('shake'); void $('#owLock').offsetWidth; $('#owLock').classList.add('shake'); return; }
-  finally { busyBox.hidden = true; }
-  $('#owPass').value = '';
+  try {
+    try { keepToken(await unseal(owBox, pass)); }
+    catch (_) { err.textContent = 'الباسورد غلط. جرّب مرة ثانية.'; $('#owLock').classList.remove('shake'); void $('#owLock').offsetWidth; $('#owLock').classList.add('shake'); return; }
+    $('#owPass').value = '';
+    if (!(await keyWorks())) { keepToken(null); pendingPass = pass; return goOwner('owRenew'); }
+  } finally { busyBox.hidden = true; }
+  showOwner();
+});
+$('#owRenewForm').addEventListener('submit', async e => {
+  e.preventDefault();
+  const tok = $('#owRenewTok').value.trim(), err = $('#owRenewErr');
+  err.textContent = '';
+  if (!tok) return void (err.textContent = 'الصق مفتاح GitHub الجديد.');
+  if (!pendingPass) return void showOwner();
+  keepToken(tok);
+  const ok = await run('جاري تجديد المفتاح…', async () => {
+    if (!(await keyWorks())) { const x = new Error('bad key'); x.badKey = true; throw x; }
+    await commitFiles([{ path: `${REPO.dir}/data/owner.json`, text: JSON.stringify(await seal(tok, pendingPass)) + '\n' }], 'تجديد مفتاح لوحة صاحب المحل');
+  });
+  if (!ok) { keepToken(null); goOwner('owRenew'); err.textContent = 'المفتاح ما اشتغل. تأكد إنه جديد وبيه صلاحية Contents: Read and write.'; return; }
+  pendingPass = null; $('#owRenewForm').reset();
+  toast('تجدد المفتاح. اللوحة رجعت تشتغل.');
   showOwner();
 });
 $('#owSetupForm').addEventListener('submit', async e => {
@@ -2572,7 +2811,8 @@ $('#owSetupForm').addEventListener('submit', async e => {
   const token = $('#owToken').value.trim(), p1 = $('#owNew1').value, p2 = $('#owNew2').value, err = $('#owSetupErr');
   err.textContent = '';
   if (!token) return void (err.textContent = 'الصق مفتاح GitHub.');
-  if (p1.length < 8) return void (err.textContent = 'الباسورد لازم يكون 8 حروف أو أكثر.');
+  const bad = passProblem(p1);
+  if (bad) return void (err.textContent = bad);
   if (p1 !== p2) return void (err.textContent = 'الباسوردين مو نفس الشي.');
   keepToken(token);
   const ok = await run('جاري تجهيز اللوحة…', async () => {
@@ -2580,7 +2820,7 @@ $('#owSetupForm').addEventListener('submit', async e => {
     if (!(await readRepoJson('data/products.json'))) files.push({ path: `${REPO.dir}/data/products.json`, text: JSON.stringify(emptyData(), null, 1) + '\n' });
     await commitFiles(files, 'تجهيز لوحة صاحب المحل');
   });
-  if (!ok) { keepToken(null); err.textContent = 'ما زبط. تأكد من المفتاح وصلاحياته وجرّب مرة ثانية.'; return; }
+  if (!ok) { keepToken(null); goOwner('owSetup'); err.textContent = lastError || 'ما زبط. تأكد من المفتاح وصلاحياته وجرّب مرة ثانية.'; return; }
   $('#owSetupForm').reset();
   toast('تجهّزت اللوحة. احفظ الباسورد بمكان أمين.');
   showOwner();
@@ -2590,14 +2830,15 @@ $('#owSetupForm').addEventListener('submit', async e => {
 const saveSetting = (label, patch, okMsg) => run(label, () => mutate(data => { Object.assign(data.settings, patch); }, [], okMsg.replace(/\.$/, '')), okMsg);
 $('#owAboutForm').addEventListener('submit', e => {
   e.preventDefault();
-  saveSetting('جاري الحفظ…', { about: $('#owAboutText').value.trim() }, 'انحفظ وصف المحل.');
+  saveSetting('جاري الحفظ…', { about: $('#owAboutText').value.trim(), hours: $('#owHoursInput').value.trim(), delivery: $('#owDeliveryInput').value.trim() }, 'انحفظت معلومات المحل.');
 });
 $('#owAboutReset').addEventListener('click', () => { $('#owAboutText').value = ''; });
 $('#owWaForm').addEventListener('submit', e => {
   e.preventDefault();
-  let n = $('#owWaInput').value.replace(/\D/g, '');
+  let n = normDigits($('#owWaInput').value).replace(/\D/g, '');
   if (n.startsWith('00')) n = n.slice(2);
-  if (n.startsWith('07')) n = '964' + n.slice(1);
+  if (/^07\d{9}$/.test(n)) n = '964' + n.slice(1);
+  else if (/^7\d{9}$/.test(n)) n = '964' + n; // typed without the leading 0
   if (!/^\d{10,15}$/.test(n)) return void ($('#owWaErr').textContent = 'اكتب الرقم كامل، مثل 07501234567 أو 9647501234567.');
   $('#owWaErr').textContent = '';
   saveSetting('جاري الحفظ…', { whatsapp: n }, 'انحفظ رقم الواتساب.');
@@ -2612,25 +2853,30 @@ $('#owTtForm').addEventListener('submit', e => {
 });
 $('#owMapForm').addEventListener('submit', e => {
   e.preventDefault();
-  const link = $('#owMapInput').value.trim();
-  if (link && !/^https:\/\/(maps\.app\.goo\.gl|goo\.gl\/maps|(www\.)?google\.[a-z.]+\/maps|maps\.google\.)/i.test(link)) return void ($('#owMapErr').textContent = 'الصق رابط من تطبيق خرائط كوكل (زر مشاركة ← نسخ الرابط).');
+  const raw = $('#owMapInput').value.trim(), link = raw ? safeMap(raw) : '';
+  if (raw && !link) return void ($('#owMapErr').textContent = 'الصق رابط من تطبيق خرائط كوكل (زر مشاركة ← نسخ الرابط).');
   $('#owMapErr').textContent = '';
   saveSetting('جاري الحفظ…', { map: link, address: $('#owAddrInput').value.trim() }, 'انحفظ موقع المحل.');
 });
-$('#owSamples').addEventListener('change', e => {
+$('#owSamples').addEventListener('change', async e => {
   const on = e.target.checked;
-  saveSetting('جاري الحفظ…', { showSamples: on }, on ? 'رجعت المنتجات التجريبية للموقع.' : 'انشالت المنتجات التجريبية من الموقع.');
+  if (!(await saveSetting('جاري الحفظ…', { showSamples: on }, on ? 'رجعت المنتجات التجريبية للموقع.' : 'انشالت المنتجات التجريبية من الموقع.'))) refreshOwner();
 });
 $('#owPassForm').addEventListener('submit', async e => {
   e.preventDefault();
-  const p1 = $('#owChg1').value, p2 = $('#owChg2').value, tok = $('#owChgTok').value.trim(), err = $('#owPassErr');
+  const cur = $('#owChgCur').value, p1 = $('#owChg1').value, p2 = $('#owChg2').value, tok = $('#owChgTok').value.trim(), err = $('#owPassErr');
   err.textContent = '';
-  if (p1.length < 8) return void (err.textContent = 'الباسورد لازم يكون 8 حروف أو أكثر.');
-  if (p1 !== p2) return void (err.textContent = 'الباسوردين مو نفس الشي.');
+  const bad = passProblem(p1);
+  if (bad) return void (err.textContent = bad);
+  if (p1 !== p2) return void (err.textContent = 'الباسوردين الجداد مو نفس الشي.');
+  // The current password must open the current box, so an unattended open tab cannot lock the owner out.
+  const box = await fetchOwnerBox();
+  if (!box) return void (err.textContent = box === undefined ? 'ماكو إنترنت. جرّب مرة ثانية.' : 'اللوحة مو مجهّزة.');
+  try { await unseal(box, cur); } catch (_) { return void (err.textContent = 'الباسورد الحالي غلط.'); }
   const prev = ghToken;
   if (tok) keepToken(tok);
   const ok = await run('جاري تغيير الباسورد…', async () => commitFiles([{ path: `${REPO.dir}/data/owner.json`, text: JSON.stringify(await seal(ghToken, p1)) + '\n' }], 'تغيير باسورد اللوحة'));
-  if (!ok) { if (tok) keepToken(prev); return; }
+  if (!ok) { if (tok) keepToken(prev); err.textContent = lastError; return; }
   $('#owPassForm').reset();
   toast('تغيّر الباسورد. من المرة الجاية ادخل بالباسورد الجديد.');
   goOwner('owHome');
@@ -2643,21 +2889,34 @@ $('#owList').addEventListener('click', e => {
   const id = btn.closest('.ow-item').dataset.id, d = ownerData.products.find(x => x.id === id);
   if (!d) return;
   if (btn.dataset.act === 'edit') return openForm(d);
-  if (!btn.classList.contains('confirm')) { btn.classList.add('confirm'); setTimeout(() => btn.classList.remove('confirm'), 3500); return; }
+  // Two separate taps: the second must come a moment after the first, so a fast double-tap cannot delete.
+  if (!btn.classList.contains('confirm')) { btn.classList.add('confirm'); btn._armed = Date.now(); setTimeout(() => btn.classList.remove('confirm'), 3500); return; }
+  if (Date.now() - (btn._armed || 0) < 450) return;
   run('جاري الحذف…', () => mutate(data => {
     const x = data.products.find(p => p.id === id);
     data.products = data.products.filter(p => p.id !== id);
-    return x ? [...new Set([...(x.images || []), x.thumb].filter(Boolean))].map(path => ({ path: `${REPO.dir}/${path}`, delete: true })) : [];
+    return x ? [...new Set([...(Array.isArray(x.images) ? x.images : []), x.thumb].filter(p => IMG_RE.test(String(p))))].map(path => ({ path: `${REPO.dir}/${path}`, delete: true })) : [];
   }, [], `حذف: ${d.name}`), `انحذف «${d.name}».`);
 });
-$('#owList').addEventListener('change', e => {
+$('#owList').addEventListener('change', async e => {
   if (e.target.dataset.act !== 'sold') return;
   const id = e.target.closest('.ow-item').dataset.id, on = e.target.checked, d = ownerData.products.find(x => x.id === id);
-  run('جاري الحفظ…', () => mutate(data => { const x = data.products.find(p => p.id === id); if (x) x.soldOut = on; }, [], `${on ? 'نفد' : 'رجع متوفر'}: ${d.name}`), on ? `تأشّرت «${d.name}» نفد.` : `«${d.name}» رجعت متوفرة.`);
+  const ok = await run('جاري الحفظ…', () => mutate(data => { const x = data.products.find(p => p.id === id); if (x) x.soldOut = on; }, [], `${on ? 'نفد' : 'رجع متوفر'}: ${d.name}`), on ? `تأشّرت «${d.name}» نفد.` : `«${d.name}» رجعت متوفرة.`);
+  if (!ok) refreshOwner(); // put the switch back
 });
 
-let editing = null, photos = [];
+let editing = null, photos = [], formId = '', dirty = false;
 const formWrap = $('#owFormWrap');
+// Checks a picked photo can be decoded here (e.g. some HEIC files cannot) before it is accepted.
+async function readable(file) {
+  try { const b = await createImageBitmap(file); if (b.close) b.close(); return true; }
+  catch (_) {
+    const url = URL.createObjectURL(file);
+    try { await new Promise((res, rej) => { const im = new Image(); im.onload = res; im.onerror = rej; im.src = url; }); return true; }
+    catch (__) { return false; }
+    finally { URL.revokeObjectURL(url); }
+  }
+}
 function renderPhotos() {
   $('#owPhotos').innerHTML = photos.map((ph, i) => `
     <div class="ow-ph${i === 0 ? ' main' : ''}"><img src="${esc(ph.url || imgSrc(ph.path))}" alt="">
@@ -2665,72 +2924,117 @@ function renderPhotos() {
       <button type="button" class="ow-rm" data-rm="${i}" aria-label="شيل الصورة">×</button></div>`).join('')
     + (photos.length < 5 ? '<label class="ow-ph add"><input type="file" accept="image/*" multiple id="owFile"><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z M12 17a4 4 0 1 0 0-8 4 4 0 0 0 0 8z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><span>ضيف صورة</span></label>' : '');
   const inp = $('#owFile');
-  if (inp) inp.addEventListener('change', () => {
-    for (const file of [...inp.files].slice(0, 5 - photos.length)) photos.push({ file, url: URL.createObjectURL(file) });
+  if (inp) inp.addEventListener('change', async () => {
+    let skipped = 0;
+    for (const file of [...inp.files].slice(0, 5 - photos.length)) {
+      if (await readable(file)) photos.push({ file, url: URL.createObjectURL(file) }); else skipped++;
+    }
+    dirty = true;
+    $('#owFormErr').textContent = skipped ? `${skipped === 1 ? 'صورة وحدة ما انقرت' : `${skipped} صور ما انقرن`}. صوّرها من جديد بالكاميرا أو اختار صورة ثانية.` : '';
     renderPhotos();
   });
 }
 $('#owPhotos').addEventListener('click', e => {
   const rm = e.target.closest('[data-rm]'), mk = e.target.closest('[data-main]');
-  if (rm) { photos.splice(+rm.dataset.rm, 1); renderPhotos(); }
-  else if (mk) { const [x] = photos.splice(+mk.dataset.main, 1); photos.unshift(x); renderPhotos(); }
+  if (rm) { photos.splice(+rm.dataset.rm, 1); dirty = true; renderPhotos(); }
+  else if (mk) { const [x] = photos.splice(+mk.dataset.main, 1); photos.unshift(x); dirty = true; renderPhotos(); }
 });
+function priceOf(v) {
+  const s = normDigits(v);
+  const n = parseFloat(s.replace(/[^\d.]/g, '')) || 0;
+  // «25 الف» / «25 ألف» / «25k» mean thousands.
+  return Math.round(/(ال|أل|ا)ف|k/i.test(s) ? n * 1000 : n);
+}
+const showPriceHint = () => { const p = priceOf($('#owPrice').value); $('#owPriceHint').textContent = p ? `يطلع بالموقع: ${fmt(p)} د.ع` : ''; };
+$('#owPrice').addEventListener('input', showPriceHint);
+$('#owForm').addEventListener('input', () => { dirty = true; });
 function openForm(d) {
   editing = d || null;
+  formId = d ? d.id : 'p' + Date.now().toString(36); // fixed per form, so a retried save never makes a second copy
+  dirty = false;
   $('#owForm').reset();
   $('#owFormErr').textContent = '';
+  $('#owCancel').textContent = 'إلغاء';
   $('#owFormTitle').textContent = d ? 'تعديل منتج' : 'منتج جديد';
-  photos = d ? (d.images || []).map(path => ({ path })) : [];
+  photos = d ? (Array.isArray(d.images) ? d.images : []).filter(p => IMG_RE.test(String(p))).map(path => ({ path })) : [];
   if (d) {
     $('#owName').value = d.name || ''; $('#owPrice').value = d.price || ''; $('#owOld').value = d.old || '';
-    $('#owCat').value = d.cat || 'watch'; $('#owBadge').value = d.badge || '';
+    $('#owCat').value = CATS[d.cat] ? d.cat : 'watch'; $('#owBadge').value = d.badge || '';
     $('#owMen').checked = (d.gender || []).includes('men'); $('#owWomen').checked = (d.gender || []).includes('women');
     $('#owColors').value = d.colors || ''; $('#owShort').value = d.short || ''; $('#owDesc').value = d.desc || ''; $('#owSold').checked = !!d.soldOut;
   }
+  showPriceHint();
   renderPhotos();
   formWrap.hidden = false;
   if (FINE) $('#owName').focus({ preventScroll: true });
 }
-const closeForm = () => { formWrap.hidden = true; photos.forEach(p => { if (p.url && !Object.values(localImg).includes(p.url)) URL.revokeObjectURL(p.url); }); photos = []; editing = null; };
+const closeForm = () => { formWrap.hidden = true; photos.forEach(p => { if (p.url && !Object.values(localImg).includes(p.url)) URL.revokeObjectURL(p.url); }); photos = []; editing = null; dirty = false; };
+// Cancel with unsaved changes asks once more instead of throwing the work away.
+const tryCloseForm = () => {
+  const btn = $('#owCancel');
+  if (dirty && !btn._armed) { btn._armed = true; btn.textContent = 'اضغط مرة ثانية حتى تلغي التغييرات'; setTimeout(() => { btn._armed = false; btn.textContent = 'إلغاء'; }, 3500); return; }
+  btn._armed = false; btn.textContent = 'إلغاء';
+  closeForm();
+};
 $('#owAdd').addEventListener('click', () => openForm(null));
-$('#owFormX').addEventListener('click', closeForm);
-$('#owCancel').addEventListener('click', closeForm);
+$('#owFormX').addEventListener('click', tryCloseForm);
+$('#owCancel').addEventListener('click', tryCloseForm);
 
 async function toImage(file, max, q) {
-  let src;
+  let src, url = null;
   try { src = await createImageBitmap(file, { imageOrientation: 'from-image' }); }
-  catch (_) { src = await new Promise((res, rej) => { const im = new Image(); im.onload = () => res(im); im.onerror = rej; im.src = URL.createObjectURL(file); }); }
-  const w0 = src.width || src.naturalWidth, h0 = src.height || src.naturalHeight, s = Math.min(1, max / Math.max(w0, h0));
-  const c = document.createElement('canvas'); c.width = Math.round(w0 * s); c.height = Math.round(h0 * s);
-  const ctx = c.getContext('2d'); ctx.imageSmoothingQuality = 'high'; ctx.drawImage(src, 0, 0, c.width, c.height);
-  let blob = await new Promise(r => c.toBlob(r, 'image/webp', q)), ext = 'webp';
-  if (!blob || blob.type !== 'image/webp') { blob = await new Promise(r => c.toBlob(r, 'image/jpeg', q)); ext = 'jpg'; }
-  return { blob, ext };
+  catch (_) {
+    url = URL.createObjectURL(file);
+    src = await new Promise((res, rej) => { const im = new Image(); im.onload = () => res(im); im.onerror = rej; im.src = url; });
+  }
+  try {
+    const w0 = src.width || src.naturalWidth, h0 = src.height || src.naturalHeight, s = Math.min(1, max / Math.max(w0, h0));
+    const c = document.createElement('canvas'); c.width = Math.round(w0 * s); c.height = Math.round(h0 * s);
+    const ctx = c.getContext('2d'); ctx.imageSmoothingQuality = 'high'; ctx.drawImage(src, 0, 0, c.width, c.height);
+    let blob = await new Promise(r => c.toBlob(r, 'image/webp', q)), ext = 'webp';
+    if (!blob || blob.type !== 'image/webp') { blob = await new Promise(r => c.toBlob(r, 'image/jpeg', q)); ext = 'jpg'; }
+    if (!blob) throw new Error('encode');
+    return { blob, ext };
+  } finally {
+    if (src && src.close) src.close();
+    if (url) URL.revokeObjectURL(url);
+  }
 }
 const blobToB64 = blob => new Promise((res, rej) => { const fr = new FileReader(); fr.onload = () => res(String(fr.result).split(',')[1]); fr.onerror = rej; fr.readAsDataURL(blob); });
-const toInt = v => parseInt(String(v).replace(/[٠-٩]/g, d => '٠١٢٣٤٥٦٧٨٩'.indexOf(d)).replace(/\D/g, ''), 10) || 0;
+const photoError = msg => { const x = new Error('photo'); x.photo = msg; return x; };
 
 $('#owForm').addEventListener('submit', async e => {
   e.preventDefault();
-  const err = $('#owFormErr'), name = $('#owName').value.trim(), price = toInt($('#owPrice').value), old = toInt($('#owOld').value);
+  if (running) return;
+  const err = $('#owFormErr'), name = $('#owName').value.trim(), price = priceOf($('#owPrice').value), old = priceOf($('#owOld').value);
   err.textContent = '';
   if (!photos.length) return void (err.textContent = 'ضيف صورة وحدة على الأقل.');
   if (!name) return void (err.textContent = 'اكتب اسم المنتج.');
   if (!price) return void (err.textContent = 'اكتب السعر بالدينار.');
+  if (price < 250) return void (err.textContent = 'السعر قليل كلش. اكتبه كامل بالدينار، مثل 25000.');
   const gender = [$('#owMen').checked && 'men', $('#owWomen').checked && 'women'].filter(Boolean);
-  const id = editing ? editing.id : 'p' + Date.now().toString(36);
-  const wasEditing = !!editing, stamp = Date.now().toString(36);
+  const id = formId, wasEditing = !!editing, stamp = Date.now().toString(36), total = photos.filter(p => !p.path).length;
   const ok = await run('جاري تجهيز الصور…', async () => {
     const files = [], images = [];
+    let done = 0;
     for (const [n, ph] of photos.entries()) {
       if (ph.path) { images.push(ph.path); continue; }
-      const img = await toImage(ph.file, 2000, .86), path = `images/${id}-${stamp}${n}.${img.ext}`;
+      $('#owBusyText').textContent = `جاري تجهيز الصورة ${++done} من ${total}…`;
+      let img;
+      try { img = await toImage(ph.file, 2000, .86); } catch (_) { throw photoError(`الصورة رقم ${n + 1} ما انقرت. شيلها وصوّرها من جديد.`); }
+      const path = `images/${id}-${stamp}${n}.${img.ext}`;
       files.push({ path: `${REPO.dir}/${path}`, base64: await blobToB64(img.blob) });
       localImg[path] = ph.url; images.push(path);
     }
-    let thumb = editing && editing.thumb && (editing.images || [])[0] === images[0] ? editing.thumb : null;
+    let thumb = editing && IMG_RE.test(String(editing.thumb)) && (editing.images || [])[0] === images[0] ? editing.thumb : null;
     if (!thumb) {
-      const first = photos[0], source = first.file || await (await fetch(imgSrc(first.path))).blob();
+      const first = photos[0];
+      let source = first.file;
+      if (!source) {
+        const r = await fetch(imgSrc(first.path));
+        if (!r.ok) throw photoError('الصورة الرئيسية بعدها ما نزلت بالموقع. انتظر دقيقة وجرّب مرة ثانية.');
+        source = await r.blob();
+      }
       const t = await toImage(source, 900, .82);
       thumb = `images/${id}-${stamp}t.${t.ext}`;
       files.push({ path: `${REPO.dir}/${thumb}`, base64: await blobToB64(t.blob) });
@@ -2742,15 +3046,16 @@ $('#owForm').addEventListener('submit', async e => {
       colors: $('#owColors').value.trim(), short: $('#owShort').value.trim(), desc: $('#owDesc').value.trim(), badge: $('#owBadge').value,
       soldOut: $('#owSold').checked, images, thumb, updatedAt: now };
     await mutate(data => {
-      const i = data.products.findIndex(p => p.id === id);
+      const i = data.products.findIndex(p => p && p.id === id);
       if (i < 0) { rec.createdAt = now; data.products.unshift(rec); return []; }
       const prev = data.products[i];
       rec.createdAt = prev.createdAt || now;
       data.products[i] = rec;
-      return [...(prev.images || []), prev.thumb].filter(pth => pth && !images.includes(pth) && pth !== thumb).map(pth => ({ path: `${REPO.dir}/${pth}`, delete: true }));
+      return [...(Array.isArray(prev.images) ? prev.images : []), prev.thumb].filter(pth => IMG_RE.test(String(pth)) && !images.includes(pth) && pth !== thumb).map(pth => ({ path: `${REPO.dir}/${pth}`, delete: true }));
     }, files, `${wasEditing ? 'تعديل' : 'إضافة'}: ${name}`);
   }, wasEditing ? `انحفظ تعديل «${name}».` : `انضافت «${name}».`);
   if (ok) closeForm();
+  else if (!formWrap.hidden) err.textContent = lastError;
 });
 
 if (location.hash === '#owner') openOwner();
