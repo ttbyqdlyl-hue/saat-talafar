@@ -234,12 +234,12 @@ img,svg{max-width:100%}
 /* product grid */
 .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px}
 @media (max-width:1020px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}}
-@media (max-width:620px){.grid{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:620px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}}
 .grid-empty{padding:60px 20px;text-align:center;color:var(--mist);border:1px dashed var(--line);border-radius:var(--r-card)}
 
 .card{position:relative;min-width:0}
 .card.is-out{display:none}
-.card-tilt{--rx:0deg;--ry:0deg;--mx:50%;--my:30%;position:relative;height:100%;border-radius:var(--r-card);
+.card-tilt{--rx:0deg;--ry:0deg;--mx:50%;--my:30%;position:relative;display:flex;flex-direction:column;height:100%;border-radius:var(--r-card);
   background:linear-gradient(180deg,var(--panel-2),var(--panel));
   transform:perspective(1100px) rotateX(var(--rx)) rotateY(var(--ry));transform-style:preserve-3d;
   transition:transform .8s var(--ease-out),box-shadow .6s,background-color .9s;
@@ -265,7 +265,7 @@ img,svg{max-width:100%}
     repeating-radial-gradient(circle at 50% 42%,rgba(255,255,255,.022) 0 1px,transparent 1px 9px),
     #0A0D12;transition:background-color .9s}
 .lume-mode .stage{background:#030405}
-@media (max-width:620px){.stage{aspect-ratio:5/4}}
+
 .stage-floor{position:absolute;left:26%;right:26%;bottom:8%;height:9%;border-radius:50%;background:radial-gradient(closest-side,rgba(0,0,0,.75),transparent);filter:blur(6px)}
 .stage .watch{position:absolute;inset:2% 0;transform:translateZ(36px) rotate(var(--tilt));transition:transform 1s var(--ease-out)}
 .card:hover .stage .watch{transform:translateZ(74px) rotate(0deg) scale(1.05)}
@@ -276,11 +276,11 @@ img,svg{max-width:100%}
 .fav path{fill:transparent;stroke:var(--ivory);transition:fill .3s,stroke .3s}
 .fav[aria-pressed="true"] path{fill:var(--tt-red);stroke:var(--tt-red)}
 .spark{position:absolute;left:50%;top:50%;width:6px;height:6px;margin:-3px;border-radius:50%;pointer-events:none;background:var(--tt-red)}
-.info{position:relative;display:grid;gap:5px;padding:18px 22px 22px;transform:translateZ(22px)}
+.info{position:relative;flex:1;display:flex;flex-direction:column;gap:5px;padding:18px 22px 22px;transform:translateZ(22px)}
 .cat{margin:0;font-size:12.5px;color:var(--champagne)}
 .name{margin:0;font-family:var(--f-display);font-weight:600;font-size:24px;line-height:1.3}
 .spec{margin:0;font-size:13.5px;color:var(--mist)}
-.buy{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:12px;padding-top:15px;border-top:1px solid var(--line)}
+.buy{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:auto;padding-top:15px;border-top:1px solid var(--line)}
 .price{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 7px;margin:0;font-variant-numeric:tabular-nums}
 .price b{font-size:22px;font-weight:600;color:var(--ivory)}
 .price .cur{font-size:13px;color:var(--mist)}
@@ -290,6 +290,26 @@ img,svg{max-width:100%}
 .card:hover .more{background:var(--champagne);color:var(--ink-dark);border-color:var(--champagne)}
 .card:hover .more svg{transform:translateX(-4px)}
 .card-hit{position:absolute;inset:0;z-index:5;border-radius:var(--r-card);transform:translateZ(80px)}
+
+/* two-per-row cards on phones */
+@media (max-width:620px){
+  .grid{--r-card:18px}
+  .stage{margin:6px 6px 0}
+  .info{gap:3px;padding:10px 11px 12px}
+  .cat{font-size:11px}
+  .name{font-size:16px;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .spec{font-size:11.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .buy{flex-direction:column;align-items:stretch;gap:8px;padding-top:10px}
+  .info .name + .buy,.info .spec + .buy{margin-top:auto}
+  .price{gap:2px 5px}
+  .price b{font-size:16px}
+  .price .cur,.price s{font-size:11px}
+  .more{justify-content:center;height:34px;padding:0 10px;font-size:12.5px}
+  .badge{top:8px;inset-inline-start:8px;padding:3px 9px;font-size:10.5px}
+  .fav{top:8px;inset-inline-end:8px;width:34px;height:34px}
+  .fav svg{width:16px;height:16px}
+  .card.skel .card-tilt{min-height:300px}
+}
 
 /* steps */
 .steps{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
