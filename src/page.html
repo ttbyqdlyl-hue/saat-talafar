@@ -4,7 +4,7 @@
 <meta name="theme-color" content="#07080B">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Readex+Pro:wght@300..600&family=Reem+Kufi:wght@400..700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300..600&family=Reem+Kufi:wght@400..700&display=swap">
 <style>
 /* Layout: a night vitrine. Glass header → split hero (copy at the start side, a live signature watch at the end side) → category marquee → filterable grid of tilting product cards → three-step order path → TikTok band → footer. One committed dark look. */
 :root{
@@ -25,7 +25,7 @@
   --tt-red:#FE2C55;
   --f-display:"Reem Kufi","Noto Kufi Arabic","Segoe UI",Tahoma,sans-serif;
   --f-body:"Readex Pro","Segoe UI",Tahoma,Arial,sans-serif;
-  --f-latin:"Cormorant Garamond","Times New Roman",Georgia,serif;
+  --f-latin:Georgia,"Times New Roman",serif;
   --ease-out:cubic-bezier(.16,1,.3,1);
   --ease-io:cubic-bezier(.65,0,.35,1);
   --r-card:24px;
@@ -469,7 +469,17 @@ img,svg{max-width:100%}
 .sheet-share{height:56px;padding:0 20px}
 .ow-hint{min-height:1.2em;font-size:12.5px;color:var(--champagne)}
 /* phones: drop the costliest always-on effects */
-@media (pointer:coarse){.grain{display:none}.tt-blob{animation:none;filter:blur(50px)}.halo{animation:none}}
+@media (pointer:coarse){
+  .grain,.tt-blob{display:none}
+  .halo{animation:none;filter:none}
+  .stage-floor{filter:none}
+  .top.scrolled{-webkit-backdrop-filter:none;backdrop-filter:none;background:rgba(7,8,11,.95)}
+  .sheet-backdrop{-webkit-backdrop-filter:none;backdrop-filter:none;background:rgba(3,4,6,.88)}
+  .ow-form-wrap,.ow-busy,.ow-top{-webkit-backdrop-filter:none;backdrop-filter:none}
+  .card-tilt,.stage{transform-style:flat}
+  .stage .watch{transform:rotate(var(--tilt))}
+  .info,.badge,.fav,.card-hit{transform:none}
+}
 
 /* owner panel */
 .owner{position:fixed;inset:0;z-index:150;overflow:auto;overscroll-behavior:contain;padding-block:env(safe-area-inset-top,0px) env(safe-area-inset-bottom,0px);
@@ -1840,7 +1850,7 @@ $('#marquee').innerHTML = Array(2).fill(['ساعات رجالية', 'ساعات 
 const dust = { on: false, parts: [], ctx: null, W: 0, H: 0 };
 (function dustInit() {
   const c = $('#dust');
-  if (RM || !c.getContext) return;
+  if (RM || !FINE || !c.getContext) return;
   dust.ctx = c.getContext('2d');
   const size = () => {
     const dpr = Math.min(2, devicePixelRatio || 1);
@@ -1878,7 +1888,6 @@ let SETTINGS = { showSamples: true, hiddenSamples: [] };
 let LIVE = [];
 let cards = [];
 let currentFilter = 'all';
-let lean = null;
 const localImg = {}; // images just uploaded from this device, shown before GitHub Pages serves them
 const imgSrc = path => localImg[path] || path;
 
@@ -1910,7 +1919,7 @@ const productUrl = id => `${location.origin}${location.pathname}#p-${id}`;
 function cardHTML(p, i) {
   const badge = p.badge ? `<span class="badge${p.soldOut ? ' sold' : ''}">${esc(p.badge)}</span>` : '';
   const stage = p.live
-    ? `<div class="stage photo">${p.thumb ? `<img class="ph-bg" src="${esc(imgSrc(p.thumb))}" alt="" aria-hidden="true" loading="lazy" decoding="async"><img class="ph" src="${esc(imgSrc(p.images[0] || p.thumb))}" alt="${esc(p.name)}" loading="lazy" decoding="async">` : ''}<span class="ph-shine"></span>${badge}</div>`
+    ? `<div class="stage photo">${p.thumb ? `<img class="ph-bg" src="${esc(imgSrc(p.thumb))}" alt="" aria-hidden="true" loading="lazy" decoding="async"><img class="ph" src="${esc(imgSrc(p.thumb))}" alt="${esc(p.name)}" loading="lazy" decoding="async" fetchpriority="low">` : ''}<span class="ph-shine"></span>${badge}</div>`
     : `<div class="stage"><div class="stage-floor"></div><div class="watch"><div class="float"></div></div>${badge}</div>`;
   return `
   <article class="card${p.soldOut ? ' sold' : ''}" data-id="${esc(p.id)}" data-tags="${p.tags.join(' ')}" style="--tint:${p.tint};--tilt:${p.tilt}deg;--fd:${(-i * .73).toFixed(2)}s">
@@ -1943,7 +1952,7 @@ function burst(btn) {
 }
 
 function wireCard(card) {
-  const w = card._w, p = card._p, tiltEl = card.querySelector('.card-tilt'), fav = card.querySelector('.fav');
+  const p = card._p, tiltEl = card.querySelector('.card-tilt'), fav = card.querySelector('.fav');
   if (favs.has(p.id)) fav.setAttribute('aria-pressed', 'true');
   fav.addEventListener('click', e => {
     e.stopPropagation();
@@ -1954,14 +1963,16 @@ function wireCard(card) {
     toast(on ? `انضافت «${p.name}» للمفضلة.` : `انشالت «${p.name}» من المفضلة.`);
   });
   card.querySelector('.card-hit').addEventListener('click', () => openSheet(card));
-  const rotBezel = to => { if (!w || !w.bezel || !/diver|gmt/.test(p.spec.bezel || '') || !ANIM) return; G.to(w, { bezelAngle: to, duration: .8, ease: 'steps(10)', overwrite: true, onUpdate: () => setBezel(w) }); };
+  const rotBezel = to => { const w = card._w; if (!w || !w.bezel || !/diver|gmt/.test(p.spec.bezel || '') || !ANIM) return; G.to(w, { bezelAngle: to, duration: .8, ease: 'steps(10)', overwrite: true, onUpdate: () => setBezel(w) }); };
   card.addEventListener('pointerenter', e => {
+    const w = card._w;
     if (e.pointerType !== 'mouse' || !w) return;
     if (w.chrono) w.chr = { state: 'run', start: performance.now() };
     rotBezel(p.spec.bezel === 'gmt' ? -45 : -30);
   });
   card.addEventListener('pointermove', e => {
     if (e.pointerType !== 'mouse' || RM) return;
+    const w = card._w;
     const r = tiltEl.getBoundingClientRect(), x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
     card.classList.add('tilting');
     tiltEl.style.setProperty('--rx', ((.5 - y) * 12).toFixed(2) + 'deg');
@@ -1978,6 +1989,7 @@ function wireCard(card) {
     card.classList.remove('tilting');
     for (const k of ['--rx', '--ry']) tiltEl.style.setProperty(k, '0deg');
     for (const k of ['--px', '--py']) tiltEl.style.setProperty(k, '0px');
+    const w = card._w;
     if (!w) return;
     if (w.sheen) w.sheen.setAttribute('transform', 'rotate(-35)');
     if (w.glare) w.glare.removeAttribute('transform');
@@ -1986,29 +1998,8 @@ function wireCard(card) {
   });
 }
 
-// Touch screens have no hover, so the cards lean with the scroll instead.
-if (!FINE && !RM) {
-  let queued = false;
-  lean = () => {
-    queued = false;
-    const vh = innerHeight, seen = [];
-    for (const c of cards) {
-      if (c.classList.contains('is-out')) continue;
-      const r = c.getBoundingClientRect();
-      if (r.bottom < -50 || r.top > vh + 50) continue;
-      seen.push([c, Math.max(-1, Math.min(1, ((r.top + r.height / 2) - vh / 2) / (vh / 2)))]);
-    }
-    // All reads above, all writes below: mixing them forces a layout per card on every scroll frame.
-    for (const [c, p] of seen) {
-      const tiltEl = c.querySelector('.card-tilt');
-      tiltEl.style.setProperty('--rx', (p * -9).toFixed(2) + 'deg');
-      tiltEl.style.setProperty('--py', (p * 14).toFixed(1) + 'px');
-      c.classList.toggle('in-focus', Math.abs(p) < .4);
-      if (c._w && c._w.sheen) c._w.sheen.setAttribute('transform', `rotate(${(-35 + p * 40).toFixed(1)})`);
-    }
-  };
-  addEventListener('scroll', () => { if (!queued) { queued = true; requestAnimationFrame(lean); } }, { passive: true });
-}
+// Touch screens have no hover: the card crossing the middle of the screen gets the moving gold edge.
+const focusIO = !FINE && !RM ? new IntersectionObserver(es => es.forEach(e => e.target.classList.toggle('in-focus', e.isIntersecting)), { rootMargin: '-42% 0px -42% 0px' }) : null;
 
 /* ---------- filters ---------- */
 const filtersEl = $('#filters');
@@ -2073,25 +2064,33 @@ function revealCards() {
   ST.batch(pending, { start: 'top 90%', once: true,
     onEnter: batch => G.to(batch, { opacity: 1, y: 0, rotationX: 0, duration: 1.3, stagger: .11, ease: 'expo.out', clearProps: 'transform' }) });
 }
+// The 18 sample drawings are built only when their card comes near the screen; building them all at once made phones slow.
+const mountIO = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) ensureMounted(e.target); }), { rootMargin: '500px 0px' });
+function ensureMounted(c) {
+  if (!c._p || c._p.live || c._w || !c.isConnected) return;
+  mountIO.unobserve(c);
+  c._w = mountWatch(c.querySelector('.float'), c._p.spec);
+}
 // Pauses the endless CSS animations of cards that are off screen (glints, floats, twinkles).
 const cardIO = new IntersectionObserver(es => es.forEach(e => e.target.classList.toggle('off', !e.isIntersecting)), { rootMargin: '150px 0px' });
 function renderCatalogue(reveal) {
   const list = catalogue();
-  cards.forEach(c => { if (c._w) unmountWatch(c._w); cardIO.unobserve(c); });
+  cards.forEach(c => { if (c._w) unmountWatch(c._w); cardIO.unobserve(c); mountIO.unobserve(c); if (focusIO) focusIO.unobserve(c); });
   grid.innerHTML = list.map(cardHTML).join('');
   cards = $$('.card', grid);
   cards.forEach((c, i) => {
     const p = list[i];
     c._p = p; c._vi = 0;
-    c._w = p.live ? null : mountWatch(c.querySelector('.float'), p.spec);
+    c._w = null;
+    if (!p.live) mountIO.observe(c);
     wireCard(c);
     cardIO.observe(c);
+    if (focusIO) focusIO.observe(c);
   });
   $('.sample-note').hidden = !list.some(p => !p.live);
   renderChips(list);
   applyFilter(false);
   if (reveal) revealCards();
-  if (lean) lean();
   if (open) repointSheet();
 }
 
@@ -2288,6 +2287,7 @@ function openSheet(card, fromLink) {
   if (busy || open) return;
   busy = true;
   const p = card._p;
+  ensureMounted(card);
   open = { p, card, v: p.variants[card._vi] };
   fillSheet(p, card);
   sheet.hidden = false;
@@ -3041,7 +3041,7 @@ $('#owForm').addEventListener('submit', async e => {
       if (ph.path) { images.push(ph.path); continue; }
       $('#owBusyText').textContent = `جاري تجهيز الصورة ${++done} من ${total}…`;
       let img;
-      try { img = await toImage(ph.file, 2000, .86); } catch (_) { throw photoError(`الصورة رقم ${n + 1} ما انقرت. شيلها وصوّرها من جديد.`); }
+      try { img = await toImage(ph.file, 1600, .82); } catch (_) { throw photoError(`الصورة رقم ${n + 1} ما انقرت. شيلها وصوّرها من جديد.`); }
       const path = `images/${id}-${stamp}${n}.${img.ext}`;
       files.push({ path: `${REPO.dir}/${path}`, base64: await blobToB64(img.blob) });
       localImg[path] = ph.url; images.push(path);
@@ -3055,7 +3055,7 @@ $('#owForm').addEventListener('submit', async e => {
         if (!r.ok) throw photoError('الصورة الرئيسية بعدها ما نزلت بالموقع. انتظر دقيقة وجرّب مرة ثانية.');
         source = await r.blob();
       }
-      const t = await toImage(source, 900, .82);
+      const t = await toImage(source, 900, .8);
       thumb = `images/${id}-${stamp}t.${t.ext}`;
       files.push({ path: `${REPO.dir}/${thumb}`, base64: await blobToB64(t.blob) });
       localImg[thumb] = URL.createObjectURL(t.blob);
