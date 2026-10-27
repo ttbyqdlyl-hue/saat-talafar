@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com 'sha256-KsR1n1HTskP76AFsPJFMTL5X//HKIjT84kbs2wOykww='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: blob:; connect-src 'self' blob: https://api.github.com; object-src 'none'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com 'sha256-iw2zb2pAwdxZQS7HEs5YH5qclnr4t2gX4X84cDEMem4='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: blob:; connect-src 'self' blob: https://api.github.com; object-src 'none'; base-uri 'none'; form-action 'none'">
 <link rel="canonical" href="https://ttbyqdlyl-hue.github.io/saat-talafar/">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><circle cx='32' cy='32' r='29' fill='%2307080B' stroke='%23C9A15A' stroke-width='4'/><path d='M32 32V14M32 32l11 7' stroke='%23EAD3A2' stroke-width='4' stroke-linecap='round'/><circle cx='32' cy='32' r='3.5' fill='%23EAD3A2'/></svg>">
 <link rel="apple-touch-icon" href="icon-180.png">
@@ -18,7 +18,7 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="ساعات تلعفر">
 <meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Store","name":"ساعات تلعفر","url":"https://ttbyqdlyl-hue.github.io/saat-talafar/","description":"ساعات ومحافظ وسبح ونظارات وعطور وإكسسوارات بتلعفر. تصفّح التشكيلة واطلب على واتساب.","telephone":"+9647503321266","hasMap":"https://maps.app.goo.gl/vMUJ7ErkPsaVY9hb8","address":{"@type":"PostalAddress","addressLocality":"تلعفر","addressRegion":"نينوى","addressCountry":"IQ"},"image":"https://ttbyqdlyl-hue.github.io/saat-talafar/og.jpg"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Store","name":"ساعات تلعفر","url":"https://ttbyqdlyl-hue.github.io/saat-talafar/","description":"ساعات ومحافظ وسبح ونظارات وعطور وإكسسوارات بتلعفر. تصفّح التشكيلة واطلب على واتساب.","telephone":"+9647503321266","hasMap":"https://maps.app.goo.gl/JBmPPUeSb4crJjCz5?g_st=ic","address":{"@type":"PostalAddress","addressLocality":"تلعفر","addressRegion":"نينوى","addressCountry":"IQ"},"image":"https://ttbyqdlyl-hue.github.io/saat-talafar/og.jpg"}</script>
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}[hidden]{display:none!important}</style>
 <title>ساعات تلعفر</title>
 <meta name="description" content="ساعات تلعفر: ساعات ومحافظ وسبح ونظارات وعطور وإكسسوارات، رجالي ونسائي. تصفّح التشكيلة واطلب على واتساب.">
@@ -3076,7 +3076,7 @@ $('#owForm').addEventListener('submit', async e => {
       if (ph.path) { images.push(ph.path); continue; }
       $('#owBusyText').textContent = `جاري تجهيز الصورة ${++done} من ${total}…`;
       let img;
-      try { img = await toImage(ph.file, 1600, .82); } catch (_) { throw photoError(`الصورة رقم ${n + 1} ما انقرت. شيلها وصوّرها من جديد.`); }
+      try { img = await toImage(ph.file, 1400, .78); } catch (_) { throw photoError(`الصورة رقم ${n + 1} ما انقرت. شيلها وصوّرها من جديد.`); }
       const path = `images/${id}-${stamp}${n}.${img.ext}`;
       files.push({ path: `${REPO.dir}/${path}`, base64: await blobToB64(img.blob) });
       localImg[path] = ph.url; images.push(path);
@@ -3090,7 +3090,7 @@ $('#owForm').addEventListener('submit', async e => {
         if (!r.ok) throw photoError('الصورة الرئيسية بعدها ما نزلت بالموقع. انتظر دقيقة وجرّب مرة ثانية.');
         source = await r.blob();
       }
-      const t = await toImage(source, 900, .8);
+      const t = await toImage(source, 720, .76);
       thumb = `images/${id}-${stamp}t.${t.ext}`;
       files.push({ path: `${REPO.dir}/${thumb}`, base64: await blobToB64(t.blob) });
       localImg[thumb] = URL.createObjectURL(t.blob);

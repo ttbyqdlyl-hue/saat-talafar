@@ -3048,7 +3048,7 @@ $('#owForm').addEventListener('submit', async e => {
       if (ph.path) { images.push(ph.path); continue; }
       $('#owBusyText').textContent = `جاري تجهيز الصورة ${++done} من ${total}…`;
       let img;
-      try { img = await toImage(ph.file, 1600, .82); } catch (_) { throw photoError(`الصورة رقم ${n + 1} ما انقرت. شيلها وصوّرها من جديد.`); }
+      try { img = await toImage(ph.file, 1400, .78); } catch (_) { throw photoError(`الصورة رقم ${n + 1} ما انقرت. شيلها وصوّرها من جديد.`); }
       const path = `images/${id}-${stamp}${n}.${img.ext}`;
       files.push({ path: `${REPO.dir}/${path}`, base64: await blobToB64(img.blob) });
       localImg[path] = ph.url; images.push(path);
@@ -3062,7 +3062,7 @@ $('#owForm').addEventListener('submit', async e => {
         if (!r.ok) throw photoError('الصورة الرئيسية بعدها ما نزلت بالموقع. انتظر دقيقة وجرّب مرة ثانية.');
         source = await r.blob();
       }
-      const t = await toImage(source, 900, .8);
+      const t = await toImage(source, 720, .76);
       thumb = `images/${id}-${stamp}t.${t.ext}`;
       files.push({ path: `${REPO.dir}/${thumb}`, base64: await blobToB64(t.blob) });
       localImg[thumb] = URL.createObjectURL(t.blob);
