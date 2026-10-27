@@ -9,6 +9,30 @@
  },
  "products": [
   {
+   "id": "pmvpy27o3",
+   "name": "كولكشن رجالي",
+   "price": 5000,
+   "old": 0,
+   "cat": "watch",
+   "gender": [
+    "men"
+   ],
+   "colors": "",
+   "short": "",
+   "desc": "",
+   "badge": "",
+   "soldOut": false,
+   "images": [
+    "images/pmvpy27o3-mvpy3l0m0.jpg",
+    "images/pmvpy27o3-mvpy3l0m1.jpg",
+    "images/pmvpy27o3-mvpy3l0m2.jpg",
+    "images/pmvpy27o3-mvpy3l0m3.jpg"
+   ],
+   "thumb": "images/pmvpy27o3-mvpy3l0mt.jpg",
+   "updatedAt": "2026-10-27T00:26:31.723Z",
+   "createdAt": "2026-10-27T00:26:31.723Z"
+  },
+  {
    "id": "pmvpy0iu3",
    "name": "باتيك فليب",
    "price": 5000,
@@ -454,5 +478,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-10-27T00:25:21.997Z"
+ "updatedAt": "2026-10-27T00:26:37.321Z"
 }
