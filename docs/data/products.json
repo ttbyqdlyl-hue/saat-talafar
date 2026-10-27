@@ -9,6 +9,30 @@
  },
  "products": [
   {
+   "id": "pmvpxh5lb",
+   "name": "رولكس رجالي",
+   "price": 8000,
+   "old": 10000,
+   "cat": "watch",
+   "gender": [
+    "men"
+   ],
+   "colors": "",
+   "short": "",
+   "desc": "",
+   "badge": "",
+   "soldOut": false,
+   "images": [
+    "images/pmvpxh5lb-mvpxi3bv0.jpg",
+    "images/pmvpxh5lb-mvpxi3bv1.jpg",
+    "images/pmvpxh5lb-mvpxi3bv2.jpg",
+    "images/pmvpxh5lb-mvpxi3bv3.jpg"
+   ],
+   "thumb": "images/pmvpxh5lb-mvpxi3bvt.jpg",
+   "updatedAt": "2026-10-27T00:09:49.209Z",
+   "createdAt": "2026-10-27T00:09:49.209Z"
+  },
+  {
    "id": "pmvpxfk3p",
    "name": "باتيك فليب اطار تيتانيوم",
    "price": 16000,
@@ -102,5 +126,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-10-27T00:08:57.168Z"
+ "updatedAt": "2026-10-27T00:09:54.116Z"
 }
