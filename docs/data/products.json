@@ -1,10 +1,11 @@
 {
  "settings": {
   "whatsapp": "9647503321266",
-  "map": "https://maps.app.goo.gl/vMUJ7ErkPsaVY9hb8",
+  "map": "https://maps.app.goo.gl/JBmPPUeSb4crJjCz5?g_st=ic",
   "showSamples": true,
   "hiddenSamples": [],
-  "tiktokUser": "talafarwatches1"
+  "tiktokUser": "talafarwatches1",
+  "address": "تلعفر حي النداء قرب قاعة الخيمة"
  },
  "products": [
   {
@@ -51,5 +52,5 @@
    "createdAt": "2026-10-24T23:16:58.830Z"
   }
  ],
- "updatedAt": "2026-10-27T00:03:43.928Z"
+ "updatedAt": "2026-10-27T00:04:55.509Z"
 }
