@@ -9,6 +9,30 @@
  },
  "products": [
   {
+   "id": "pmvpy3ti7",
+   "name": "ساعة ADL اصلي",
+   "price": 16000,
+   "old": 0,
+   "cat": "watch",
+   "gender": [
+    "men"
+   ],
+   "colors": "",
+   "short": "",
+   "desc": "",
+   "badge": "",
+   "soldOut": false,
+   "images": [
+    "images/pmvpy3ti7-mvpy4j6u0.jpg",
+    "images/pmvpy3ti7-mvpy4j6u1.jpg",
+    "images/pmvpy3ti7-mvpy4j6u2.jpg",
+    "images/pmvpy3ti7-mvpy4j6u3.jpg"
+   ],
+   "thumb": "images/pmvpy3ti7-mvpy4j6ut.jpg",
+   "updatedAt": "2026-10-27T00:27:15.965Z",
+   "createdAt": "2026-10-27T00:27:15.965Z"
+  },
+  {
    "id": "pmvpy27o3",
    "name": "كولكشن رجالي",
    "price": 5000,
@@ -478,5 +502,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-10-27T00:26:37.321Z"
+ "updatedAt": "2026-10-27T00:27:21.973Z"
 }
