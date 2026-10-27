@@ -9,6 +9,30 @@
  },
  "products": [
   {
+   "id": "pmvqpjrgv",
+   "name": "ساعة وسوار نسائية",
+   "price": 5000,
+   "old": 0,
+   "cat": "watch",
+   "gender": [
+    "women"
+   ],
+   "colors": "",
+   "short": "",
+   "desc": "",
+   "badge": "",
+   "soldOut": false,
+   "images": [
+    "images/pmvqpjrgv-mvqpl5je0.jpg",
+    "images/pmvqpjrgv-mvqpl5je1.jpg",
+    "images/pmvqpjrgv-mvqpl5je2.jpg",
+    "images/pmvqpjrgv-mvqpl5je3.jpg"
+   ],
+   "thumb": "images/pmvqpjrgv-mvqpl5jet.jpg",
+   "updatedAt": "2026-10-27T13:16:01.218Z",
+   "createdAt": "2026-10-27T13:16:01.218Z"
+  },
+  {
    "id": "pmvqpiu73",
    "name": "رولكس رنك دوار",
    "price": 8000,
@@ -640,5 +664,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-10-27T13:14:48.657Z"
+ "updatedAt": "2026-10-27T13:16:07.195Z"
 }
