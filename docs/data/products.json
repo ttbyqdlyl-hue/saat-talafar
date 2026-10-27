@@ -9,6 +9,28 @@
  },
  "products": [
   {
+   "id": "pmvpxx6tu",
+   "name": "محفظة ماستر كولتي",
+   "price": 5000,
+   "old": 0,
+   "cat": "watch",
+   "gender": [
+    "men"
+   ],
+   "colors": "",
+   "short": "",
+   "desc": "",
+   "badge": "",
+   "soldOut": false,
+   "images": [
+    "images/pmvpxx6tu-mvpxxttj0.jpg",
+    "images/pmvpxx6tu-mvpxxttj1.jpg"
+   ],
+   "thumb": "images/pmvpxx6tu-mvpxxttjt.jpg",
+   "updatedAt": "2026-10-27T00:22:03.079Z",
+   "createdAt": "2026-10-27T00:22:03.079Z"
+  },
+  {
    "id": "pmvpxw2is",
    "name": "ساعة الترند فحمي",
    "price": 5000,
@@ -362,5 +384,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-10-27T00:21:26.977Z"
+ "updatedAt": "2026-10-27T00:22:06.466Z"
 }
