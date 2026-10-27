@@ -9,6 +9,31 @@
  },
  "products": [
   {
+   "id": "pmvqplexs",
+   "name": "جداحة",
+   "price": 4000,
+   "old": 0,
+   "cat": "watch",
+   "gender": [
+    "men"
+   ],
+   "colors": "",
+   "short": "",
+   "desc": "",
+   "badge": "",
+   "soldOut": false,
+   "images": [
+    "images/pmvqplexs-mvqpmiqw0.jpg",
+    "images/pmvqplexs-mvqpmiqw1.jpg",
+    "images/pmvqplexs-mvqpmiqw2.jpg",
+    "images/pmvqplexs-mvqpmiqw3.jpg",
+    "images/pmvqplexs-mvqpmiqw4.jpg"
+   ],
+   "thumb": "images/pmvqplexs-mvqpmiqwt.jpg",
+   "updatedAt": "2026-10-27T13:17:05.575Z",
+   "createdAt": "2026-10-27T13:17:05.575Z"
+  },
+  {
    "id": "pmvqpjrgv",
    "name": "ساعة وسوار نسائية",
    "price": 5000,
@@ -664,5 +689,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-10-27T13:16:07.195Z"
+ "updatedAt": "2026-10-27T13:17:12.523Z"
 }
