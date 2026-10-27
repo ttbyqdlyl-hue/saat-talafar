@@ -9,6 +9,28 @@
  },
  "products": [
   {
+   "id": "pmvpxw2is",
+   "name": "ساعة الترند فحمي",
+   "price": 5000,
+   "old": 0,
+   "cat": "watch",
+   "gender": [
+    "men"
+   ],
+   "colors": "",
+   "short": "",
+   "desc": "",
+   "badge": "",
+   "soldOut": false,
+   "images": [
+    "images/pmvpxw2is-mvpxwyyd0.jpg",
+    "images/pmvpxw2is-mvpxwyyd1.jpg"
+   ],
+   "thumb": "images/pmvpxw2is-mvpxwyydt.jpg",
+   "updatedAt": "2026-10-27T00:21:23.477Z",
+   "createdAt": "2026-10-27T00:21:23.477Z"
+  },
+  {
    "id": "pmvpxut76",
    "name": "دبل تايم كاسيو كتان اصلي",
    "price": 12500,
@@ -340,5 +362,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-10-27T00:20:35.855Z"
+ "updatedAt": "2026-10-27T00:21:26.977Z"
 }
