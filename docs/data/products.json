@@ -9,6 +9,29 @@
  },
  "products": [
   {
+   "id": "pmvqpiu73",
+   "name": "رولكس رنك دوار",
+   "price": 8000,
+   "old": 10000,
+   "cat": "watch",
+   "gender": [
+    "men"
+   ],
+   "colors": "",
+   "short": "",
+   "desc": "",
+   "badge": "",
+   "soldOut": false,
+   "images": [
+    "images/pmvqpiu73-mvqpjho30.jpg",
+    "images/pmvqpiu73-mvqpjho31.jpg",
+    "images/pmvqpiu73-mvqpjho32.jpg"
+   ],
+   "thumb": "images/pmvqpiu73-mvqpjho3t.jpg",
+   "updatedAt": "2026-10-27T13:14:43.204Z",
+   "createdAt": "2026-10-27T13:14:43.204Z"
+  },
+  {
    "id": "pmvqphreo",
    "name": "محفظة حديد",
    "price": 3000,
@@ -617,5 +640,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-10-27T13:14:06.303Z"
+ "updatedAt": "2026-10-27T13:14:48.657Z"
 }
