@@ -9,6 +9,30 @@
  },
  "products": [
   {
+   "id": "pmvpxibf0",
+   "name": "رولكس GMT اصلي",
+   "price": 18000,
+   "old": 23000,
+   "cat": "watch",
+   "gender": [
+    "men"
+   ],
+   "colors": "",
+   "short": "",
+   "desc": "",
+   "badge": "",
+   "soldOut": false,
+   "images": [
+    "images/pmvpxibf0-mvpxjhuj0.jpg",
+    "images/pmvpxibf0-mvpxjhuj1.jpg",
+    "images/pmvpxibf0-mvpxjhuj2.jpg",
+    "images/pmvpxibf0-mvpxjhuj3.jpg"
+   ],
+   "thumb": "images/pmvpxibf0-mvpxjhujt.jpg",
+   "updatedAt": "2026-10-27T00:10:54.869Z",
+   "createdAt": "2026-10-27T00:10:54.869Z"
+  },
+  {
    "id": "pmvpxh5lb",
    "name": "رولكس رجالي",
    "price": 8000,
@@ -126,5 +150,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-10-27T00:09:54.116Z"
+ "updatedAt": "2026-10-27T00:11:00.840Z"
 }
