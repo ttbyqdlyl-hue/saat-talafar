@@ -9,6 +9,31 @@
  },
  "products": [
   {
+   "id": "pmvpxcbtp",
+   "name": "ريتشارد رجالي",
+   "price": 6000,
+   "old": 0,
+   "cat": "watch",
+   "gender": [
+    "men"
+   ],
+   "colors": "ألوان متعددة",
+   "short": "",
+   "desc": "",
+   "badge": "",
+   "soldOut": false,
+   "images": [
+    "images/pmvpxcbtp-mvpxdo840.jpg",
+    "images/pmvpxcbtp-mvpxdo841.jpg",
+    "images/pmvpxcbtp-mvpxdo842.jpg",
+    "images/pmvpxcbtp-mvpxdo843.jpg",
+    "images/pmvpxcbtp-mvpxdo844.jpg"
+   ],
+   "thumb": "images/pmvpxcbtp-mvpxdo84t.jpg",
+   "updatedAt": "2026-10-27T00:06:23.914Z",
+   "createdAt": "2026-10-27T00:06:23.914Z"
+  },
+  {
    "id": "pmvnur4o0",
    "name": "ساعة رجالي جلد",
    "price": 25000,
@@ -31,5 +56,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-10-27T00:05:14.307Z"
+ "updatedAt": "2026-10-27T00:06:29.744Z"
 }
