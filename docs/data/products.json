@@ -9,6 +9,31 @@
  },
  "products": [
   {
+   "id": "pmvpxkvq2",
+   "name": "بنما الاصلي عسكري",
+   "price": 6000,
+   "old": 0,
+   "cat": "watch",
+   "gender": [
+    "men"
+   ],
+   "colors": "",
+   "short": "",
+   "desc": "",
+   "badge": "",
+   "soldOut": false,
+   "images": [
+    "images/pmvpxkvq2-mvpxltla0.jpg",
+    "images/pmvpxkvq2-mvpxltla1.jpg",
+    "images/pmvpxkvq2-mvpxltla2.jpg",
+    "images/pmvpxkvq2-mvpxltla3.jpg",
+    "images/pmvpxkvq2-mvpxltla4.jpg"
+   ],
+   "thumb": "images/pmvpxkvq2-mvpxltlat.jpg",
+   "updatedAt": "2026-10-27T00:12:44.170Z",
+   "createdAt": "2026-10-27T00:12:44.170Z"
+  },
+  {
    "id": "pmvpxjsw5",
    "name": "ساعة بنما اصلي",
    "price": 6000,
@@ -173,5 +198,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-10-27T00:11:51.489Z"
+ "updatedAt": "2026-10-27T00:12:50.915Z"
 }
