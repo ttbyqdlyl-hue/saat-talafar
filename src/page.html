@@ -435,7 +435,7 @@ img,svg{max-width:100%}
 .card.skel .card-tilt{min-height:440px;background:linear-gradient(100deg,var(--panel) 30%,var(--panel-2) 50%,var(--panel) 70%);background-size:300% 100%;animation:skel 1.4s linear infinite}
 @keyframes skel{to{background-position:-300% 0}}
 .sheet-gallery{position:relative;width:100%;height:min(440px,54vh)}
-.gal-track{display:flex;height:100%;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;border-radius:20px}
+.gal-track{display:flex;height:100%;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;border-radius:20px;background:linear-gradient(100deg,rgba(255,255,255,.02) 30%,rgba(255,255,255,.07) 50%,rgba(255,255,255,.02) 70%);background-size:300% 100%;animation:skel 1.4s linear infinite}
 .gal-track::-webkit-scrollbar{display:none}
 .gal-track img{flex:0 0 100%;width:100%;height:100%;object-fit:contain;scroll-snap-align:center}
 .gal-dots{position:absolute;bottom:-28px;inset-inline:0;display:flex;justify-content:center;gap:6px}
@@ -449,6 +449,7 @@ img,svg{max-width:100%}
 .zoom{position:fixed;inset:0;z-index:130;display:grid;grid-template-rows:minmax(0,1fr) auto;padding-block:env(safe-area-inset-top,0px) env(safe-area-inset-bottom,0px);background:var(--obsidian)}
 .zoom-stage{position:relative;min-height:0;overflow:hidden;display:grid;place-items:center;touch-action:none;cursor:zoom-in;user-select:none;-webkit-user-select:none}
 .zoom-stage.zoomed{cursor:grab}
+.zoom-stage.loading::after{content:"";position:absolute;top:50%;left:50%;width:46px;height:46px;margin:-23px 0 0 -23px;border-radius:50%;border:3px solid rgba(234,211,162,.2);border-top-color:var(--champagne);animation:spin .9s linear infinite}
 .zoom-stage img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;transform-origin:center;will-change:transform;-webkit-user-drag:none}
 .zoom-x,.zoom-nav{position:absolute;z-index:2;width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:rgba(20,24,32,.86);border:1px solid var(--line);color:var(--ivory)}
 .zoom-x{top:calc(14px + env(safe-area-inset-top,0px));inset-inline-end:max(14px, env(safe-area-inset-left, 0px))}
@@ -2139,10 +2140,13 @@ let open = null, sheetW = null, busy = false;
 function fillGallery(p) {
   const imgs = p.images.length ? p.images : p.thumb ? [p.thumb] : [];
   if (!imgs.length) { gallery.innerHTML = '<p class="gal-none">ماكو صورة لهذا المنتج بعد.</p>'; return; }
-  gallery.innerHTML = `<div class="gal-track">${imgs.map((src, i) => `<img src="${esc(imgSrc(src))}" alt="${esc(p.name)} ${i + 1}" decoding="async">`).join('')}</div>`
+  const first = p.thumb && imgs[0] !== p.thumb ? p.thumb : imgs[0];
+  gallery.innerHTML = `<div class="gal-track">${imgs.map((src, i) => `<img src="${esc(imgSrc(i ? src : first))}" alt="${esc(p.name)} ${i + 1}"${i ? ' loading="lazy"' : ''}>`).join('')}</div>`
     + (imgs.length > 1 ? `<div class="gal-dots">${imgs.map((_, i) => `<button type="button" aria-label="صورة ${i + 1}" aria-current="${i === 0}"></button>`).join('')}</div>` : '');
   gallery.insertAdjacentHTML('beforeend', `<button type="button" class="gal-zoom" aria-label="كبّر الصورة">${MAG_ICON}<span>تكبير</span></button>`);
   const track = $('.gal-track', gallery), slides = $$('img', track), dots = $$('.gal-dots button', gallery), list = imgs.map(imgSrc);
+  // On slow mobile data the full photo can take seconds: keep the small one on screen until the full one has arrived.
+  if (first !== imgs[0]) { const full = new Image(); full.onload = () => { if (slides[0].isConnected) slides[0].src = full.src; }; full.src = imgSrc(imgs[0]); }
   gallery._i = 0;
   dots.forEach((d, i) => d.addEventListener('click', () => slides[i].scrollIntoView({ inline: 'center', block: 'nearest', behavior: ANIM ? 'smooth' : 'auto' })));
   slides.forEach((s, i) => s.addEventListener('click', () => openZoom(list, i)));
@@ -2180,7 +2184,9 @@ function zSet(s, cx, cy, anim) {
 }
 function zShow(i) {
   zIdx = (i + zList.length) % zList.length; zs = 1; zx = 0; zy = 0;
+  zStage.classList.add('loading');
   zImg.src = zList[zIdx];
+  if (zImg.complete && zImg.naturalWidth) zStage.classList.remove('loading');
   zApply(false);
   $('#zoomCount').textContent = zList.length > 1 ? `${zIdx + 1} / ${zList.length}` : '';
   $('#zoomPrev').hidden = $('#zoomNext').hidden = zList.length < 2;
@@ -2202,7 +2208,8 @@ $('#zoomReset').addEventListener('click', () => zSet(1, null, null, true));
 // In right-to-left order the next photo sits to the left.
 $('#zoomPrev').addEventListener('click', () => zShow(zIdx - 1));
 $('#zoomNext').addEventListener('click', () => zShow(zIdx + 1));
-zImg.addEventListener('load', () => zApply(false));
+zImg.addEventListener('load', () => { zStage.classList.remove('loading'); zApply(false); });
+zImg.addEventListener('error', () => { zStage.classList.remove('loading'); toast('الصورة ما نزلت. تأكد من النت وجرّب مرة ثانية.'); });
 zStage.addEventListener('wheel', e => { e.preventDefault(); zSet(zs * Math.exp(-e.deltaY * .0016), e.clientX, e.clientY, false); }, { passive: false });
 {
   const ptrs = new Map();

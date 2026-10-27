@@ -11,6 +11,17 @@ const src = readFileSync(at('./src/page.html'), 'utf8');
 let [head, body] = src.split('<!-- page -->');
 if (body === undefined) throw new Error('src/page.html is missing the <!-- page --> marker');
 head = head.replace(/<meta name="claude:[^>]*>\s*/g, ''); // Artifact-viewer hint, meaningless on a normal site
+// Older phones (iOS < 14.5, old Android WebViews) ignore `inset`: write top/right/bottom/left in front of each one.
+head = head.replace(/([{;\s])inset:([^;}]+)/g, (m, pre, v) => {
+  const [t, r = t, b = t, l = r] = v.trim().split(/\s+/);
+  return `${pre}top:${t};right:${r};bottom:${b};left:${l};inset:${v}`;
+});
+// …and `aspect-ratio` (iOS < 15): give the photo frames a height the old way.
+const legacyCss = `<style>@supports not (aspect-ratio:1/1){
+.stage{height:0;padding-top:100%}
+.ow-ph{height:0;padding-top:100%}.ow-ph img{position:absolute;top:0;left:0}
+.sheet-watch{width:min(330px,40vh)}.hero-watch{width:min(470px,72vw)}
+}</style>`;
 
 mkdirSync(at('./docs/data/'), { recursive: true });
 const dataFile = at('./docs/data/products.json');
@@ -66,6 +77,7 @@ ${hasOg ? `<meta property="og:image" content="${SITE}og.jpg">
 ` : ''}<script type="application/ld+json">${JSON.stringify(store).replace(/</g, '\\u003c')}</script>
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}[hidden]{display:none!important}</style>
 ${head.trim()}
+${legacyCss}
 </head>
 <body>
 <noscript><p style="margin:0;padding:14px 16px;background:#16110A;color:#F3EEE5;font:15px/1.7 Tahoma,sans-serif;text-align:center">الموقع يحتاج تشغيل JavaScript حتى تطلع المنتجات. تكدر تطلب مباشرة على واتساب: <a style="color:#EAD3A2" href="https://wa.me/${phone}">+${phone}</a></p></noscript>
