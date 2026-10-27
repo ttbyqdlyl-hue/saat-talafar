@@ -9,6 +9,31 @@
  },
  "products": [
   {
+   "id": "pmvpxnq7q",
+   "name": "تون هدية رجالي ونسائي",
+   "price": 14000,
+   "old": 0,
+   "cat": "watch",
+   "gender": [
+    "men"
+   ],
+   "colors": "هدية مثالية ومميزة",
+   "short": "",
+   "desc": "",
+   "badge": "",
+   "soldOut": false,
+   "images": [
+    "images/pmvpxnq7q-mvpxpajh0.jpg",
+    "images/pmvpxnq7q-mvpxpajh1.jpg",
+    "images/pmvpxnq7q-mvpxpajh2.jpg",
+    "images/pmvpxnq7q-mvpxpajh3.jpg",
+    "images/pmvpxnq7q-mvpxpajh4.jpg"
+   ],
+   "thumb": "images/pmvpxnq7q-mvpxpajht.jpg",
+   "updatedAt": "2026-10-27T00:15:25.111Z",
+   "createdAt": "2026-10-27T00:15:25.111Z"
+  },
+  {
    "id": "pmvpxm4p6",
    "name": "كارتير جلد رجالي",
    "price": 5000,
@@ -221,5 +246,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-10-27T00:14:05.740Z"
+ "updatedAt": "2026-10-27T00:15:32.167Z"
 }
