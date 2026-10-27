@@ -9,6 +9,30 @@
  },
  "products": [
   {
+   "id": "pmvqphreo",
+   "name": "محفظة حديد",
+   "price": 3000,
+   "old": 0,
+   "cat": "watch",
+   "gender": [
+    "men"
+   ],
+   "colors": "",
+   "short": "",
+   "desc": "",
+   "badge": "",
+   "soldOut": false,
+   "images": [
+    "images/pmvqphreo-mvqpijws0.jpg",
+    "images/pmvqphreo-mvqpijws1.jpg",
+    "images/pmvqphreo-mvqpijws2.jpg",
+    "images/pmvqphreo-mvqpijws3.jpg"
+   ],
+   "thumb": "images/pmvqphreo-mvqpijwst.jpg",
+   "updatedAt": "2026-10-27T13:13:59.550Z",
+   "createdAt": "2026-10-27T13:13:59.550Z"
+  },
+  {
    "id": "pmvqpg1xf",
    "name": "سكمي عسكري اصلي",
    "price": 15000,
@@ -593,5 +617,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-10-27T13:12:58.521Z"
+ "updatedAt": "2026-10-27T13:14:06.303Z"
 }
