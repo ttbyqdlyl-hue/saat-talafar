@@ -9,6 +9,30 @@
  },
  "products": [
   {
+   "id": "pmvvjk3zz",
+   "name": "نظارة رجالي اصلي",
+   "price": 7000,
+   "old": 0,
+   "cat": "glasses",
+   "gender": [
+    "men"
+   ],
+   "colors": "",
+   "short": "",
+   "desc": "",
+   "badge": "",
+   "soldOut": false,
+   "images": [
+    "images/pmvvjk3zz-mvvjlamu0.jpg",
+    "images/pmvvjk3zz-mvvjlamu1.jpg",
+    "images/pmvvjk3zz-mvvjlamu2.jpg",
+    "images/pmvvjk3zz-mvvjlamu3.jpg"
+   ],
+   "thumb": "images/pmvvjk3zz-mvvjlamut.jpg",
+   "updatedAt": "2026-10-30T22:27:00.978Z",
+   "createdAt": "2026-10-30T22:27:00.978Z"
+  },
+  {
    "id": "pmvvjj2x5",
    "name": "جداحة",
    "price": 4000,
@@ -1194,5 +1218,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-10-30T22:25:57.893Z"
+ "updatedAt": "2026-10-30T22:27:07.832Z"
 }
