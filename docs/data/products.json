@@ -9,6 +9,29 @@
  },
  "products": [
   {
+   "id": "pmvvk84lr",
+   "name": "نظارة رجالي موديل جديده",
+   "price": 5000,
+   "old": 0,
+   "cat": "glasses",
+   "gender": [
+    "men"
+   ],
+   "colors": "",
+   "short": "",
+   "desc": "",
+   "badge": "",
+   "soldOut": false,
+   "images": [
+    "images/pmvvk84lr-mvvk8x5m0.jpg",
+    "images/pmvvk84lr-mvvk8x5m1.jpg",
+    "images/pmvvk84lr-mvvk8x5m2.jpg"
+   ],
+   "thumb": "images/pmvvk84lr-mvvk8x5mt.jpg",
+   "updatedAt": "2026-10-30T22:45:23.160Z",
+   "createdAt": "2026-10-30T22:45:23.160Z"
+  },
+  {
    "id": "pmvvk6vxa",
    "name": "سبحة تراب تركي اصلي",
    "price": 3000,
@@ -1643,5 +1666,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-10-30T22:44:39.822Z"
+ "updatedAt": "2026-10-30T22:45:27.459Z"
 }
