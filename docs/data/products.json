@@ -9,6 +9,30 @@
  },
  "products": [
   {
+   "id": "pmvvk0i7l",
+   "name": "محفظة رجالي",
+   "price": 2500,
+   "old": 0,
+   "cat": "watch",
+   "gender": [
+    "men"
+   ],
+   "colors": "",
+   "short": "",
+   "desc": "",
+   "badge": "",
+   "soldOut": false,
+   "images": [
+    "images/pmvvk0i7l-mvvk145i0.jpg",
+    "images/pmvvk0i7l-mvvk145i1.jpg",
+    "images/pmvvk0i7l-mvvk145i2.jpg",
+    "images/pmvvk0i7l-mvvk145i3.jpg"
+   ],
+   "thumb": "images/pmvvk0i7l-mvvk145it.jpg",
+   "updatedAt": "2026-10-30T22:39:18.994Z",
+   "createdAt": "2026-10-30T22:39:18.994Z"
+  },
+  {
    "id": "pmvvjzky9",
    "name": "محفظة سحرية",
    "price": 2500,
@@ -1501,5 +1525,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-10-30T22:38:45.149Z"
+ "updatedAt": "2026-10-30T22:39:26.012Z"
 }
