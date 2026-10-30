@@ -9,6 +9,31 @@
  },
  "products": [
   {
+   "id": "pmvvk59wn",
+   "name": "محفظة رجالي",
+   "price": 2500,
+   "old": 0,
+   "cat": "wallet",
+   "gender": [
+    "men"
+   ],
+   "colors": "",
+   "short": "",
+   "desc": "",
+   "badge": "",
+   "soldOut": false,
+   "images": [
+    "images/pmvvk59wn-mvvk6l2j0.jpg",
+    "images/pmvvk59wn-mvvk6l2j1.jpg",
+    "images/pmvvk59wn-mvvk6l2j2.jpg",
+    "images/pmvvk59wn-mvvk6l2j3.jpg",
+    "images/pmvvk59wn-mvvk6l2j4.jpg"
+   ],
+   "thumb": "images/pmvvk59wn-mvvk6l2jt.jpg",
+   "updatedAt": "2026-10-30T22:43:34.308Z",
+   "createdAt": "2026-10-30T22:43:34.308Z"
+  },
+  {
    "id": "pmvvk4dng",
    "name": "كاسيو رجالي",
    "price": 8000,
@@ -1593,5 +1618,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-10-30T22:42:26.418Z"
+ "updatedAt": "2026-10-30T22:43:42.221Z"
 }
