@@ -9,6 +9,27 @@
  },
  "products": [
   {
+   "id": "pmvvkf09o",
+   "name": "ساعة جلد رجالي",
+   "price": 10000,
+   "old": 0,
+   "cat": "watch",
+   "gender": [
+    "men"
+   ],
+   "colors": "",
+   "short": "",
+   "desc": "",
+   "badge": "",
+   "soldOut": false,
+   "images": [
+    "images/pmvvkf09o-mvvkfri50.jpg"
+   ],
+   "thumb": "images/pmvvkf09o-mvvkfri5t.jpg",
+   "updatedAt": "2026-10-30T22:50:41.967Z",
+   "createdAt": "2026-10-30T22:50:41.967Z"
+  },
+  {
    "id": "pmvvke2av",
    "name": "هيومن رجالي",
    "price": 10000,
@@ -1809,5 +1830,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-10-30T22:49:56.919Z"
+ "updatedAt": "2026-10-30T22:50:44.598Z"
 }
