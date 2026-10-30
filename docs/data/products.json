@@ -9,6 +9,31 @@
  },
  "products": [
   {
+   "id": "pmvvixbpe",
+   "name": "جداحة مميزة",
+   "price": 3000,
+   "old": 0,
+   "cat": "acc",
+   "gender": [
+    "men"
+   ],
+   "colors": "",
+   "short": "",
+   "desc": "",
+   "badge": "",
+   "soldOut": false,
+   "images": [
+    "images/pmvvixbpe-mvviygrs0.jpg",
+    "images/pmvvixbpe-mvviygrs1.jpg",
+    "images/pmvvixbpe-mvviygrs2.jpg",
+    "images/pmvvixbpe-mvviygrs3.jpg",
+    "images/pmvvixbpe-mvviygrs4.jpg"
+   ],
+   "thumb": "images/pmvvixbpe-mvviygrst.jpg",
+   "updatedAt": "2026-10-30T22:09:15.906Z",
+   "createdAt": "2026-10-30T22:09:15.906Z"
+  },
+  {
    "id": "pmvviuh26",
    "name": "سوار سل ستيل",
    "price": 5000,
@@ -832,5 +857,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-10-30T22:07:58.972Z"
+ "updatedAt": "2026-10-30T22:09:22.896Z"
 }
