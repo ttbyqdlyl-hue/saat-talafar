@@ -9,6 +9,31 @@
  },
  "products": [
   {
+   "id": "pmvvjxaig",
+   "name": "نظارة نسائية",
+   "price": 5000,
+   "old": 0,
+   "cat": "glasses",
+   "gender": [
+    "women"
+   ],
+   "colors": "",
+   "short": "",
+   "desc": "",
+   "badge": "",
+   "soldOut": false,
+   "images": [
+    "images/pmvvjxaig-mvvjymag0.jpg",
+    "images/pmvvjxaig-mvvjymag1.jpg",
+    "images/pmvvjxaig-mvvjymag2.jpg",
+    "images/pmvvjxaig-mvvjymag3.jpg",
+    "images/pmvvjxaig-mvvjymag4.jpg"
+   ],
+   "thumb": "images/pmvvjxaig-mvvjymagt.jpg",
+   "updatedAt": "2026-10-30T22:37:22.568Z",
+   "createdAt": "2026-10-30T22:37:22.568Z"
+  },
+  {
    "id": "pmvvjwbwy",
    "name": "باتيك فليب رجالي",
    "price": 12000,
@@ -1432,5 +1457,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-10-30T22:36:14.245Z"
+ "updatedAt": "2026-10-30T22:37:29.190Z"
 }
