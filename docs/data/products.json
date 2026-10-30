@@ -9,6 +9,31 @@
  },
  "products": [
   {
+   "id": "pmvvjgyig",
+   "name": "باتيك فليب رجالي",
+   "price": 12000,
+   "old": 0,
+   "cat": "watch",
+   "gender": [
+    "men"
+   ],
+   "colors": "",
+   "short": "",
+   "desc": "",
+   "badge": "",
+   "soldOut": false,
+   "images": [
+    "images/pmvvjgyig-mvvjho8x0.jpg",
+    "images/pmvvjgyig-mvvjho8x1.jpg",
+    "images/pmvvjgyig-mvvjho8x2.jpg",
+    "images/pmvvjgyig-mvvjho8x3.jpg",
+    "images/pmvvjgyig-mvvjho8x4.jpg"
+   ],
+   "thumb": "images/pmvvjgyig-mvvjho8xt.jpg",
+   "updatedAt": "2026-10-30T22:24:11.888Z",
+   "createdAt": "2026-10-30T22:24:11.888Z"
+  },
+  {
    "id": "pmvvjf5f7",
    "name": "ساعة اوميكانسائي اصلي",
    "price": 10000,
@@ -1119,5 +1144,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-10-30T22:23:28.200Z"
+ "updatedAt": "2026-10-30T22:24:19.271Z"
 }
