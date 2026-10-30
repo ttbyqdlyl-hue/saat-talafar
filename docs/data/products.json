@@ -9,6 +9,27 @@
  },
  "products": [
   {
+   "id": "pmvvl91da",
+   "name": "سبحة سندلس اصلي",
+   "price": 18000,
+   "old": 0,
+   "cat": "misbaha",
+   "gender": [
+    "men"
+   ],
+   "colors": "",
+   "short": "",
+   "desc": "",
+   "badge": "",
+   "soldOut": false,
+   "images": [
+    "images/pmvvl91da-mvvl9nh70.jpg"
+   ],
+   "thumb": "images/pmvvl91da-mvvl9nh7t.jpg",
+   "updatedAt": "2026-10-30T23:13:56.546Z",
+   "createdAt": "2026-10-30T23:13:56.546Z"
+  },
+  {
    "id": "pmvvl8deg",
    "name": "ساعة ضوئية",
    "price": 3000,
@@ -2221,5 +2242,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-10-30T23:13:22.470Z"
+ "updatedAt": "2026-10-30T23:13:59.054Z"
 }
