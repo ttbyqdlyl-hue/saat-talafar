@@ -9,6 +9,29 @@
  },
  "products": [
   {
+   "id": "pmvvke2av",
+   "name": "هيومن رجالي",
+   "price": 10000,
+   "old": 0,
+   "cat": "watch",
+   "gender": [
+    "men"
+   ],
+   "colors": "",
+   "short": "",
+   "desc": "",
+   "badge": "",
+   "soldOut": false,
+   "images": [
+    "images/pmvvke2av-mvvkeorr0.jpg",
+    "images/pmvvke2av-mvvkeorr1.jpg",
+    "images/pmvvke2av-mvvkeorr2.jpg"
+   ],
+   "thumb": "images/pmvvke2av-mvvkeorrt.jpg",
+   "updatedAt": "2026-10-30T22:49:52.252Z",
+   "createdAt": "2026-10-30T22:49:52.252Z"
+  },
+  {
    "id": "pmvvkd2zg",
    "name": "محفظة رجالي",
    "price": 2500,
@@ -1786,5 +1809,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-10-30T22:49:16.924Z"
+ "updatedAt": "2026-10-30T22:49:56.919Z"
 }
