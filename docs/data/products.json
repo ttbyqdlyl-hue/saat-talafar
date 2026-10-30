@@ -9,6 +9,30 @@
  },
  "products": [
   {
+   "id": "pmvvl8deg",
+   "name": "ساعة ضوئية",
+   "price": 3000,
+   "old": 0,
+   "cat": "watch",
+   "gender": [
+    "men",
+    "women"
+   ],
+   "colors": "",
+   "short": "",
+   "desc": "",
+   "badge": "",
+   "soldOut": false,
+   "images": [
+    "images/pmvvl8deg-mvvl8uc30.jpg",
+    "images/pmvvl8deg-mvvl8uc31.jpg",
+    "images/pmvvl8deg-mvvl8uc32.jpg"
+   ],
+   "thumb": "images/pmvvl8deg-mvvl8uc3t.jpg",
+   "updatedAt": "2026-10-30T23:13:18.678Z",
+   "createdAt": "2026-10-30T23:13:18.678Z"
+  },
+  {
    "id": "pmvvl3924",
    "name": "محفظة رجالي شاموه",
    "price": 2500,
@@ -2197,5 +2221,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-10-30T23:09:23.551Z"
+ "updatedAt": "2026-10-30T23:13:22.470Z"
 }
