@@ -9,6 +9,28 @@
  },
  "products": [
   {
+   "id": "pmvvjllc2",
+   "name": "باتيك فليب سناتر شمي قمري",
+   "price": 25000,
+   "old": 35000,
+   "cat": "watch",
+   "gender": [
+    "men"
+   ],
+   "colors": "",
+   "short": "",
+   "desc": "",
+   "badge": "",
+   "soldOut": false,
+   "images": [
+    "images/pmvvjllc2-mvvjmzos0.jpg",
+    "images/pmvvjllc2-mvvjmzos1.jpg"
+   ],
+   "thumb": "images/pmvvjllc2-mvvjmzost.jpg",
+   "updatedAt": "2026-10-30T22:28:19.717Z",
+   "createdAt": "2026-10-30T22:28:19.717Z"
+  },
+  {
    "id": "pmvvjk3zz",
    "name": "نظارة رجالي اصلي",
    "price": 7000,
@@ -1218,5 +1240,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-10-30T22:27:07.832Z"
+ "updatedAt": "2026-10-30T22:28:23.423Z"
 }
