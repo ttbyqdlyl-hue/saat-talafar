@@ -9,6 +9,31 @@
  },
  "products": [
   {
+   "id": "pmvvju4xo",
+   "name": "رولكس رجالي",
+   "price": 6000,
+   "old": 0,
+   "cat": "watch",
+   "gender": [
+    "men"
+   ],
+   "colors": "",
+   "short": "",
+   "desc": "",
+   "badge": "",
+   "soldOut": false,
+   "images": [
+    "images/pmvvju4xo-mvvjv5tl0.jpg",
+    "images/pmvvju4xo-mvvjv5tl1.jpg",
+    "images/pmvvju4xo-mvvjv5tl2.jpg",
+    "images/pmvvju4xo-mvvjv5tl3.jpg",
+    "images/pmvvju4xo-mvvjv5tl4.jpg"
+   ],
+   "thumb": "images/pmvvju4xo-mvvjv5tlt.jpg",
+   "updatedAt": "2026-10-30T22:34:41.014Z",
+   "createdAt": "2026-10-30T22:34:41.014Z"
+  },
+  {
    "id": "pmvvjsz32",
    "name": "رولكس رجالي",
    "price": 6000,
@@ -1361,5 +1386,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-10-30T22:33:46.857Z"
+ "updatedAt": "2026-10-30T22:34:47.988Z"
 }
