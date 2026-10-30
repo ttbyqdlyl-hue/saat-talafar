@@ -9,6 +9,30 @@
  },
  "products": [
   {
+   "id": "pmvvjrxqy",
+   "name": "نظارة رجالي",
+   "price": 3000,
+   "old": 0,
+   "cat": "glasses",
+   "gender": [
+    "men"
+   ],
+   "colors": "",
+   "short": "",
+   "desc": "",
+   "badge": "",
+   "soldOut": false,
+   "images": [
+    "images/pmvvjrxqy-mvvjsqp70.jpg",
+    "images/pmvvjrxqy-mvvjsqp71.jpg",
+    "images/pmvvjrxqy-mvvjsqp72.jpg",
+    "images/pmvvjrxqy-mvvjsqp73.jpg"
+   ],
+   "thumb": "images/pmvvjrxqy-mvvjsqp7t.jpg",
+   "updatedAt": "2026-10-30T22:32:48.386Z",
+   "createdAt": "2026-10-30T22:32:48.386Z"
+  },
+  {
    "id": "pmvvjpwon",
    "name": "ساعة نسائية",
    "price": 5000,
@@ -1312,5 +1336,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-10-30T22:32:05.249Z"
+ "updatedAt": "2026-10-30T22:32:53.833Z"
 }
