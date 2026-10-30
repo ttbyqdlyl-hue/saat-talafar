@@ -9,6 +9,31 @@
  },
  "products": [
   {
+   "id": "pmvvirwkh",
+   "name": "تيسوت رجالي",
+   "price": 12000,
+   "old": 15000,
+   "cat": "watch",
+   "gender": [
+    "men"
+   ],
+   "colors": "",
+   "short": "",
+   "desc": "",
+   "badge": "",
+   "soldOut": false,
+   "images": [
+    "images/pmvvirwkh-mvviu5wr0.jpg",
+    "images/pmvvirwkh-mvviu5wr1.jpg",
+    "images/pmvvirwkh-mvviu5wr2.jpg",
+    "images/pmvvirwkh-mvviu5wr3.jpg",
+    "images/pmvvirwkh-mvviu5wr4.jpg"
+   ],
+   "thumb": "images/pmvvirwkh-mvviu5wrt.jpg",
+   "updatedAt": "2026-10-30T22:05:54.965Z",
+   "createdAt": "2026-10-30T22:05:54.965Z"
+  },
+  {
    "id": "pmvviqdk8",
    "name": "رولكس رجالي موديل جديد",
    "price": 8000,
@@ -784,5 +809,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-10-30T22:04:04.182Z"
+ "updatedAt": "2026-10-30T22:06:03.853Z"
 }
