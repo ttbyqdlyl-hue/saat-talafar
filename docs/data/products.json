@@ -9,6 +9,31 @@
  },
  "products": [
   {
+   "id": "pmvvj3ydo",
+   "name": "توماتيك رولكس اصلي",
+   "price": 20000,
+   "old": 0,
+   "cat": "watch",
+   "gender": [
+    "men"
+   ],
+   "colors": "",
+   "short": "",
+   "desc": "طلاء تابت مع ضمان ضد الماء بدون بطارية",
+   "badge": "",
+   "soldOut": false,
+   "images": [
+    "images/pmvvj3ydo-mvvj5knj0.jpg",
+    "images/pmvvj3ydo-mvvj5knj1.jpg",
+    "images/pmvvj3ydo-mvvj5knj2.jpg",
+    "images/pmvvj3ydo-mvvj5knj3.jpg",
+    "images/pmvvj3ydo-mvvj5knj4.jpg"
+   ],
+   "thumb": "images/pmvvj3ydo-mvvj5knjt.jpg",
+   "updatedAt": "2026-10-30T22:14:48.076Z",
+   "createdAt": "2026-10-30T22:14:48.076Z"
+  },
+  {
    "id": "pmvvj1xaw",
    "name": "كاسيو رجالي",
    "price": 6000,
@@ -904,5 +929,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-10-30T22:13:24.346Z"
+ "updatedAt": "2026-10-30T22:14:53.628Z"
 }
