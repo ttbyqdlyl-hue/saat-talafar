@@ -9,6 +9,28 @@
  },
  "products": [
   {
+   "id": "pmvvkfxij",
+   "name": "جداحة موديل جديد",
+   "price": 5000,
+   "old": 0,
+   "cat": "acc",
+   "gender": [
+    "men"
+   ],
+   "colors": "",
+   "short": "",
+   "desc": "",
+   "badge": "",
+   "soldOut": false,
+   "images": [
+    "images/pmvvkfxij-mvvkh78u0.jpg",
+    "images/pmvvkfxij-mvvkh78u1.jpg"
+   ],
+   "thumb": "images/pmvvkfxij-mvvkh78ut.jpg",
+   "updatedAt": "2026-10-30T22:51:49.269Z",
+   "createdAt": "2026-10-30T22:51:49.269Z"
+  },
+  {
    "id": "pmvvkf09o",
    "name": "ساعة جلد رجالي",
    "price": 10000,
@@ -1830,5 +1852,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-10-30T22:50:44.598Z"
+ "updatedAt": "2026-10-30T22:51:52.787Z"
 }
