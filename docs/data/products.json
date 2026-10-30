@@ -9,6 +9,31 @@
  },
  "products": [
   {
+   "id": "pmvvk6vxa",
+   "name": "سبحة تراب تركي اصلي",
+   "price": 3000,
+   "old": 0,
+   "cat": "misbaha",
+   "gender": [
+    "men"
+   ],
+   "colors": "",
+   "short": "",
+   "desc": "",
+   "badge": "",
+   "soldOut": false,
+   "images": [
+    "images/pmvvk6vxa-mvvk7t1j0.jpg",
+    "images/pmvvk6vxa-mvvk7t1j1.jpg",
+    "images/pmvvk6vxa-mvvk7t1j2.jpg",
+    "images/pmvvk6vxa-mvvk7t1j3.jpg",
+    "images/pmvvk6vxa-mvvk7t1j4.jpg"
+   ],
+   "thumb": "images/pmvvk6vxa-mvvk7t1jt.jpg",
+   "updatedAt": "2026-10-30T22:44:31.671Z",
+   "createdAt": "2026-10-30T22:44:31.671Z"
+  },
+  {
    "id": "pmvvk59wn",
    "name": "محفظة رجالي",
    "price": 2500,
@@ -1618,5 +1643,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-10-30T22:43:42.221Z"
+ "updatedAt": "2026-10-30T22:44:39.822Z"
 }
