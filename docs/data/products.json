@@ -9,6 +9,31 @@
  },
  "products": [
   {
+   "id": "pmvvkbag8",
+   "name": "كوليكشن رجالي",
+   "price": 5000,
+   "old": 0,
+   "cat": "watch",
+   "gender": [
+    "men"
+   ],
+   "colors": "",
+   "short": "",
+   "desc": "",
+   "badge": "",
+   "soldOut": false,
+   "images": [
+    "images/pmvvkbag8-mvvkc0hl0.jpg",
+    "images/pmvvkbag8-mvvkc0hl1.jpg",
+    "images/pmvvkbag8-mvvkc0hl2.jpg",
+    "images/pmvvkbag8-mvvkc0hl3.jpg",
+    "images/pmvvkbag8-mvvkc0hl4.jpg"
+   ],
+   "thumb": "images/pmvvkbag8-mvvkc0hlt.jpg",
+   "updatedAt": "2026-10-30T22:47:47.536Z",
+   "createdAt": "2026-10-30T22:47:47.536Z"
+  },
+  {
    "id": "pmvvka31l",
    "name": "كارتير ربل عربي",
    "price": 5000,
@@ -1714,5 +1739,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-10-30T22:47:08.272Z"
+ "updatedAt": "2026-10-30T22:47:53.849Z"
 }
