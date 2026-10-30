@@ -9,6 +9,29 @@
  },
  "products": [
   {
+   "id": "pmvviuh26",
+   "name": "سوار سل ستيل",
+   "price": 5000,
+   "old": 0,
+   "cat": "acc",
+   "gender": [
+    "men"
+   ],
+   "colors": "",
+   "short": "",
+   "desc": "طلاء تابت مع ضمان",
+   "badge": "",
+   "soldOut": false,
+   "images": [
+    "images/pmvviuh26-mvvivmpe0.jpg",
+    "images/pmvviuh26-mvvivmpe1.jpg",
+    "images/pmvviuh26-mvvivmpe2.jpg"
+   ],
+   "thumb": "images/pmvviuh26-mvvivmpet.jpg",
+   "updatedAt": "2026-10-30T22:07:03.366Z",
+   "createdAt": "2026-10-30T22:07:03.366Z"
+  },
+  {
    "id": "pmvvirwkh",
    "name": "تيسوت رجالي",
    "price": 12000,
@@ -809,5 +832,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-10-30T22:06:03.853Z"
+ "updatedAt": "2026-10-30T22:07:07.990Z"
 }
