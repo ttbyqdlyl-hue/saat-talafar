@@ -131,7 +131,7 @@
    "name": "جداحات",
    "price": 4000,
    "old": 0,
-   "cat": "watch",
+   "cat": "acc",
    "gender": [
     "men"
    ],
@@ -148,7 +148,7 @@
     "images/pmvqpmtou-mvqpnv9q4.jpg"
    ],
    "thumb": "images/pmvqpmtou-mvqpnv9qt.jpg",
-   "updatedAt": "2026-10-27T13:18:08.264Z",
+   "updatedAt": "2026-10-30T22:07:23.669Z",
    "createdAt": "2026-10-27T13:18:08.264Z"
   },
   {
@@ -832,5 +832,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-10-30T22:07:07.990Z"
+ "updatedAt": "2026-10-30T22:07:24.231Z"
 }
