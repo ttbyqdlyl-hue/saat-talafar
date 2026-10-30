@@ -9,6 +9,31 @@
  },
  "products": [
   {
+   "id": "pmvvjbgdh",
+   "name": "نظارة رجالي",
+   "price": 3000,
+   "old": 0,
+   "cat": "glasses",
+   "gender": [
+    "men"
+   ],
+   "colors": "",
+   "short": "",
+   "desc": "",
+   "badge": "",
+   "soldOut": false,
+   "images": [
+    "images/pmvvjbgdh-mvvjcrmj0.jpg",
+    "images/pmvvjbgdh-mvvjcrmj1.jpg",
+    "images/pmvvjbgdh-mvvjcrmj2.jpg",
+    "images/pmvvjbgdh-mvvjcrmj3.jpg",
+    "images/pmvvjbgdh-mvvjcrmj4.jpg"
+   ],
+   "thumb": "images/pmvvjbgdh-mvvjcrmjt.jpg",
+   "updatedAt": "2026-10-30T22:20:23.155Z",
+   "createdAt": "2026-10-30T22:20:23.155Z"
+  },
+  {
    "id": "pmvvja5s1",
    "name": "نظارة اصلية رجالي",
    "price": 7000,
@@ -1026,5 +1051,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-10-30T22:19:16.310Z"
+ "updatedAt": "2026-10-30T22:20:29.223Z"
 }
