@@ -9,6 +9,30 @@
  },
  "products": [
   {
+   "id": "pmvvkobaw",
+   "name": "كاسيو جلد رجالي",
+   "price": 8000,
+   "old": 10000,
+   "cat": "watch",
+   "gender": [
+    "men"
+   ],
+   "colors": "",
+   "short": "",
+   "desc": "",
+   "badge": "",
+   "soldOut": false,
+   "images": [
+    "images/pmvvkobaw-mvvkq7br0.jpg",
+    "images/pmvvkobaw-mvvkq7br1.jpg",
+    "images/pmvvkobaw-mvvkq7br2.jpg",
+    "images/pmvvkobaw-mvvkq7br3.jpg"
+   ],
+   "thumb": "images/pmvvkobaw-mvvkq7brt.jpg",
+   "updatedAt": "2026-10-30T22:58:49.774Z",
+   "createdAt": "2026-10-30T22:58:49.774Z"
+  },
+  {
    "id": "pmvvkn51w",
    "name": "كاسيو كتان",
    "price": 8000,
@@ -1963,5 +1987,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-10-30T22:57:16.055Z"
+ "updatedAt": "2026-10-30T22:58:56.324Z"
 }
