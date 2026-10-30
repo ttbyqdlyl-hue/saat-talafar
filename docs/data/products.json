@@ -9,6 +9,29 @@
  },
  "products": [
   {
+   "id": "pmvvkd2zg",
+   "name": "محفظة رجالي",
+   "price": 2500,
+   "old": 0,
+   "cat": "wallet",
+   "gender": [
+    "men"
+   ],
+   "colors": "",
+   "short": "",
+   "desc": "",
+   "badge": "",
+   "soldOut": false,
+   "images": [
+    "images/pmvvkd2zg-mvvkdtff0.jpg",
+    "images/pmvvkd2zg-mvvkdtff1.jpg",
+    "images/pmvvkd2zg-mvvkdtff2.jpg"
+   ],
+   "thumb": "images/pmvvkd2zg-mvvkdtfft.jpg",
+   "updatedAt": "2026-10-30T22:49:11.485Z",
+   "createdAt": "2026-10-30T22:49:11.485Z"
+  },
+  {
    "id": "pmvvkcado",
    "name": "كولكشن",
    "price": 5000,
@@ -1763,5 +1786,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-10-30T22:48:31.602Z"
+ "updatedAt": "2026-10-30T22:49:16.924Z"
 }
