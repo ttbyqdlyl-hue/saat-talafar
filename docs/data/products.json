@@ -9,6 +9,29 @@
  },
  "products": [
   {
+   "id": "pmvviyqor",
+   "name": "باتيك فليب",
+   "price": 12000,
+   "old": 0,
+   "cat": "watch",
+   "gender": [
+    "men"
+   ],
+   "colors": "",
+   "short": "",
+   "desc": "",
+   "badge": "",
+   "soldOut": false,
+   "images": [
+    "images/pmvviyqor-mvvj1p0r0.jpg",
+    "images/pmvviyqor-mvvj1p0r1.jpg",
+    "images/pmvviyqor-mvvj1p0r2.jpg"
+   ],
+   "thumb": "images/pmvviyqor-mvvj1p0rt.jpg",
+   "updatedAt": "2026-10-30T22:11:46.086Z",
+   "createdAt": "2026-10-30T22:11:46.086Z"
+  },
+  {
    "id": "pmvvixbpe",
    "name": "جداحة مميزة",
    "price": 3000,
@@ -857,5 +880,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-10-30T22:09:22.896Z"
+ "updatedAt": "2026-10-30T22:11:51.250Z"
 }
