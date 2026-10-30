@@ -9,6 +9,29 @@
  },
  "products": [
   {
+   "id": "pmvvje70o",
+   "name": "رولكس رجالي",
+   "price": 8000,
+   "old": 10000,
+   "cat": "watch",
+   "gender": [
+    "men"
+   ],
+   "colors": "",
+   "short": "",
+   "desc": "",
+   "badge": "",
+   "soldOut": false,
+   "images": [
+    "images/pmvvje70o-mvvjex4l0.jpg",
+    "images/pmvvje70o-mvvjex4l1.jpg",
+    "images/pmvvje70o-mvvjex4l2.jpg"
+   ],
+   "thumb": "images/pmvvje70o-mvvjex4lt.jpg",
+   "updatedAt": "2026-10-30T22:22:03.075Z",
+   "createdAt": "2026-10-30T22:22:03.075Z"
+  },
+  {
    "id": "pmvvjd0pe",
    "name": "محفظة ماستر كولتي",
    "price": 5000,
@@ -1074,5 +1097,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-10-30T22:21:23.940Z"
+ "updatedAt": "2026-10-30T22:22:07.766Z"
 }
