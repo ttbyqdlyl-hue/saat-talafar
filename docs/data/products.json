@@ -9,6 +9,30 @@
  },
  "products": [
   {
+   "id": "pmvvkyonj",
+   "name": "محفظة رجالي",
+   "price": 2500,
+   "old": 0,
+   "cat": "wallet",
+   "gender": [
+    "men"
+   ],
+   "colors": "",
+   "short": "",
+   "desc": "",
+   "badge": "",
+   "soldOut": false,
+   "images": [
+    "images/pmvvkyonj-mvvl0rl00.jpg",
+    "images/pmvvkyonj-mvvl0rl01.jpg",
+    "images/pmvvkyonj-mvvl0rl02.jpg",
+    "images/pmvvkyonj-mvvl0rl03.jpg"
+   ],
+   "thumb": "images/pmvvkyonj-mvvl0rl0t.jpg",
+   "updatedAt": "2026-10-30T23:07:01.988Z",
+   "createdAt": "2026-10-30T23:07:01.988Z"
+  },
+  {
    "id": "pmvvktkga",
    "name": "ساعة جيب",
    "price": 5000,
@@ -2083,5 +2107,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-10-30T23:02:28.698Z"
+ "updatedAt": "2026-10-30T23:07:07.725Z"
 }
