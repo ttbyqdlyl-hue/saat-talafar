@@ -9,6 +9,31 @@
  },
  "products": [
   {
+   "id": "pmvviqdk8",
+   "name": "رولكس رجالي موديل جديد",
+   "price": 8000,
+   "old": 0,
+   "cat": "watch",
+   "gender": [
+    "men"
+   ],
+   "colors": "",
+   "short": "",
+   "desc": "",
+   "badge": "",
+   "soldOut": false,
+   "images": [
+    "images/pmvviqdk8-mvvirlko0.jpg",
+    "images/pmvviqdk8-mvvirlko1.jpg",
+    "images/pmvviqdk8-mvvirlko2.jpg",
+    "images/pmvviqdk8-mvvirlko3.jpg",
+    "images/pmvviqdk8-mvvirlko4.jpg"
+   ],
+   "thumb": "images/pmvviqdk8-mvvirlkot.jpg",
+   "updatedAt": "2026-10-30T22:03:55.261Z",
+   "createdAt": "2026-10-30T22:03:55.261Z"
+  },
+  {
    "id": "pmvvip6n6",
    "name": "كاسيو رجالي",
    "price": 8000,
@@ -759,5 +784,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-10-30T22:02:50.700Z"
+ "updatedAt": "2026-10-30T22:04:04.182Z"
 }
