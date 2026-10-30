@@ -9,6 +9,30 @@
  },
  "products": [
   {
+   "id": "pmvvjwbwy",
+   "name": "باتيك فليب رجالي",
+   "price": 12000,
+   "old": 0,
+   "cat": "watch",
+   "gender": [
+    "men"
+   ],
+   "colors": "",
+   "short": "",
+   "desc": "",
+   "badge": "",
+   "soldOut": false,
+   "images": [
+    "images/pmvvjwbwy-mvvjx0v80.jpg",
+    "images/pmvvjwbwy-mvvjx0v81.jpg",
+    "images/pmvvjwbwy-mvvjx0v82.jpg",
+    "images/pmvvjwbwy-mvvjx0v83.jpg"
+   ],
+   "thumb": "images/pmvvjwbwy-mvvjx0v8t.jpg",
+   "updatedAt": "2026-10-30T22:36:08.724Z",
+   "createdAt": "2026-10-30T22:36:08.724Z"
+  },
+  {
    "id": "pmvvjvfqz",
    "name": "كاسيو رجالي اصلي",
    "price": 12000,
@@ -1408,5 +1432,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-10-30T22:35:29.865Z"
+ "updatedAt": "2026-10-30T22:36:14.245Z"
 }
