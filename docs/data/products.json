@@ -9,6 +9,31 @@
  },
  "products": [
   {
+   "id": "pmvvj7cf3",
+   "name": "كاسيو رجالي",
+   "price": 6000,
+   "old": 0,
+   "cat": "watch",
+   "gender": [
+    "men"
+   ],
+   "colors": "",
+   "short": "",
+   "desc": "",
+   "badge": "",
+   "soldOut": false,
+   "images": [
+    "images/pmvvj7cf3-mvvj8afv0.jpg",
+    "images/pmvvj7cf3-mvvj8afv1.jpg",
+    "images/pmvvj7cf3-mvvj8afv2.jpg",
+    "images/pmvvj7cf3-mvvj8afv3.jpg",
+    "images/pmvvj7cf3-mvvj8afv4.jpg"
+   ],
+   "thumb": "images/pmvvj7cf3-mvvj8afvt.jpg",
+   "updatedAt": "2026-10-30T22:16:54.479Z",
+   "createdAt": "2026-10-30T22:16:54.479Z"
+  },
+  {
    "id": "pmvvj6awn",
    "name": "باتيك فليب توماتيك",
    "price": 25000,
@@ -950,5 +975,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-10-30T22:15:57.867Z"
+ "updatedAt": "2026-10-30T22:17:00.918Z"
 }
