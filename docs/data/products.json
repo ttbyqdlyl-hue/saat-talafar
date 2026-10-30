@@ -9,6 +9,28 @@
  },
  "products": [
   {
+   "id": "pmvvkn51w",
+   "name": "كاسيو كتان",
+   "price": 8000,
+   "old": 12000,
+   "cat": "watch",
+   "gender": [
+    "men"
+   ],
+   "colors": "",
+   "short": "",
+   "desc": "",
+   "badge": "",
+   "soldOut": false,
+   "images": [
+    "images/pmvvkn51w-mvvko4rq0.jpg",
+    "images/pmvvkn51w-mvvko4rq1.jpg"
+   ],
+   "thumb": "images/pmvvkn51w-mvvko4rqt.jpg",
+   "updatedAt": "2026-10-30T22:57:12.398Z",
+   "createdAt": "2026-10-30T22:57:12.398Z"
+  },
+  {
    "id": "pmvvklvvd",
    "name": "بنما رجالي الكتروني",
    "price": 6000,
@@ -1941,5 +1963,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-10-30T22:56:20.747Z"
+ "updatedAt": "2026-10-30T22:57:16.055Z"
 }
