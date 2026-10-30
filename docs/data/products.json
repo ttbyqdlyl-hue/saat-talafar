@@ -9,6 +9,30 @@
  },
  "products": [
   {
+   "id": "pmvvkcado",
+   "name": "كولكشن",
+   "price": 5000,
+   "old": 0,
+   "cat": "watch",
+   "gender": [
+    "men"
+   ],
+   "colors": "",
+   "short": "",
+   "desc": "",
+   "badge": "",
+   "soldOut": false,
+   "images": [
+    "images/pmvvkcado-mvvkcumi0.jpg",
+    "images/pmvvkcado-mvvkcumi1.jpg",
+    "images/pmvvkcado-mvvkcumi2.jpg",
+    "images/pmvvkcado-mvvkcumi3.jpg"
+   ],
+   "thumb": "images/pmvvkcado-mvvkcumit.jpg",
+   "updatedAt": "2026-10-30T22:48:26.446Z",
+   "createdAt": "2026-10-30T22:48:26.446Z"
+  },
+  {
    "id": "pmvvkbag8",
    "name": "كوليكشن رجالي",
    "price": 5000,
@@ -1739,5 +1763,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-10-30T22:47:53.849Z"
+ "updatedAt": "2026-10-30T22:48:31.602Z"
 }
