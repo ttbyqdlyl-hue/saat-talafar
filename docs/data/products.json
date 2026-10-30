@@ -9,6 +9,29 @@
  },
  "products": [
   {
+   "id": "pmvvjzky9",
+   "name": "محفظة سحرية",
+   "price": 2500,
+   "old": 0,
+   "cat": "wallet",
+   "gender": [
+    "men"
+   ],
+   "colors": "",
+   "short": "",
+   "desc": "",
+   "badge": "",
+   "soldOut": false,
+   "images": [
+    "images/pmvvjzky9-mvvk09fc0.jpg",
+    "images/pmvvjzky9-mvvk09fc1.jpg",
+    "images/pmvvjzky9-mvvk09fc2.jpg"
+   ],
+   "thumb": "images/pmvvjzky9-mvvk09fct.jpg",
+   "updatedAt": "2026-10-30T22:38:39.188Z",
+   "createdAt": "2026-10-30T22:38:39.188Z"
+  },
+  {
    "id": "pmvvjyvr9",
    "name": "باتيك فليب نسائي",
    "price": 10000,
@@ -1478,5 +1501,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-10-30T22:38:01.921Z"
+ "updatedAt": "2026-10-30T22:38:45.149Z"
 }
