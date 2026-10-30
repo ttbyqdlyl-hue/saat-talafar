@@ -461,7 +461,7 @@
    "name": "محفظة ماستر كولتي",
    "price": 5000,
    "old": 0,
-   "cat": "watch",
+   "cat": "wallet",
    "gender": [
     "men"
    ],
@@ -475,7 +475,7 @@
     "images/pmvpxx6tu-mvpxxttj1.jpg"
    ],
    "thumb": "images/pmvpxx6tu-mvpxxttjt.jpg",
-   "updatedAt": "2026-10-27T00:22:03.079Z",
+   "updatedAt": "2026-10-30T22:07:57.705Z",
    "createdAt": "2026-10-27T00:22:03.079Z"
   },
   {
@@ -832,5 +832,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-10-30T22:07:42.346Z"
+ "updatedAt": "2026-10-30T22:07:58.972Z"
 }
