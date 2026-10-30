@@ -9,6 +9,31 @@
  },
  "products": [
   {
+   "id": "pmvvja5s1",
+   "name": "نظارة اصلية رجالي",
+   "price": 7000,
+   "old": 0,
+   "cat": "glasses",
+   "gender": [
+    "men"
+   ],
+   "colors": "",
+   "short": "",
+   "desc": "",
+   "badge": "",
+   "soldOut": false,
+   "images": [
+    "images/pmvvja5s1-mvvjb3vw0.jpg",
+    "images/pmvvja5s1-mvvjb3vw1.jpg",
+    "images/pmvvja5s1-mvvjb3vw2.jpg",
+    "images/pmvvja5s1-mvvjb3vw3.jpg",
+    "images/pmvvja5s1-mvvjb3vw4.jpg"
+   ],
+   "thumb": "images/pmvvja5s1-mvvjb3vwt.jpg",
+   "updatedAt": "2026-10-30T22:19:05.869Z",
+   "createdAt": "2026-10-30T22:19:05.869Z"
+  },
+  {
    "id": "pmvvj8lg1",
    "name": "تون كاسيو رجالي ونسائي",
    "price": 14000,
@@ -1001,5 +1026,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-10-30T22:18:14.053Z"
+ "updatedAt": "2026-10-30T22:19:16.310Z"
 }
