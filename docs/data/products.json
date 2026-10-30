@@ -9,6 +9,28 @@
  },
  "products": [
   {
+   "id": "pmvvl10r4",
+   "name": "رولكس جلد رجالي",
+   "price": 8000,
+   "old": 0,
+   "cat": "watch",
+   "gender": [
+    "men"
+   ],
+   "colors": "",
+   "short": "",
+   "desc": "",
+   "badge": "",
+   "soldOut": false,
+   "images": [
+    "images/pmvvl10r4-mvvl1mzd0.jpg",
+    "images/pmvvl10r4-mvvl1mzd1.jpg"
+   ],
+   "thumb": "images/pmvvl10r4-mvvl1mzdt.jpg",
+   "updatedAt": "2026-10-30T23:07:42.584Z",
+   "createdAt": "2026-10-30T23:07:42.584Z"
+  },
+  {
    "id": "pmvvkyonj",
    "name": "محفظة رجالي",
    "price": 2500,
@@ -2107,5 +2129,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-10-30T23:07:07.725Z"
+ "updatedAt": "2026-10-30T23:07:46.098Z"
 }
