@@ -9,6 +9,30 @@
  },
  "products": [
   {
+   "id": "pmvvkscv6",
+   "name": "ساعة جلد رجالي",
+   "price": 4000,
+   "old": 0,
+   "cat": "watch",
+   "gender": [
+    "men"
+   ],
+   "colors": "",
+   "short": "",
+   "desc": "",
+   "badge": "",
+   "soldOut": false,
+   "images": [
+    "images/pmvvkscv6-mvvktbjv0.jpg",
+    "images/pmvvkscv6-mvvktbjv1.jpg",
+    "images/pmvvkscv6-mvvktbjv2.jpg",
+    "images/pmvvkscv6-mvvktbjv3.jpg"
+   ],
+   "thumb": "images/pmvvkscv6-mvvktbjvt.jpg",
+   "updatedAt": "2026-10-30T23:01:14.966Z",
+   "createdAt": "2026-10-30T23:01:14.966Z"
+  },
+  {
    "id": "pmvvkrawc",
    "name": "سوار",
    "price": 2500,
@@ -2035,5 +2059,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-10-30T23:00:23.299Z"
+ "updatedAt": "2026-10-30T23:01:21.327Z"
 }
