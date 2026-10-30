@@ -9,6 +9,29 @@
  },
  "products": [
   {
+   "id": "pmvvjd0pe",
+   "name": "محفظة ماستر كولتي",
+   "price": 5000,
+   "old": 0,
+   "cat": "wallet",
+   "gender": [
+    "men"
+   ],
+   "colors": "",
+   "short": "",
+   "desc": "",
+   "badge": "",
+   "soldOut": false,
+   "images": [
+    "images/pmvvjd0pe-mvvjdyk20.jpg",
+    "images/pmvvjd0pe-mvvjdyk21.jpg",
+    "images/pmvvjd0pe-mvvjdyk22.jpg"
+   ],
+   "thumb": "images/pmvvjd0pe-mvvjdyk2t.jpg",
+   "updatedAt": "2026-10-30T22:21:18.637Z",
+   "createdAt": "2026-10-30T22:21:18.637Z"
+  },
+  {
    "id": "pmvvjbgdh",
    "name": "نظارة رجالي",
    "price": 3000,
@@ -1051,5 +1074,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-10-30T22:20:29.223Z"
+ "updatedAt": "2026-10-30T22:21:23.940Z"
 }
