@@ -9,6 +9,30 @@
  },
  "products": [
   {
+   "id": "pmvvk94pe",
+   "name": "اورينت رجالي",
+   "price": 8000,
+   "old": 0,
+   "cat": "watch",
+   "gender": [
+    "men"
+   ],
+   "colors": "",
+   "short": "",
+   "desc": "",
+   "badge": "",
+   "soldOut": false,
+   "images": [
+    "images/pmvvk94pe-mvvk9uqz0.jpg",
+    "images/pmvvk94pe-mvvk9uqz1.jpg",
+    "images/pmvvk94pe-mvvk9uqz2.jpg",
+    "images/pmvvk94pe-mvvk9uqz3.jpg"
+   ],
+   "thumb": "images/pmvvk94pe-mvvk9uqzt.jpg",
+   "updatedAt": "2026-10-30T22:46:06.381Z",
+   "createdAt": "2026-10-30T22:46:06.381Z"
+  },
+  {
    "id": "pmvvk84lr",
    "name": "نظارة رجالي موديل جديده",
    "price": 5000,
@@ -1666,5 +1690,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-10-30T22:45:27.459Z"
+ "updatedAt": "2026-10-30T22:46:11.995Z"
 }
