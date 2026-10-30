@@ -9,6 +9,29 @@
  },
  "products": [
   {
+   "id": "pmvvklvvd",
+   "name": "بنما رجالي الكتروني",
+   "price": 6000,
+   "old": 0,
+   "cat": "watch",
+   "gender": [
+    "men"
+   ],
+   "colors": "",
+   "short": "",
+   "desc": "",
+   "badge": "",
+   "soldOut": false,
+   "images": [
+    "images/pmvvklvvd-mvvkmxga0.jpg",
+    "images/pmvvklvvd-mvvkmxga1.jpg",
+    "images/pmvvklvvd-mvvkmxga2.jpg"
+   ],
+   "thumb": "images/pmvvklvvd-mvvkmxgat.jpg",
+   "updatedAt": "2026-10-30T22:56:16.631Z",
+   "createdAt": "2026-10-30T22:56:16.631Z"
+  },
+  {
    "id": "pmvvkkg6l",
    "name": "بنما رجالي الكتروني",
    "price": 6000,
@@ -1918,5 +1941,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-10-30T22:55:05.176Z"
+ "updatedAt": "2026-10-30T22:56:20.747Z"
 }
