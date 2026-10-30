@@ -9,6 +9,27 @@
  },
  "products": [
   {
+   "id": "pmvvj6awn",
+   "name": "باتيك فليب توماتيك",
+   "price": 25000,
+   "old": 0,
+   "cat": "watch",
+   "gender": [
+    "men"
+   ],
+   "colors": "",
+   "short": "",
+   "desc": "",
+   "badge": "",
+   "soldOut": false,
+   "images": [
+    "images/pmvvj6awn-mvvj716q0.jpg"
+   ],
+   "thumb": "images/pmvvj6awn-mvvj716qt.jpg",
+   "updatedAt": "2026-10-30T22:15:54.989Z",
+   "createdAt": "2026-10-30T22:15:54.989Z"
+  },
+  {
    "id": "pmvvj3ydo",
    "name": "توماتيك رولكس اصلي",
    "price": 20000,
@@ -929,5 +950,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-10-30T22:14:53.628Z"
+ "updatedAt": "2026-10-30T22:15:57.867Z"
 }
