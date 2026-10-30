@@ -9,6 +9,31 @@
  },
  "products": [
   {
+   "id": "pmvvlbu3n",
+   "name": "رولكس رجالي",
+   "price": 8000,
+   "old": 0,
+   "cat": "watch",
+   "gender": [
+    "men"
+   ],
+   "colors": "",
+   "short": "",
+   "desc": "",
+   "badge": "",
+   "soldOut": false,
+   "images": [
+    "images/pmvvlbu3n-mvvlcb4p0.jpg",
+    "images/pmvvlbu3n-mvvlcb4p1.jpg",
+    "images/pmvvlbu3n-mvvlcb4p2.jpg",
+    "images/pmvvlbu3n-mvvlcb4p3.jpg",
+    "images/pmvvlbu3n-mvvlcb4p4.jpg"
+   ],
+   "thumb": "images/pmvvlbu3n-mvvlcb4pt.jpg",
+   "updatedAt": "2026-10-30T23:16:00.612Z",
+   "createdAt": "2026-10-30T23:16:00.612Z"
+  },
+  {
    "id": "pmvvl91da",
    "name": "سبحة سندلس اصلي",
    "price": 18000,
@@ -2242,5 +2267,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-10-30T23:13:59.054Z"
+ "updatedAt": "2026-10-30T23:16:07.397Z"
 }
