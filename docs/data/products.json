@@ -9,6 +9,32 @@
  },
  "products": [
   {
+   "id": "pmvvj8lg1",
+   "name": "تون كاسيو رجالي ونسائي",
+   "price": 14000,
+   "old": 0,
+   "cat": "watch",
+   "gender": [
+    "men",
+    "women"
+   ],
+   "colors": "",
+   "short": "",
+   "desc": "هدية مميزة يجي مع بوكس وتغليف مرتبةً",
+   "badge": "",
+   "soldOut": false,
+   "images": [
+    "images/pmvvj8lg1-mvvj9tq70.jpg",
+    "images/pmvvj8lg1-mvvj9tq71.jpg",
+    "images/pmvvj8lg1-mvvj9tq72.jpg",
+    "images/pmvvj8lg1-mvvj9tq73.jpg",
+    "images/pmvvj8lg1-mvvj9tq74.jpg"
+   ],
+   "thumb": "images/pmvvj8lg1-mvvj9tq7t.jpg",
+   "updatedAt": "2026-10-30T22:18:05.469Z",
+   "createdAt": "2026-10-30T22:18:05.469Z"
+  },
+  {
    "id": "pmvvj7cf3",
    "name": "كاسيو رجالي",
    "price": 6000,
@@ -975,5 +1001,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-10-30T22:17:00.918Z"
+ "updatedAt": "2026-10-30T22:18:14.053Z"
 }
