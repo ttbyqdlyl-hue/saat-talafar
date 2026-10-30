@@ -9,6 +9,30 @@
  },
  "products": [
   {
+   "id": "pmvvip6n6",
+   "name": "كاسيو رجالي",
+   "price": 8000,
+   "old": 0,
+   "cat": "watch",
+   "gender": [
+    "men"
+   ],
+   "colors": "",
+   "short": "",
+   "desc": "",
+   "badge": "",
+   "soldOut": false,
+   "images": [
+    "images/pmvvip6n6-mvviq2pn0.jpg",
+    "images/pmvvip6n6-mvviq2pn1.jpg",
+    "images/pmvvip6n6-mvviq2pn2.jpg",
+    "images/pmvvip6n6-mvviq2pn3.jpg"
+   ],
+   "thumb": "images/pmvvip6n6-mvviq2pnt.jpg",
+   "updatedAt": "2026-10-30T22:02:44.542Z",
+   "createdAt": "2026-10-30T22:02:44.542Z"
+  },
+  {
    "id": "pmvqq8e82",
    "name": "رولكس نسائي اصلي",
    "price": 15000,
@@ -735,5 +759,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-10-27T13:34:47.716Z"
+ "updatedAt": "2026-10-30T22:02:50.700Z"
 }
