@@ -9,6 +9,32 @@
  },
  "products": [
   {
+   "id": "pmvvkrawc",
+   "name": "سوار",
+   "price": 2500,
+   "old": 0,
+   "cat": "acc",
+   "gender": [
+    "men",
+    "women"
+   ],
+   "colors": "",
+   "short": "",
+   "desc": "",
+   "badge": "",
+   "soldOut": false,
+   "images": [
+    "images/pmvvkrawc-mvvks2i00.jpg",
+    "images/pmvvkrawc-mvvks2i01.jpg",
+    "images/pmvvkrawc-mvvks2i02.jpg",
+    "images/pmvvkrawc-mvvks2i03.jpg",
+    "images/pmvvkrawc-mvvks2i04.jpg"
+   ],
+   "thumb": "images/pmvvkrawc-mvvks2i0t.jpg",
+   "updatedAt": "2026-10-30T23:00:16.820Z",
+   "createdAt": "2026-10-30T23:00:16.820Z"
+  },
+  {
    "id": "pmvvkqguc",
    "name": "كارتير رجالي اصلي",
    "price": 12000,
@@ -2009,5 +2035,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-10-30T22:59:35.060Z"
+ "updatedAt": "2026-10-30T23:00:23.299Z"
 }
