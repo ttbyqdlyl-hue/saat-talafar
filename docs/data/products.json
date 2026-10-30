@@ -9,6 +9,28 @@
  },
  "products": [
   {
+   "id": "pmvvk4dng",
+   "name": "كاسيو رجالي",
+   "price": 8000,
+   "old": 0,
+   "cat": "watch",
+   "gender": [
+    "men"
+   ],
+   "colors": "",
+   "short": "",
+   "desc": "",
+   "badge": "",
+   "soldOut": false,
+   "images": [
+    "images/pmvvk4dng-mvvk52k30.jpg",
+    "images/pmvvk4dng-mvvk52k31.jpg"
+   ],
+   "thumb": "images/pmvvk4dng-mvvk52k3t.jpg",
+   "updatedAt": "2026-10-30T22:42:23.068Z",
+   "createdAt": "2026-10-30T22:42:23.068Z"
+  },
+  {
    "id": "pmvvk2kdq",
    "name": "دبل تايم",
    "price": 8000,
@@ -1571,5 +1593,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-10-30T22:41:41.233Z"
+ "updatedAt": "2026-10-30T22:42:26.418Z"
 }
