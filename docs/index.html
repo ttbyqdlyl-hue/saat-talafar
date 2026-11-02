@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com 'sha256-iw2zb2pAwdxZQS7HEs5YH5qclnr4t2gX4X84cDEMem4='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: blob:; connect-src 'self' blob: https://api.github.com; object-src 'none'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com 'sha256-PSB/ED+qJ1Hd7W3qjjovjRLsNgERpSL7UaCtnBZp6Z8=' 'sha256-MeCxcQbplDNqn23/EjqzKKdi/O3+KE0Q7vAm+GI8+c4='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: blob: https://raw.githubusercontent.com; connect-src 'self' blob: https://api.github.com; object-src 'none'; base-uri 'none'; form-action 'none'">
 <link rel="canonical" href="https://ttbyqdlyl-hue.github.io/saat-talafar/">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><circle cx='32' cy='32' r='29' fill='%2307080B' stroke='%23C9A15A' stroke-width='4'/><path d='M32 32V14M32 32l11 7' stroke='%23EAD3A2' stroke-width='4' stroke-linecap='round'/><circle cx='32' cy='32' r='3.5' fill='%23EAD3A2'/></svg>">
 <link rel="apple-touch-icon" href="icon-180.png">
@@ -257,6 +257,9 @@ img,svg{max-width:100%}
 @media (max-width:1020px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}}
 @media (max-width:620px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}}
 .grid-empty{padding:60px 20px;text-align:center;color:var(--mist);border:1px dashed var(--line);border-radius:var(--r-card)}
+.grid-state{margin-top:18px;text-align:center;color:var(--mist);font-size:14.5px}
+.grid-state p{margin:0 0 14px}
+.grid-retry{font:inherit;font-weight:600;padding:12px 26px;border-radius:999px;border:0;background:var(--gold-grad);color:#16110A;cursor:pointer}
 
 .card{position:relative;min-width:0}
 .card.is-out{display:none}
@@ -614,6 +617,10 @@ select.ow-input{appearance:none;-webkit-appearance:none;padding-inline-end:44px;
   *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
 }
 </style>
+<script>
+// Start fetching the shop's products right away, while the animation library is still downloading.
+window.__shopData = fetch('data/products.json?v=' + Date.now(), { cache: 'no-store' }).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; });
+</script>
 <style>@supports not (aspect-ratio:1/1){
 .stage{height:0;padding-top:100%}
 .ow-ph{height:0;padding-top:100%}.ow-ph img{position:absolute;top:0;left:0}
@@ -712,11 +719,12 @@ select.ow-input{appearance:none;-webkit-appearance:none;padding-inline-end:44px;
             <p class="eyebrow">التشكيلة</p>
             <h2 class="sec-title split">اختار اللي يعجبك</h2>
           </div>
-          <p class="sample-note">نسخة تجريبية: المنتجات والأسعار أمثلة لحد ما توصل صور وأسعار المحل</p>
+          <p class="sample-note" hidden>نسخة تجريبية: المنتجات والأسعار أمثلة لحد ما توصل صور وأسعار المحل</p>
         </div>
         <div class="filters" id="filters" role="group" aria-label="تصفية حسب النوع"></div>
         <div class="grid" id="grid"><div class="card skel" aria-hidden="true"><div class="card-tilt"></div></div><div class="card skel" aria-hidden="true"><div class="card-tilt"></div></div><div class="card skel" aria-hidden="true"><div class="card-tilt"></div></div></div>
         <p class="grid-empty" id="gridEmpty" hidden>ماكو ساعات بهذا القسم حالياً.</p>
+        <div class="grid-state" id="gridState" role="status" hidden><p></p><button type="button" class="grid-retry" hidden>جرّب مرة ثانية</button></div>
       </div>
     </section>
 
@@ -1090,7 +1098,7 @@ const SHOP = {
   tiktokLabel: 'ساعات تلعفر'
 };
 const waLink = msg => `https://wa.me/${SHOP.whatsapp}?text=${encodeURIComponent(msg)}`;
-const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
+const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 const phoneLabel = d => d.length >= 12 ? `+${d.slice(0, 3)} ${d.slice(3, 6)} ${d.slice(6, 9)} ${d.slice(9)}` : '+' + d;
 
 const $ = (s, r = document) => r.querySelector(s);
@@ -1922,6 +1930,14 @@ const imgSrc = path => localImg[path] || path;
 
 // products.json is written by the owner panel, but read it defensively: one bad entry must not blank the shop.
 const ID_RE = /^p[a-z0-9]{3,24}$/, IMG_RE = /^images\/[\w-]+\.(webp|jpe?g|png)$/i;
+// A photo saved a minute ago may not be on the site yet (GitHub Pages takes a while): load it straight from GitHub.
+const RAW = 'https://raw.githubusercontent.com/ttbyqdlyl-hue/saat-talafar/main/docs/';
+document.addEventListener('error', e => {
+  const im = e.target, path = im && im.tagName === 'IMG' ? im.getAttribute('src') || '' : '';
+  if (!IMG_RE.test(path)) return;
+  e.stopPropagation(); // not a real failure yet, so the zoom's «photo didn't load» message waits for the second try
+  im.src = RAW + path;
+}, true);
 function splitColors(s) {
   s = String(s || '');
   // Comma-type separators win so two-word colours («أزرق غامق») stay whole; otherwise spaces and stray marks (‘ - / .) split.
@@ -2123,14 +2139,39 @@ function renderCatalogue(reveal) {
   if (open) repointSheet();
 }
 
-async function loadData() {
+// The site's own copy of the list can lag up to ~10 minutes behind a save (GitHub's cache); GitHub's API has
+// the latest at once but allows only 60 calls an hour per address, so it tops up and stands in, never leads.
+const API_DATA = 'https://api.github.com/repos/ttbyqdlyl-hue/saat-talafar/contents/docs/data/products.json?ref=main';
+const wait = ms => new Promise(r => setTimeout(r, ms));
+async function getJson(url, opts, ms) {
+  const ctl = window.AbortController ? new AbortController() : null;
+  const t = setTimeout(() => { if (ctl) ctl.abort(); }, ms);
   try {
-    const r = await fetch(`${DATA_URL}?v=${Date.now()}`, { cache: 'no-store' });
+    const r = await fetch(url, ctl ? { ...opts, signal: ctl.signal } : opts);
     return r.ok ? await r.json() : null;
-  } catch (_) { return null; }
+  } catch (_) { return null; } finally { clearTimeout(t); }
 }
+const fromSite = ms => getJson(`${DATA_URL}?v=${Date.now()}`, { cache: 'no-store' }, ms);
+const fromApi = ms => getJson(API_DATA, { cache: 'no-cache', headers: { Accept: 'application/vnd.github.raw+json' } }, ms);
+const isData = d => !!d && typeof d === 'object' && Array.isArray(d.products);
+const stampOf = d => (d && typeof d.updatedAt === 'string' && Date.parse(d.updatedAt)) || 0;
+async function loadData() {
+  // first try: the request the page head started before the animation library loaded
+  const early = window.__shopData;
+  window.__shopData = null;
+  let d = early ? await Promise.race([early, wait(15000)]) : null;
+  // a weak line: try the site again, then GitHub's API
+  for (const ms of [12000, 20000]) {
+    if (isData(d)) return d;
+    await wait(1200);
+    d = (await fromSite(ms)) || (await fromApi(ms));
+  }
+  return isData(d) ? d : null;
+}
+let dataStamp = 0;
 function applyData(d) {
   if (!d || typeof d !== 'object') return;
+  dataStamp = stampOf(d);
   const s = d.settings && typeof d.settings === 'object' && !Array.isArray(d.settings) ? d.settings : {};
   SETTINGS = { showSamples: true, hiddenSamples: [], ...s };
   const wa = String(SETTINGS.whatsapp || '').replace(/\D/g, '');
@@ -2149,17 +2190,45 @@ function applyData(d) {
   LIVE = (Array.isArray(d.products) ? d.products : []).map(fromData).filter(Boolean);
   wireLinks();
 }
-// Show the samples after 2.5 s on a slow line, but still swap in the shop's own data whenever it arrives.
-let rendered = false;
-const firstPaint = setTimeout(() => { if (!rendered) { rendered = true; renderCatalogue(true); openFromHash(); } }, 2500);
-loadData().then(d => {
+// Nothing is drawn until the shop's own list arrives: on a slow line the skeleton stays and says so, and a
+// failed load offers a retry instead of falling back to the sample drawings.
+let rendered = false, loading = false;
+const SKELETON = grid.innerHTML, gridState = $('#gridState'), retryBtn = $('.grid-retry', gridState);
+function setGridState(msg, retry) {
+  gridState.hidden = !msg;
+  $('p', gridState).textContent = msg || '';
+  retryBtn.hidden = !retry;
+}
+function useData(d) {
   try { applyData(d); } catch (_) {}
-  clearTimeout(firstPaint);
   const first = !rendered;
   rendered = true;
-  if (d || first) renderCatalogue(first);
+  setGridState('');
+  renderCatalogue(first);
   openFromHash();
-});
+}
+async function boot() {
+  if (loading || rendered) return;
+  loading = true;
+  if (!grid.querySelector('.card')) grid.innerHTML = SKELETON;
+  setGridState('');
+  const slow = setTimeout(() => setGridState('النت بطيء شوية، دا نحمّل المنتجات…'), 5000);
+  const d = await loadData();
+  clearTimeout(slow);
+  loading = false;
+  if (!d) {
+    grid.innerHTML = '';
+    setGridState('ما كدرنا نحمّل المنتجات. تأكد من النت وجرّب مرة ثانية.', true);
+    return;
+  }
+  useData(d);
+  // the site's copy may be a few minutes behind the owner's last save
+  const fresh = await fromApi(15000);
+  if (isData(fresh) && stampOf(fresh) > dataStamp) useData(fresh);
+}
+retryBtn.addEventListener('click', boot);
+addEventListener('online', () => { if (!rendered) boot(); });
+boot();
 
 /* ---------- product sheet ---------- */
 const sheet = $('#sheet'), panel = $('.sheet-panel'), backdrop = $('.sheet-backdrop'), sWatch = $('#sheetWatch'), gallery = $('#sheetGallery'), flyer = $('#flyer'), stageEl = $('#sheetStage');

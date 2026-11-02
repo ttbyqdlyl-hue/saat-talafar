@@ -32,15 +32,16 @@ const phone = String(settings.whatsapp || '9647503321266').replace(/\D/g, '');
 const mapUrl = /^https:\/\//.test(settings.map || '') ? settings.map : 'https://maps.app.goo.gl/vMUJ7ErkPsaVY9hb8';
 const escAttr = s => String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
 
-// Content-Security-Policy: only this page's own inline script (by hash), GSAP from cdnjs, Google Fonts,
-// and the GitHub API for the owner panel. Recomputed on every build because the script changes.
-const scripts = [...body.matchAll(/<script>([\s\S]*?)<\/script>/g)].map(m => `'sha256-${createHash('sha256').update(m[1], 'utf8').digest('base64')}'`);
+// Content-Security-Policy: only this page's own inline scripts (by hash), GSAP from cdnjs, Google Fonts,
+// the GitHub API (owner panel, and the newest product list), and photos from raw GitHub while Pages catches up.
+// Recomputed on every build because the scripts change.
+const scripts = [...(head + body).matchAll(/<script>([\s\S]*?)<\/script>/g)].map(m => `'sha256-${createHash('sha256').update(m[1], 'utf8').digest('base64')}'`);
 const csp = [
   "default-src 'self'",
   `script-src 'self' https://cdnjs.cloudflare.com ${scripts.join(' ')}`,
   "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
   'font-src https://fonts.gstatic.com',
-  "img-src 'self' data: blob:",
+  "img-src 'self' data: blob: https://raw.githubusercontent.com",
   "connect-src 'self' blob: https://api.github.com",
   "object-src 'none'", "base-uri 'none'", "form-action 'none'"
 ].join('; ');
