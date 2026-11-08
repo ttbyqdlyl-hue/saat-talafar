@@ -9,6 +9,31 @@
  },
  "products": [
   {
+   "id": "pmw8hpmb2",
+   "name": "سكمي اصلي",
+   "price": 25000,
+   "old": 35000,
+   "cat": "watch",
+   "gender": [
+    "men"
+   ],
+   "colors": "",
+   "short": "",
+   "desc": "طلاء تابت ضد الماء قفل فراشة سناتر شغالة",
+   "badge": "",
+   "soldOut": false,
+   "images": [
+    "images/pmw8hpmb2-mw8hrjam0.jpg",
+    "images/pmw8hpmb2-mw8hrjam1.jpg",
+    "images/pmw8hpmb2-mw8hrjam2.jpg",
+    "images/pmw8hpmb2-mw8hrjam3.jpg",
+    "images/pmw8hpmb2-mw8hrjam4.jpg"
+   ],
+   "thumb": "images/pmw8hpmb2-mw8hrjamt.jpg",
+   "updatedAt": "2026-11-08T23:56:53.234Z",
+   "createdAt": "2026-11-08T23:56:53.234Z"
+  },
+  {
    "id": "pmvvlbu3n",
    "name": "رولكس رجالي",
    "price": 8000,
@@ -2267,5 +2292,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-10-30T23:16:07.397Z"
+ "updatedAt": "2026-11-08T23:56:59.586Z"
 }
