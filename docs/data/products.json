@@ -9,6 +9,29 @@
  },
  "products": [
   {
+   "id": "pmw8i5c9w",
+   "name": "باتيك فليب سناتر مفصوله",
+   "price": 18000,
+   "old": 0,
+   "cat": "watch",
+   "gender": [
+    "men"
+   ],
+   "colors": "",
+   "short": "",
+   "desc": "باتيك فليب سناتر مفصولة قفل فراشة وزن ثقيل منفذ شهري",
+   "badge": "",
+   "soldOut": false,
+   "images": [
+    "images/pmw8i5c9w-mw8i6jmy0.jpg",
+    "images/pmw8i5c9w-mw8i6jmy1.jpg",
+    "images/pmw8i5c9w-mw8i6jmy2.jpg"
+   ],
+   "thumb": "images/pmw8i5c9w-mw8i6jmyt.jpg",
+   "updatedAt": "2026-11-09T00:08:33.568Z",
+   "createdAt": "2026-11-09T00:08:33.568Z"
+  },
+  {
    "id": "pmw8i3rq2",
    "name": "اومكس ربل اصلي",
    "price": 15000,
@@ -2483,5 +2506,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-11-09T00:07:27.460Z"
+ "updatedAt": "2026-11-09T00:08:37.809Z"
 }
