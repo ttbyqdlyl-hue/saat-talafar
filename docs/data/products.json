@@ -9,6 +9,31 @@
  },
  "products": [
   {
+   "id": "pmw8i2m1x",
+   "name": "باتيك فليب جلد",
+   "price": 12000,
+   "old": 0,
+   "cat": "watch",
+   "gender": [
+    "men"
+   ],
+   "colors": "",
+   "short": "",
+   "desc": "",
+   "badge": "",
+   "soldOut": false,
+   "images": [
+    "images/pmw8i2m1x-mw8i3exi0.jpg",
+    "images/pmw8i2m1x-mw8i3exi1.jpg",
+    "images/pmw8i2m1x-mw8i3exi2.jpg",
+    "images/pmw8i2m1x-mw8i3exi3.jpg",
+    "images/pmw8i2m1x-mw8i3exi4.jpg"
+   ],
+   "thumb": "images/pmw8i2m1x-mw8i3exit.jpg",
+   "updatedAt": "2026-11-09T00:06:07.827Z",
+   "createdAt": "2026-11-09T00:06:07.827Z"
+  },
+  {
    "id": "pmw8i1lru",
    "name": "باتيك فليب ربل",
    "price": 10000,
@@ -2434,5 +2459,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-11-09T00:05:24.464Z"
+ "updatedAt": "2026-11-09T00:06:14.198Z"
 }
