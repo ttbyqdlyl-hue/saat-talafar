@@ -9,6 +9,28 @@
  },
  "products": [
   {
+   "id": "pmw8hyd3y",
+   "name": "كاسيو كتان",
+   "price": 8000,
+   "old": 10000,
+   "cat": "watch",
+   "gender": [
+    "men"
+   ],
+   "colors": "",
+   "short": "",
+   "desc": "",
+   "badge": "",
+   "soldOut": false,
+   "images": [
+    "images/pmw8hyd3y-mw8hz4qi0.jpg",
+    "images/pmw8hyd3y-mw8hz4qi1.jpg"
+   ],
+   "thumb": "images/pmw8hyd3y-mw8hz4qit.jpg",
+   "updatedAt": "2026-11-09T00:02:47.229Z",
+   "createdAt": "2026-11-09T00:02:47.229Z"
+  },
+  {
    "id": "pmw8hwvim",
    "name": "رولكس",
    "price": 8000,
@@ -2364,5 +2386,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-11-09T00:02:02.659Z"
+ "updatedAt": "2026-11-09T00:02:50.881Z"
 }
