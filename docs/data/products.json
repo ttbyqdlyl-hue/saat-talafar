@@ -9,6 +9,30 @@
  },
  "products": [
   {
+   "id": "pmw8hwvim",
+   "name": "رولكس",
+   "price": 8000,
+   "old": 10000,
+   "cat": "watch",
+   "gender": [
+    "men"
+   ],
+   "colors": "",
+   "short": "",
+   "desc": "",
+   "badge": "",
+   "soldOut": false,
+   "images": [
+    "images/pmw8hwvim-mw8hy1yz0.jpg",
+    "images/pmw8hwvim-mw8hy1yz1.jpg",
+    "images/pmw8hwvim-mw8hy1yz2.jpg",
+    "images/pmw8hwvim-mw8hy1yz3.jpg"
+   ],
+   "thumb": "images/pmw8hwvim-mw8hy1yzt.jpg",
+   "updatedAt": "2026-11-09T00:01:57.268Z",
+   "createdAt": "2026-11-09T00:01:57.268Z"
+  },
+  {
    "id": "pmw8hud9p",
    "name": "باتيك فليب قفل فراشة",
    "price": 18000,
@@ -2340,5 +2364,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-11-09T00:00:53.875Z"
+ "updatedAt": "2026-11-09T00:02:02.659Z"
 }
