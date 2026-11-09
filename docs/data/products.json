@@ -9,6 +9,29 @@
  },
  "products": [
   {
+   "id": "pmw8hud9p",
+   "name": "باتيك فليب قفل فراشة",
+   "price": 18000,
+   "old": 0,
+   "cat": "watch",
+   "gender": [
+    "men"
+   ],
+   "colors": "",
+   "short": "",
+   "desc": "باتيك فليب اطار تيتانيوم وزن ثقيل جلد اصلي مختم \nضد الماء",
+   "badge": "",
+   "soldOut": false,
+   "images": [
+    "images/pmw8hud9p-mw8hwl7b0.jpg",
+    "images/pmw8hud9p-mw8hwl7b1.jpg",
+    "images/pmw8hud9p-mw8hwl7b2.jpg"
+   ],
+   "thumb": "images/pmw8hud9p-mw8hwl7bt.jpg",
+   "updatedAt": "2026-11-09T00:00:48.825Z",
+   "createdAt": "2026-11-09T00:00:48.825Z"
+  },
+  {
    "id": "pmw8hru0a",
    "name": "كلاكسي رجالي اصلي",
    "price": 15000,
@@ -2317,5 +2340,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-11-08T23:58:55.406Z"
+ "updatedAt": "2026-11-09T00:00:53.875Z"
 }
