@@ -9,6 +9,31 @@
  },
  "products": [
   {
+   "id": "pmw8hzbn3",
+   "name": "تيكارتو اصلي",
+   "price": 15000,
+   "old": 0,
+   "cat": "watch",
+   "gender": [
+    "men"
+   ],
+   "colors": "",
+   "short": "",
+   "desc": "ساعة تيكارتو اصلي ضد الماء قفل فراشة طلاء تابت \nوزن ثقيل",
+   "badge": "",
+   "soldOut": false,
+   "images": [
+    "images/pmw8hzbn3-mw8i14ao0.jpg",
+    "images/pmw8hzbn3-mw8i14ao1.jpg",
+    "images/pmw8hzbn3-mw8i14ao2.jpg",
+    "images/pmw8hzbn3-mw8i14ao3.jpg",
+    "images/pmw8hzbn3-mw8i14ao4.jpg"
+   ],
+   "thumb": "images/pmw8hzbn3-mw8i14aot.jpg",
+   "updatedAt": "2026-11-09T00:04:20.717Z",
+   "createdAt": "2026-11-09T00:04:20.717Z"
+  },
+  {
    "id": "pmw8hyd3y",
    "name": "كاسيو كتان",
    "price": 8000,
@@ -2386,5 +2411,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-11-09T00:02:50.881Z"
+ "updatedAt": "2026-11-09T00:04:27.124Z"
 }
