@@ -9,6 +9,29 @@
  },
  "products": [
   {
+   "id": "pmw8i1lru",
+   "name": "باتيك فليب ربل",
+   "price": 10000,
+   "old": 0,
+   "cat": "watch",
+   "gender": [
+    "men"
+   ],
+   "colors": "",
+   "short": "",
+   "desc": "",
+   "badge": "",
+   "soldOut": false,
+   "images": [
+    "images/pmw8i1lru-mw8i2eey0.jpg",
+    "images/pmw8i1lru-mw8i2eey1.jpg",
+    "images/pmw8i1lru-mw8i2eey2.jpg"
+   ],
+   "thumb": "images/pmw8i1lru-mw8i2eeyt.jpg",
+   "updatedAt": "2026-11-09T00:05:19.909Z",
+   "createdAt": "2026-11-09T00:05:19.909Z"
+  },
+  {
    "id": "pmw8hzbn3",
    "name": "تيكارتو اصلي",
    "price": 15000,
@@ -2411,5 +2434,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-11-09T00:04:27.124Z"
+ "updatedAt": "2026-11-09T00:05:24.464Z"
 }
