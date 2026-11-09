@@ -9,6 +9,30 @@
  },
  "products": [
   {
+   "id": "pmw8i87bj",
+   "name": "باتيك فليب اطار تيتانيوم",
+   "price": 16000,
+   "old": 0,
+   "cat": "watch",
+   "gender": [
+    "men"
+   ],
+   "colors": "",
+   "short": "",
+   "desc": "قفل فراشة وزن ثقيل اطار تيتانيوم طلاء تابت",
+   "badge": "",
+   "soldOut": false,
+   "images": [
+    "images/pmw8i87bj-mw8i9lpy0.jpg",
+    "images/pmw8i87bj-mw8i9lpy1.jpg",
+    "images/pmw8i87bj-mw8i9lpy2.jpg",
+    "images/pmw8i87bj-mw8i9lpy3.jpg"
+   ],
+   "thumb": "images/pmw8i87bj-mw8i9lpyt.jpg",
+   "updatedAt": "2026-11-09T00:10:56.184Z",
+   "createdAt": "2026-11-09T00:10:56.184Z"
+  },
+  {
    "id": "pmw8i5c9w",
    "name": "باتيك فليب سناتر مفصوله",
    "price": 18000,
@@ -2506,5 +2530,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-11-09T00:08:37.809Z"
+ "updatedAt": "2026-11-09T00:11:01.533Z"
 }
