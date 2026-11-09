@@ -9,6 +9,30 @@
  },
  "products": [
   {
+   "id": "pmw8i3rq2",
+   "name": "اومكس ربل اصلي",
+   "price": 15000,
+   "old": 0,
+   "cat": "watch",
+   "gender": [
+    "men"
+   ],
+   "colors": "",
+   "short": "",
+   "desc": "ربل اصلي مريحة بالبس اليومي ضد الماء منفذ شهري ويومي",
+   "badge": "",
+   "soldOut": false,
+   "images": [
+    "images/pmw8i3rq2-mw8i505f0.jpg",
+    "images/pmw8i3rq2-mw8i505f1.jpg",
+    "images/pmw8i3rq2-mw8i505f2.jpg",
+    "images/pmw8i3rq2-mw8i505f3.jpg"
+   ],
+   "thumb": "images/pmw8i3rq2-mw8i505ft.jpg",
+   "updatedAt": "2026-11-09T00:07:22.200Z",
+   "createdAt": "2026-11-09T00:07:22.200Z"
+  },
+  {
    "id": "pmw8i2m1x",
    "name": "باتيك فليب جلد",
    "price": 12000,
@@ -2459,5 +2483,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-11-09T00:06:14.198Z"
+ "updatedAt": "2026-11-09T00:07:27.460Z"
 }
