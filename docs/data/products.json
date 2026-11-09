@@ -755,7 +755,7 @@
   {
    "id": "pmvvkd2zg",
    "name": "محفظة رجالي",
-   "price": 2500,
+   "price": 3000,
    "old": 0,
    "cat": "wallet",
    "gender": [
@@ -772,7 +772,7 @@
     "images/pmvvkd2zg-mvvkdtff2.jpg"
    ],
    "thumb": "images/pmvvkd2zg-mvvkdtfft.jpg",
-   "updatedAt": "2026-10-30T22:49:11.485Z",
+   "updatedAt": "2026-11-09T03:06:54.116Z",
    "createdAt": "2026-10-30T22:49:11.485Z"
   },
   {
@@ -2530,5 +2530,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-11-09T03:06:22.867Z"
+ "updatedAt": "2026-11-09T03:06:54.408Z"
 }
