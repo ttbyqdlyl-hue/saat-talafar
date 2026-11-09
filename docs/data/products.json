@@ -344,7 +344,7 @@
   {
    "id": "pmvvl3924",
    "name": "محفظة رجالي شاموه",
-   "price": 2500,
+   "price": 3000,
    "old": 0,
    "cat": "wallet",
    "gender": [
@@ -360,7 +360,7 @@
     "images/pmvvl3924-mvvl3q8p1.jpg"
    ],
    "thumb": "images/pmvvl3924-mvvl3q8pt.jpg",
-   "updatedAt": "2026-10-30T23:09:20.199Z",
+   "updatedAt": "2026-11-09T03:06:07.679Z",
    "createdAt": "2026-10-30T23:09:20.199Z"
   },
   {
@@ -2530,5 +2530,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-11-09T03:05:53.814Z"
+ "updatedAt": "2026-11-09T03:06:07.986Z"
 }
