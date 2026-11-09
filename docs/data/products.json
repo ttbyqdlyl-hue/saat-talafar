@@ -434,7 +434,7 @@
   {
    "id": "pmvvkyonj",
    "name": "محفظة رجالي",
-   "price": 2500,
+   "price": 3000,
    "old": 0,
    "cat": "wallet",
    "gender": [
@@ -452,7 +452,7 @@
     "images/pmvvkyonj-mvvl0rl03.jpg"
    ],
    "thumb": "images/pmvvkyonj-mvvl0rl0t.jpg",
-   "updatedAt": "2026-10-30T23:07:01.988Z",
+   "updatedAt": "2026-11-09T03:06:22.480Z",
    "createdAt": "2026-10-30T23:07:01.988Z"
   },
   {
@@ -2530,5 +2530,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-11-09T03:06:07.986Z"
+ "updatedAt": "2026-11-09T03:06:22.867Z"
 }
