@@ -1040,7 +1040,7 @@
   {
    "id": "pmvvjzky9",
    "name": "محفظة سحرية",
-   "price": 2500,
+   "price": 3000,
    "old": 0,
    "cat": "wallet",
    "gender": [
@@ -1057,7 +1057,7 @@
     "images/pmvvjzky9-mvvk09fc2.jpg"
    ],
    "thumb": "images/pmvvjzky9-mvvk09fct.jpg",
-   "updatedAt": "2026-10-30T22:38:39.188Z",
+   "updatedAt": "2026-11-10T05:30:51.114Z",
    "createdAt": "2026-10-30T22:38:39.188Z"
   },
   {
@@ -2530,5 +2530,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-11-10T05:30:32.866Z"
+ "updatedAt": "2026-11-10T05:30:51.421Z"
 }
