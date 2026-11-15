@@ -4,7 +4,7 @@
 <meta name="theme-color" content="#07080B">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300..600&family=Reem+Kufi:wght@400..700&display=swap">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300..600&family=Reem+Kufi:wght@400..700&display=swap">
 <style>
 /* Layout: a night vitrine. Glass header → split hero (copy at the start side, a live signature watch at the end side) → category marquee → filterable grid of tilting product cards → three-step order path → TikTok band → footer. One committed dark look. */
 :root{
@@ -483,6 +483,13 @@ img,svg{max-width:100%}
   .card-tilt,.stage{transform-style:flat}
   .stage .watch{transform:rotate(var(--tilt))}
   .info,.badge,.fav,.card-hit{transform:none}
+  /* 100+ photo cards made weak phones run out of memory and close the page: no 3D layer, filter or blurred
+     second photo per card, and cards far off screen are not drawn at all */
+  .card{content-visibility:auto;contain-intrinsic-size:auto 312px}
+  .card-tilt{transform:none;transition:box-shadow .6s}
+  .stage.photo{background:radial-gradient(90% 80% at 50% 45%,#1A1F28,#0A0D12 72%)}
+  .stage.photo .ph{transform:none;filter:none;transition:none}
+  .card.sold .stage.photo .ph{filter:grayscale(.9) brightness(.62)}
 }
 
 /* owner panel */
@@ -597,8 +604,10 @@ select.ow-input{appearance:none;-webkit-appearance:none;padding-inline-end:44px;
 }
 </style>
 <script>
+// The fonts load without holding up the page: on a weak line the text shows in the phone's own font first.
+(function () { var f = document.createElement('link'); f.rel = 'stylesheet'; f.href = 'https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300..600&family=Reem+Kufi:wght@400..700&display=swap'; document.head.appendChild(f); })();
 // Start fetching the shop's products right away, while the animation library is still downloading.
-window.__shopData = fetch('data/products.json?v=' + Date.now(), { cache: 'no-store' }).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; });
+window.__shopData =fetch('data/products.json?v=' + Date.now(), { cache: 'no-store' }).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; });
 </script>
 <!-- page -->
 <svg class="fx-defs" aria-hidden="true" focusable="false">
@@ -1936,7 +1945,7 @@ const productUrl = id => `${location.origin}${location.pathname}#p-${id}`;
 function cardHTML(p, i) {
   const badge = p.badge ? `<span class="badge${p.soldOut ? ' sold' : ''}">${esc(p.badge)}</span>` : '';
   const stage = p.live
-    ? `<div class="stage photo">${p.thumb ? `<img class="ph-bg" src="${esc(imgSrc(p.thumb))}" alt="" aria-hidden="true" loading="lazy" decoding="async"><img class="ph" src="${esc(imgSrc(p.thumb))}" alt="${esc(p.name)}" loading="lazy" decoding="async" fetchpriority="low">` : ''}<span class="ph-shine"></span>${badge}</div>`
+    ? `<div class="stage photo">${p.thumb ? `${FINE ? `<img class="ph-bg" src="${esc(imgSrc(p.thumb))}" alt="" aria-hidden="true" loading="lazy" decoding="async">` : ''}<img class="ph"src="${esc(imgSrc(p.thumb))}" alt="${esc(p.name)}" loading="lazy" decoding="async" fetchpriority="low">` : ''}<span class="ph-shine"></span>${badge}</div>`
     : `<div class="stage"><div class="stage-floor"></div><div class="watch"><div class="float"></div></div>${badge}</div>`;
   return `
   <article class="card${p.soldOut ? ' sold' : ''}" data-id="${esc(p.id)}" data-tags="${p.tags.join(' ')}" style="--tint:${p.tint};--tilt:${p.tilt}deg;--fd:${(-i * .73).toFixed(2)}s">
@@ -2042,9 +2051,12 @@ function renderChips(list) {
 }
 function applyFilter(animate) {
   const tag = currentFilter;
+  // Flip lifts every card into its own layer at once: fine with a mouse and a few dozen cards, but on a phone
+  // with the full shop it ran out of memory and the page closed. Phones and big lists get a light fade instead.
+  const flip = animate && ANIM && FL && FINE && cards.length <= 40;
   // Finish any reveal tween first so it does not fight Flip over the same transforms.
-  if (animate && ANIM && FL) G.getTweensOf(cards).forEach(t => t.progress(1));
-  const state = animate && ANIM && FL ? FL.getState(cards) : null;
+  if (flip) G.getTweensOf(cards).forEach(t => t.progress(1));
+  const state = flip ? FL.getState(cards) : null;
   let shown = 0;
   cards.forEach(c => { const on = tag === 'all' || c.dataset.tags.split(' ').includes(tag); c.classList.toggle('is-out', !on); if (on) shown++; });
   $('#gridEmpty').hidden = shown > 0;
@@ -2053,7 +2065,13 @@ function applyFilter(animate) {
       onEnter: els => G.fromTo(els, { opacity: 0, scale: .86, y: 34 }, { opacity: 1, scale: 1, y: 0, duration: .75, ease: 'back.out(1.5)', stagger: .06, clearProps: 'transform' }),
       onLeave: els => G.to(els, { opacity: 0, scale: .86, duration: .35, ease: 'power2.in' }),
       onComplete: () => ST && ST.refresh() });
-  } else if (ST) ST.refresh();
+    return;
+  }
+  if (animate && ANIM) {
+    const first = cards.filter(c => !c.classList.contains('is-out')).slice(0, 6);
+    G.fromTo(first, { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: .55, stagger: .06, ease: 'power2.out', clearProps: 'transform' });
+  }
+  if (ST) ST.refresh();
 }
 function setFilter(btn) {
   currentFilter = btn.dataset.f;
@@ -2071,15 +2089,20 @@ function catalogue() {
   const samples = SETTINGS.showSamples === false ? [] : PRODUCTS.filter(p => !hidden.includes(p.id));
   return [...LIVE, ...samples];
 }
+let revealST = [];
 function revealCards() {
+  revealST.forEach(t => t.kill());
+  revealST = [];
   if (!ANIM || !ST) return;
   const vh = innerHeight, pending = [];
+  // Phones get a flat fade-up: a 3D start pose would make every waiting card its own GPU layer.
+  const pose = FINE ? { opacity: 0, y: 90, rotationX: -12, transformPerspective: 900 } : { opacity: 0, y: 40 };
   cards.forEach((c, i) => {
     if (c.getBoundingClientRect().top < vh * .95) G.from(c, { y: 70, opacity: 0, duration: 1.3, delay: .2 + i * .09, ease: 'expo.out', clearProps: 'transform' });
-    else { G.set(c, { opacity: 0, y: 90, rotationX: -12, transformPerspective: 900 }); pending.push(c); }
+    else { G.set(c, pose); pending.push(c); }
   });
-  ST.batch(pending, { start: 'top 90%', once: true,
-    onEnter: batch => G.to(batch, { opacity: 1, y: 0, rotationX: 0, duration: 1.3, stagger: .11, ease: 'expo.out', clearProps: 'transform' }) });
+  revealST = ST.batch(pending, { start: 'top 90%', once: true,
+    onEnter: batch => G.to(batch, { opacity: 1, y: 0, rotationX: 0, duration: FINE ? 1.3 : .8, stagger: .11, ease: 'expo.out', clearProps: 'transform' }) });
 }
 // The 18 sample drawings are built only when their card comes near the screen; building them all at once made phones slow.
 const mountIO = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) ensureMounted(e.target); }), { rootMargin: '500px 0px' });
@@ -3117,7 +3140,8 @@ $('#owForm').addEventListener('submit', async e => {
       if (ph.path) { images.push(ph.path); continue; }
       $('#owBusyText').textContent = `جاري تجهيز الصورة ${++done} من ${total}…`;
       let img;
-      try { img = await toImage(ph.file, 1400, .78); } catch (_) { throw photoError(`الصورة رقم ${n + 1} ما انقرت. شيلها وصوّرها من جديد.`); }
+      // 1200px stays sharp under zoom and keeps each photo light enough for a weak mobile line
+      try { img = await toImage(ph.file, 1200, .72); } catch (_) { throw photoError(`الصورة رقم ${n + 1} ما انقرت. شيلها وصوّرها من جديد.`); }
       const path = `images/${id}-${stamp}${n}.${img.ext}`;
       files.push({ path: `${REPO.dir}/${path}`, base64: await blobToB64(img.blob) });
       localImg[path] = ph.url; images.push(path);
@@ -3131,7 +3155,7 @@ $('#owForm').addEventListener('submit', async e => {
         if (!r.ok) throw photoError('الصورة الرئيسية بعدها ما نزلت بالموقع. انتظر دقيقة وجرّب مرة ثانية.');
         source = await r.blob();
       }
-      const t = await toImage(source, 720, .76);
+      const t = await toImage(source, 480, .7); // a card shows its photo at most ~450px wide on a phone
       thumb = `images/${id}-${stamp}t.${t.ext}`;
       files.push({ path: `${REPO.dir}/${thumb}`, base64: await blobToB64(t.blob) });
       localImg[thumb] = URL.createObjectURL(t.blob);

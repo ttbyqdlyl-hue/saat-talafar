@@ -11,6 +11,11 @@ const src = readFileSync(at('./src/page.html'), 'utf8');
 let [head, body] = src.split('<!-- page -->');
 if (body === undefined) throw new Error('src/page.html is missing the <!-- page --> marker');
 head = head.replace(/<meta name="claude:[^>]*>\s*/g, ''); // Artifact-viewer hint, meaningless on a normal site
+// GSAP is served from the site itself (docs/vendor): one less server for a weak mobile line to reach.
+body = body.replace(/https:\/\/cdnjs\.cloudflare\.com\/ajax\/libs\/gsap\/3\.12\.5\/([\w.]+)" integrity="[^"]*" crossorigin="anonymous"/g, (m, f) => {
+  if (!existsSync(at('./docs/vendor/' + f))) throw new Error('missing docs/vendor/' + f);
+  return `vendor/${f}"`;
+});
 // Older phones (iOS < 14.5, old Android WebViews) ignore `inset`: write top/right/bottom/left in front of each one.
 head = head.replace(/([{;\s])inset:([^;}]+)/g, (m, pre, v) => {
   const [t, r = t, b = t, l = r] = v.trim().split(/\s+/);
@@ -32,13 +37,13 @@ const phone = String(settings.whatsapp || '9647503321266').replace(/\D/g, '');
 const mapUrl = /^https:\/\//.test(settings.map || '') ? settings.map : 'https://maps.app.goo.gl/vMUJ7ErkPsaVY9hb8';
 const escAttr = s => String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
 
-// Content-Security-Policy: only this page's own inline scripts (by hash), GSAP from cdnjs, Google Fonts,
+// Content-Security-Policy: only this page's own inline scripts (by hash), GSAP from docs/vendor, Google Fonts,
 // the GitHub API (owner panel, and the newest product list), and photos from raw GitHub while Pages catches up.
 // Recomputed on every build because the scripts change.
 const scripts = [...(head + body).matchAll(/<script>([\s\S]*?)<\/script>/g)].map(m => `'sha256-${createHash('sha256').update(m[1], 'utf8').digest('base64')}'`);
 const csp = [
   "default-src 'self'",
-  `script-src 'self' https://cdnjs.cloudflare.com ${scripts.join(' ')}`,
+  `script-src 'self' ${scripts.join(' ')}`,
   "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
   'font-src https://fonts.gstatic.com',
   "img-src 'self' data: blob: https://raw.githubusercontent.com",
