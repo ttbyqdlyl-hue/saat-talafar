@@ -532,8 +532,8 @@
   {
    "id": "pmvvkqguc",
    "name": "كارتير رجالي اصلي",
-   "price": 12000,
-   "old": 0,
+   "price": 10000,
+   "old": 12000,
    "cat": "watch",
    "gender": [
     "men"
@@ -548,7 +548,7 @@
     "images/pmvvkqguc-mvvkr3t51.jpg"
    ],
    "thumb": "images/pmvvkqguc-mvvkr3t5t.jpg",
-   "updatedAt": "2026-10-30T22:59:31.471Z",
+   "updatedAt": "2026-11-21T19:49:13.718Z",
    "createdAt": "2026-10-30T22:59:31.471Z"
   },
   {
@@ -2530,5 +2530,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-11-21T19:48:29.551Z"
+ "updatedAt": "2026-11-21T19:49:16.106Z"
 }
