@@ -2305,7 +2305,7 @@
    "short": "",
    "desc": "",
    "badge": "",
-   "soldOut": false,
+   "soldOut": true,
    "images": [
     "images/pmvpxnq7q-mvpxpajh0.jpg",
     "images/pmvpxnq7q-mvpxpajh1.jpg",
@@ -2530,5 +2530,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-11-21T19:53:54.915Z"
+ "updatedAt": "2026-11-21T19:54:15.145Z"
 }
