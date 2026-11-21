@@ -1694,7 +1694,7 @@
    "short": "",
    "desc": "",
    "badge": "",
-   "soldOut": false,
+   "soldOut": true,
    "images": [
     "images/pmvvixbpe-mvviygrs0.jpg",
     "images/pmvvixbpe-mvviygrs1.jpg",
@@ -2530,5 +2530,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-11-21T19:52:41.561Z"
+ "updatedAt": "2026-11-21T19:53:00.322Z"
 }
