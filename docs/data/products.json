@@ -9,6 +9,30 @@
  },
  "products": [
   {
+   "id": "pmwqttxqt",
+   "name": "محفظة رجالي اصلي ماستر كولتي",
+   "price": 5000,
+   "old": 8000,
+   "cat": "wallet",
+   "gender": [
+    "men"
+   ],
+   "colors": "",
+   "short": "",
+   "desc": "",
+   "badge": "",
+   "soldOut": false,
+   "images": [
+    "images/pmwqttxqt-mwqtun3v0.jpg",
+    "images/pmwqttxqt-mwqtun3v1.jpg",
+    "images/pmwqttxqt-mwqtun3v2.jpg",
+    "images/pmwqttxqt-mwqtun3v3.jpg"
+   ],
+   "thumb": "images/pmwqttxqt-mwqtun3vt.jpg",
+   "updatedAt": "2026-11-21T19:55:04.429Z",
+   "createdAt": "2026-11-21T19:55:04.429Z"
+  },
+  {
    "id": "pmw8i87bj",
    "name": "باتيك فليب اطار تيتانيوم",
    "price": 16000,
@@ -2530,5 +2554,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-11-21T19:54:15.145Z"
+ "updatedAt": "2026-11-21T19:55:10.789Z"
 }
