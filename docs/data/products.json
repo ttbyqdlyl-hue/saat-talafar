@@ -130,8 +130,8 @@
   {
    "id": "pmw8hzbn3",
    "name": "تيكارتو اصلي",
-   "price": 15000,
-   "old": 0,
+   "price": 14000,
+   "old": 16000,
    "cat": "watch",
    "gender": [
     "men"
@@ -149,7 +149,7 @@
     "images/pmw8hzbn3-mw8i14ao4.jpg"
    ],
    "thumb": "images/pmw8hzbn3-mw8i14aot.jpg",
-   "updatedAt": "2026-11-09T00:04:20.717Z",
+   "updatedAt": "2026-11-21T19:48:28.517Z",
    "createdAt": "2026-11-09T00:04:20.717Z"
   },
   {
@@ -2530,5 +2530,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-11-10T05:31:08.776Z"
+ "updatedAt": "2026-11-21T19:48:29.551Z"
 }
