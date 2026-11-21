@@ -1958,7 +1958,7 @@
    "short": "",
    "desc": "",
    "badge": "",
-   "soldOut": false,
+   "soldOut": true,
    "images": [
     "images/pmvqpg1xf-mvqph5t80.jpg",
     "images/pmvqpg1xf-mvqph5t81.jpg"
@@ -2530,5 +2530,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-11-21T19:53:00.322Z"
+ "updatedAt": "2026-11-21T19:53:26.615Z"
 }
