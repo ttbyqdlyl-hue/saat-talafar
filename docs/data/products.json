@@ -9,6 +9,30 @@
  },
  "products": [
   {
+   "id": "pmwqtuw77",
+   "name": "ترند الجديد ويل",
+   "price": 8000,
+   "old": 12000,
+   "cat": "watch",
+   "gender": [
+    "men"
+   ],
+   "colors": "",
+   "short": "",
+   "desc": "",
+   "badge": "",
+   "soldOut": false,
+   "images": [
+    "images/pmwqtuw77-mwqtw22q0.jpg",
+    "images/pmwqtuw77-mwqtw22q1.jpg",
+    "images/pmwqtuw77-mwqtw22q2.jpg",
+    "images/pmwqtuw77-mwqtw22q3.jpg"
+   ],
+   "thumb": "images/pmwqtuw77-mwqtw22qt.jpg",
+   "updatedAt": "2026-11-21T19:56:10.452Z",
+   "createdAt": "2026-11-21T19:56:10.452Z"
+  },
+  {
    "id": "pmwqttxqt",
    "name": "محفظة رجالي اصلي ماستر كولتي",
    "price": 5000,
@@ -2554,5 +2578,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-11-21T19:55:10.789Z"
+ "updatedAt": "2026-11-21T19:56:15.439Z"
 }
