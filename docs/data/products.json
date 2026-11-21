@@ -1525,7 +1525,7 @@
    "short": "",
    "desc": "",
    "badge": "",
-   "soldOut": false,
+   "soldOut": true,
    "images": [
     "images/pmvvja5s1-mvvjb3vw0.jpg",
     "images/pmvvja5s1-mvvjb3vw1.jpg",
@@ -2530,5 +2530,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-11-21T19:51:53.550Z"
+ "updatedAt": "2026-11-21T19:52:41.561Z"
 }
