@@ -1970,7 +1970,7 @@
   {
    "id": "pmvqpell9",
    "name": "كاسيو",
-   "price": 20000,
+   "price": 18000,
    "old": 25000,
    "cat": "watch",
    "gender": [
@@ -1986,7 +1986,7 @@
     "images/pmvqpell9-mvqpftim1.jpg"
    ],
    "thumb": "images/pmvqpell9-mvqpftimt.jpg",
-   "updatedAt": "2026-10-30T22:53:20.587Z",
+   "updatedAt": "2026-11-21T19:53:44.611Z",
    "createdAt": "2026-10-27T13:11:51.979Z"
   },
   {
@@ -2530,5 +2530,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-11-21T19:53:26.615Z"
+ "updatedAt": "2026-11-21T19:53:45.125Z"
 }
