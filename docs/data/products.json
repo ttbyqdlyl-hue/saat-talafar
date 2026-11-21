@@ -721,7 +721,7 @@
    "short": "",
    "desc": "",
    "badge": "",
-   "soldOut": false,
+   "soldOut": true,
    "images": [
     "images/pmvvkf09o-mvvkfri50.jpg"
    ],
@@ -2530,5 +2530,5 @@
    "createdAt": "2026-10-25T13:19:17.130Z"
   }
  ],
- "updatedAt": "2026-11-21T19:49:16.106Z"
+ "updatedAt": "2026-11-21T19:49:31.163Z"
 }
